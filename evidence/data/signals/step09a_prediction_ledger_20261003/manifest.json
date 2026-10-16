@@ -1,0 +1,83 @@
+{
+  "run_id": "step09a_prediction_ledger_20261003",
+  "stage": "09a_prediction_input_ledger",
+  "status": "verified_prediction_input_ledger",
+  "started_at_utc": "2026-10-03T09:47:01.925691+00:00",
+  "inputs": {
+    "response_manifest": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step07e_panel_responses_20261001/manifest.json",
+      "sha256": "b12b4640c88f78bd952c72ef03780eeffc98b67a9c2009f5f17b9038e427fbb3"
+    },
+    "panel_manifest": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step07f_panel_analysis_20261001/manifest.json",
+      "sha256": "f70ce68c87ff39321267aacc1145526d3e8c7ae6764908aa366cffc898ee4202"
+    },
+    "anchors": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step07e_panel_responses_20261001/anchors.parquet",
+      "sha256": "272a8127a52e7992f80bea53cef3c937ace485efc479b070e0a3fdb6d22740ae"
+    },
+    "features": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step07f_panel_analysis_20261001/features.parquet",
+      "sha256": "94ed30c9a6a7367ea81b51f77af9c8ed046707feb071267ec7cfe41643a3e6bc"
+    },
+    "outcomes": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step07f_panel_analysis_20261001/ledger_outcomes.parquet",
+      "sha256": "6b9364085a15250138b4c8d18310b42412c32f465c155e8f354a6e7becd7eeba"
+    },
+    "scaling": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step07f_panel_analysis_20261001/scaling.json",
+      "sha256": "aa891c425a734374b0d74d0e16ab06b5353106d91dc1d02f260cca75e23cc094"
+    },
+    "schedule": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step07c_chronological_panel_20261001_v2/cycle_schedule.parquet",
+      "sha256": "9888e51512182a1778b5afe632a34d74bb2378d02b9757e45f6bb20e02be3e99"
+    },
+    "joint_manifest": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step07m_joint_response_20261002/manifest.json",
+      "sha256": "89881068a3c8fc8e214a97e102826494576acf007ad21f1e5881bf45dfc41dd0"
+    },
+    "old_joint_membership": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step07m_joint_response_20261002/membership.parquet",
+      "sha256": "ddb09ba859bc2fa97ecdeae908d15836278c3d7a4e7a259a66650addaeedd280"
+    }
+  },
+  "source_sha256": {
+    "repair_prediction_ledger.py": "aeac1134d7273b4f2dc8e053e6db40cad10a3197ea643db1914c54abe882b4a6",
+    "src/prediction_ledger.py": "9070513d09f1eb75b42e4268dbcdb03d87dca26264d0a3eb9fda1e5161348f3e",
+    "src/verify_prediction_ledger.py": "2fa6ccad71181980ae22bc3fe2de430732f78aca1ee481b6589ad76e1d62625d",
+    "tests/test_prediction_ledger.py": "631122b0d998d835ad7a42cfc61faa4f3bf123872b70f11445579195e831852c",
+    "tests/test_verify_prediction_ledger.py": "0222deb2a2a7936c64d14c99137a7e76c98ba0e48ed64626c485cbbfc37f4dde",
+    "reports/STEP09A_PREDICTION_CONTRACT.md": "346fe1cb0098db5944590ad3c44b7b57c7d852c9ae4bfa1d5887cca34e3bd03d"
+  },
+  "protocol_sha256": "346fe1cb0098db5944590ad3c44b7b57c7d852c9ae4bfa1d5887cca34e3bd03d",
+  "evaluation_start": "2024-05-06T00:00:00+00:00",
+  "sample_end": "2026-08-01T00:00:00+00:00",
+  "environment": {
+    "python": "3.12.13",
+    "pandas": "2.2.3",
+    "numpy": "2.5.0"
+  },
+  "empirical_models_fitted": 0,
+  "forecasts_computed": 0,
+  "forecast_validated": false,
+  "novelty_established": false,
+  "causal_identification_established": false,
+  "untouched_holdout": false,
+  "live_feed_latency_validated": false,
+  "outputs": {
+    "fold_statistics.json": "d002803113fdadb449651596961acdde0eb147b2acad0b064bc68592bf9afb35",
+    "folds.parquet": "7b5c24ef82c9ad846281f525cd4dcfdf5d74439b5978a4ec83066d06fb326c17",
+    "labels.parquet": "0c104745c200756960da57a1ded58aab11057795c997edba5904d30a253e8db7",
+    "membership.parquet": "726573ad4454adf43b0f48d3aceadd00e279b1994733e394ea6877804a5b42bc",
+    "origin_statistics.json": "6ccdd047f923c5c7955099cf3b1c5584e53761a3af608453bb5623195f1a2cb5",
+    "origins.parquet": "a2c1a2715d9e87f703fafcf6275eac662e24eba71c03a5464b32378abe806c8e",
+    "predictors.parquet": "ad2d2cf478bd051416ae547e3202aec53d24eea8af4d34daf1832520b6371dbe",
+    "statistics.json": "1bba04486f033f0593bc9e1c4db2a05931f74da4390de05dfcb586d431e85876",
+    "test_evidence.json": "4aa596cdd23f56a11ff4579dfa2cff1b30bdcc7c1d7be4094e08317959b8ac42",
+    "test_execution.log": "70ef2c7f72c2da1996b9fb1064ef34217fcde1055db57c3a08a8f898d1cf5dd1",
+    "verification.json": "e621d0069188485304ec899c7015a7a3b02027d89d189e93efe46bc784fe2c11",
+    "saved_verification.json": "e501e42a1428b182e7b27883c4eec09c6a7b062a530f0cbf59eb4a8516662d73"
+  },
+  "tests_passed": 33,
+  "completed_at_utc": "2026-10-03T09:47:13.862174+00:00"
+}

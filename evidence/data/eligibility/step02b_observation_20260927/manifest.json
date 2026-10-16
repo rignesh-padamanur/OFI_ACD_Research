@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "run_id": "step02b_observation_20260927",
+  "stage": "02b_observation_eligibility",
+  "status": "verified_observation_support_only",
+  "created_at_utc": "2026-09-27T14:21:53.633850+00:00",
+  "parent_data_run": "step01_quote_sizes_20260927_v2",
+  "parent_directory": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/runs/step01_quote_sizes_20260927_v2",
+  "input_hashes": {
+    "parent_manifest": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/runs/step01_quote_sizes_20260927_v2/manifest.json",
+      "sha256": "ef3197dba7fec7232f99277d2be63d1344cecfd5292f19c7cd0bf4d52a4faad0"
+    },
+    "parent_verification": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/runs/step01_quote_sizes_20260927_v2/verification.json",
+      "sha256": "22d474c86d626649d638c74b3ec6761d245ea00a7059f040cd9bb5b707bbb409"
+    },
+    "parent_clean": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/runs/step01_quote_sizes_20260927_v2/clean_quotes.parquet",
+      "sha256": "42bf8ebd9db201a5606e811de6d778e81b1094471d30af52e8e63f02b9e6254e"
+    },
+    "parent_raw": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/runs/step01_quote_sizes_20260927_v2/raw_quotes.parquet",
+      "sha256": "2e5cd3b1751da85897e169245e3f710d22b9d1b281d467549f7929f033ff298c"
+    },
+    "coverage": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/acquisition/step02_hours_20260927/coverage_before.parquet",
+      "sha256": "484e9e4b7f31f45dd72f9dbf2e129708109ba7ee3b6ef09d6de09fd84af35200"
+    },
+    "coverage_manifest": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/acquisition/step02_hours_20260927/manifest.json",
+      "sha256": "8be76c2a9940cca68cc1f67fc9e0220ddfb65dffd0e97de9f894462069f09aef"
+    },
+    "coverage_verification": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/acquisition/step02_hours_20260927/coverage_verification.json",
+      "sha256": "73baca7a1f3e4c51ea81fed988e52ee8265e872b5791797d5a48290974011c28"
+    }
+  },
+  "freshness_diagnostics": {
+    "structural_only": null,
+    "fresh_15s": 15,
+    "fresh_30s": 30,
+    "fresh_60s": 60
+  },
+  "lookback_diagnostics_seconds": [
+    0,
+    60,
+    300
+  ],
+  "horizons_seconds": [
+    0,
+    1,
+    5,
+    30,
+    60,
+    300
+  ],
+  "primary_freshness_policy": null,
+  "coverage_certified": false,
+  "downstream_ready": false,
+  "environment": {
+    "python": "3.12.13",
+    "numpy": "2.5.0",
+    "pandas": "2.2.3",
+    "pyarrow": "18.1.0"
+  },
+  "limitations": [
+    "Observed hours do not certify update completeness; silence can be inactivity or missing recording.",
+    "Holiday versus outage causes remain unresolved; absent hours are never automatically labelled outages.",
+    "Legacy same-timestamp price deduplication may have lost size updates; no records are recovered here.",
+    "Structural-only support is a diagnostic without a stale-quote safeguard, not a selected analysis policy.",
+    "15/30/60-second freshness rules and 0/60/300-second contexts are diagnostics, not fitted thresholds or ACD burn-in choices.",
+    "Eligibility describes recorded support, not an independently observed true market path.",
+    "Outcome availability and interval ends are ex-post audit information and must never be predictors.",
+    "Clock anchors are not events; event attrition, sample-selection bias, OFI and economic identification remain to be evaluated.",
+    "This stage supports strictly increasing clean timestamps; new tied-timestamp inputs fail until an ordering policy is specified."
+  ],
+  "code_sha256": {
+    "repair_observation_eligibility.py": "6d79dbaedb34bb079c2d9d93a263ed8c4d6fa1875e7067383a28bfd3c187b66e",
+    "src/observation_eligibility.py": "6128d5acf8da8ecd367cfc01c2ea0e67a7cd811ffd41d25aacc725f69efb2a67",
+    "src/verify_observation_eligibility.py": "517d2f93fecf02fa468c563df48bef719300f7b2e047da231518c480a0240834",
+    "src/data_preparation.py": "199ed717ada3eaea625ffb3da788e80a75a7765c7afdb2b560433c6f3a100831",
+    "src/acquisition.py": "54e9dd5db475721130459684f861ce82fb42dbe9c99958605b9badfe13602a87",
+    "src/pipeline_state.py": "b251e488a6b671eae8b501c7f76299aae0142240ce92ba56b6be4893a1e43505",
+    "tests/test_observation_eligibility.py": "c6e4a913492e36b5161006b4b4a48aa279d32bcbf08b45778b0e6e6c2540c1b3"
+  },
+  "output_sha256": {
+    "hourly_eligibility.parquet": "6083abdddfa8a43b3ea9b8e92ef1c166f757bd807e1761ff2713c98659688584",
+    "segments.parquet": "a7f3ea6b78ff6af839a46c5d5eace43ded5c5492af7d86cb7ad8d5eb79c76391",
+    "support_intervals.parquet": "088041bbc06b8517c4ae090d826abf70c11e590c03d7f8c65b89dd010a7b7443",
+    "long_interquote_gaps.parquet": "72cb8b4a1f4c9b85184b41f857cfe850d4ab0d83e9d9e8578129a8e90a19440e",
+    "window_attrition_by_hour.parquet": "de95d3e8d1b64028949febe41c2cff7063d53023075b330986f29ab4d56c7ec8",
+    "window_attrition_by_month_band.parquet": "40e4325b1912e04ebc4eef0a0fdc9d01ee45fdc2883b03b815d1f4fb7f50e67a",
+    "statistics.json": "b95e99f70bc824e2ca5da2a5139fb8799ed41b8676853939446e42a876dc1fa1",
+    "test_evidence.json": "7d58e9c09753e73c4343dfa4bfab2bb1d6327d7d57521415fb552d83d6a09269"
+  }
+}

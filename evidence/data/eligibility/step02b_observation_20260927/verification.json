@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "retained_quotes_checked": 55708318,
+  "raw_timestamps_checked": 55709907,
+  "structural_segments_checked": 208,
+  "support_intervals_checked": 410383,
+  "hourly_window_counts_checked": 1629504,
+  "past_and_future_window_scenarios": 72,
+  "calendar_checked_independently": true,
+  "all_clean_time_provenance_pairs_checked_against_raw": true,
+  "coverage_certified": false,
+  "scope": "Observation-support arithmetic and cached-data provenance; no event/model validation"
+}

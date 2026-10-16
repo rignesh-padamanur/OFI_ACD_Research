@@ -1,0 +1,31 @@
+{
+  "scope": "Notebook 2: past-day seasonal calibration for quote counts and absolute recorded quote imbalance; four support scenarios, no primary chosen.",
+  "timing": "For UTC day d, fit once from [d-lookback_days,d). Matching cell uses the same UTC weekday and 15-minute slot. No current-day observations enter any mean, scale or factor. Current normalized signal is available at bin completion.",
+  "reference_specification": "56 calendar days, full-window warm-up, four prior matching dates, 1800 eligible seconds. Fixed before execution, configurable, not optimized or mandated by cited literature.",
+  "weighting": "Equal weight per eligible second, including supported zeros. Channel-specific support: count support for counts, valid-flow support for absolute imbalance. Distinct-date and observation counts are recorded; seconds are not assumed independent for inference.",
+  "formula": "phi=historical_cell_mean/historical_global_mean; adjusted_x=x/phi; z_x=(x-historical_cell_mean)/historical_cell_sample_sd. Signed imbalance is divided by positive phi_abs to preserve direction, never divided by its possibly zero signed mean.",
+  "variance": "Daily centered sums of squares pooled within and between dates; sample denominator n-1. No zero/NaN denominator fallback, winsorization, quantile threshold, Gaussian transformation or future fitting.",
+  "unavailable": "Unsupported input, incomplete warm-up, too few dates/seconds, nonpositive/unavailable mean or scale produce missing calibrated outputs with explicit reasons. No cross-cell interpolation or retrospective backfill.",
+  "interpretation": "Rolling unsupervised calibration from past covariates, conditional on fixed retrospective observation masks. Not an online outage detector, frozen supervised train/test split, optimal seasonality model, or evidence of prediction/causal information/permanence.",
+  "limits": [
+    "UTC weekday/time cells do not fully align changing local-market sessions/DST or holiday effects. New or unsupported cells can lose calibration until enough same-weekday history exists.",
+    "Prior mean/scale estimates adapt to changing activity and can include past shocks. Out-of-sample moments need not equal zero/one; scores need not be Gaussian or independent.",
+    "A primary support/freshness policy and calibration specification sensitivity must be settled before paper estimation.",
+    "Duration/ACD inputs, multivariate scoring/covariance/thresholds, observable event onset, supervised evaluation and persistence inference remain pending."
+  ],
+  "sources": [
+    {
+      "title": "Hyndman and Athanasopoulos, rolling-origin evaluation",
+      "url": "https://otexts.com/fpp3/tscv.html",
+      "scope": "Chronological prior-only evaluation principle; does not select our numerical reference settings."
+    },
+    {
+      "title": "Andersen and Bollerslev (1997), Intraday periodicity and volatility persistence in financial markets",
+      "url": "https://public.econ.duke.edu/~boller/Published_Papers/joef_97.pdf",
+      "scope": "Importance of intraday seasonality in return volatility; does not validate this quote-count/quote-pressure model."
+    }
+  ],
+  "coverage_certified": false,
+  "downstream_ready": false,
+  "primary_freshness_policy": null
+}

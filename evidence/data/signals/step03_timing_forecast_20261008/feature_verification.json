@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "cycles": 59,
+  "source_reconstructed_rows": 20189813,
+  "max_absolute_seasonal_mean_discrepancy": 1.4210854715202004e-14,
+  "algorithm": "Independent numpy unique/bincount aggregation of completed source gaps",
+  "future_outcomes_read": 0,
+  "protected_files_unchanged": 39
+}

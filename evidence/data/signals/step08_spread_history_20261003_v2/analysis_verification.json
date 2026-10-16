@@ -1,0 +1,231 @@
+{
+  "status": "passed",
+  "horizons": {
+    "300": {
+      "status": "passed",
+      "rows_verified": 127013,
+      "calendar_days_verified": 817,
+      "zero_event_days_verified": 116,
+      "models_verified": 2,
+      "outcomes_verified": [
+        "J",
+        "C",
+        "I",
+        "spread_initial",
+        "spread_post",
+        "spread_total"
+      ],
+      "table_rows_verified": {
+        "coefficients": 474,
+        "covariances": 37452,
+        "history_intervals": 12,
+        "cross_outcome_covariances": 72,
+        "events": 1524156,
+        "daily_scores": 9804,
+        "daily_influence": 4902,
+        "bread": 3121,
+        "model_diagnostics": 12
+      },
+      "fixed_calendar_lags_verified": {
+        "fixed_20": 20,
+        "fixed_40": 40
+      },
+      "daily_aggregation_roundoff": [
+        {
+          "model": "benchmark",
+          "outcome": "J",
+          "maximum_absolute_aggregation_error": 2.3646862246096134e-11,
+          "maximum_error_to_roundoff_bound": 0.15188628497655454
+        },
+        {
+          "model": "benchmark",
+          "outcome": "C",
+          "maximum_absolute_aggregation_error": 1.4551915228366852e-11,
+          "maximum_error_to_roundoff_bound": 0.12458007534162666
+        },
+        {
+          "model": "benchmark",
+          "outcome": "I",
+          "maximum_absolute_aggregation_error": 2.546585164964199e-11,
+          "maximum_error_to_roundoff_bound": 0.1328899955047931
+        },
+        {
+          "model": "benchmark",
+          "outcome": "spread_initial",
+          "maximum_absolute_aggregation_error": 1.3642420526593924e-12,
+          "maximum_error_to_roundoff_bound": 0.12649353791343423
+        },
+        {
+          "model": "benchmark",
+          "outcome": "spread_post",
+          "maximum_absolute_aggregation_error": 3.637978807091713e-12,
+          "maximum_error_to_roundoff_bound": 0.13349768914716453
+        },
+        {
+          "model": "benchmark",
+          "outcome": "spread_total",
+          "maximum_absolute_aggregation_error": 9.094947017729282e-12,
+          "maximum_error_to_roundoff_bound": 0.14260648980215831
+        },
+        {
+          "model": "history",
+          "outcome": "J",
+          "maximum_absolute_aggregation_error": 4.547473508864641e-12,
+          "maximum_error_to_roundoff_bound": 0.19358177935575885
+        },
+        {
+          "model": "history",
+          "outcome": "C",
+          "maximum_absolute_aggregation_error": 1.4551915228366852e-10,
+          "maximum_error_to_roundoff_bound": 0.11474431720483164
+        },
+        {
+          "model": "history",
+          "outcome": "I",
+          "maximum_absolute_aggregation_error": 9.094947017729282e-12,
+          "maximum_error_to_roundoff_bound": 0.08585874190828065
+        },
+        {
+          "model": "history",
+          "outcome": "spread_initial",
+          "maximum_absolute_aggregation_error": 4.547473508864641e-12,
+          "maximum_error_to_roundoff_bound": 0.17009576112395272
+        },
+        {
+          "model": "history",
+          "outcome": "spread_post",
+          "maximum_absolute_aggregation_error": 3.637978807091713e-12,
+          "maximum_error_to_roundoff_bound": 0.14438709822186493
+        },
+        {
+          "model": "history",
+          "outcome": "spread_total",
+          "maximum_absolute_aggregation_error": 3.183231456205249e-12,
+          "maximum_error_to_roundoff_bound": 0.13983604739544694
+        }
+      ],
+      "methods": [
+        "equilibrated pivoted QR",
+        "independent fixed design and pandas daily sums",
+        "saved-residual daily score fsum with gamma_n sum-absolute bound",
+        "residualized-history scalar Bartlett cross-products",
+        "joint coefficient accounting"
+      ],
+      "confidence_interval_coverage_validated": false,
+      "inference_approved": false
+    },
+    "60": {
+      "status": "passed",
+      "rows_verified": 127052,
+      "calendar_days_verified": 817,
+      "zero_event_days_verified": 116,
+      "models_verified": 2,
+      "outcomes_verified": [
+        "J",
+        "C",
+        "I",
+        "spread_initial",
+        "spread_post",
+        "spread_total"
+      ],
+      "table_rows_verified": {
+        "coefficients": 474,
+        "covariances": 37452,
+        "history_intervals": 12,
+        "cross_outcome_covariances": 72,
+        "events": 1524624,
+        "daily_scores": 9804,
+        "daily_influence": 4902,
+        "bread": 3121,
+        "model_diagnostics": 12
+      },
+      "fixed_calendar_lags_verified": {
+        "fixed_20": 20,
+        "fixed_40": 40
+      },
+      "daily_aggregation_roundoff": [
+        {
+          "model": "benchmark",
+          "outcome": "J",
+          "maximum_absolute_aggregation_error": 7.275957614183426e-12,
+          "maximum_error_to_roundoff_bound": 0.1839133030745419
+        },
+        {
+          "model": "benchmark",
+          "outcome": "C",
+          "maximum_absolute_aggregation_error": 2.1827872842550278e-11,
+          "maximum_error_to_roundoff_bound": 0.11507247185831285
+        },
+        {
+          "model": "benchmark",
+          "outcome": "I",
+          "maximum_absolute_aggregation_error": 1.4551915228366852e-11,
+          "maximum_error_to_roundoff_bound": 0.16281147785202355
+        },
+        {
+          "model": "benchmark",
+          "outcome": "spread_initial",
+          "maximum_absolute_aggregation_error": 2.7284841053187847e-12,
+          "maximum_error_to_roundoff_bound": 0.1878980302097959
+        },
+        {
+          "model": "benchmark",
+          "outcome": "spread_post",
+          "maximum_absolute_aggregation_error": 5.9117155615240335e-12,
+          "maximum_error_to_roundoff_bound": 0.12329708396911102
+        },
+        {
+          "model": "benchmark",
+          "outcome": "spread_total",
+          "maximum_absolute_aggregation_error": 2.0463630789890885e-12,
+          "maximum_error_to_roundoff_bound": 0.10007490501303047
+        },
+        {
+          "model": "history",
+          "outcome": "J",
+          "maximum_absolute_aggregation_error": 1.0913936421275139e-11,
+          "maximum_error_to_roundoff_bound": 0.1553634407653053
+        },
+        {
+          "model": "history",
+          "outcome": "C",
+          "maximum_absolute_aggregation_error": 4.3655745685100555e-11,
+          "maximum_error_to_roundoff_bound": 0.15051863769780682
+        },
+        {
+          "model": "history",
+          "outcome": "I",
+          "maximum_absolute_aggregation_error": 2.1827872842550278e-11,
+          "maximum_error_to_roundoff_bound": 0.10117015958882924
+        },
+        {
+          "model": "history",
+          "outcome": "spread_initial",
+          "maximum_absolute_aggregation_error": 4.547473508864641e-12,
+          "maximum_error_to_roundoff_bound": 0.15579383116603002
+        },
+        {
+          "model": "history",
+          "outcome": "spread_post",
+          "maximum_absolute_aggregation_error": 3.637978807091713e-12,
+          "maximum_error_to_roundoff_bound": 0.16510368189441052
+        },
+        {
+          "model": "history",
+          "outcome": "spread_total",
+          "maximum_absolute_aggregation_error": 5.4569682106375694e-12,
+          "maximum_error_to_roundoff_bound": 0.11197114147673477
+        }
+      ],
+      "methods": [
+        "equilibrated pivoted QR",
+        "independent fixed design and pandas daily sums",
+        "saved-residual daily score fsum with gamma_n sum-absolute bound",
+        "residualized-history scalar Bartlett cross-products",
+        "joint coefficient accounting"
+      ],
+      "confidence_interval_coverage_validated": false,
+      "inference_approved": false
+    }
+  }
+}

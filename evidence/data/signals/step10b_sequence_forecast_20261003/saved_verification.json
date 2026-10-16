@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "run_id": "step10b_sequence_forecast_20261003",
+  "verified_at_utc": "2026-10-03T14:26:43.111791+00:00",
+  "source_projection": {
+    "status": "passed",
+    "origins_verified": 135724,
+    "exact_predictor_projection_verified": true,
+    "inherited_eligibility_preserved": true,
+    "future_columns_excluded": true
+  },
+  "forecast": {
+    "status": "passed",
+    "coefficient_solver": "independent equilibrated QR",
+    "ols_fits_verified": 118,
+    "coefficients_verified": 5713,
+    "forecast_rows_verified": 535672,
+    "prediction_origins_verified": 133918,
+    "eligible_origins_verified": 127058,
+    "all_origin_and_method_keys_preserved": true,
+    "future_outcomes_in_forecast_table": false,
+    "training_membership_reconstructed_from_maturity": true,
+    "unseen_marginal_level_fallbacks_verified": true,
+    "producer_helpers_imported": false,
+    "sequence_adjacency_reparameterization_verified": true,
+    "forecast_superiority_established": false
+  },
+  "evaluation": {
+    "status": "passed",
+    "scored_event_rows_verified": 535672,
+    "prediction_origins_verified": 133918,
+    "evaluable_origins_verified": 127013,
+    "issued_unavailable_verified": 45,
+    "calendar_days_verified": 817,
+    "metrics_verified": 4,
+    "comparisons_verified": 3,
+    "serial_rows_verified": 123,
+    "event_weighting_verified": true,
+    "stable_delta_roundoff_bound_checked": true,
+    "centering_uses_daily_event_counts": true,
+    "empty_calendar_dates_preserved": true,
+    "producer_helpers_imported": false,
+    "inference_validated": false,
+    "forecast_superiority_established": false
+  },
+  "new_scientific_models_fitted": 0,
+  "verification_reconstructions_only": true
+}

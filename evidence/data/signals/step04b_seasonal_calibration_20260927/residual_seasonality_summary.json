@@ -1,0 +1,82 @@
+[
+  {
+    "policy": "structural_only",
+    "channel": "tick_count",
+    "minimum_diagnostic_cell_seconds": 1800,
+    "cells": 480,
+    "weighted_rms_cell_mean_deviation": 0.015807278984708975,
+    "minimum_cell_mean": -0.021731020805295282,
+    "maximum_cell_mean": 0.09063327654146654,
+    "interpretation": "Descriptive residual seasonality; not an independence-based significance test."
+  },
+  {
+    "policy": "structural_only",
+    "channel": "abs_quote_ofi",
+    "minimum_diagnostic_cell_seconds": 1800,
+    "cells": 480,
+    "weighted_rms_cell_mean_deviation": 0.011136539651593145,
+    "minimum_cell_mean": -0.029129405146873993,
+    "maximum_cell_mean": 0.09034194690362424,
+    "interpretation": "Descriptive residual seasonality; not an independence-based significance test."
+  },
+  {
+    "policy": "fresh_15s",
+    "channel": "tick_count",
+    "minimum_diagnostic_cell_seconds": 1800,
+    "cells": 480,
+    "weighted_rms_cell_mean_deviation": 0.017051596419014492,
+    "minimum_cell_mean": -0.021628574879207545,
+    "maximum_cell_mean": 0.12367811391968102,
+    "interpretation": "Descriptive residual seasonality; not an independence-based significance test."
+  },
+  {
+    "policy": "fresh_15s",
+    "channel": "abs_quote_ofi",
+    "minimum_diagnostic_cell_seconds": 1800,
+    "cells": 480,
+    "weighted_rms_cell_mean_deviation": 0.011910524617401625,
+    "minimum_cell_mean": -0.029123689436632082,
+    "maximum_cell_mean": 0.1257166130373994,
+    "interpretation": "Descriptive residual seasonality; not an independence-based significance test."
+  },
+  {
+    "policy": "fresh_30s",
+    "channel": "tick_count",
+    "minimum_diagnostic_cell_seconds": 1800,
+    "cells": 480,
+    "weighted_rms_cell_mean_deviation": 0.01620257630308881,
+    "minimum_cell_mean": -0.021729593263895747,
+    "maximum_cell_mean": 0.10260106260949578,
+    "interpretation": "Descriptive residual seasonality; not an independence-based significance test."
+  },
+  {
+    "policy": "fresh_30s",
+    "channel": "abs_quote_ofi",
+    "minimum_diagnostic_cell_seconds": 1800,
+    "cells": 480,
+    "weighted_rms_cell_mean_deviation": 0.011419169156039246,
+    "minimum_cell_mean": -0.029131397077868767,
+    "maximum_cell_mean": 0.10493515976078541,
+    "interpretation": "Descriptive residual seasonality; not an independence-based significance test."
+  },
+  {
+    "policy": "fresh_60s",
+    "channel": "tick_count",
+    "minimum_diagnostic_cell_seconds": 1800,
+    "cells": 480,
+    "weighted_rms_cell_mean_deviation": 0.015892061636747896,
+    "minimum_cell_mean": -0.021731020805295282,
+    "maximum_cell_mean": 0.09169043914893991,
+    "interpretation": "Descriptive residual seasonality; not an independence-based significance test."
+  },
+  {
+    "policy": "fresh_60s",
+    "channel": "abs_quote_ofi",
+    "minimum_diagnostic_cell_seconds": 1800,
+    "cells": 480,
+    "weighted_rms_cell_mean_deviation": 0.011189447520332787,
+    "minimum_cell_mean": -0.029129405146873993,
+    "maximum_cell_mean": 0.09259852522413824,
+    "interpretation": "Descriptive residual seasonality; not an independence-based significance test."
+  }
+]

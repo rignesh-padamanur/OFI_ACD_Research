@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "policy_spell_rows_checked": 28542356,
+  "seasonal_parameter_rows_checked": 48384,
+  "validation_prediction_rows_checked": 9747262,
+  "fitted_models_checked": 14,
+  "scope": "Fixed initial chronological audit only; implementation verification does not certify model adequacy or economic identification.",
+  "methods": [
+    "incoming completed durations plus separate terminal rows",
+    "direct prior-spell exposure clipping and same-weekday refits",
+    "SciPy linear filtering and distribution logpdf/logsf",
+    "independent aggregate and calendar-day likelihood/hazard diagnostic reconstruction"
+  ]
+}

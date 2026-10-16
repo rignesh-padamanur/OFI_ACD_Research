@@ -1,0 +1,39 @@
+> Historical protocol/review preserved for provenance. Dated conclusions reflect the record at that time. Navigation links were made portable for this release; paths marked “full research archive” are not bundled. Original and release hashes are in the evidence manifest.
+
+# Step 11: frozen exploratory detector comparison
+
+4 October 2026. The user authorized execution of the detector contribution test plan. This protocol is fixed before generating the new economic comparisons. It extends the inspected cache; it is not an untouched validation exercise. Outputs live in a new run directory and do not replace earlier scientific results.
+
+## Population, detectors, and clocks
+
+Replay the inherited 60 detector cycles from 22 April 2024 through 31 July 2026. The first cycle initializes episode history; the primary evaluation is 6 May 2024 through 31 July 2026 (817 calendar days). Reuse saved seasonal factors and ACD parameters, without optimization. Reconstruct calibration inputs and require agreement with saved three-dimensional fit moments, thresholds, deployment scores, candidate flags, and confirmed onsets.
+
+Seven core rules use exactly the same three-feature calibration and deployment support: full Mahalanobis, two-feature OFI/activity Mahalanobis, diagonal standardized distance, maximum absolute standardized feature, and each of the three absolute standardized features separately. Use unsquared distances throughout, retaining the original full detector's empirical linear-interpolated q99 threshold exactly. Every alternative gets its own q99 threshold, fitted only on its calibration observations. No threshold search. Save ties and actual alert rates.
+
+Add two economic monitors: current quoted spread and preceding 300-second price variation at the inherited five-second sampling frequency. Their thresholds use finite available scores within that calibration population; absent histories are explicitly unavailable and reset that monitor's episode state. This availability exception is necessary to preserve the original full detector. All primary economic comparisons use the same finite-reference-state/outcome eligibility rule at each calendar origin. Report all alert counts before that restriction.
+
+An alert is a candidate preceded by five reliably clear seconds in the same support interval. Observed quiet seconds can establish clearance; unsupported or unscorable active seconds cannot. Preserve uncertain episode starts separately. Carry the last five clock observations between cycles. Independently compare full-detector confirmed onsets with the inherited stream. Threshold changes follow the original cycle boundaries.
+
+Pairwise timing matching is descriptive: within each support interval, sort each detector's confirmed onsets; greedily pair the earliest remaining alerts when within five seconds, otherwise advance the earlier one. Report exact matches, matched lead times, and unmatched counts. Matching never changes issuance or outcomes.
+
+## Measurements and reference model
+
+All quote marks are strict-left limits with integer price ticks (100000 ticks per exchange-rate unit). Spread pips equal ask-minus-bid ticks divided by ten; midpoint pips use the sum of bid and ask ticks divided by twenty. For bin start s, issuance is t0=s+1. Primary outcome is the arithmetic mean of S(t0+h), h=1,...,300. Secondary outcomes are the analogous next-60-second mean, absolute subsequent midpoint movement at 300 seconds, and direction-aligned J/C/I using the recorded bin OFI sign (zero direction remains missing for aligned outcomes).
+
+Every required mark must belong to the origin's structural support interval. Missing future support does not cancel an issued alert; it creates an unavailable outcome. No carry across an outage. Preserve quote ages. Report fixed 15/30/60-second sensitivity screens on the maximum age over the preceding 300 marks, detection mark, and future 300 marks; these are restricted-population descriptions, not replacement detectors.
+
+Fit one ordinary-condition reference for future mean spread, separately at each original refit date, using the preceding 56 calendar days. Features available at issuance are current spread, strict pre-bin spread, average spread at s-299,...,s, inherited preceding variation, log(1+current quote count), log(1+preceding 300-second mean quote count), current quote age, maximum preceding quote age, UTC hour, and weekday. Require finite features and common valid history. No detector score or duration residual enters this reference.
+
+Use sklearn HistGradientBoostingRegressor with squared loss, learning_rate=0.05, max_iter=100, max_leaf_nodes=15, min_samples_leaf=100, l2_regularization=1, max_bins=63, early_stopping=False, random_state=20261004. Hour and weekday are numeric fixed inputs. For bounded training cost, select a deterministic approximately 5% sample of eligible calibration seconds by a fixed SplitMix64 timestamp hash modulo 20; the selection does not use outcomes or alerts. Retain only labels with t0+300 <= the refit cutoff and valid support. Fit no hyperparameter alternatives. Predictions must be finite; model or measurement failures stop the run rather than triggering a favorable fallback.
+
+Predict at every deployment origin with complete reference features. Primary adjusted outcome is observed future spread minus this frozen reference prediction. Report prediction calibration and MSE on all evaluable origins as a diagnostic, not as proof that adjustment removes confounding. Add a fixed stratification check: historical current-spread decile by UTC hour, with each cell's historical mean future spread; empty cells fall back to the corresponding historical spread decile, then the overall historical mean. This is a diagnostic adjustment, not a second selected primary model.
+
+## Estimands, uncertainty, and scope
+
+For each detector, report counts and raw/adjusted future-spread means at confirmed alerts, with common feature and outcome masks. Primary contrasts are full minus diagonal, full minus two-feature, and full minus maximum-feature rule. Report all other comparisons. Summarize both/full-only/comparator-only/neither candidate groups and analogous onset groups, and actual deployment rates. This is an alert-selected mean comparison, not equal-realized-budget utility or causal impact.
+
+Aggregate ratio-estimator influence contributions to every UTC calendar day, retaining zeros. Use Bartlett HAC at 56 calendar-day lags, with 28 and 112 as fixed sensitivity choices. The primary lag reflects the calibration window but does not establish valid coverage. Show nominal normal intervals; for the three primary contrasts use Bonferroni simultaneous 95% intervals. Do not choose a preferred lag from results. Intervals condition on the issued scores/predictions and do not establish repeated-estimation coverage of the entire pipeline. No p-value discovery claim or equivalence claim.
+
+Report quarterly stability and the largest daily influence concentrations. There is no specified operational action or alert cost from which to justify a minimum economically important margin. Consequently report improvements in pips and their uncertainty, without certifying profitability or economic materiality from statistical significance. Positive results require independent validation before a strong novelty claim. The existing cache supplies no untouched confirmation; do not relabel a random split as one or acquire new data implicitly.
+
+Before economic execution, complete detector reconstruction and tests for strict timing, future/support boundaries, causal onset construction, threshold calibration, and calendar-ratio uncertainty. Save code, protocol, environment, input fingerprints, cycle checkpoints, raw summaries, and verification evidence. Report every failure and fix that affects execution; do not tune the scientific specification after seeing economic contrasts.

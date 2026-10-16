@@ -1,0 +1,107 @@
+{
+  "run_id": "step11_detector_contribution_20261004",
+  "status": "economic_comparison_complete",
+  "created_at": "2026-10-04T06:27:55.746526+00:00",
+  "scope": "exploratory_fixed_detector_economic_comparison",
+  "source_sha256": {
+    "run_detector_contribution.py": "4970fe2276a1edf785e7049266e55fa35ceb659647f49def4101e6fc5381286b",
+    "src/detector_contribution.py": "101b30f1d5583833bf01fdfed925e790a9a264e28f8c7f3ec6c920016381b274",
+    "reports/STEP11_DETECTOR_CONTRIBUTION_PROTOCOL.md": "2ac10235799d303df6c265837bf917a4be6b3755bb29dbcd52ce182559c29a9e",
+    "tests/test_detector_contribution.py": "1d195ea22adad98940f0ba6bc8477faa2915f6d60762c69959c4fffe83a5eba7",
+    "src/event_audit.py": "9c088a526ed2d92902acba9da9aaf5e0c9e32f8cafa827c8c91a935c5667ace7",
+    "src/chronological_panel.py": "d51e4f17a11d0113ad268227fa56c4632b78e3c5214103a49415f55b627dd17f",
+    "src/chronological_acd.py": "c550c9b8dc3bb97c2d824bcd4f87477956c6e002a60bc3f71e81db2655c7fcdb",
+    "src/acd_kernel.c": "0477453f6f492434da99c8b0cb3813539cece34fa2850e7708232c9aa7c7e3e6",
+    "src/duration_calibration.py": "e9af45e82a15285c6aede07a2e3db06c22bf02bb3df837e31f3d77c13fbd0d88",
+    "src/panel_observations.py": "9f9bc8c35ab855afc8718626e10722642913d70c9d0196280249d34f112625af",
+    "src/panel_state_precision.py": "8a1bb7d7df3bc66af6405fe1ed604c4594c3bb315fa98f1e4c4ee0dba02cebd3",
+    "src/intensity.py": "b8c2057bc9bf3ebb8d289e029a12e1af849a1d757a8493f994e6b255891ebd27",
+    "repair_event_audit.py": "63983d2e164a264f1df9ed8a53a0f49f29d83e4cf18b10b5004ceeb2a3eca8ac"
+  },
+  "inputs": {
+    "clock": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step04a_signal_clock_20260927_v2/signal_clock_1s.parquet",
+      "sha256": "67395dc6b64e91aad8cc97d31e40d8cd1a7020713025a05c5cbd5441a92a7889"
+    },
+    "calibration_parameters": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step04b_seasonal_calibration_20260927/calibration_parameters.parquet",
+      "sha256": "0ee08209eaacd43cca080d07caf67f9f1da7094412682280f5cbbe5522752b31"
+    },
+    "clean_quotes": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/runs/step01_quote_sizes_20260927_v2/clean_quotes.parquet",
+      "sha256": "42bf8ebd9db201a5606e811de6d778e81b1094471d30af52e8e63f02b9e6254e"
+    },
+    "support_intervals": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/eligibility/step02b_observation_20260927/support_intervals.parquet",
+      "sha256": "088041bbc06b8517c4ae090d826abf70c11e590c03d7f8c65b89dd010a7b7443"
+    }
+  },
+  "parent_panel_manifest_sha256": "35be235b0d45c8d575299cc72e69bfde1eea74939bdffd68999321b9997c212a",
+  "parent_panel": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step07c_chronological_panel_20261001_v2",
+  "start": "2024-05-06T00:00:00+00:00",
+  "end_exclusive": "2026-08-01T00:00:00+00:00",
+  "model": {
+    "loss": "squared_error",
+    "learning_rate": 0.05,
+    "max_iter": 100,
+    "max_leaf_nodes": 15,
+    "min_samples_leaf": 100,
+    "l2_regularization": 1,
+    "max_bins": 63,
+    "early_stopping": false,
+    "random_state": 20261004
+  },
+  "features": [
+    "current_spread",
+    "pre_spread",
+    "history_spread",
+    "variation",
+    "log_count",
+    "log_history_count",
+    "quote_age",
+    "history_age",
+    "hour",
+    "weekday"
+  ],
+  "rules": [
+    "full",
+    "two_feature",
+    "diagonal",
+    "marginal",
+    "ofi",
+    "activity",
+    "duration",
+    "spread",
+    "variation"
+  ],
+  "independent_validation": false,
+  "pipeline_uncertainty_validated": false,
+  "economic_materiality_margin": null,
+  "python": "3.12.13",
+  "verification_status": "passed",
+  "review_path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/reports/STEP11_DETECTOR_CONTRIBUTION_REVIEW.md",
+  "outputs": {
+    "summary.json": "6e55b9ffe434fce889675ef38837230433decbd313752c100cd8aeadcb10e3a9",
+    "age_sensitivity.csv": "c8fb64bdef4fa4e6a4a7e384060556881f655ee3e454521029c9f77055651e7f",
+    "coverage.csv": "ac21115284ab0268a7f064abde9815e75208f71a168ec41a094223dc037e9d0e",
+    "reference_calibration.csv": "a29443424ec0f4dd610f55280b9720bef19a74c26b685f954c9a50abab657721",
+    "detector_gate.json": "046de882e2833b4f417f894c65761f3f34ab81c66a776ca1e0e51f57bf7575e9",
+    "daily_sufficient_statistics.parquet": "b45ae5f2de90cb00a674ab0edf73a4f797403fc564556afc98546b847e19ecd9",
+    "all_confirmed_onsets.parquet": "27653a820288156e813a9b57c2e0bc00ae8a81efbf3df9191237d02ea3175278",
+    "timing_comparison.csv": "8b34dc345536688f98b265219f6dd9c0000109f4459450c9828ace3e9e35b93c",
+    "disagreement_daily.parquet": "7022cbfa48c46b99f6fbfef43d4b88d46e33209e8836d97dd5bc9953e39327c9",
+    "quarterly_summary.csv": "af0abe0492215939f4cc0abda6e647ff284b2f3826fb53031b71120a1c4253c2",
+    "pre_economic_overlap.csv": "010060e7b7420ec83940122cca3cbb6ccea02453240d321ec1edb9d28a5b67ac",
+    "contrasts.csv": "129f86c67cb1f8ff47e201c4384426324b50789380e8be34235ccc3abd11b1ee",
+    "progress.json": "326ad074c518709ee91849bec247c51c3730b6b66fe54f57ebcd3df335dbc5bd",
+    "tests.log": "3d616bd334ea4f86b27e60e388ee83aba05d968e59b9e74f2803825d83fc79e6",
+    "group_comparison.csv": "5fe135ce6550c72016aa602c8f9e5bfc06a97ef4c57214bd5607ce00e431c5b7",
+    "verification.json": "662681f6e7c284e284f8be74f8273db616b91eddb934d0ebee8331de77f161c1",
+    "environment.json": "7a85986594981f74d293f54381742e6922aeb7196d84fd1c01449acfbeaedb9d",
+    "economic_summary.csv": "3116505f0823d0e9529591f2cfab1fb2d547db267fee2668bc20ec14218b94d8",
+    "detector_burden.parquet": "4c30758b812335167eed1d8f019195f5dd20da33922b6502ffd4e644e0c87918",
+    "group_sufficient_statistics.parquet": "394d832b4dd1c003331b407939e68ab434bd94892b993a9350f278241ef401cf",
+    "disagreement_precision.csv": "5086aa121be6f0415180e6308c6e3a1e15e73bd571a0e1603e15bfd16adc8895"
+  },
+  "supplementary_precision_note": "Calculated after primary review on the predeclared disagreement groups; no primary specification changed."
+}

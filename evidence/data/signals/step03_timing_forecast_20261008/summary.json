@@ -1,0 +1,108 @@
+{
+  "n": 19042840,
+  "mse_b": 0.042948733983402286,
+  "mse_t": 0.043063422849197217,
+  "rmse_b": 0.2072407633246951,
+  "rmse_t": 0.20751728325418395,
+  "mse_current_spread_carry": 0.051268466749211546,
+  "delta_pips_squared": -0.00011468886579492635,
+  "relative_mse_reduction": -0.0026703666245260762,
+  "leave_one_day_out_delta_min": -0.0001224458126728898,
+  "leave_one_day_out_delta_max": -5.120396870754971e-05,
+  "nominal_intervals": [
+    {
+      "lag_days": 56,
+      "delta_pips_squared": -0.00011468886579492635,
+      "nominal_se": 8.367695455678148e-05,
+      "nominal_low": -0.00027869268306221284,
+      "nominal_high": 4.9314951472360124e-05,
+      "relative_mse_reduction": -0.0026703666245260762,
+      "relative_nominal_se": 0.0017701180927457761,
+      "relative_nominal_low": -0.006139734334690528,
+      "relative_nominal_high": 0.0007990010856383759
+    },
+    {
+      "lag_days": 28,
+      "delta_pips_squared": -0.00011468886579492635,
+      "nominal_se": 8.373624573316552e-05,
+      "nominal_low": -0.00027880889163252656,
+      "nominal_high": 4.943116004267385e-05,
+      "relative_mse_reduction": -0.0026703666245260762,
+      "relative_nominal_se": 0.0017780058535615667,
+      "relative_nominal_low": -0.006155194061808145,
+      "relative_nominal_high": 0.0008144608127559918
+    },
+    {
+      "lag_days": 112,
+      "delta_pips_squared": -0.00011468886579492635,
+      "nominal_se": 8.221293393898728e-05,
+      "nominal_low": -0.0002758232553787121,
+      "nominal_high": 4.6445523788859406e-05,
+      "relative_mse_reduction": -0.0026703666245260762,
+      "relative_nominal_se": 0.0017416572697918236,
+      "relative_nominal_low": -0.006083952146730411,
+      "relative_nominal_high": 0.0007432188976782585
+    }
+  ],
+  "coverage": {
+    "scored_origins": 19065217,
+    "issued_forecasts": 19059881,
+    "missing_features": 5336,
+    "issued_without_future_label": 17041,
+    "evaluation_cycles": 55,
+    "calendar_days": 761
+  },
+  "top_absolute_daily_loss_differences": [
+    {
+      "date": "2025-04-18T00:00:00.000Z",
+      "n": 45220,
+      "sum_d": -1211.2481811163
+    },
+    {
+      "date": "2026-04-29T00:00:00.000Z",
+      "n": 36929,
+      "sum_d": -549.8271417813
+    },
+    {
+      "date": "2025-04-06T00:00:00.000Z",
+      "n": 6946,
+      "sum_d": -408.6574046307
+    },
+    {
+      "date": "2026-06-19T00:00:00.000Z",
+      "n": 24862,
+      "sum_d": -236.6798735968
+    },
+    {
+      "date": "2025-07-04T00:00:00.000Z",
+      "n": 26795,
+      "sum_d": -192.4653478176
+    },
+    {
+      "date": "2026-06-24T00:00:00.000Z",
+      "n": 33765,
+      "sum_d": 143.5799154207
+    },
+    {
+      "date": "2026-04-03T00:00:00.000Z",
+      "n": 13454,
+      "sum_d": -140.8488799606
+    },
+    {
+      "date": "2025-04-09T00:00:00.000Z",
+      "n": 71721,
+      "sum_d": 137.8552424358
+    },
+    {
+      "date": "2026-04-23T00:00:00.000Z",
+      "n": 40865,
+      "sum_d": -119.6931655666
+    },
+    {
+      "date": "2025-04-11T00:00:00.000Z",
+      "n": 65266,
+      "sum_d": 104.0644080665
+    }
+  ],
+  "scope": "Realized exploratory forecast pair; nominal conditional intervals; no field-novelty or causal claim."
+}

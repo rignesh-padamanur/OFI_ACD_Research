@@ -1,0 +1,208 @@
+{
+  "onsets": 135724,
+  "marks": 678620,
+  "cycles": 60,
+  "state_marks_reconciled": 270836,
+  "by_role": {
+    "prior_300": {
+      "status_counts": {
+        "available": 135418,
+        "outside_onset_support": 306
+      },
+      "available_max_age_sec": 1053.516
+    },
+    "pre_onset": {
+      "status_counts": {
+        "available": 135724
+      },
+      "available_max_age_sec": 1060.516
+    },
+    "detection": {
+      "status_counts": {
+        "available": 135724
+      },
+      "available_max_age_sec": 1.0
+    },
+    "horizon_60": {
+      "status_counts": {
+        "available": 135718,
+        "outside_onset_support": 6
+      },
+      "available_max_age_sec": 60.999
+    },
+    "horizon_300": {
+      "status_counts": {
+        "available": 135679,
+        "outside_onset_support": 45
+      },
+      "available_max_age_sec": 300.621
+    }
+  },
+  "horizons": {
+    "60": {
+      "inherited_n": 127052,
+      "included_n": 127052,
+      "attrition": 0,
+      "waterfall": [
+        {
+          "step": "prior_300",
+          "remaining": 127052,
+          "newly_excluded": 0
+        },
+        {
+          "step": "pre_onset",
+          "remaining": 127052,
+          "newly_excluded": 0
+        },
+        {
+          "step": "detection",
+          "remaining": 127052,
+          "newly_excluded": 0
+        },
+        {
+          "step": "horizon_60",
+          "remaining": 127052,
+          "newly_excluded": 0
+        },
+        {
+          "step": "finite_declared_inputs_and_outcomes",
+          "remaining": 127052,
+          "newly_excluded": 0
+        }
+      ],
+      "initial_spread_sign": {
+        "widened": 48254,
+        "unchanged": 33176,
+        "narrowed": 45622
+      },
+      "means": {
+        "J": 0.38029546957151267,
+        "C": -0.003153039700280251,
+        "I": 0.3771424298712325,
+        "spread_initial": 0.016283096684821963,
+        "spread_post": -0.0182885747567925,
+        "spread_total": -0.002005478071970532
+      },
+      "history_quantiles": {
+        "0": -16.7,
+        "0.01": -3.0,
+        "0.25": -0.1,
+        "0.5": 0.0,
+        "0.75": 0.1,
+        "0.99": 3.0,
+        "1": 20.2
+      },
+      "mark_age_descriptions": {
+        "prior_300": {
+          "median": 2.735,
+          "p99": 60.51333000000009,
+          "max": 1053.516
+        },
+        "pre_onset": {
+          "median": 2.108,
+          "p99": 54.15449000000001,
+          "max": 1060.516
+        },
+        "detection": {
+          "median": 0.213,
+          "p99": 0.932,
+          "max": 1.0
+        },
+        "horizon_60": {
+          "median": 2.277,
+          "p99": 48.57396000000002,
+          "max": 60.999
+        }
+      },
+      "all_required_marks_age_le": {
+        "15": 91690,
+        "30": 113066,
+        "60": 124690
+      }
+    },
+    "300": {
+      "inherited_n": 127013,
+      "included_n": 127013,
+      "attrition": 0,
+      "waterfall": [
+        {
+          "step": "prior_300",
+          "remaining": 127013,
+          "newly_excluded": 0
+        },
+        {
+          "step": "pre_onset",
+          "remaining": 127013,
+          "newly_excluded": 0
+        },
+        {
+          "step": "detection",
+          "remaining": 127013,
+          "newly_excluded": 0
+        },
+        {
+          "step": "horizon_300",
+          "remaining": 127013,
+          "newly_excluded": 0
+        },
+        {
+          "step": "finite_declared_inputs_and_outcomes",
+          "remaining": 127013,
+          "newly_excluded": 0
+        }
+      ],
+      "initial_spread_sign": {
+        "widened": 48239,
+        "unchanged": 33169,
+        "narrowed": 45605
+      },
+      "means": {
+        "J": 0.3802575326935025,
+        "C": 0.014752426916932357,
+        "I": 0.3950099596104349,
+        "spread_initial": 0.016301480950768818,
+        "spread_post": -0.03631518033587113,
+        "spread_total": -0.020013699385102314
+      },
+      "history_quantiles": {
+        "0": -16.7,
+        "0.01": -3.0,
+        "0.25": -0.1,
+        "0.5": 0.0,
+        "0.75": 0.1,
+        "0.99": 3.0,
+        "1": 20.2
+      },
+      "mark_age_descriptions": {
+        "prior_300": {
+          "median": 2.736,
+          "p99": 60.519960000000076,
+          "max": 1053.516
+        },
+        "pre_onset": {
+          "median": 2.11,
+          "p99": 54.154880000000006,
+          "max": 1060.516
+        },
+        "detection": {
+          "median": 0.213,
+          "p99": 0.932,
+          "max": 1.0
+        },
+        "horizon_300": {
+          "median": 2.572,
+          "p99": 56.75680000000028,
+          "max": 300.621
+        }
+      },
+      "all_required_marks_age_le": {
+        "15": 89749,
+        "30": 111704,
+        "60": 123944
+      }
+    }
+  },
+  "new_empirical_fits": 0,
+  "parent_price_responses_reconciled": true,
+  "additional_60_events": 39
+}

@@ -1,0 +1,33 @@
+> Historical protocol/review preserved for provenance. Dated conclusions reflect the record at that time. Navigation links were made portable for this release; paths marked “full research archive” are not bundled. Original and release hashes are in the evidence manifest.
+
+# Stage 07b: first chronological recalibration transition
+
+Frozen before execution. This bounded repair covers Notebook 2 detector calibration and Notebook 3 episode inputs. It extends the structural-only baseline from April 22-May 5 through May 19, 2024. No response regression or alternative duration-model search is authorized by this protocol. Existing artifacts remain immutable. The later cache has been inspected in legacy work; this is chronological reanalysis, not an untouched holdout.
+
+## Economic target and fixed calendar
+
+An event remains an unusual joint recorded-quote state under the original three-feature Mahalanobis/q99 rule. Use 56 preceding UTC calendar days for each ACD and detector calibration, then deploy for 14 calendar days. The initial deployment cutoff is April 22, 2024. The first extension cutoff is May 6, with calibration March 11-May 5 and deployment May 6-May 19. Daily seasonality still uses the existing preceding 56-day, same-weekday/15-minute rules. The first pilot does not certify coverage of subsequent cycles.
+
+Rolling q99 defines unusualness relative to recent conditions; it is not a constant absolute liquidity-severity cutoff. This preserves the earlier rolling-reference architecture and avoids treating one 2024 covariance as stable across the whole cache. Neither 56 nor 14 is selected from response results. Regression input scales cQ, cV and sV stay fixed at stage 07a values, separately from detector recalibration.
+
+Refit only the existing mean-parameterized Weibull ACD with the same likelihood, constraints, three deterministic numerical starts and optimizer tolerances. These are attempts to fit one specified model, not candidate-model comparisons. Save every attempt, objective, constraint warning and working-model diagnostic. An unsuccessful fit or inadmissible covariance fails the cycle closed; do not silently substitute another model, threshold, ridge or stale parameters. Duration residuals remain working features, not calibrated shock probabilities.
+
+## Information timing and pending waits
+
+Training uses origins in [cutoff-56 days, cutoff). Clip unfinished durations at the cutoff; a completion exactly at the cutoff is unavailable to that training fit. Daily seasonal scales are frozen at each spell origin and use only earlier observations. Historical training features are refiltered under that cycle's fitted ACD parameters, then the detector mean, covariance and empirical linear q99 are fitted only on detector-eligible calibration bins. Calibration scores are retrospective fit inputs, not deployed signals.
+
+A running wait with an already-issued forecast retains its previous origin-vintage psi and seasonal scale when it later completes, including a completion exactly at the new cutoff. New-origin forecasts use a separate history refilter under the new parameters. Never transplant an old psi into the new-parameter recurrence. The current wait's eventual length cannot determine its own forecast. Save both refiltered and actually used forecasts, their vintage, origin and completion identity. The first April 22 initialization remains as previously audited: its crossing wait was filtered using the initial fit; do not claim all initialization parameters were known at that wait's origin.
+
+The first pilot accepts a carried forecast only from the verified immediately preceding deployment, with matching quote identity and origin scale. An older or missing required forecast stops the pilot. A future full-panel implementation must carry actual issued state across arbitrarily many chunks or explicitly flag that case; it cannot replace missing history with a neutral residual.
+
+## Bins, episodes and future response boundaries
+
+Residuals enter the one-second bin containing their completion, with -log of the mean residual. The new detector applies to bins beginning at the cutoff; all bin inputs are available at its right edge. Preserve the previous deployment's scores and opportunity rows exactly. Join clocks before episode construction; a parameter update is not an observation barrier. Unknown bins and physical support changes remain barriers. Five clear seconds confirm onset/closure as before. A candidate after the cutoff can belong to an earlier episode. Keep stable onset IDs and all pre-cutoff onset/state fields; only future termination/membership bookkeeping may extend an unfinished episode.
+
+Compute preceding Q and five-second variation with history from before the computational boundary, under existing support and mark rules. No new state variable or threshold is introduced. Save all onset fragments and eligibility/quote-age accounting. This pilot extends the baseline only; the existing fixed freshness/sampling sensitivities still require their later chronological extension.
+
+For subsequent response work, internal recalibration boundaries cannot censor J/C/I or the 300-second endpoint. Rebuild combined response artifacts from the continuous quote/support record, reading needed endpoint quotes beyond an internal chunk. Preserve old censored artifacts as history; do not append new rows to old truncated endpoint masks and call that a continuous panel. Only actual support/data-end restrictions can determine final endpoint availability. Responses, ledger, regression matrices and inference on the enlarged panel remain pending after this detector/episode pilot.
+
+## Execution and falsification checks
+
+Save an immutable run, source/test/protocol hashes, parent lineage, dated parameters, origin forecasts, residual bins, calibration/deployment opportunities and scores, combined episodes/onsets, calendar attrition and boundary statistics. Verify incoming-spell reconstruction, past-only seasonal exposure, historical clipping, independent ACD filtering and detector covariance/quantile arithmetic, old baseline-score preservation and candidate conservation. The historical two-feature comparison is not recomputed; combined baseline files contain the common three-feature schema. Test completion exactly at cutoff, absent/duplicate carry identities, changed future exposure, new-state separation, candidate chains across the cutoff, real support barriers and gaps/overlaps in joined clocks. Independently reconstruct actual episode membership and pre-state measurements. No finding of two regimes or significant coefficients is a completion criterion.

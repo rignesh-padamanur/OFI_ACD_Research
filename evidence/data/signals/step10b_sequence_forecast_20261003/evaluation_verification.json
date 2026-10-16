@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "scored_event_rows_verified": 535672,
+  "prediction_origins_verified": 133918,
+  "evaluable_origins_verified": 127013,
+  "issued_unavailable_verified": 45,
+  "calendar_days_verified": 817,
+  "metrics_verified": 4,
+  "comparisons_verified": 3,
+  "serial_rows_verified": 123,
+  "event_weighting_verified": true,
+  "stable_delta_roundoff_bound_checked": true,
+  "centering_uses_daily_event_counts": true,
+  "empty_calendar_dates_preserved": true,
+  "producer_helpers_imported": false,
+  "inference_validated": false,
+  "forecast_superiority_established": false
+}

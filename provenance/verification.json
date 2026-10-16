@@ -1,0 +1,311 @@
+{
+  "status": "passed",
+  "date": "2026-10-16",
+  "scope": "Clean Git clone and freshly installed pinned Python environment; saved-output reproduction, plots and selected tests. No raw-data refit.",
+  "command": "python reproduce.py all",
+  "clean_clone_exit_code": 0,
+  "clean_clone_log_sha256": "eedbc7ac2cdc1a0883a87d781962cf0dc9887522a20001c982eaf1ff31b89c5d",
+  "python": "3.12.13",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "installed_packages": {
+    "certifi": "2026.6.17",
+    "charset-normalizer": "3.4.7",
+    "contourpy": "1.3.3",
+    "cycler": "0.12.1",
+    "fonttools": "4.63.0",
+    "idna": "3.18",
+    "joblib": "1.5.3",
+    "kiwisolver": "1.4.9",
+    "matplotlib": "3.11.0",
+    "narwhals": "2.24.0",
+    "numpy": "2.5.0",
+    "packaging": "26.0",
+    "pandas": "2.2.3",
+    "pillow": "12.2.0",
+    "pyarrow": "18.1.0",
+    "pyparsing": "3.2.5",
+    "python-dateutil": "2.9.0.post0",
+    "pytz": "2026.2",
+    "requests": "2.34.2",
+    "scikit-learn": "1.9.0",
+    "scipy": "1.18.0",
+    "six": "1.17.0",
+    "threadpoolctl": "3.6.0",
+    "tzdata": "2026.2",
+    "urllib3": "2.7.0"
+  },
+  "pip_check": "No broken requirements found.",
+  "tests": {
+    "scientific": 842,
+    "panel_precision": 43,
+    "release_integrity": 5,
+    "total": 890
+  },
+  "negative_controls": {
+    "status": "passed",
+    "scope": "In-memory tampering and optimized-mode negative controls; no source mutations",
+    "checks": [
+      "Deleted quarter_losses.parquet",
+      "Deleted fold_losses.parquet",
+      "Deleted daily_losses.parquet",
+      "Deleted metrics.parquet",
+      "Deleted comparisons.parquet",
+      "Deleted intervals.parquet",
+      "Deleted covariances.parquet",
+      "Deleted scores.parquet",
+      "Tampered spread nominal_low",
+      "Tampered spread nominal_high",
+      "Tampered spread relative_nominal_low",
+      "Tampered spread relative_nominal_high",
+      "Deleted spread patterns.parquet",
+      "Deleted spread pattern_cell_coverage.parquet",
+      "Optimized Python rejected by verify_saved_results.py",
+      "Optimized Python rejected by plot_spread_concentration.py"
+    ],
+    "script_sha256": {
+      "verify_saved_results.py": "05d8cc1e1b59f7916debe71ebc6121eccc32b553031e36893d7656709ba19428",
+      "plot_spread_concentration.py": "6d66768422f1f41f4ded4e837831b4f1d78e954c54e666a833318c22b0e84a0f"
+    }
+  },
+  "saved_results": {
+    "status": "passed",
+    "scope": "Independent saved-result arithmetic; no model refits or empirical source mutations",
+    "responses": {
+      "status": "passed",
+      "units": "direction-aligned pips",
+      "summary_rows_checked": 48,
+      "common_events": 127013,
+      "available_60_events": 127052,
+      "quote_age_rows": [
+        {
+          "quote_age_cap_seconds": null,
+          "n": 127013,
+          "J": 0.3802575326935025,
+          "C": 0.014752426916932355,
+          "I": 0.39500995961043484
+        },
+        {
+          "quote_age_cap_seconds": 15,
+          "n": 100248,
+          "J": 0.4011760833133808,
+          "C": 0.023034374750619084,
+          "I": 0.4242104580639999
+        },
+        {
+          "quote_age_cap_seconds": 30,
+          "n": 116836,
+          "J": 0.3881145366154235,
+          "C": 0.018142952514638013,
+          "I": 0.40625748913006154
+        },
+        {
+          "quote_age_cap_seconds": 60,
+          "n": 125127,
+          "J": 0.3811027995556505,
+          "C": 0.016353384960881914,
+          "I": 0.3974561845165324
+        }
+      ],
+      "primary_continuation_quantiles": {
+        "p01": -9.049999999999336,
+        "p05": -3.7999999999982492,
+        "p25": -0.9499999999995623,
+        "p50": 0.0,
+        "p75": 0.9000000000014552,
+        "p95": 3.8999999999989043,
+        "p99": 9.450000000001957
+      }
+    },
+    "nominal_response_uncertainty": {
+      "status": "passed",
+      "intervals_checked": 24,
+      "cross_covariances_checked": 288,
+      "primary_lag": 20,
+      "alternative_lag": 40,
+      "interpretation": "Conditional arithmetic only; coverage and full-pipeline uncertainty are not validated."
+    },
+    "price_forecast": {
+      "status": "passed",
+      "metrics": [
+        {
+          "method": "zero",
+          "n": 127013,
+          "mse_pips_squared": 10.524917941470605
+        },
+        {
+          "method": "training_mean",
+          "n": 127013,
+          "mse_pips_squared": 10.525068534284898
+        },
+        {
+          "method": "additive",
+          "n": 127013,
+          "mse_pips_squared": 10.547278576772445
+        },
+        {
+          "method": "interaction",
+          "n": 127013,
+          "mse_pips_squared": 10.548794217226435
+        }
+      ],
+      "quarter_rows": 10,
+      "fold_rows": 59,
+      "calendar_days": 817,
+      "primary_contrast": "interaction_minus_additive",
+      "relative_mse_increase_percent": 0.014369967029489141,
+      "limits": "Saved predictions and losses are checked; training maturity, original model fitting and inference validity require the full archive."
+    },
+    "sequence_forecast": {
+      "status": "passed",
+      "metrics": [
+        {
+          "method": "zero",
+          "n": 127013,
+          "mse_pips_squared": 10.524917941470605
+        },
+        {
+          "method": "training_mean",
+          "n": 127013,
+          "mse_pips_squared": 10.525068534284898
+        },
+        {
+          "method": "baseline",
+          "n": 127013,
+          "mse_pips_squared": 10.58477551368615
+        },
+        {
+          "method": "sequence",
+          "n": 127013,
+          "mse_pips_squared": 10.585062800225929
+        }
+      ],
+      "quarter_rows": 10,
+      "fold_rows": 59,
+      "calendar_days": 817,
+      "primary_contrast": "sequence_minus_baseline",
+      "relative_mse_increase_percent": 0.002714148631753095,
+      "limits": "Saved predictions and losses are checked; training maturity, original model fitting and inference validity require the full archive."
+    },
+    "spread_forecast": {
+      "n": 19042840,
+      "calendar_days": 761,
+      "all_pattern_dimensions_reconcile": true,
+      "mse_b": 0.042948733983402286,
+      "mse_t": 0.043063422849197217,
+      "delta_t_minus_b_pips_squared": 0.00011468886579492635,
+      "relative_mse_increase_pct": 0.2670366624526076,
+      "nominal_conditional_intervals": [
+        {
+          "lag_days": 56,
+          "relative_increase_pct": 0.2670366624526076,
+          "nominal_95_low_pct": -0.07990010856383746,
+          "nominal_95_high_pct": 0.6139734334690528
+        },
+        {
+          "lag_days": 28,
+          "relative_increase_pct": 0.2670366624526076,
+          "nominal_95_low_pct": -0.081446081275599,
+          "nominal_95_high_pct": 0.6155194061808142
+        },
+        {
+          "lag_days": 112,
+          "relative_increase_pct": 0.2670366624526076,
+          "nominal_95_low_pct": -0.07432188976782554,
+          "nominal_95_high_pct": 0.6083952146730407
+        }
+      ],
+      "normal_critical_value": 1.9599639845400534,
+      "leave_one_day_out_increase_pips_squared": [
+        5.120396870754971e-05,
+        0.0001224458126728898
+      ],
+      "largest_adverse_day": "2025-04-18",
+      "largest_day_share_net_deterioration_pct": 55.46003784733138,
+      "lower_three_groups_summed_loss_reduction": 57.97064735753895,
+      "highest_group_summed_loss_increase": 2241.972368471794,
+      "declared_cycle_cells": 825,
+      "empty_cycle_cells_retained": 16,
+      "spread_groups": [
+        {
+          "group": "1",
+          "n": 2538115,
+          "origin_share_pct": 13.328447857567463,
+          "benchmark_sse_share_pct": 1.3071618598454557,
+          "mse_b": 0.004212114388088845,
+          "mse_t": 0.0042113121677095884,
+          "relative_mse_increase_pct": -0.019045550650903662
+        },
+        {
+          "group": "2",
+          "n": 3486743,
+          "origin_share_pct": 18.309994727677175,
+          "benchmark_sse_share_pct": 1.5776589849204927,
+          "mse_b": 0.003700626737890418,
+          "mse_t": 0.00369432456374886,
+          "relative_mse_increase_pct": -0.1703001839399356
+        },
+        {
+          "group": "3",
+          "n": 5060569,
+          "origin_share_pct": 26.57465483089707,
+          "benchmark_sse_share_pct": 2.71961956460463,
+          "mse_b": 0.0043953239641125255,
+          "mse_t": 0.004388613165740489,
+          "relative_mse_increase_pct": -0.15268040369334293
+        },
+        {
+          "group": "4",
+          "n": 7957413,
+          "origin_share_pct": 41.78690258385829,
+          "benchmark_sse_share_pct": 94.39555959062943,
+          "mse_b": 0.09702010743525202,
+          "mse_t": 0.09730185382298781,
+          "relative_mse_increase_pct": 0.2903999956130902
+        }
+      ]
+    },
+    "script_sha256": "05d8cc1e1b59f7916debe71ebc6121eccc32b553031e36893d7656709ba19428"
+  },
+  "original_archive_verification": {
+    "status": "passed",
+    "named_files_checked": 405,
+    "scope": "Named code/evidence/plot source inputs only; not full raw archive closure."
+  },
+  "original_workspace_preservation": {
+    "original_inventory_files": 10719,
+    "existing_file_metadata_changed": [],
+    "new_files_outside_publication": [],
+    "protected_original_files_checked": 187,
+    "protected_hash_failures": [],
+    "original_git_head_unchanged": true
+  },
+  "manuscript": {
+    "status": "passed",
+    "pages": 39,
+    "changed_visual_pages": [
+      28,
+      29,
+      31,
+      36
+    ],
+    "changed_text_pages": [
+      36
+    ],
+    "overfull_boxes": 0,
+    "undefined_citations": false,
+    "compiler": "Tectonic 0.17.0; built-in compiler cannot load external figure assets",
+    "source_change": "Relative figure paths and approximate normal critical value wording only"
+  },
+  "secret_pattern_scan": {
+    "current_tracked_text_files_scanned": 313,
+    "common_secret_pattern_paths": [],
+    "scope": "Bounded common credential/private-key patterns in text; not proof of absence of all confidential content."
+  },
+  "limitations": [
+    "Actual Linux numerical execution has not been tested.",
+    "Full raw-data and historical model-fitting reconstruction requires the separate original archive and its registration state.",
+    "No public archive URL is currently established.",
+    "File integrity and computational checks do not establish feed completeness, inferential coverage or causality."
+  ],
+  "repository_state": "Prepublication verification of a separate publication repository based on the existing remote licence commit; original research Git history preserved."
+}

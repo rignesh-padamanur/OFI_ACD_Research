@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "independent_method": "source masks, exact signs, grouped summaries and crosstabs",
+  "table_rows_verified": {
+    "membership": 254065,
+    "summary": 48,
+    "endpoint_counts": 96,
+    "transition_counts": 64,
+    "daily": 3268
+  },
+  "statistics_verified": true,
+  "empirical_models_fitted": 0,
+  "source_lineage": {
+    "status": "passed",
+    "registered_selected_horizon_rows": 407172,
+    "source_anchor_rows": 135724,
+    "main_continuation_rows": 254065,
+    "path_files": 60,
+    "direct_mark_arithmetic_checked": true,
+    "baseline_estimation_keys_unchanged": true,
+    "raw_tick_reconstruction_performed": false
+  },
+  "executed_tests": 932,
+  "production_inference_approved": false,
+  "downstream_ready": false
+}

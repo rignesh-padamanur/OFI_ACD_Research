@@ -1,0 +1,36 @@
+{
+  "stage": "07c_state_precision_numerical_repair",
+  "created_at": "2026-10-01T02:33:27.937978+00:00",
+  "tests_run": 11,
+  "passed": true,
+  "failures": [],
+  "errors": [],
+  "skipped": [],
+  "test_names": [
+    "__main__.PanelStatePrecisionTests.test_all_five_grid_phases_and_exact_first_available_row",
+    "__main__.PanelStatePrecisionTests.test_all_nonvariation_metrics_are_identical_to_historical_function",
+    "__main__.PanelStatePrecisionTests.test_finite_counts_reject_each_missing_term_without_zero_imputation",
+    "__main__.PanelStatePrecisionTests.test_fully_flat_windows_are_exactly_zero_after_large_moves_leave",
+    "__main__.PanelStatePrecisionTests.test_nan_flow_and_nan_quote_mark_preserve_unavailability",
+    "__main__.PanelStatePrecisionTests.test_no_quote_before_first_mark_and_short_clocks_remain_missing",
+    "__main__.PanelStatePrecisionTests.test_quotes_at_marks_are_excluded_and_future_quotes_cannot_change_states",
+    "__main__.PanelStatePrecisionTests.test_support_gap_and_new_support_require_full_new_history",
+    "__main__.PanelStatePrecisionTests.test_tiny_returns_after_large_moves_match_scalar_without_a_floor",
+    "__main__.PanelStatePrecisionTests.test_window_input_validation_and_no_mutation",
+    "__main__.PanelStatePrecisionTests.test_window_sum_has_no_memory_of_expired_large_terms"
+  ],
+  "elapsed_seconds": 1.8526786249130964,
+  "source_sha256": {
+    "src/panel_state_precision.py": "8a1bb7d7df3bc66af6405fe1ed604c4594c3bb315fa98f1e4c4ee0dba02cebd3",
+    "src/panel_reference_precision.py": "e598484167b8777679b53f2bd229b57ba9245a238fd5503e5592b4ecd688f3e6",
+    "src/event_audit.py": "9c088a526ed2d92902acba9da9aaf5e0c9e32f8cafa827c8c91a935c5667ace7",
+    "reports/tests/test_panel_state_precision.py": "f33cbd7f9f000644025790324a61dedc5938ede49e8c3f70ac9199752a0c6d9d"
+  },
+  "tiny_after_large_fixture": {
+    "rows": 1400,
+    "historical_max_bps_in_tiny_return_region": 4.656612873143567e-06,
+    "direct_max_bps_in_tiny_return_region": 2.9790409838967237e-11,
+    "max_absolute_direct_reference_difference_bps": 4.547473508864641e-13
+  },
+  "scope": "Standalone numerical tests; does not replace the earlier 573-test panel evidence or verify the rebuilt full panel."
+}

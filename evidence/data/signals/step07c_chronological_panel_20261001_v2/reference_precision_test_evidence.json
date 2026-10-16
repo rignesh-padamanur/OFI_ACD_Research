@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "tests_run": 17,
+  "failures": 0,
+  "errors": 0,
+  "output": "test_empty_and_short_sequences_remain_unavailable (test_panel_reference_precision.DirectSquareSumTests.test_empty_and_short_sequences_remain_unavailable) ... ok\ntest_invalid_inputs_fail (test_panel_reference_precision.DirectSquareSumTests.test_invalid_inputs_fail) ... ok\ntest_long_flat_history_is_exactly_zero (test_panel_reference_precision.DirectSquareSumTests.test_long_flat_history_is_exactly_zero) ... ok\ntest_missing_and_infinite_terms_require_sixty_finite_terms (test_panel_reference_precision.DirectSquareSumTests.test_missing_and_infinite_terms_require_sixty_finite_terms) ... ok\ntest_nonnegative_terms_never_need_a_variance_floor (test_panel_reference_precision.DirectSquareSumTests.test_nonnegative_terms_never_need_a_variance_floor) ... ok\ntest_tiny_terms_after_large_history_do_not_disappear (test_panel_reference_precision.DirectSquareSumTests.test_tiny_terms_after_large_history_do_not_disappear) ... ok\ntest_all_five_grid_phases_match_sixty_scalar_returns (test_panel_reference_precision.QuoteStatePrecisionTests.test_all_five_grid_phases_match_sixty_scalar_returns) ... ok\ntest_alternating_tiny_log_returns_after_large_history (test_panel_reference_precision.QuoteStatePrecisionTests.test_alternating_tiny_log_returns_after_large_history) ... ok\ntest_flat_quotes_after_large_moves_match_scalar_zero (test_panel_reference_precision.QuoteStatePrecisionTests.test_flat_quotes_after_large_moves_match_scalar_zero) ... ok\ntest_missing_flow_breaks_history_until_it_leaves_window (test_panel_reference_precision.QuoteStatePrecisionTests.test_missing_flow_breaks_history_until_it_leaves_window) ... ok\ntest_missing_initial_predecessor_does_not_become_zero (test_panel_reference_precision.QuoteStatePrecisionTests.test_missing_initial_predecessor_does_not_become_zero) ... ok\ntest_observation_support_change_is_a_real_history_barrier (test_panel_reference_precision.QuoteStatePrecisionTests.test_observation_support_change_is_a_real_history_barrier) ... ok\ntest_quote_exactly_at_state_time_is_excluded (test_panel_reference_precision.QuoteStatePrecisionTests.test_quote_exactly_at_state_time_is_excluded) ... ok\ntest_repeated_marks_are_valid_under_existing_structural_policy (test_panel_reference_precision.QuoteStatePrecisionTests.test_repeated_marks_are_valid_under_existing_structural_policy) ... ok\ntest_unrelated_measurement_fields_are_unchanged (test_panel_reference_precision.QuoteStatePrecisionTests.test_unrelated_measurement_fields_are_unchanged) ... ok\ntest_failed_verify_only_raises_without_build_tests_or_writes (test_panel_reference_precision.ReadOnlyVerificationCommandTests.test_failed_verify_only_raises_without_build_tests_or_writes) ... ok\ntest_verify_only_reports_result_without_build_tests_or_writes (test_panel_reference_precision.ReadOnlyVerificationCommandTests.test_verify_only_reports_result_without_build_tests_or_writes) ... ok\n\n----------------------------------------------------------------------\nRan 17 tests in 0.484s\n\nOK\n",
+  "source_sha256": {
+    "src/panel_reference_precision.py": "e598484167b8777679b53f2bd229b57ba9245a238fd5503e5592b4ecd688f3e6",
+    "src/verify_chronological_panel.py": "dfb2af0dca935b1c4fe5845aa70b37daf9ccfb3e3d8f6676cff8cc11581bcb12",
+    "src/verify_chronological_panel_v2.py": "3613c0299dd22375ff5a7d99e174aab44e363b601a5e258faf2f446c5750c540",
+    "repair_chronological_panel.py": "5cea004a8905abfa0bb92f201db063ac537aa4e0fe895bf5094050f546588f7f",
+    "reports/tests/test_panel_reference_precision.py": "dfbda0e7f3e074b39afcc0588f0b262b4444b97009225fe2d2a931a8a51a0e7b"
+  },
+  "integration": {
+    "status": "passed",
+    "run_id": "step07c_chronological_panel_20260930",
+    "cycle_id": 17,
+    "counts": {
+      "training_spells_verified": 4018661,
+      "new_issued_forecasts_verified": 765857,
+      "carried_forecasts_verified": 1,
+      "completed_residuals_verified": 765854,
+      "deployment_clock_rows_verified": 1209600,
+      "deployment_scored_rows_verified": 313020,
+      "calibration_scored_rows_verified": 1541957
+    },
+    "carry_out_rows": 1,
+    "checked_at_utc": "2026-09-30T17:09:23.368274+00:00",
+    "cycle_manifest_sha256": "80137719c916652192d9f060b415ab1696a1141d397f68e72bfe824d4337b655",
+    "production_outputs_modified": false,
+    "optimizer_reruns": 0
+  }
+}

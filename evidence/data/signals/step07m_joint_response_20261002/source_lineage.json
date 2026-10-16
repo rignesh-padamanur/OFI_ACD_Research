@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "registered_selected_horizon_rows": 407172,
+  "source_anchor_rows": 135724,
+  "main_continuation_rows": 254065,
+  "path_files": 60,
+  "direct_mark_arithmetic_checked": true,
+  "baseline_estimation_keys_unchanged": true,
+  "raw_tick_reconstruction_performed": false
+}

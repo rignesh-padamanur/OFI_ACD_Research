@@ -1,0 +1,76 @@
+{
+  "all_origins": 135724,
+  "origin_eligible": 128841,
+  "origin_ineligible": 6883,
+  "waterfall": [
+    {
+      "step": "confirmed_onset",
+      "remaining": 135711,
+      "newly_excluded": 13
+    },
+    {
+      "step": "defined_detection_direction",
+      "remaining": 129102,
+      "newly_excluded": 6609
+    },
+    {
+      "step": "prior_state_available",
+      "remaining": 128841,
+      "newly_excluded": 261
+    },
+    {
+      "step": "positive_pre_spread",
+      "remaining": 128841,
+      "newly_excluded": 0
+    },
+    {
+      "step": "positive_pre_size",
+      "remaining": 128841,
+      "newly_excluded": 0
+    },
+    {
+      "step": "known_initial_quotes",
+      "remaining": 128841,
+      "newly_excluded": 0
+    },
+    {
+      "step": "finite_prior_predictors",
+      "remaining": 128841,
+      "newly_excluded": 0
+    }
+  ],
+  "exclusion_reasons": {
+    "eligible": 128841,
+    "defined_detection_direction": 6609,
+    "prior_state_available": 261,
+    "confirmed_onset": 13
+  },
+  "direction_counts": {
+    "positive": 66114,
+    "negative": 62999,
+    "zero": 6611
+  },
+  "eligible_initial_sign_counts": {
+    "positive": 114027,
+    "negative": 9330,
+    "zero": 5484
+  },
+  "prediction_clock": "completed_onset_second_first_alert",
+  "strict_prior_predictor_columns": [
+    "signed_pressure",
+    "pressure_magnitude",
+    "variation_standardized",
+    "variation_x_magnitude",
+    "pre_spread_pips",
+    "log_pre_displayed_size",
+    "onset_hour_utc",
+    "onset_weekday_utc"
+  ],
+  "scaling_reference_cutoff": "2024-04-22T00:00:00+00:00",
+  "empirical_models_fitted": 0,
+  "forecasts_computed": 0,
+  "advance_warning_supported": false,
+  "future_eligibility_used": false,
+  "live_feed_latency_validated": false,
+  "untouched_holdout": false
+}

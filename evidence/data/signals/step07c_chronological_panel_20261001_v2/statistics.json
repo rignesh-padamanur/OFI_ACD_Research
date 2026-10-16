@@ -1,0 +1,140 @@
+{
+  "scope": "full_cached_structural_baseline_detector_episode_states_only",
+  "primary_policy": "structural_only",
+  "source": {
+    "calendar_days": 943,
+    "stream_batch_size": 500000,
+    "source_batches": 113,
+    "source_spell_rows": 55708318,
+    "source_completed_events": 55708110,
+    "source_exposure_ns": 57787166776000000,
+    "source_positive_exposure_rows": 55708317,
+    "seasonal_parameter_rows": 90528,
+    "seasonal_ready_rows": 52114324,
+    "seasonal_ready_completed_events": 52114124,
+    "seasonal_status_counts": {
+      "0": 3587117,
+      "1": 6877,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 52114324
+    }
+  },
+  "cycles": 60,
+  "inherited_cycles": 2,
+  "new_fitted_cycles": 58,
+  "final_cycle_days": 5,
+  "deployment": {
+    "calendar_seconds": 71798400,
+    "eligible_bins": 20494799,
+    "candidate_bins": 213325,
+    "candidate_share_of_eligible": 0.010408738334052458,
+    "reason_counts": {
+      "unsupported": 20811409,
+      "invalid_flow": 70,
+      "seasonal_unavailable": 28653,
+      "quiet_no_duration": 30463461,
+      "incomplete_duration": 8,
+      "eligible": 20494799
+    }
+  },
+  "combined_episodes": {
+    "clock_seconds": 71798400,
+    "observation_states": {
+      "trigger": 213325,
+      "clear_active": 20281474,
+      "clear_quiet": 30489470,
+      "unknown": 20814131
+    },
+    "candidate_bins": 213325,
+    "episode_fragments": 135724,
+    "confirmed_onsets": 135711,
+    "uncertain_onsets": 13,
+    "terminations": {
+      "closed_no_trigger": 135723,
+      "censored_unknown": 0,
+      "censored_support_change": 1,
+      "censored_sample_end": 0
+    },
+    "state_history_available": 135418,
+    "state_history_missing": 306,
+    "state_sample_eligible": 135414,
+    "confirmed_onsets_missing_history": 297,
+    "state_eligible_right_censored": 1,
+    "multiple_candidate_fragments": 28928,
+    "max_candidate_bins": 316,
+    "max_span_seconds": 316,
+    "quality": {
+      "pre_mark_max_age_sec": {
+        "available": 135414,
+        "median": 24.6705,
+        "p95": 74.02439999999996,
+        "max": 1116.327
+      },
+      "pre_mark_repeat_fraction": {
+        "available": 135414,
+        "median": 0.35,
+        "p95": 0.7333333333333333,
+        "max": 1.0
+      },
+      "pre_recorded_updates_300s": {
+        "available": 135414,
+        "median": 134.0,
+        "p95": 826.0,
+        "max": 3712.0
+      },
+      "pre_max_observed_silence_sec": {
+        "available": 135414,
+        "median": 25.991,
+        "p95": 70.35789999999987,
+        "max": 300.0
+      },
+      "raw_pre_rv_300s_5s_bps": {
+        "available": 135414,
+        "median": 1.3314224639639067,
+        "p95": 5.727486509386175,
+        "max": 55.892535052166934
+      }
+    },
+    "mark_age_sensitivity": {
+      "15": {
+        "state_sample_with_quality": 135414,
+        "max_mark_age_at_most_cap": 38793,
+        "max_mark_age_above_cap": 96621
+      },
+      "30": {
+        "state_sample_with_quality": 135414,
+        "max_mark_age_at_most_cap": 80708,
+        "max_mark_age_above_cap": 54706
+      },
+      "60": {
+        "state_sample_with_quality": 135414,
+        "max_mark_age_at_most_cap": 124017,
+        "max_mark_age_above_cap": 11397
+      }
+    }
+  },
+  "previous_onsets_preserved": 3011,
+  "previous_closed_episodes_preserved": 3011,
+  "new_onset_fragments": 132713,
+  "episodes_with_candidates_across_cutoffs": 1,
+  "new_cycle_diagnostics": {
+    "constraint_warning_cycles": 1,
+    "threshold_min": 5.093555963748215,
+    "threshold_max": 5.523993571261964,
+    "diagnostic_flag_cycles": {
+      "hazard_band_calibration": 58
+    },
+    "carried_forecast_transitions": 58,
+    "completed_carried_residuals": 58,
+    "carry_origins_before_training_start": 0
+  },
+  "fitted_duration_specifications": 1,
+  "empirical_response_models_fitted": 0,
+  "full_panel_extension_performed": true,
+  "fixed_sensitivities_extended": false,
+  "extended_responses_computed": false,
+  "production_inference_approved": false,
+  "downstream_ready": false
+}

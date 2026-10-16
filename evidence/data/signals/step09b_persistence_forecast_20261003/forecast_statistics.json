@@ -1,0 +1,27 @@
+{
+  "folds": 59,
+  "prediction_origins": 133918,
+  "eligible_origins": 127058,
+  "ineligible_origins": 6860,
+  "forecast_rows": 535672,
+  "forecasts_computed": 508232,
+  "ols_fits": 118,
+  "training_mean_calibrations": 59,
+  "empirical_models_fitted": 177,
+  "methods": [
+    "zero",
+    "training_mean",
+    "additive",
+    "interaction"
+  ],
+  "primary_horizon_sec": 300,
+  "ols_unseen_calendar_fallbacks": {
+    "additive": 2,
+    "interaction": 2
+  },
+  "maximum_equilibrated_condition": 19.565362706754627,
+  "future_evaluation_labels_attached": false,
+  "forecast_performance_computed": false,
+  "inference_computed": false,
+  "untouched_holdout": false
+}

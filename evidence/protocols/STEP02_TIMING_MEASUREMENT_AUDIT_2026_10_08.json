@@ -1,0 +1,531 @@
+{
+  "stage": "predictor_only_timing_measurement_and_redundancy_audit",
+  "recorded_at_utc": "2026-10-08T13:06:24.404594+00:00",
+  "status": "passed",
+  "protocol": {
+    "path": "reports/STEP02_TIMING_MEASUREMENT_PROTOCOL_2026_10_08.md",
+    "bytes": 5109,
+    "sha256": "549d9f601cf0db08deb8b333c4ff387641deca3d8aa6c775f68a8ee86af9bdf9"
+  },
+  "script": {
+    "path": "audit_timing_measurement.py",
+    "bytes": 13474,
+    "sha256": "774f31e73dd38d03ac26b9f0ca684dcaa83afae8845eb916159dd39799780316"
+  },
+  "versions": {
+    "python": "3.12.13",
+    "numpy": "2.5.0",
+    "pandas": "2.2.3",
+    "pyarrow": "18.1.0"
+  },
+  "population": {
+    "cycles": 59,
+    "scored_bins": 20189813,
+    "count_equality_rows": 20189813,
+    "finite_positive_reconstructed_exposure_rows": 20189813,
+    "right_boundary_available_rows": 20189813,
+    "max_residual_log_discrepancy": 0.0
+  },
+  "predictor_descriptions": {
+    "column_order": [
+      "log_count",
+      "raw_speed",
+      "normalized_speed",
+      "log_effective_expectation"
+    ],
+    "means": [
+      0.6679385009880591,
+      0.2668123626158324,
+      0.17466262839790583,
+      -0.09214973421790004
+    ],
+    "sample_covariance": [
+      [
+        0.3976756493509709,
+        0.4101102051084975,
+        0.22399566002098525,
+        -0.18611454508752995
+      ],
+      [
+        0.4101102051084975,
+        1.3508605307637613,
+        0.9223635151819921,
+        -0.42849701558177666
+      ],
+      [
+        0.22399566002098525,
+        0.9223635151819921,
+        1.0506004565431757,
+        0.12823694136117866
+      ],
+      [
+        -0.18611454508752995,
+        -0.42849701558177666,
+        0.12823694136117866,
+        0.5567339569429575
+      ]
+    ],
+    "pearson_correlation": [
+      [
+        1.0000000000000002,
+        0.5595395903081507,
+        0.3465423465333608,
+        -0.39554141253331515
+      ],
+      [
+        0.5595395903081507,
+        0.9999999999999999,
+        0.7742443892322315,
+        -0.4941043638988122
+      ],
+      [
+        0.3465423465333608,
+        0.7742443892322315,
+        0.9999999999999998,
+        0.16767584466394547
+      ],
+      [
+        -0.39554141253331515,
+        -0.4941043638988122,
+        0.16767584466394547,
+        1.0
+      ]
+    ],
+    "interpretation": "Descriptive predictor covariance only; no independent-information or economic claim."
+  },
+  "source_reconstruction": [
+    {
+      "cycle": 2,
+      "start": "2024-05-20T00:00:00+00:00",
+      "stop": "2024-06-03T00:00:00+00:00",
+      "scored_bins_verified": 260701,
+      "physical_quote_rows_read": 521359,
+      "raw_completed_spells_read": 521356,
+      "issued_and_carried_origins_read": 521359,
+      "scored_normalized_completions_verified": 521356,
+      "seasonal_only_mean_reconstructed_for_bins": 260701,
+      "max_absolute_discrepancies": {
+        "raw_gap_sum_vs_boundary_ages_sec": 2.842170943040401e-14,
+        "physical_pre_age_sec": 0.0,
+        "physical_end_age_sec": 0.0,
+        "physical_mean_raw_gap_sec": 1.4210854715202004e-14,
+        "normalized_residual_mean": 1.4210854715202004e-14,
+        "independent_feature_decomposition": 8.881784197001252e-16
+      },
+      "status": "passed"
+    },
+    {
+      "cycle": 30,
+      "start": "2025-06-16T00:00:00+00:00",
+      "stop": "2025-06-30T00:00:00+00:00",
+      "scored_bins_verified": 405471,
+      "physical_quote_rows_read": 972603,
+      "raw_completed_spells_read": 972600,
+      "issued_and_carried_origins_read": 972603,
+      "scored_normalized_completions_verified": 972600,
+      "seasonal_only_mean_reconstructed_for_bins": 405471,
+      "max_absolute_discrepancies": {
+        "raw_gap_sum_vs_boundary_ages_sec": 2.842170943040401e-14,
+        "physical_pre_age_sec": 0.0,
+        "physical_end_age_sec": 0.0,
+        "physical_mean_raw_gap_sec": 1.4210854715202004e-14,
+        "normalized_residual_mean": 7.105427357601002e-15,
+        "independent_feature_decomposition": 8.881784197001252e-16
+      },
+      "status": "passed"
+    },
+    {
+      "cycle": 59,
+      "start": "2026-07-27T00:00:00+00:00",
+      "stop": "2026-08-01T00:00:00+00:00",
+      "scored_bins_verified": 152052,
+      "physical_quote_rows_read": 340572,
+      "raw_completed_spells_read": 340571,
+      "issued_and_carried_origins_read": 340571,
+      "scored_normalized_completions_verified": 340570,
+      "seasonal_only_mean_reconstructed_for_bins": 152052,
+      "max_absolute_discrepancies": {
+        "raw_gap_sum_vs_boundary_ages_sec": 2.842170943040401e-14,
+        "physical_pre_age_sec": 0.0,
+        "physical_end_age_sec": 0.0,
+        "physical_mean_raw_gap_sec": 3.552713678800501e-15,
+        "normalized_residual_mean": 1.4210854715202004e-14,
+        "independent_feature_decomposition": 8.881784197001252e-16
+      },
+      "status": "passed"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/001/scored.parquet",
+      "bytes": 24854792,
+      "sha256": "abd7089132311043abc541505b1787b523cce6910b8becd4341319f54a89d9f7"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/002/scored.parquet",
+      "bytes": 25746578,
+      "sha256": "83cf5376057d3ac6ed2e1c4aa3c2ec2c4492529f565deea2caa286e174663c83"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/003/scored.parquet",
+      "bytes": 30652167,
+      "sha256": "44b4d474752e6580c5c5614d18200319602fec0a82ac97ecdabda3148adc1f6f"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/004/scored.parquet",
+      "bytes": 28893579,
+      "sha256": "c40af71a2ffd657495e40947235fe4c90dca78ff02e92fb856f03a662e40eda5"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/005/scored.parquet",
+      "bytes": 27360895,
+      "sha256": "a37332650e423067a350095a5a7443058a1fb7a8506a8af922f9293ab024dbfc"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/006/scored.parquet",
+      "bytes": 30971021,
+      "sha256": "63a0dcbd5e3744635ce6eece4fdc5e8c13c83ac455799498df125c7662c22d7d"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/007/scored.parquet",
+      "bytes": 38519573,
+      "sha256": "7aa20ce2c5425c1cf2f51c51316ec60f9d9d455b4695c733ec7a2b028ecace44"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/008/scored.parquet",
+      "bytes": 29897231,
+      "sha256": "c3e4ea5265bdac9e132a22ecda903e3b5dd8b3f58e9b958791c014250e09d67f"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/009/scored.parquet",
+      "bytes": 32328698,
+      "sha256": "c8446a47d911def022e74a17f3d10dc7432918f170a9a005d4d401030b8caf86"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/010/scored.parquet",
+      "bytes": 33644403,
+      "sha256": "fe25b899f8a275fdd45bffbcb5310b9740927acd0fa29d65405edea1ba996943"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/011/scored.parquet",
+      "bytes": 36272198,
+      "sha256": "c1551265b43f0b3a3950e1712eeb2595cdd1d80f2f635efa5d393bf062ec7e5d"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/012/scored.parquet",
+      "bytes": 32465090,
+      "sha256": "0d28d40e379f67ae1bad414a64816e19b9fe0cb036a3524ad0da0a9ef983bd01"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/013/scored.parquet",
+      "bytes": 32092076,
+      "sha256": "f0f06878583da67c0d5d00eb11a181fb870c5ac1675a98b0a4605a2fedb60447"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/014/scored.parquet",
+      "bytes": 40056991,
+      "sha256": "9f804761a2b2c75a7361ba4beea2c0904d2d9df5fa379e79dfb6b5b8ea4a2e12"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/015/scored.parquet",
+      "bytes": 39204477,
+      "sha256": "7e83c8252fef7b74f7e09c1caa2e95888020443b763e650cb42634ba0c060d19"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/016/scored.parquet",
+      "bytes": 37888321,
+      "sha256": "7fd3ac7d0d1657ab02fb2f354c64b68a12eac4c19b1816a60b30238bfee5a902"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/017/scored.parquet",
+      "bytes": 30174130,
+      "sha256": "d4566d76482fbea4739917cab17fdee6e9a1bb075921e1ac6d87237580ca2996"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/018/scored.parquet",
+      "bytes": 31244023,
+      "sha256": "122426be7d677a7cb1d8026cc05f82b0f726a5c7525f55b95c341b0cee9e9a14"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/019/scored.parquet",
+      "bytes": 37028166,
+      "sha256": "06337cd8374c37071eb5364fcda669b90b51d6d05779588aeb3aafb1278a0736"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/020/scored.parquet",
+      "bytes": 40549578,
+      "sha256": "1afe4a02f67a585f44994538de3edef0b8a803e1a5bc55b402306172fc14d8b8"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/021/scored.parquet",
+      "bytes": 33366357,
+      "sha256": "c8c22ade1fb211f40adbf4e873031f53c8891f54ebdf4a6a60b7499b211d0757"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/022/scored.parquet",
+      "bytes": 44285632,
+      "sha256": "918f56c4f73777cb6597c3dc0730a22b5acd8d164cc695d92dd6c3e79c717096"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/023/scored.parquet",
+      "bytes": 38208257,
+      "sha256": "33dfc618e2a70ee9abc459844a76eda4ce3e0bf636961280376a5ed532f28320"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/024/scored.parquet",
+      "bytes": 40370525,
+      "sha256": "ed6440c09063dcfacfe0f9a89ec147481f70bc7d4ccea398c125afd6225eeb34"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/025/scored.parquet",
+      "bytes": 56325708,
+      "sha256": "25e587f643206629b3cc4b70b2377ba17b58d9ff4dff1b93a5a25aacb9662c4c"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/026/scored.parquet",
+      "bytes": 41948225,
+      "sha256": "79e77e91eb4f31dac1293afec048f25352b7276f3fb26e3410e4752eb85ab03d"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/027/scored.parquet",
+      "bytes": 40543978,
+      "sha256": "42bb07868bb6888add1df093be69490d9e4766a2aa8b364436ae9282d281d3b2"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/028/scored.parquet",
+      "bytes": 39947515,
+      "sha256": "ba3fd2308f38fcc037afdfd77c4f6dea6fbfb467461f7670b7df1dbe0b3d63c5"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/029/scored.parquet",
+      "bytes": 36834915,
+      "sha256": "eba7167ded6ad1265bd5fbe73cf7a361a890897ccdba6fbaae0f674e2ef76d9c"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/030/scored.parquet",
+      "bytes": 36721884,
+      "sha256": "6675ac8178064e70f6b5b78d36f3a86aa1ab28eba1a575836746a7b7b1f084e4"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/031/scored.parquet",
+      "bytes": 29440533,
+      "sha256": "539cf69b4e07cb7d4f1073f81bcab8e6982a978bd10ed376ab0021029a6a7db5"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/032/scored.parquet",
+      "bytes": 27444548,
+      "sha256": "30f60563a232e78d477bf53712809dae9418059c53ce29c5d98aeb757bcafdc3"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/033/scored.parquet",
+      "bytes": 29885888,
+      "sha256": "bfc12da233791cfdd415ffe99bf44ea4b9dde1fc289b2eca0ffd340d13563bd8"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/034/scored.parquet",
+      "bytes": 26068703,
+      "sha256": "8ab22727a682c50bcf232320760656a9b4b44d6b6fdff656c6e2f97247f8c048"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/035/scored.parquet",
+      "bytes": 26404396,
+      "sha256": "ffff0828d8cfb5cf604f652cde3a9b6da2da6fae6d151f54167e38efc42171f7"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/036/scored.parquet",
+      "bytes": 29724555,
+      "sha256": "644480066efbc9111297c62976db4458f3cffe95b3488762808779b5a6a2ecfe"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/037/scored.parquet",
+      "bytes": 28908051,
+      "sha256": "4f284f33bbc2a00596e8c17b99b24a59f8fc7d0626f56aa67516434ce6c12507"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/038/scored.parquet",
+      "bytes": 30115930,
+      "sha256": "591a791a8bfb3d15cade95509e9c292470c500366be430aa0bd3684e8fd323db"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/039/scored.parquet",
+      "bytes": 26696929,
+      "sha256": "3139416e05f7633ae082371015bea161dfabf7238b1346b496dec1ee31c7bf2e"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/040/scored.parquet",
+      "bytes": 25667921,
+      "sha256": "6bf4a8839a4ad19ac0cdf0b5f63757523aafea2fa0562acf9934c9ff5b029390"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/041/scored.parquet",
+      "bytes": 28196774,
+      "sha256": "838afd0fc837bbeda272a3b2a6deb2dbbaef8875768785913cb400957dab7ccc"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/042/scored.parquet",
+      "bytes": 26543115,
+      "sha256": "907d908c5b43a9ef459109633d76a9b63aeea453b71ff9391c5e40d32e27b61a"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/043/scored.parquet",
+      "bytes": 24425732,
+      "sha256": "5b7ca283079bc541b3618d5bdb8d4b7ec1fbda9b980f94ea3cdcf71bafde3751"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/044/scored.parquet",
+      "bytes": 22975838,
+      "sha256": "47a10bdc18a7cd0e1b47799fe2078aa1b84712b3675910a3c88a4377c7d01e40"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/045/scored.parquet",
+      "bytes": 26283255,
+      "sha256": "ca467147474d49e3959002def312036d8a207946757d5293f49f044954a30885"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/046/scored.parquet",
+      "bytes": 34962814,
+      "sha256": "63dd186ea2659662cfd1792131173baf2cb6aeb2e95dba90d62bf5318431426d"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/047/scored.parquet",
+      "bytes": 25866319,
+      "sha256": "2dd52d3c713c32ffc2d1f8e1e947309127433ab9950e807de71d189a24bf1b41"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/048/scored.parquet",
+      "bytes": 32842833,
+      "sha256": "dc63da04fd0887c120980714811a577fc454d0eb1fa992b9fc14b23b66a79f84"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/049/scored.parquet",
+      "bytes": 37349378,
+      "sha256": "9e7b5d2754735973dc268daf3b61a55093ae577e5fa949b09efb1b6973a903af"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/050/scored.parquet",
+      "bytes": 34671802,
+      "sha256": "fa789a71f5c75ff4a4cb9e6f12e865a6e7eed62a398a661afb755290489f7ab2"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/051/scored.parquet",
+      "bytes": 30925103,
+      "sha256": "d69285dfea98965f18fbbca0bbf48b1ded3a272b708de9e5abe4a392729c6380"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/052/scored.parquet",
+      "bytes": 31222996,
+      "sha256": "99838f36057812a2920a3d911564d74cb5741778b6d21092ec0f1996faf74848"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/053/scored.parquet",
+      "bytes": 29074767,
+      "sha256": "6848f3d41de9c8ad23abc6ffa4f08dac051f190de939c0dd02670c5837804c47"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/054/scored.parquet",
+      "bytes": 25859639,
+      "sha256": "7be3901c2e0e63280f0f0f7f22045047f4c3cebf65f7b8728d54a6e81e5c7f5b"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/055/scored.parquet",
+      "bytes": 26847487,
+      "sha256": "8604a5ed0afa9db82358d334b1a68302d516a784b2f93834156ec5798908efe5"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/056/scored.parquet",
+      "bytes": 26419340,
+      "sha256": "e68c1e912aea569beac6924549b5ea0514195c31577a69e467b94c42d0fad5b6"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/057/scored.parquet",
+      "bytes": 26251105,
+      "sha256": "28323351530be006b3a7c8f2462f30de4d1ff7f89568beb70fa63a8129a4b9ac"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/058/scored.parquet",
+      "bytes": 25988830,
+      "sha256": "a6f6007d1a859a9079ffbc6900cb004a78adffd3d28253aa94c3692e16e3bc83"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/059/scored.parquet",
+      "bytes": 14838621,
+      "sha256": "5235d83a7805487e343567e1ec96b8f4636e552c5c5a87503d808c0bf26d4a29"
+    },
+    {
+      "path": "data/runs/step01_quote_sizes_20260927_v2/clean_quotes.parquet",
+      "bytes": 976055434,
+      "sha256": "42bf8ebd9db201a5606e811de6d778e81b1094471d30af52e8e63f02b9e6254e"
+    },
+    {
+      "path": "data/eligibility/step02b_observation_20260927/support_intervals.parquet",
+      "bytes": 11143573,
+      "sha256": "088041bbc06b8517c4ae090d826abf70c11e590c03d7f8c65b89dd010a7b7443"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/observations/raw_spells.parquet",
+      "bytes": 1179007976,
+      "sha256": "57579e3d1ecdfc81ec235087db56238102f9e74e0e1fbe530ee29ad78e524b63"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/002/manifest.json",
+      "bytes": 1701,
+      "sha256": "c03f8d1d926a96a85fde5a5313aa6469a3dead8949625a38e1507058b14f50fd"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/002/carry_in.parquet",
+      "bytes": 4278,
+      "sha256": "a3362e8505a3ce96e8302c5e98b8ffd2d7bc705a59ab12ccdcb81ac227bb4460"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/002/issued_forecasts.parquet",
+      "bytes": 11431811,
+      "sha256": "dd28eb137b1d0c16bc73b4566ffc883086aa4a42f7681d4b2cf7b4c99059bafc"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/030/manifest.json",
+      "bytes": 1702,
+      "sha256": "d514987614975accba247684e88ec6621c5ac5fd36c195abdea08b08bd9140d5"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/030/carry_in.parquet",
+      "bytes": 4278,
+      "sha256": "7bb39082477e1c85901dfac4e88b74b0390aeb737fe7bbe8d7aafedaa96d66e6"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/030/issued_forecasts.parquet",
+      "bytes": 20788698,
+      "sha256": "d69af1768be2c9a0a01b03ff68ccc2db26bbd4d199f9776b003b05f759e629c3"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/059/manifest.json",
+      "bytes": 1702,
+      "sha256": "325182b4d955b0d783f5942decbb87c28683b3433d48cd7a0b53dd01fb494927"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/059/carry_in.parquet",
+      "bytes": 4278,
+      "sha256": "ebc1a6795972fc07564de3c5393c35422cc0dd701b5e1d42f7dbd196b2637283"
+    },
+    {
+      "path": "data/signals/step07c_chronological_panel_20261001_v2/cycles/059/issued_forecasts.parquet",
+      "bytes": 7237879,
+      "sha256": "d6cc0797cc80d2c5d2cf635764c50861bbb5929e1a5207f41b4ade0d21ae273d"
+    }
+  ],
+  "scientific_preservation": {
+    "files_compared_before_after": 35,
+    "mismatches": [],
+    "step01_brief_and_receipt_unchanged": true
+  },
+  "new_model_fits": 0,
+  "new_outcome_contrasts": 0,
+  "future_outcome_files_read": 0,
+  "new_data_acquired": false,
+  "field_novelty_established": false,
+  "limitations": [
+    "The arithmetic identity is source-reconstructed in three fixed cycles, not all 59.",
+    "The remaining cycles have predictor consistency checks, not independent raw-timestamp reconstruction.",
+    "Recorded-feed completeness and economic forecast value are not tested.",
+    "The cache was already inspected; this is a retrospective measurement audit."
+  ]
+}

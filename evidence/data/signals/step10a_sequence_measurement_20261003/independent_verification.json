@@ -1,0 +1,559 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "completed_at_utc": "2026-10-03T13:40:25.438948+00:00",
+  "run_id": "step10a_sequence_measurement_20261003",
+  "verifier_sha256": "d11dd114d35b5688a74912bf4d209d661450968c78f55dffda781fc24b252d2b",
+  "manifest_sha256_at_verification": "cde921753a1dc619f2b533451a9342cdf1ece0d4b26cb453090859a4377cdced",
+  "source_sha256": {
+    "data/signals/step09a_prediction_ledger_20261003/origins.parquet": "a2c1a2715d9e87f703fafcf6275eac662e24eba71c03a5464b32378abe806c8e",
+    "data/signals/step07e_panel_responses_20261001/anchors.parquet": "272a8127a52e7992f80bea53cef3c937ace485efc479b070e0a3fdb6d22740ae",
+    "data/signals/step04a_signal_clock_20260927_v2/signal_clock_1s.parquet": "67395dc6b64e91aad8cc97d31e40d8cd1a7020713025a05c5cbd5441a92a7889",
+    "data/runs/step01_quote_sizes_20260927_v2/clean_quotes.parquet": "42bf8ebd9db201a5606e811de6d778e81b1094471d30af52e8e63f02b9e6254e",
+    "data/eligibility/step02b_observation_20260927/support_intervals.parquet": "088041bbc06b8517c4ae090d826abf70c11e590c03d7f8c65b89dd010a7b7443",
+    "data/signals/step07f_panel_analysis_20261001/scaling.json": "aa891c425a734374b0d74d0e16ab06b5353106d91dc1d02f260cca75e23cc094",
+    "data/signals/step09a_prediction_ledger_20261003/predictors.parquet": "ad2d2cf478bd051416ae547e3202aec53d24eea8af4d34daf1832520b6371dbe"
+  },
+  "inherited_manifests_sha256": {
+    "data/signals/step09a_prediction_ledger_20261003/manifest.json": "b5448a1207973a3dfe2efc9a99d7f4b61495ab469afadb32a351da60ae10adb9",
+    "data/signals/step07c_chronological_panel_20261001_v2/manifest.json": "35be235b0d45c8d575299cc72e69bfde1eea74939bdffd68999321b9997c212a",
+    "data/signals/step07e_panel_responses_20261001/manifest.json": "b12b4640c88f78bd952c72ef03780eeffc98b67a9c2009f5f17b9038e427fbb3",
+    "data/signals/step07f_panel_analysis_20261001/manifest.json": "f70ce68c87ff39321267aacc1145526d3e8c7ae6764908aa366cffc898ee4202"
+  },
+  "serialized_output_sha256": {
+    "features.parquet": "cafd55b65882d749dc0f92c0b502b29f984b1249fc1623435e2a77ee2c1984f6",
+    "sequences.parquet": "91c41c81218bae0f24c7cced9d12dd6dd9d6da697ebd470abd15ee0053d4f2cc",
+    "prior_price_marks.parquet": "bae0e00a9eb557b14bf688785f37c37d7f321068d37bea762ca8926670cfe796"
+  },
+  "source_columns_read": {
+    "origins": [
+      "episode_id",
+      "bin_start",
+      "forecast_at",
+      "origin_eligible",
+      "direction",
+      "initial_pips",
+      "pre_mark_at"
+    ],
+    "anchors": [
+      "episode_id",
+      "bin_start",
+      "support_id",
+      "state_history_available",
+      "pre_quote_ofi_300s",
+      "pre_rv_300s_5s_bps",
+      "pre_spread_pips",
+      "pre_displayed_size",
+      "pre_recorded_updates_300s"
+    ],
+    "full_clock": [
+      "bin_start",
+      "support_id_structural_only",
+      "flow_status_structural_only",
+      "observed_quote_ofi",
+      "recorded_update_count",
+      "n_invalid_transitions"
+    ],
+    "quotes": [
+      "timestamp",
+      "bid",
+      "ask",
+      "bid_volume",
+      "ask_volume"
+    ]
+  },
+  "origins": 135724,
+  "available_sequences": 135418,
+  "available_price_histories": 135418,
+  "combined_eligible": 128841,
+  "sequence_bins_reconstructed": 8125080,
+  "historical_price_marks_reconstructed": 8260498,
+  "checks": [
+    {
+      "check": "frozen_design_hash_reports/STEP10A_SEQUENCE_PROTOCOL.md",
+      "status": "passed"
+    },
+    {
+      "check": "frozen_design_hash_reports/STEP10A_SEQUENCE_SPEC.json",
+      "status": "passed"
+    },
+    {
+      "check": "frozen_design_hash_reports/STEP10A_LITERATURE_GATE.md",
+      "status": "passed"
+    },
+    {
+      "check": "serialized_output_hash_features.parquet",
+      "status": "passed"
+    },
+    {
+      "check": "serialized_output_hash_sequences.parquet",
+      "status": "passed"
+    },
+    {
+      "check": "serialized_output_hash_prior_price_marks.parquet",
+      "status": "passed"
+    },
+    {
+      "check": "unique_chronological_origin_identifiers",
+      "status": "passed"
+    },
+    {
+      "check": "all_origin_ids_preserved_anchors",
+      "status": "passed"
+    },
+    {
+      "check": "all_origin_ids_preserved_predictors",
+      "status": "passed"
+    },
+    {
+      "check": "all_origin_ids_preserved_features",
+      "status": "passed"
+    },
+    {
+      "check": "all_origin_ids_preserved_sequences",
+      "status": "passed"
+    },
+    {
+      "check": "all_origin_ids_preserved_price_marks",
+      "status": "passed"
+    },
+    {
+      "check": "inherited_clock_bin_start",
+      "status": "passed"
+    },
+    {
+      "check": "inherited_clock_forecast_at",
+      "status": "passed"
+    },
+    {
+      "check": "inherited_origin_eligibility_unchanged",
+      "status": "passed"
+    },
+    {
+      "check": "composition_reference_independent_exhaustive_synthetic_identity",
+      "status": "passed",
+      "compositions": 116,
+      "lengths": "2 through 7",
+      "max_absolute_error": 0.0,
+      "research_hypothesis_test": false
+    },
+    {
+      "check": "all_origins_reconstructed_once_from_full_clock",
+      "status": "passed",
+      "origins": 135724,
+      "clock_rows_read": 81475200,
+      "five_second_bins": 8143440
+    },
+    {
+      "check": "strict_left_quotes_reconstructed_for_all_origins",
+      "status": "passed",
+      "origins": 135724,
+      "historical_marks": 8279164,
+      "unique_boundaries": 5381360,
+      "quote_rows_read": 55708318
+    },
+    {
+      "check": "all_sixty_serialized_pressure_bins",
+      "status": "passed",
+      "compared_values": 8143440,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "component_pressure_sequence_available",
+      "status": "passed"
+    },
+    {
+      "check": "component_prior_price_available",
+      "status": "passed"
+    },
+    {
+      "check": "component_pressure_sequence_status",
+      "status": "passed"
+    },
+    {
+      "check": "component_prior_price_status",
+      "status": "passed"
+    },
+    {
+      "check": "component_order_degenerate",
+      "status": "passed"
+    },
+    {
+      "check": "all_zero_sequence_flag",
+      "status": "passed"
+    },
+    {
+      "check": "constant_nonzero_sequence_flag",
+      "status": "passed"
+    },
+    {
+      "check": "pressure_prior_quote_updates",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "pressure_sum_1s_fsum",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "pressure_gross_1s_fsum",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "pressure_supported_empty_seconds",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "pressure_observed_invalid_seconds",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "pressure_numpy_fsum_sign_differences",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "pressure_bound_sensitive_nonzero_subbins",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "pressure_exact_zero_subbins_with_nonzero_gross",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "pressure_max_sum_disagreement",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "pressure_min_abs_nonzero_subbin",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "sequence_adjacent_agreement",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "sequence_composition_reference",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "sequence_sequence_z",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "sequence_sign_sum",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "sequence_nonzero_subbins",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "sequence_sum_5s_fsum",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "sequence_gross_5s_fsum",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "all_sixty_one_serialized_strict_left_quote_timestamps",
+      "status": "passed",
+      "compared_timestamps": 8279164
+    },
+    {
+      "check": "feature_timestamp_first_prior_quote_at",
+      "status": "passed"
+    },
+    {
+      "check": "feature_timestamp_last_prior_quote_at",
+      "status": "passed"
+    },
+    {
+      "check": "all_sixty_one_serialized_midpoints",
+      "status": "passed",
+      "compared_values": 8279164,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "price_reconstructed_rv_5s_bps",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 7.105427357601002e-15
+    },
+    {
+      "check": "price_prior_max_quote_age_seconds",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "price_repeated_mark_fraction",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "price_raw_prior_quote_updates",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "prior_price_change_5s",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "prior_price_change_30s",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "prior_price_change_300s",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "baseline_direction",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "baseline_initial_pips",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "baseline_aligned_pressure",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "baseline_pressure_magnitude",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "baseline_gross_pressure_scaled",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "baseline_variation_standardized",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 5.930811397547586e-13
+    },
+    {
+      "check": "baseline_pre_spread_pips",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "baseline_log_pre_displayed_size",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "baseline_log1p_prior_quote_updates",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "baseline_aligned_sign_balance",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "baseline_nonzero_fraction",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "baseline_composition_reference",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "baseline_onset_hour_utc",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "baseline_onset_weekday_utc",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "baseline_aligned_recent_5s_pressure",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "baseline_recent_5s_gross_scaled",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "baseline_aligned_recent_30s_pressure",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "baseline_recent_30s_gross_scaled",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "baseline_aligned_prior_5s_price_pips",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "baseline_aligned_prior_30s_price_pips",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "baseline_aligned_prior_300s_price_pips",
+      "status": "passed",
+      "compared_values": 135724,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "measurement_availability_from_components_and_finite_benchmark",
+      "status": "passed"
+    },
+    {
+      "check": "combined_eligibility_uses_no_future_availability",
+      "status": "passed"
+    },
+    {
+      "check": "measurement_status_preserves_exclusion_precedence",
+      "status": "passed"
+    },
+    {
+      "check": "all_inherited_available_histories_reconstructed",
+      "status": "passed"
+    },
+    {
+      "check": "inherited_pressure_reconciliation",
+      "status": "passed",
+      "compared_values": 135418,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "inherited_variation_reconciliation",
+      "status": "passed",
+      "compared_values": 135418,
+      "max_absolute_error": 9.140327383860836e-13
+    },
+    {
+      "check": "inherited_quote_count_reconciliation",
+      "status": "passed",
+      "compared_values": 135418,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "raw_quote_reconciliation_pre_spread_pips",
+      "status": "passed",
+      "compared_values": 135418,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "raw_quote_reconciliation_pre_displayed_size",
+      "status": "passed",
+      "compared_values": 135418,
+      "max_absolute_error": 0.0
+    },
+    {
+      "check": "inherited_manifest_source_hash_data/signals/step09a_prediction_ledger_20261003/origins.parquet",
+      "status": "passed"
+    },
+    {
+      "check": "inherited_manifest_source_hash_data/signals/step09a_prediction_ledger_20261003/predictors.parquet",
+      "status": "passed"
+    },
+    {
+      "check": "inherited_manifest_source_hash_data/signals/step07e_panel_responses_20261001/anchors.parquet",
+      "status": "passed"
+    },
+    {
+      "check": "inherited_manifest_source_hash_data/signals/step07f_panel_analysis_20261001/scaling.json",
+      "status": "passed"
+    },
+    {
+      "check": "inherited_manifest_source_hash_data/signals/step04a_signal_clock_20260927_v2/signal_clock_1s.parquet",
+      "status": "passed"
+    },
+    {
+      "check": "inherited_manifest_source_hash_data/runs/step01_quote_sizes_20260927_v2/clean_quotes.parquet",
+      "status": "passed"
+    },
+    {
+      "check": "inherited_manifest_source_hash_data/eligibility/step02b_observation_20260927/support_intervals.parquet",
+      "status": "passed"
+    }
+  ],
+  "check_count": 91,
+  "outcome_fields_read": false,
+  "response_models_fitted": 0,
+  "research_hypothesis_tests": 0,
+  "novelty_established": false,
+  "limit": "Agreement verifies recorded-cache measurement, not vendor completeness, market ordering, causality or novelty."
+}

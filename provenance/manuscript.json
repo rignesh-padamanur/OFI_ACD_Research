@@ -1,0 +1,52 @@
+{
+  "source_name": "review_assembly.tex",
+  "source_sha256": "b174ac457f877aad40fdf1022b4ac7ae9dc5585251723845879dc62ffa07e35c",
+  "release_path": "paper/main.tex",
+  "release_sha256": "278951b3a8e4db55138c3b94e8a34385a02e829e24b06e697ddce9d56dc84f60",
+  "changes": [
+    "Figure search path changed to release-relative figures.",
+    "Clarified that the Appendix D normal critical value 1.96 is approximate; no numerical estimates changed."
+  ],
+  "pdf_source_sha256": "75dec1447b9c454e994f39cebe07a636691ac82d339a142b86a6b607ad94ecb6",
+  "prior_verification": {
+    "date": "2026-10-15",
+    "main_word_count": 5132,
+    "word_count_method": "TeXcount text+headings+captions; table/tabular counted as text so notes included; equations/reference/appendices excluded",
+    "main_pages": 21,
+    "reference_pages": 1,
+    "appendix_pages": 17,
+    "total_review_pages": 39,
+    "main_font": "12 pt, double spaced, 1-inch letter-paper margins",
+    "compiler": "Tectonic 0.17.0",
+    "compile_success": true,
+    "overfull_boxes": 0,
+    "undefined_citations": 0,
+    "undefined_labels": 0,
+    "citation_keys": 12,
+    "labels": 43,
+    "scientific_models_fitted": 0,
+    "source_and_protected_file_hashes_rechecked": 51,
+    "project_manuscripts_unchanged": true,
+    "temporary_assembly_sha256": "b174ac457f877aad40fdf1022b4ac7ae9dc5585251723845879dc62ffa07e35c",
+    "figure_prose_checks": "left/right panels; signed vertical gap; figures appear before interpretation paragraphs; quarterly stems not intervals; all quarters retained",
+    "visual_review": "All 39 final-layout content pages covered via full-document rendered inspection and updated changed-page inspection; captions and appendix tables readable; some benign underfull text warnings remain in appendix identifiers/prose."
+  },
+  "release_pdf_sha256": "235e1b6403a7f65880b4b0ebfb926a96e553c5d341f973f3762653fe9ff895be",
+  "release_compile": {
+    "status": "passed",
+    "pages": 39,
+    "changed_visual_pages": [
+      28,
+      29,
+      31,
+      36
+    ],
+    "changed_text_pages": [
+      36
+    ],
+    "overfull_boxes": 0,
+    "undefined_citations": false,
+    "compiler": "Tectonic 0.17.0; built-in compiler cannot load external figure assets",
+    "source_change": "Relative figure paths and approximate normal critical value wording only"
+  }
+}

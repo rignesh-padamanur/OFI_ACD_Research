@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "run_id": "step04d_chronological_acd_audit_20260928",
+  "stage": "04d_initial_chronological_duration_model_audit",
+  "status": "verified_initial_chronological_duration_model_audit",
+  "parent_data_run": "step01_quote_sizes_20260927_v2",
+  "parent_eligibility_run": "step02b_observation_20260927",
+  "parent_duration_run": "step04c_duration_observation_20260927",
+  "inputs": {
+    "clean": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/runs/step01_quote_sizes_20260927_v2/clean_quotes.parquet",
+      "sha256": "42bf8ebd9db201a5606e811de6d778e81b1094471d30af52e8e63f02b9e6254e"
+    },
+    "raw": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/runs/step01_quote_sizes_20260927_v2/raw_quotes.parquet",
+      "sha256": "2e5cd3b1751da85897e169245e3f710d22b9d1b281d467549f7929f033ff298c"
+    },
+    "data_manifest": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/runs/step01_quote_sizes_20260927_v2/manifest.json",
+      "sha256": "ef3197dba7fec7232f99277d2be63d1344cecfd5292f19c7cd0bf4d52a4faad0"
+    },
+    "data_verification": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/runs/step01_quote_sizes_20260927_v2/verification.json",
+      "sha256": "22d474c86d626649d638c74b3ec6761d245ea00a7059f040cd9bb5b707bbb409"
+    },
+    "segments": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/eligibility/step02b_observation_20260927/segments.parquet",
+      "sha256": "a7f3ea6b78ff6af839a46c5d5eace43ded5c5492af7d86cb7ad8d5eb79c76391"
+    },
+    "support": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/eligibility/step02b_observation_20260927/support_intervals.parquet",
+      "sha256": "088041bbc06b8517c4ae090d826abf70c11e590c03d7f8c65b89dd010a7b7443"
+    },
+    "eligibility_manifest": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/eligibility/step02b_observation_20260927/manifest.json",
+      "sha256": "7cc1b63c3b65d34f8a63d036d0b968ad1622a65721bd2180cbda57f66a513610"
+    },
+    "eligibility_verification": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/eligibility/step02b_observation_20260927/verification.json",
+      "sha256": "cf2520ce5a5bf5820ce2e94fdac42056a7f2725d6a5d8984dd741d97ad6b8de7"
+    },
+    "eligibility_contract": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/eligibility/step02b_observation_20260927/usage_contract.json",
+      "sha256": "64eaf67e15946608d42bca6fb789612e69b65c99578746f6f4d7a4b9634c9599"
+    },
+    "quote_durations": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step04c_duration_observation_20260927/quote_durations.parquet",
+      "sha256": "987b52991945b4730d361ab2250abec552b96ad851455dced66db8bbc277357b"
+    },
+    "terminal_spells": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step04c_duration_observation_20260927/terminal_spells.parquet",
+      "sha256": "07cb3d16f93d384fcbecc7f20d270946c147e07a069a7e69385826c1b4617031"
+    },
+    "duration_manifest": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step04c_duration_observation_20260927/manifest.json",
+      "sha256": "2ab037689e652d81e215da9eb5250116c5292e450be1fd7b95d353c1f8350e19"
+    },
+    "duration_verification": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step04c_duration_observation_20260927/verification.json",
+      "sha256": "789c3d214499190d3c45aa6cc302cb2f245c7441c8d22e626dfde91436ea07b4"
+    }
+  },
+  "configuration": {
+    "seasonal_days": 56,
+    "training_days": 56,
+    "validation_days": 14,
+    "min_prior_dates": 4,
+    "min_exposure_seconds": 1800,
+    "min_completions": 100
+  },
+  "calendar_origin": "2024-01-01T00:00:00+00:00",
+  "created_at_utc": "2026-09-27T19:23:10.096634+00:00",
+  "code_sha256": {
+    "repair_chronological_acd.py": "cd986a4df4ddba066867a9930bda62a353a8b7453fbc48d608684c89ac38ad76",
+    "src/duration_calibration.py": "c3030fa53795aa13b4ab4111bc9a8f02f6186d36e85e8284e9cbe9931d9973fd",
+    "src/chronological_acd.py": "c550c9b8dc3bb97c2d824bcd4f87477956c6e002a60bc3f71e81db2655c7fcdb",
+    "src/acd_kernel.c": "0477453f6f492434da99c8b0cb3813539cece34fa2850e7708232c9aa7c7e3e6",
+    "src/verify_chronological_acd.py": "73964cef8e5159ecfc99b551d8d78ce6c298cedb1f4b6941f423b9e3f915ae81",
+    "src/data_preparation.py": "199ed717ada3eaea625ffb3da788e80a75a7765c7afdb2b560433c6f3a100831",
+    "src/observation_eligibility.py": "6128d5acf8da8ecd367cfc01c2ea0e67a7cd811ffd41d25aacc725f69efb2a67",
+    "src/verify_quote_imbalance.py": "3dee52a51022f13290d7f738c9d8e56c24478ae3e2e74fc633431e202d7b9342",
+    "repair_duration_observation.py": "0a59940790696a4a939a816f6965c2e4878a5b6521537613b2daeeeb508d06eb",
+    "tests/test_chronological_acd.py": "8c0d07ae5153d28a5c68c6935fa1ca19f1cc82e9267879ac456ff8051e3faf9b"
+  },
+  "primary_freshness_policy": null,
+  "downstream_ready": false,
+  "environment": {
+    "python": "3.12.13",
+    "numpy": "2.5.0",
+    "pandas": "2.2.3",
+    "scipy": "1.18.0",
+    "pyarrow": "18.1.0"
+  },
+  "outputs": {
+    "fresh_15s/eacd_daily_validation.parquet": "dc59b668ee93f550c8e72a1f065791393f4c520b2ea8c42853ab902ebea5dfbe",
+    "fresh_15s/eacd_validation_predictions.parquet": "afd12fe999c98e63b1bd94e9a4acd23c44f14bcf7fc0e6d437ba42120b5e7bc2",
+    "fresh_15s/historical_cutoff_corrections.parquet": "e73c713d44aa6ea324bf2803311bad1072342b7fa9840734497c068b7c631bcb",
+    "fresh_15s/iid_exponential_daily_validation.parquet": "72ae9173b71d59bfa6c0dda03228d79aace9397ae130fc2ab3b43b9cdae8303c",
+    "fresh_15s/iid_exponential_validation_predictions.parquet": "aeb2ce289d15ced9f91b367b2e1cd2f1af6436663c64965254ef266c55865b44",
+    "fresh_15s/origin_daily_sufficient_statistics.parquet": "f167fa837d156c954fe47eb69fdf2f499bae15e8896cc04424585c3a38d878e4",
+    "fresh_15s/seasonal_parameters.parquet": "1c694152a844d20a7c67de6fa89383b5718dee69141512623124bed08a4a4a0e",
+    "fresh_15s/seasonal_spells.parquet": "419dbc4948c77c315c26ba4430b0ad4682757a5c1d89a75904b4caad9229431d",
+    "fresh_15s/statistics.json": "f09d92e3dd6fc8cc593026e1bf07195fb32b9a572e4fcdea3f4ee121807b7d6c",
+    "fresh_15s/validation_spells.parquet": "fc0612b8a79b81ea06887eb99dbe17848ed9a37dd83c34301cd5570ab28224fb",
+    "fresh_15s/weibull_acd_daily_validation.parquet": "c378a970509e47883d721171b1b06226ea784fb9def7158298bbeb5ff9c12c0c",
+    "fresh_15s/weibull_acd_validation_predictions.parquet": "c50a6ac9764c85bf8768ebe7b3a1ce152d27e2e0adb0c40989486dd5e8038c39",
+    "fresh_30s/eacd_daily_validation.parquet": "5974945e4fe0887059cb8ad44485b0d695c533ab08ed3f4b53249b4819faf45b",
+    "fresh_30s/eacd_validation_predictions.parquet": "703b6d0068db457fdd9dda01eec1eb09b8c37462463ebdfddd97f89adcf89818",
+    "fresh_30s/historical_cutoff_corrections.parquet": "7048f33eb10f258fb71d0d410b1eb911e8fe96f738a72c7b162ed34055577362",
+    "fresh_30s/iid_exponential_daily_validation.parquet": "fbce8da28b69c3a5869a62d480e77faff68cc0448cc9a175670a73a531cdaf1c",
+    "fresh_30s/iid_exponential_validation_predictions.parquet": "7d59a00f83eeae2fdf95755d60b1b9d87dfa47a6c6b67af5e2ee895fb6f9a1c3",
+    "fresh_30s/origin_daily_sufficient_statistics.parquet": "269a9ed893a0386f7ddd981dfd3d66b6c7725953126c85fe9c2fedcda7420e1d",
+    "fresh_30s/seasonal_parameters.parquet": "bfa84f0349bc99e40551423e9e76af570dc9d9f77dbb80dc00b1a4ccb12ae5fa",
+    "fresh_30s/seasonal_spells.parquet": "3a774e2df579a60b9418f1d4c90f5fa52f25f64d8b36d29ec1e9dcae0ee9f318",
+    "fresh_30s/statistics.json": "dd0d8a51f8e5d2160d17c77fb212d5251717126b7239a4e69923a1e9332c3365",
+    "fresh_30s/validation_spells.parquet": "02126326dcc2aaa06f7d6997d088438c7d242c2f8bc01a355467b12bafd83c63",
+    "fresh_30s/weibull_acd_daily_validation.parquet": "e158536788d17e45bdafc24402628eee6c8eb2ad20917d2fff9bd5ee86ea8ba0",
+    "fresh_30s/weibull_acd_validation_predictions.parquet": "2ecf45cf150977cb28320c857de2ccd50c4f220059a1d06dc55d954c8dc3bf61",
+    "fresh_60s/eacd_daily_validation.parquet": "96e4bddc6bc20f4739192b10b203731936331b11562ec1a10ab5a39f1c2d8dac",
+    "fresh_60s/eacd_validation_predictions.parquet": "08e055d6014075446713d41a896b8e674bf1ca5c9bfbce069760b30c7a849f23",
+    "fresh_60s/historical_cutoff_corrections.parquet": "22ca96cc347adbbc416789f5a96b5e1a483216de46e140dde8d77e5ee4acf263",
+    "fresh_60s/iid_exponential_daily_validation.parquet": "935e6144edcea4158785a676f72a94abe5926c6d332a82bf33ef87904fd7e8b3",
+    "fresh_60s/iid_exponential_validation_predictions.parquet": "bf8931465eacca9f8806a883dded7973c0c62a926d7edbf9eec33cbf60a0d30f",
+    "fresh_60s/origin_daily_sufficient_statistics.parquet": "a49c06bdf8413851fd9045d1a2ea285c76718af6d95c482247ce58f303233353",
+    "fresh_60s/seasonal_parameters.parquet": "a2f8366ad4d344087f8fdfa412f8156e7d186f8ce94b4feee9305e930377cfc6",
+    "fresh_60s/seasonal_spells.parquet": "7ec8eeaee1152bc2226330d140bd2d8a196459ba7380fea960fd3f52cb1663ac",
+    "fresh_60s/statistics.json": "b52daa7b0514abce49e57292b4b820e73ebc12dc4f3817cafbf6acc9b161583d",
+    "fresh_60s/validation_spells.parquet": "a353fc4a5b00231cc7b8852a2ad62de214a6cb8b965df81359f1222c81dd50e4",
+    "fresh_60s/weibull_acd_daily_validation.parquet": "4bbe7a5592f57511fdf63dcf8b12e50ff9a5b31e279b5b4118abd99560dcfed3",
+    "fresh_60s/weibull_acd_validation_predictions.parquet": "6e4a84b462896962227ca96061f968816af06b9756718f06b442ebef1c41dde5",
+    "kernel_build.json": "4e2ae6679035aee36b180fe06e7a5b26af9e6d4cebd652c09a6a412d207d15b7",
+    "methodology.json": "af0eb0b42c69bafed6c2bfb94164fb764b09fd85c3021104de1144ca40ba1255",
+    "statistics.json": "6d7f599004832b84075adfb9d992221e021d57e4277739ab111cf1dbba22a415",
+    "structural_only/eacd_daily_validation.parquet": "1492df20c889e01f643c46ea3e34b9b2818f577d0d443f585a61990505684875",
+    "structural_only/eacd_validation_predictions.parquet": "fd993abb61f2521f7205b19c44a23225a9510f57de1a97fc0def685540f5b2f1",
+    "structural_only/historical_cutoff_corrections.parquet": "22ca96cc347adbbc416789f5a96b5e1a483216de46e140dde8d77e5ee4acf263",
+    "structural_only/iid_exponential_daily_validation.parquet": "f9066bbeca9307d2570e6adc46ffa76cfac6dd6d693bb94584b781fed7bbc4af",
+    "structural_only/iid_exponential_validation_predictions.parquet": "0a114d12003b26bb6b74b7518fa9b63e189f28f94a8befcc281df15497b305e8",
+    "structural_only/origin_daily_sufficient_statistics.parquet": "9d18990e1bb0cee74edcc800d335a87087d584cfe290ea302ace531cb2a33f80",
+    "structural_only/seasonal_parameters.parquet": "e69c4511c73d6ba4cb5712057b1256b6266bd22cead5d8ca4e010b3b8badb296",
+    "structural_only/seasonal_spells.parquet": "3d173a41fe2a47059985d9a5a1cf2f790fde5839200fffcfdb700bc9756c08f8",
+    "structural_only/statistics.json": "4dbde4f1e9d5b7068e742e86d2aeee7b2ad87d25bb2fc42470d13cad38067ced",
+    "structural_only/validation_spells.parquet": "72e7afe7a07febee127b3e9b73915c21e37fddbeb90618f92c6c514e52e3d5be",
+    "structural_only/weibull_acd_daily_validation.parquet": "b30af392e7d801992fd0abad3f33fc4bc547a8462b0e648786ee1579c5f894d9",
+    "structural_only/weibull_acd_validation_predictions.parquet": "597f0b6d15cb5664e0116337d2a56a44cdfef47cc3ba9408a5166ea475bb12f7",
+    "structural_only/weibull_omit_structural_tail_daily_validation.parquet": "73dced741f4745b5e0f3fde6e70dc301cf74eadedc5203f7b83873493ae77bba",
+    "structural_only/weibull_omit_structural_tail_validation_predictions.parquet": "1b20d3c26f223c024f5d02e184fd38d5865b6f0038c63ad88d4eea3e285545b3",
+    "structural_only/weibull_unit_initialization_daily_validation.parquet": "e79dd46810a744a5f32f5cf77e80a8c14f3ae6fff7530b5d3ddc194740ca5e5a",
+    "structural_only/weibull_unit_initialization_validation_predictions.parquet": "fb8f20f0e59a052e3cec266677e07773ac9258aa760f9238d097823bc3bf84ef",
+    "test_evidence.json": "bd96bee613507db2ccc01804769df0cc628c6a30fd5313248d3159bc84c0c0dd"
+  }
+}

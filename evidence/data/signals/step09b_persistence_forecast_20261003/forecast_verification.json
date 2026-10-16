@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "coefficient_solver": "independent equilibrated QR",
+  "ols_fits_verified": 118,
+  "coefficients_verified": 4061,
+  "forecast_rows_verified": 535672,
+  "prediction_origins_verified": 133918,
+  "eligible_origins_verified": 127058,
+  "all_origin_and_method_keys_preserved": true,
+  "future_outcomes_in_forecast_table": false,
+  "training_membership_reconstructed_from_maturity": true,
+  "unseen_marginal_level_fallbacks_verified": true,
+  "producer_helpers_imported": false,
+  "forecast_superiority_established": false
+}

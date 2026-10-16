@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "review_file": "reports/STEP03_TIMING_FORECAST_RESULTS_REVIEW_2026_10_08.md",
+  "review_sha256": "1f057bf99bdd7259e27f3c193a406370d03fb6806c20f940d7f45dd1230472ca",
+  "review_local_links_checked": 11,
+  "fixed_pattern_rows_rendered": 24,
+  "daily_contribution_rows_rendered": 10,
+  "protected_files_unchanged": 39,
+  "frozen_code_copies_match": true,
+  "primary_summary_unchanged": true,
+  "supplementary_reporting_source_archived": "data/signals/step03_timing_forecast_20261008/code/reports/complete_timing_forecast_reporting.py",
+  "additional_model_fits": 0,
+  "scope": "Report rendering and preservation checks only; no statistical coverage or field priority certification."
+}

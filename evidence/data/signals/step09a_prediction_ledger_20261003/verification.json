@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "origins_verified": 135724,
+  "origin_eligible_verified": 128841,
+  "predictor_rows_verified": 135724,
+  "labels_verified": 271448,
+  "folds_verified": 59,
+  "membership_rows_verified": 4042241,
+  "prediction_origins_verified": 133918,
+  "checks": [
+    "full_parent_identity_and_strict_left_timing",
+    "strict_prior_predictor_allowlist_and_independent_algebra",
+    "origin_eligibility_from_current_and_prior_primitives",
+    "zero_and_negative_J_retained",
+    "all_origin_horizon_pairs_preserved",
+    "scheduled_label_maturity_not_quote_timestamp",
+    "endpoint_status_and_J_C_I",
+    "expanding_primary300_training_with_maturity_at_or_before_cutoff",
+    "all_origins_issued_in_each_half_open_prediction_block",
+    "derived_statistics_counts"
+  ],
+  "producer_helpers_imported": false,
+  "empirical_models_fitted": 0,
+  "forecast_performance_validated": false,
+  "live_feed_validated": false,
+  "untouched_holdout": false
+}

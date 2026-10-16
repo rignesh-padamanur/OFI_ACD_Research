@@ -1,0 +1,133 @@
+{
+  "run_id": "step07a_regression_inputs_20260930_v2",
+  "stage": "07a_regression_input_audit",
+  "status": "verified_development_regression_inputs",
+  "created_at_utc": "2026-09-30T14:28:20.871797+00:00",
+  "scope": "reused_development_only",
+  "primary_policy": "structural_only",
+  "parent_analysis_ledger": "step06c_analysis_ledger_20260929",
+  "parent_reference_detector": "step05a_original_detector_audit_20260928",
+  "configuration": {
+    "reference_start": "2024-02-26T00:00:00+00:00",
+    "reference_cutoff": "2024-04-22T00:00:00+00:00"
+  },
+  "inputs": {
+    "anchors": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step06c_analysis_ledger_20260929/anchors.parquet",
+      "sha256": "862343388b2de1f436f0f9423030d0d4244a9b99e07568e35cb31f1ec42cd620"
+    },
+    "outcomes": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step06c_analysis_ledger_20260929/outcomes.parquet",
+      "sha256": "b3547f2a1e0ec47f9c316d84f70f596c3cadf909a8efa20a36b0a1a1d008653e"
+    },
+    "reference_bins": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step05a_original_detector_audit_20260928/structural_only/scored_bins.parquet",
+      "sha256": "d825275bc91a075dda2038928992242be72b25a146c28c7c3373824ec1af6fa7"
+    },
+    "reference_parameters": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step05a_original_detector_audit_20260928/structural_only/parameters.json",
+      "sha256": "596c5834fb7e893111a3f054f73a8b392da8a5d9d00841099934c9d87bead53f"
+    },
+    "parent_manifest": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step06c_analysis_ledger_20260929/manifest.json",
+      "sha256": "74fcc7a60c575a95b2b0f122c1a5ec3ec9acbbf2761de8bbde61c0aaf4e4c0b9"
+    },
+    "reference_manifest": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step05a_original_detector_audit_20260928/manifest.json",
+      "sha256": "a81b84356e68670427f802ff4c2d0635508ae379f158c9a929b63ba6b9ea6ac3"
+    },
+    "response_manifest": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step06a_price_responses_20260928/manifest.json",
+      "sha256": "696f9850bdeb960ca1e724b53f7fcf844ab3c3f9a111728f56b4fbf25abac39a"
+    },
+    "episode_manifest": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step05b_observable_episodes_20260928/manifest.json",
+      "sha256": "2e1de857ea50ef4ac94b8116c545053a0461eefa71df7af41b2f2e55010f99f1"
+    },
+    "parent_verification": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step06c_analysis_ledger_20260929/verification.json",
+      "sha256": "f13e5c1b7ee2e1a1d9ece96c8752b52cfc1cb35336c65db61bf03a548b673786"
+    },
+    "reference_verification": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step05a_original_detector_audit_20260928/verification.json",
+      "sha256": "f955dd25c677845cef55b599cc4d63ba3e284dbb357a9f302b41466228a21f88"
+    }
+  },
+  "previous_files": {
+    "src/run_corrected_regressions.py": "f5afc0497ad49f5a651773fac384ac352f4098f46fcd31bb538bdbf7b6bc72af",
+    "reports/pipeline_master_statistics.json": "0992f19b252675c194a0efe6c1e8fccb24437b25982f835acae9c3163740aa53",
+    "reports/PIPELINE_REPAIR_LOG.md": "1b5d83b300f380aceb0cc715b1dfc553ce4f658c4dc7260b59f03556ce70a7a0",
+    "REPAIR_WORKFLOW.md": "9491798dc478b34528303428bfa7b4de05cc81b01976834ad6c0ec2f5e180902",
+    "data/active_adaptive_duration_audit.json": "e7c9d6b7d3716cfe52c018dbe73409bca7f18e886099833f6dc5b098e28558b5",
+    "data/active_analysis_ledger_audit.json": "9a7dc2201dc3571fdf94c4b3f13240da326527aa678aa404a5ec7726a2d919a0",
+    "data/active_calibration.json": "b6361c8ac3a36eb176b09f32dd8c7f93ff7a844bbfcf680898abf51c69b31b58",
+    "data/active_discrete_duration_audit.json": "d0a71db3b67a1b068349d64cdc9e999d8c8df04d5eddd55f236f58f6cd770894",
+    "data/active_duration_model_audit.json": "77c5512d276d06e2f3c3198b280bb2d9f509c17b4746b90d1157aa61a4cf4b99",
+    "data/active_duration_observation.json": "67bed53a6e03f2ac567d908212fc26562855144f2532d8081e143aec4fb29337",
+    "data/active_duration_tail_audit.json": "184282b9bb25a05792922b1bb563794209ecd04fcd55ef826eeebefe24ea545d",
+    "data/active_eligibility.json": "99e969219d9506599061dd047d96de531547ba1888df1c893bdbd0ddfac6b406",
+    "data/active_episode_audit.json": "c1a2ab56c686a76ae7b63358014322cfd46338ab2b066c97bb1c4649528cb148",
+    "data/active_event_detector_audit.json": "d9704eb4f59df8ed8ec030b45b315c98e3476633853ee24023d37f4007b8719a",
+    "data/active_origin_hour_duration_audit.json": "f17475bfa4ea518fd6099d99240981ef4e7f0f4e12b61fe3c6085f1b9cad0a5a",
+    "data/active_price_response_audit.json": "a4e1f5328e63a03153a5bfc54877dcb26f5d91717e72fa71507933d324a0f98d",
+    "data/active_quote_imbalance.json": "0bfcc2a4b2b2ef571347ce562722d4c6c1ca26f9a496dcf5504dda3aa65a8364",
+    "data/active_run.json": "6f7a8ba254a487960c9e5b5285e15d64a62ff6691f6884530dc53bff5f7fd78d",
+    "data/active_signal_clock.json": "43524c8e8190ad48692c26927573fadfd867ebe418f6cf7a7567f2fcdfa62977",
+    "data/active_state_measurement_audit.json": "332be5f7575adb3cbdec804cb151a4fe51526f42aa4bcf43f5278987c9408fd3",
+    "data/active_timestamp_audit.json": "603fd8b51f9a46aaf89b0a6c787c141278770f41e422c9342ed262672c8721a0"
+  },
+  "snapshot_path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/reports/repair_history/2026-09-30_pre_stage07a_source",
+  "code_sha256": {
+    "repair_estimation_inputs.py": "81495143b10fa0a3d2a1596d3af947d3faf25f33943c0bdbe925375657766cc6",
+    "src/estimation_inputs.py": "0b9853150f63c7bafa0df6c8586bfd3d90fcafae2e805cb3ff6b80eeedae3c5a",
+    "src/verify_estimation_inputs.py": "665e197203cd833252b8e0084f3649fb9dad6044ef887e8bc3fd078d8dc3b538",
+    "src/data_preparation.py": "199ed717ada3eaea625ffb3da788e80a75a7765c7afdb2b560433c6f3a100831",
+    "src/run_corrected_regressions.py": "ebf28124ea0c5ec8eddf3b89a48cf19b3d0ed9c7e09e1861a00c77e20a9a2455",
+    "tests/test_estimation_inputs.py": "865e3fd8bc5a3436bba888b6821ed51e8491f07de55d51f72a44a62f341fd743",
+    "reports/STAGE07A_ESTIMATION_INPUT_PROTOCOL.md": "4d2b6cf516f15d5b7878a4b5400437e10aa031b98b1d12c9f1c8b74f66841abc",
+    "reports/stage07a_closeout.py": "bb3fa2fdeb3551ec82b39bd797c2d580fc04561c9d8dde37edf4d62dd9cb899a"
+  },
+  "production_inference_approved": false,
+  "downstream_ready": false,
+  "environment": {
+    "python": "3.12.13",
+    "numpy": "2.5.0",
+    "pandas": "2.2.3",
+    "pyarrow": "18.1.0"
+  },
+  "outputs": {
+    "calendar_support.parquet": "fe17f7860d15e466b0053543f90633ff7a7f6f0ab164e4345d28643217c92375",
+    "design_rows.parquet": "ed0b14b13f0eee9f71379a26e8a96ee1510fbdd0c95ee6e9702b2f7a55adc2e4",
+    "features.parquet": "e0c211a49caded392b51ca30519a07a6e0cf5e55715d739d2777bc7b0517ee85",
+    "full_test_sources/test_acquisition.py": "701e0dd7b4116d90a87b6e44bfb05aafd753445ff22834d3b69771f6db9175b0",
+    "full_test_sources/test_adaptive_duration.py": "0cce49d871ed50caa4f257848b3d7377e3233dd0c816a8111f7bb5e716d0eda8",
+    "full_test_sources/test_analysis_ledger.py": "f6bc92a21edc4b8db8eacb4830b264a5d4535412eb0662916b73d8a5142ab71c",
+    "full_test_sources/test_chronological_acd.py": "e247a0eae7a534dfc98a6deb3d25e9232f65c86054ea3bdacfc47347b0c7000e",
+    "full_test_sources/test_data_preparation.py": "7872b7e6f5c4fd16092edffcbf17537a38b51eaabe3fe959d4cb7592cab6ebd8",
+    "full_test_sources/test_discrete_duration.py": "798f52843489e52046374f1ed5f8473281d2363e93c219e331f24bd97f6461b7",
+    "full_test_sources/test_duration_observation.py": "f5daa6aa8154458ef4be245a68589d0492774d2859e747557ff7cb65127b3af1",
+    "full_test_sources/test_duration_shrinkage.py": "52711b16120239f672aa4289e5929c6a961d6b8f92afe7cde05954fcb6f0607a",
+    "full_test_sources/test_estimation_inputs.py": "865e3fd8bc5a3436bba888b6821ed51e8491f07de55d51f72a44a62f341fd743",
+    "full_test_sources/test_event_audit.py": "800b37d5c08602e8696a900f23349c23d81d13285e365a407917379b693cc809",
+    "full_test_sources/test_event_episodes.py": "301da11519b5b37a5958bb1fb071297804eac3f3017536ebfe1006d2f32a5b7c",
+    "full_test_sources/test_hour_conditioned_duration.py": "cf5180ba9eadd0f61f21206e5c88fcb1bf84239b9b2a819b0369a74405b12989",
+    "full_test_sources/test_observation_eligibility.py": "c6e4a913492e36b5161006b4b4a48aa279d32bcbf08b45778b0e6e6c2540c1b3",
+    "full_test_sources/test_price_responses.py": "a868ed7b57c1f82db7075520211673fdb3e9750b4d50937e395a1f527596c393",
+    "full_test_sources/test_quote_imbalance.py": "c87bfe177c64d93f06d52114df27978dfb3d6cdce4c86f2c2c3bc25cbba7fde0",
+    "full_test_sources/test_seasonal_calibration.py": "41fa55bb7611a144c70bbb6ef28ab3484e4ecadf34f420db9847f4e39da552af",
+    "full_test_sources/test_signal_clock.py": "9de944d553ecbb87cbbb5be5e02ca0d30bc71b35bc20f1c77a1a0dc2f5f49e4e",
+    "full_test_sources/test_state_measurement.py": "f8e661bc8e8ad652b5a6255694f7409ccadd5c80f98c48d321d0fe4406749b32",
+    "full_test_sources/test_timestamp_audit.py": "65775a309815b2e0b804d4ea39e9fb2c44f2be253ed733652b60c5d740fb8c7b",
+    "legacy_guard.json": "39aecbdb24aef1eb716ead399f4ae994070172ca0544feeb644fbcc6a5bc91cc",
+    "reference.parquet": "5c5e208ba970f6044f4254222d597bfc5471e9d593adac986cbff096a4546b5c",
+    "samples.parquet": "724f235f6e686d98e8d401c5c17b13b1c61377271ab29dd58cf7d1e00cc37734",
+    "scaling.json": "aa891c425a734374b0d74d0e16ab06b5353106d91dc1d02f260cca75e23cc094",
+    "schemas.json": "0b9eb380bf903fa2e3efc0332e526ddc3c5607ccc7e69269749baf8b6f7b27ec",
+    "specification.json": "bafa7ad6c63dcbefe738de20d0b267369cc8848ce27074c62293f31215354083",
+    "statistics.json": "0f53413c5d8dce0e4c76b4606ca751d2c47cfaa0a0c02c8bdb7ca1bf0afbfd92",
+    "test_evidence.json": "57e6fc1c0a49379263b30da4ecaf237214255e18f3a4057023e76719a2c48a8d",
+    "verification.json": "3d261be2e08b1f120bed7995bb06bcb3c7b90a034eef8754bed25180836a4051",
+    "review.md": "8333444914961cbe70cecb23b9b02b7fa56ddcf21233c0bc0a66342d62763740"
+  },
+  "supersedes_unregistered_run": "step07a_regression_inputs_20260930"
+}

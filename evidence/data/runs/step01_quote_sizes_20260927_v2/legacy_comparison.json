@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "comparison": "every legacy price/time/derived field; exact equality including NaNs",
+  "rows_checked": 55708318,
+  "columns_checked": [
+    "timestamp",
+    "ask",
+    "bid",
+    "spread",
+    "mid",
+    "spread_pips",
+    "delta_sec"
+  ],
+  "legacy_clean_sha256": "de56345ff36105dc86249e4356284920e4306f8474dada8ac7b9fae62c75d988",
+  "comparison_script_sha256": "6d01af44c41b4ad529201cf9ff65177598ca03e56e37c3c4f37bfa9e63537b18"
+}

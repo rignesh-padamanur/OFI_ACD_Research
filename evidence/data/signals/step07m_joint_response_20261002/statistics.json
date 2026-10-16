@@ -1,0 +1,124 @@
+{
+  "status": "descriptive_joint_response_complete",
+  "start": "2024-05-06T00:00:00+00:00",
+  "end": "2026-08-01T00:00:00+00:00",
+  "calendar_days": 817,
+  "by_horizon": {
+    "60": {
+      "main_continuation_rows": 127052,
+      "joint_rows": 127052,
+      "missing_joint_rows": 0
+    },
+    "300": {
+      "main_continuation_rows": 127013,
+      "joint_rows": 127013,
+      "missing_joint_rows": 0
+    }
+  },
+  "common_joint_events": 127013,
+  "set_relation": {
+    "only_60": 39,
+    "only_300": 0,
+    "equal": false,
+    "joint_300_subset_60": true
+  },
+  "cohorts": {
+    "horizon_joint_60": {
+      "n": 127052,
+      "mean": {
+        "J": 0.3802954695715127,
+        "C": -0.0031530397002802516,
+        "I": 0.3771424298712325
+      },
+      "initial_sign_counts": {
+        "positive": 112335,
+        "zero": 5443,
+        "negative": 9274
+      },
+      "endpoint_pattern_counts": {
+        "unchanged": 5755,
+        "extended": 55850,
+        "retraced": 20592,
+        "at_pre_onset": 4400,
+        "beyond_pre_onset": 35012,
+        "initial_zero_positive": 2578,
+        "initial_zero_negative": 2398,
+        "initial_zero_flat": 467
+      }
+    },
+    "common_horizons_joint_60": {
+      "n": 127013,
+      "mean": {
+        "J": 0.3802575326935025,
+        "C": -0.0032709250234228826,
+        "I": 0.37698660767007963
+      },
+      "initial_sign_counts": {
+        "positive": 112304,
+        "zero": 5442,
+        "negative": 9267
+      },
+      "endpoint_pattern_counts": {
+        "unchanged": 5754,
+        "extended": 55828,
+        "retraced": 20587,
+        "at_pre_onset": 4400,
+        "beyond_pre_onset": 35002,
+        "initial_zero_positive": 2577,
+        "initial_zero_negative": 2398,
+        "initial_zero_flat": 467
+      }
+    },
+    "horizon_joint_300": {
+      "n": 127013,
+      "mean": {
+        "J": 0.3802575326935025,
+        "C": 0.014752426916932355,
+        "I": 0.39500995961043484
+      },
+      "initial_sign_counts": {
+        "positive": 112304,
+        "zero": 5442,
+        "negative": 9267
+      },
+      "endpoint_pattern_counts": {
+        "unchanged": 2099,
+        "extended": 58637,
+        "retraced": 10816,
+        "at_pre_onset": 2110,
+        "beyond_pre_onset": 47909,
+        "initial_zero_positive": 2671,
+        "initial_zero_negative": 2617,
+        "initial_zero_flat": 154
+      }
+    },
+    "common_horizons_joint_300": {
+      "n": 127013,
+      "mean": {
+        "J": 0.3802575326935025,
+        "C": 0.014752426916932355,
+        "I": 0.39500995961043484
+      },
+      "initial_sign_counts": {
+        "positive": 112304,
+        "zero": 5442,
+        "negative": 9267
+      },
+      "endpoint_pattern_counts": {
+        "unchanged": 2099,
+        "extended": 58637,
+        "retraced": 10816,
+        "at_pre_onset": 2110,
+        "beyond_pre_onset": 47909,
+        "initial_zero_positive": 2671,
+        "initial_zero_negative": 2617,
+        "initial_zero_flat": 154
+      }
+    }
+  },
+  "identity_max_abs": 1.4210854715202004e-14,
+  "descriptive_only": true,
+  "empirical_models_fitted": 0,
+  "uncertainty_computed": false,
+  "inference_approved": false
+}

@@ -1,0 +1,378 @@
+{
+  "source_spell_rows": 7135589,
+  "source_completed_events": 7090258,
+  "source_exposure_ns": 7170827747000000,
+  "seasonal_ready_spell_rows": 3545786,
+  "seasonal_unavailable_spell_rows": 3589803,
+  "seasonal_status_counts": {
+    "0": 3587117,
+    "1": 2686,
+    "5": 3545786
+  },
+  "smallest_completed_duration_sec": 0.05,
+  "models": {
+    "iid_exponential": {
+      "distribution": "exponential",
+      "omit_structural_training_tails": false,
+      "unit_initialization": false,
+      "optimization_attempts": [],
+      "parameter_cutoff": "2024-04-22T00:00:00+00:00",
+      "training_start": "2024-02-26T00:00:00+00:00",
+      "status": "fitted_reference",
+      "parameters": {
+        "omega": 1.1091811814065762,
+        "alpha": 0.0,
+        "beta": 0.0,
+        "shape": 1.0
+      },
+      "numerical_constraint_warning": false,
+      "training_objective_normalized": 1.094794030957876,
+      "training_spells": 2849553,
+      "training_events": 2826759,
+      "validation": {
+        "spells": 696233,
+        "completed_events": 689883,
+        "incomplete_positive_exposures": 6350,
+        "sequence_resets": 6349,
+        "sequence_fragments": 6350,
+        "negative_log_score_seconds_mean": 0.9875018649999101,
+        "total_hazard": 627727.1589189196,
+        "event_hazard_ratio": 1.0990172883201772,
+        "martingale_mean": 0.08927448294045293,
+        "martingale_lag1_correlation": 0.11839008978037599,
+        "adjacent_pairs": 689883,
+        "hazard_bands": [
+          {
+            "lower_hazard": 0.0,
+            "upper_hazard": 0.010050335853501442,
+            "events": 2,
+            "hazard_exposure": 6997.37513239178,
+            "event_exposure_ratio": 0.0002858214633572715
+          },
+          {
+            "lower_hazard": 0.010050335853501442,
+            "upper_hazard": 0.051293294387550536,
+            "events": 43370,
+            "hazard_exposure": 28148.29632221951,
+            "event_exposure_ratio": 1.5407682050641511
+          },
+          {
+            "lower_hazard": 0.051293294387550536,
+            "upper_hazard": 0.10536051565782631,
+            "events": 130480,
+            "hazard_exposure": 31885.6762297762,
+            "event_exposure_ratio": 4.0921195793286085
+          },
+          {
+            "lower_hazard": 0.10536051565782631,
+            "upper_hazard": 0.6931471805599453,
+            "events": 316479,
+            "hazard_exposure": 176803.9605278098,
+            "event_exposure_ratio": 1.7899994946675444
+          },
+          {
+            "lower_hazard": 0.6931471805599453,
+            "upper_hazard": 2.302585092994046,
+            "events": 130518,
+            "hazard_exposure": 199131.5279753282,
+            "event_exposure_ratio": 0.6554361397566878
+          },
+          {
+            "lower_hazard": 2.302585092994046,
+            "upper_hazard": 4.605170185988091,
+            "events": 46609,
+            "hazard_exposure": 108320.32235938644,
+            "event_exposure_ratio": 0.43028860129644103
+          },
+          {
+            "lower_hazard": 4.605170185988091,
+            "upper_hazard": null,
+            "events": 22425,
+            "hazard_exposure": 76440.00037200765,
+            "event_exposure_ratio": 0.29336734551105575
+          }
+        ],
+        "diagnostic_flags": [
+          "martingale_lag1_dependence",
+          "hazard_band_calibration"
+        ],
+        "reference_diagnostic_screen_passed": false,
+        "inference": "Descriptive predeclared screening tolerances, conditional on working observation assumptions; no formal p-values."
+      }
+    },
+    "eacd": {
+      "distribution": "exponential",
+      "omit_structural_training_tails": false,
+      "unit_initialization": false,
+      "optimization_attempts": [
+        {
+          "start_alpha": 0.05,
+          "start_beta": 0.85,
+          "start_shape": 1.0,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 30,
+          "evaluations": 34,
+          "objective": 0.9315955965181525,
+          "gradient_inf_norm": 5.427845992347913e-06,
+          "omega": 0.0017364214464977443,
+          "alpha": 0.03846468239589259,
+          "beta": 0.9605294159074044,
+          "shape": 1.0,
+          "near_constraint": true
+        },
+        {
+          "start_alpha": 0.15,
+          "start_beta": 0.7,
+          "start_shape": 1.0,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 27,
+          "evaluations": 31,
+          "objective": 0.9315955965146415,
+          "gradient_inf_norm": 5.428782691448142e-06,
+          "omega": 0.0017364046233093822,
+          "alpha": 0.03846443649869693,
+          "beta": 0.9605296618030894,
+          "shape": 1.0,
+          "near_constraint": true
+        },
+        {
+          "start_alpha": 0.3,
+          "start_beta": 0.5,
+          "start_shape": 1.0,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 31,
+          "evaluations": 34,
+          "objective": 0.9315955965146654,
+          "gradient_inf_norm": 5.430125489688797e-06,
+          "omega": 0.0017364045253504855,
+          "alpha": 0.03846443653564956,
+          "beta": 0.9605296617661369,
+          "shape": 1.0,
+          "near_constraint": true
+        }
+      ],
+      "parameter_cutoff": "2024-04-22T00:00:00+00:00",
+      "training_start": "2024-02-26T00:00:00+00:00",
+      "status": "fitted_reference",
+      "parameters": {
+        "omega": 0.0017364046233093822,
+        "alpha": 0.03846443649869693,
+        "beta": 0.9605296618030894,
+        "shape": 1.0
+      },
+      "numerical_constraint_warning": true,
+      "training_objective_normalized": 0.9315955965146415,
+      "training_spells": 2849553,
+      "training_events": 2826759,
+      "validation": {
+        "spells": 696233,
+        "completed_events": 689883,
+        "incomplete_positive_exposures": 6350,
+        "sequence_resets": 6349,
+        "sequence_fragments": 6350,
+        "negative_log_score_seconds_mean": 0.8136406117163966,
+        "total_hazard": 703594.9546395806,
+        "event_hazard_ratio": 0.9805115790709378,
+        "martingale_mean": -0.019694491125213123,
+        "martingale_lag1_correlation": 0.009558562311807661,
+        "adjacent_pairs": 689883,
+        "hazard_bands": [
+          {
+            "lower_hazard": 0.0,
+            "upper_hazard": 0.010050335853501442,
+            "events": 90,
+            "hazard_exposure": 6997.278115990138,
+            "event_exposure_ratio": 0.01286214418065398
+          },
+          {
+            "lower_hazard": 0.010050335853501442,
+            "upper_hazard": 0.051293294387550536,
+            "events": 37692,
+            "hazard_exposure": 28160.83606846338,
+            "event_exposure_ratio": 1.3384545795573992
+          },
+          {
+            "lower_hazard": 0.051293294387550536,
+            "upper_hazard": 0.10536051565782631,
+            "events": 81098,
+            "hazard_exposure": 33329.37958688071,
+            "event_exposure_ratio": 2.4332286110696835
+          },
+          {
+            "lower_hazard": 0.10536051565782631,
+            "upper_hazard": 0.6931471805599453,
+            "events": 321166,
+            "hazard_exposure": 220291.16087854345,
+            "event_exposure_ratio": 1.4579159632150354
+          },
+          {
+            "lower_hazard": 0.6931471805599453,
+            "upper_hazard": 2.302585092994046,
+            "events": 169902,
+            "hazard_exposure": 238604.19380432792,
+            "event_exposure_ratio": 0.7120662771725274
+          },
+          {
+            "lower_hazard": 2.302585092994046,
+            "upper_hazard": 4.605170185988091,
+            "events": 57130,
+            "hazard_exposure": 115936.79993802865,
+            "event_exposure_ratio": 0.49276847412156904
+          },
+          {
+            "lower_hazard": 4.605170185988091,
+            "upper_hazard": null,
+            "events": 22805,
+            "hazard_exposure": 60275.30624734623,
+            "event_exposure_ratio": 0.37834731036317293
+          }
+        ],
+        "diagnostic_flags": [
+          "hazard_band_calibration"
+        ],
+        "reference_diagnostic_screen_passed": false,
+        "inference": "Descriptive predeclared screening tolerances, conditional on working observation assumptions; no formal p-values."
+      }
+    },
+    "weibull_acd": {
+      "distribution": "weibull",
+      "omit_structural_training_tails": false,
+      "unit_initialization": false,
+      "optimization_attempts": [
+        {
+          "start_alpha": 0.05,
+          "start_beta": 0.85,
+          "start_shape": 0.7,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 43,
+          "evaluations": 47,
+          "objective": 0.8389052944270553,
+          "gradient_inf_norm": 1.1943965299958392e-06,
+          "omega": 0.0015841677935438674,
+          "alpha": 0.03804935884396823,
+          "beta": 0.9609447369075084,
+          "shape": 0.7476405507648906,
+          "near_constraint": true
+        },
+        {
+          "start_alpha": 0.15,
+          "start_beta": 0.7,
+          "start_shape": 1.0,
+          "success": true,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 36,
+          "evaluations": 41,
+          "objective": 0.8389052944281907,
+          "gradient_inf_norm": 1.3642968791291454e-06,
+          "omega": 0.0015841712346997662,
+          "alpha": 0.038049783216052464,
+          "beta": 0.9609443125380315,
+          "shape": 0.7476408770220362,
+          "near_constraint": true
+        },
+        {
+          "start_alpha": 0.3,
+          "start_beta": 0.5,
+          "start_shape": 0.5,
+          "success": true,
+          "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+          "iterations": 35,
+          "evaluations": 43,
+          "objective": 0.8389060326063648,
+          "gradient_inf_norm": 8.508198437641901e-05,
+          "omega": 0.0015925382479039132,
+          "alpha": 0.0381319336475882,
+          "beta": 0.9608590150171084,
+          "shape": 0.7476510841512574,
+          "near_constraint": true
+        }
+      ],
+      "parameter_cutoff": "2024-04-22T00:00:00+00:00",
+      "training_start": "2024-02-26T00:00:00+00:00",
+      "status": "fitted_reference",
+      "parameters": {
+        "omega": 0.0015841677935438674,
+        "alpha": 0.03804935884396823,
+        "beta": 0.9609447369075084,
+        "shape": 0.7476405507648906
+      },
+      "numerical_constraint_warning": true,
+      "training_objective_normalized": 0.8389052944270553,
+      "training_spells": 2849553,
+      "training_events": 2826759,
+      "validation": {
+        "spells": 696233,
+        "completed_events": 689883,
+        "incomplete_positive_exposures": 6350,
+        "sequence_resets": 6349,
+        "sequence_fragments": 6350,
+        "negative_log_score_seconds_mean": 0.7342270423137575,
+        "total_hazard": 699311.2708315295,
+        "event_hazard_ratio": 0.9865177765255826,
+        "martingale_mean": -0.013541832736353492,
+        "martingale_lag1_correlation": 0.012010571271466796,
+        "adjacent_pairs": 689883,
+        "hazard_bands": [
+          {
+            "lower_hazard": 0.0,
+            "upper_hazard": 0.010050335853501442,
+            "events": 0,
+            "hazard_exposure": 6997.375482290869,
+            "event_exposure_ratio": 0.0
+          },
+          {
+            "lower_hazard": 0.010050335853501442,
+            "upper_hazard": 0.051293294387550536,
+            "events": 746,
+            "hazard_exposure": 28709.920339255048,
+            "event_exposure_ratio": 0.025984049805251284
+          },
+          {
+            "lower_hazard": 0.051293294387550536,
+            "upper_hazard": 0.10536051565782631,
+            "events": 20376,
+            "hazard_exposure": 37204.190411634896,
+            "event_exposure_ratio": 0.547680241783404
+          },
+          {
+            "lower_hazard": 0.10536051565782631,
+            "upper_hazard": 0.6931471805599453,
+            "events": 362900,
+            "hazard_exposure": 272228.8960211319,
+            "event_exposure_ratio": 1.3330693592932534
+          },
+          {
+            "lower_hazard": 0.6931471805599453,
+            "upper_hazard": 2.302585092994046,
+            "events": 235320,
+            "hazard_exposure": 258467.51194715925,
+            "event_exposure_ratio": 0.9104432438228774
+          },
+          {
+            "lower_hazard": 2.302585092994046,
+            "upper_hazard": 4.605170185988091,
+            "events": 61108,
+            "hazard_exposure": 81585.29982862942,
+            "event_exposure_ratio": 0.7490074820875556
+          },
+          {
+            "lower_hazard": 4.605170185988091,
+            "upper_hazard": null,
+            "events": 9433,
+            "hazard_exposure": 14118.076801428158,
+            "event_exposure_ratio": 0.6681504947646818
+          }
+        ],
+        "diagnostic_flags": [
+          "hazard_band_calibration"
+        ],
+        "reference_diagnostic_screen_passed": false,
+        "inference": "Descriptive predeclared screening tolerances, conditional on working observation assumptions; no formal p-values."
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+# Reproduction outputs and local environments
+/build/
+/.venv/
+/archive/
+/figures/*.png
+__pycache__/
+*.py[cod]
+*.so
+*.dylib
+*.dll
+*.o
+.DS_Store
+.ipynb_checkpoints/
+.pytest_cache/
+.coverage
+*.log
+*.aux
+*.out
+*.toc
+*.synctex.gz
+# Never add raw or reconstructed research archives to this compact release.
+/pipeline/data/
+/pipeline/output/
+/pipeline/tmp/

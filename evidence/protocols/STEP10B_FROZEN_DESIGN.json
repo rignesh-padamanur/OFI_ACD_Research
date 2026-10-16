@@ -1,0 +1,20 @@
+{
+  "frozen_at_utc": "2026-10-03T14:24:05.080728+00:00",
+  "scope": "one_exploratory_algorithm_relative_sequence_forecast_comparison",
+  "files_sha256": {
+    "reports/STEP10B_FORECAST_PROTOCOL.md": "7a6f3804754e6b05cdb9c97b01f81ace840569156e11270d40c620b5cb7867d7",
+    "reports/STEP10B_LITERATURE_ADDENDUM.md": "9692a69bc52ad70727b4d6f570c82563047d2ca843b9b82b74e2086a52085c55",
+    "repair_sequence_forecast.py": "52cf71743681f27c53d224b91ecf096ec73c73c42f18f92cbb147ff074af2f4a",
+    "src/sequence_forecast.py": "16645778e56aa45f130a84b1020edfdf18db79c4d19c2fd5096fab7818ad0557",
+    "src/verify_sequence_forecast.py": "49a3745755374c10a0f04d323602c9cfc041750f62bafedb28e38aba979ed381",
+    "tests/test_sequence_forecast.py": "e45a0f27b645b29dc56ee32c3979efbf4d3a6fb835eafd1405c6c52503a4910b",
+    "tests/test_verify_sequence_forecast.py": "bf8596de9e9450845de1ffc50f1cb21a2b03f79b795f762605aaf44f1977f222"
+  },
+  "sequence_candidates": 1,
+  "primary_horizon_sec": 300,
+  "primary_contrast": "sequence_minus_baseline",
+  "new_formal_hypothesis_tests": 0,
+  "novelty_established": false,
+  "untouched_holdout": false,
+  "source_review": "root code/protocol review plus separate independent implementation and43 passing combined synthetic tests before freeze; runner rechecks frozen suite"
+}

@@ -1,0 +1,899 @@
+{
+  "status": "passed",
+  "cycle_checks": [
+    {
+      "cycle_id": 0,
+      "status": "passed",
+      "onsets_verified": 1806,
+      "marks_verified": 9030,
+      "available_marks_verified": 9030,
+      "source_quotes_checked": 696484,
+      "status_counts": {
+        "available": 9030
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 1,
+      "status": "passed",
+      "onsets_verified": 1205,
+      "marks_verified": 6025,
+      "available_marks_verified": 6025,
+      "source_quotes_checked": 487648,
+      "status_counts": {
+        "available": 6025
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 2,
+      "status": "passed",
+      "onsets_verified": 1592,
+      "marks_verified": 7960,
+      "available_marks_verified": 7959,
+      "source_quotes_checked": 521517,
+      "status_counts": {
+        "available": 7959,
+        "outside_onset_support": 1
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 3,
+      "status": "passed",
+      "onsets_verified": 2289,
+      "marks_verified": 11445,
+      "available_marks_verified": 11437,
+      "source_quotes_checked": 703433,
+      "status_counts": {
+        "available": 11437,
+        "outside_onset_support": 8
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 4,
+      "status": "passed",
+      "onsets_verified": 2519,
+      "marks_verified": 12595,
+      "available_marks_verified": 12594,
+      "source_quotes_checked": 628608,
+      "status_counts": {
+        "available": 12594,
+        "outside_onset_support": 1
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 5,
+      "status": "passed",
+      "onsets_verified": 3226,
+      "marks_verified": 16130,
+      "available_marks_verified": 16127,
+      "source_quotes_checked": 602647,
+      "status_counts": {
+        "available": 16127,
+        "outside_onset_support": 3
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 6,
+      "status": "passed",
+      "onsets_verified": 3816,
+      "marks_verified": 19080,
+      "available_marks_verified": 19080,
+      "source_quotes_checked": 651034,
+      "status_counts": {
+        "available": 19080
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 7,
+      "status": "passed",
+      "onsets_verified": 4672,
+      "marks_verified": 23360,
+      "available_marks_verified": 23359,
+      "source_quotes_checked": 1006042,
+      "status_counts": {
+        "available": 23359,
+        "outside_onset_support": 1
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 8,
+      "status": "passed",
+      "onsets_verified": 1562,
+      "marks_verified": 7810,
+      "available_marks_verified": 7809,
+      "source_quotes_checked": 674757,
+      "status_counts": {
+        "available": 7809,
+        "outside_onset_support": 1
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 9,
+      "status": "passed",
+      "onsets_verified": 1616,
+      "marks_verified": 8080,
+      "available_marks_verified": 8078,
+      "source_quotes_checked": 780832,
+      "status_counts": {
+        "available": 8078,
+        "outside_onset_support": 2
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 10,
+      "status": "passed",
+      "onsets_verified": 2143,
+      "marks_verified": 10715,
+      "available_marks_verified": 10712,
+      "source_quotes_checked": 841740,
+      "status_counts": {
+        "available": 10712,
+        "outside_onset_support": 3
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 11,
+      "status": "passed",
+      "onsets_verified": 2500,
+      "marks_verified": 12500,
+      "available_marks_verified": 12496,
+      "source_quotes_checked": 930029,
+      "status_counts": {
+        "available": 12496,
+        "outside_onset_support": 4
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 12,
+      "status": "passed",
+      "onsets_verified": 2876,
+      "marks_verified": 14380,
+      "available_marks_verified": 14369,
+      "source_quotes_checked": 737235,
+      "status_counts": {
+        "available": 14369,
+        "outside_onset_support": 11
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 13,
+      "status": "passed",
+      "onsets_verified": 2803,
+      "marks_verified": 14015,
+      "available_marks_verified": 14006,
+      "source_quotes_checked": 745242,
+      "status_counts": {
+        "available": 14006,
+        "outside_onset_support": 9
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 14,
+      "status": "passed",
+      "onsets_verified": 5522,
+      "marks_verified": 27610,
+      "available_marks_verified": 27609,
+      "source_quotes_checked": 1129488,
+      "status_counts": {
+        "available": 27609,
+        "outside_onset_support": 1
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 15,
+      "status": "passed",
+      "onsets_verified": 3013,
+      "marks_verified": 15065,
+      "available_marks_verified": 15061,
+      "source_quotes_checked": 1101668,
+      "status_counts": {
+        "available": 15061,
+        "outside_onset_support": 4
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 16,
+      "status": "passed",
+      "onsets_verified": 1543,
+      "marks_verified": 7715,
+      "available_marks_verified": 7715,
+      "source_quotes_checked": 1044388,
+      "status_counts": {
+        "available": 7715
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 17,
+      "status": "passed",
+      "onsets_verified": 1382,
+      "marks_verified": 6910,
+      "available_marks_verified": 6901,
+      "source_quotes_checked": 766237,
+      "status_counts": {
+        "available": 6901,
+        "outside_onset_support": 9
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 18,
+      "status": "passed",
+      "onsets_verified": 941,
+      "marks_verified": 4705,
+      "available_marks_verified": 4703,
+      "source_quotes_checked": 836577,
+      "status_counts": {
+        "available": 4703,
+        "outside_onset_support": 2
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 19,
+      "status": "passed",
+      "onsets_verified": 2886,
+      "marks_verified": 14430,
+      "available_marks_verified": 14424,
+      "source_quotes_checked": 1033263,
+      "status_counts": {
+        "available": 14424,
+        "outside_onset_support": 6
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 20,
+      "status": "passed",
+      "onsets_verified": 3321,
+      "marks_verified": 16605,
+      "available_marks_verified": 16564,
+      "source_quotes_checked": 1193238,
+      "status_counts": {
+        "available": 16564,
+        "outside_onset_support": 41
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 21,
+      "status": "passed",
+      "onsets_verified": 970,
+      "marks_verified": 4850,
+      "available_marks_verified": 4849,
+      "source_quotes_checked": 866154,
+      "status_counts": {
+        "available": 4849,
+        "outside_onset_support": 1
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 22,
+      "status": "passed",
+      "onsets_verified": 1515,
+      "marks_verified": 7575,
+      "available_marks_verified": 7572,
+      "source_quotes_checked": 1311845,
+      "status_counts": {
+        "available": 7572,
+        "outside_onset_support": 3
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 23,
+      "status": "passed",
+      "onsets_verified": 1417,
+      "marks_verified": 7085,
+      "available_marks_verified": 7085,
+      "source_quotes_checked": 1047457,
+      "status_counts": {
+        "available": 7085
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 24,
+      "status": "passed",
+      "onsets_verified": 2804,
+      "marks_verified": 14020,
+      "available_marks_verified": 14005,
+      "source_quotes_checked": 1238402,
+      "status_counts": {
+        "available": 14005,
+        "outside_onset_support": 15
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 25,
+      "status": "passed",
+      "onsets_verified": 4816,
+      "marks_verified": 24080,
+      "available_marks_verified": 24067,
+      "source_quotes_checked": 2201023,
+      "status_counts": {
+        "available": 24067,
+        "outside_onset_support": 13
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 26,
+      "status": "passed",
+      "onsets_verified": 1816,
+      "marks_verified": 9080,
+      "available_marks_verified": 9072,
+      "source_quotes_checked": 1236250,
+      "status_counts": {
+        "available": 9072,
+        "outside_onset_support": 8
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 27,
+      "status": "passed",
+      "onsets_verified": 1361,
+      "marks_verified": 6805,
+      "available_marks_verified": 6788,
+      "source_quotes_checked": 1128889,
+      "status_counts": {
+        "available": 6788,
+        "outside_onset_support": 17
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 28,
+      "status": "passed",
+      "onsets_verified": 1102,
+      "marks_verified": 5510,
+      "available_marks_verified": 5501,
+      "source_quotes_checked": 1075048,
+      "status_counts": {
+        "available": 5501,
+        "outside_onset_support": 9
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 29,
+      "status": "passed",
+      "onsets_verified": 1288,
+      "marks_verified": 6440,
+      "available_marks_verified": 6430,
+      "source_quotes_checked": 979113,
+      "status_counts": {
+        "available": 6430,
+        "outside_onset_support": 10
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 30,
+      "status": "passed",
+      "onsets_verified": 2449,
+      "marks_verified": 12245,
+      "available_marks_verified": 12227,
+      "source_quotes_checked": 973185,
+      "status_counts": {
+        "available": 12227,
+        "outside_onset_support": 18
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 31,
+      "status": "passed",
+      "onsets_verified": 2307,
+      "marks_verified": 11535,
+      "available_marks_verified": 11528,
+      "source_quotes_checked": 690417,
+      "status_counts": {
+        "available": 11528,
+        "outside_onset_support": 7
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 32,
+      "status": "passed",
+      "onsets_verified": 1973,
+      "marks_verified": 9865,
+      "available_marks_verified": 9859,
+      "source_quotes_checked": 646689,
+      "status_counts": {
+        "available": 9859,
+        "outside_onset_support": 6
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 33,
+      "status": "passed",
+      "onsets_verified": 2332,
+      "marks_verified": 11660,
+      "available_marks_verified": 11654,
+      "source_quotes_checked": 744794,
+      "status_counts": {
+        "available": 11654,
+        "outside_onset_support": 6
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 34,
+      "status": "passed",
+      "onsets_verified": 1456,
+      "marks_verified": 7280,
+      "available_marks_verified": 7279,
+      "source_quotes_checked": 609591,
+      "status_counts": {
+        "available": 7279,
+        "outside_onset_support": 1
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 35,
+      "status": "passed",
+      "onsets_verified": 2346,
+      "marks_verified": 11730,
+      "available_marks_verified": 11724,
+      "source_quotes_checked": 612413,
+      "status_counts": {
+        "available": 11724,
+        "outside_onset_support": 6
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 36,
+      "status": "passed",
+      "onsets_verified": 2806,
+      "marks_verified": 14030,
+      "available_marks_verified": 14030,
+      "source_quotes_checked": 704930,
+      "status_counts": {
+        "available": 14030
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 37,
+      "status": "passed",
+      "onsets_verified": 2346,
+      "marks_verified": 11730,
+      "available_marks_verified": 11722,
+      "source_quotes_checked": 679125,
+      "status_counts": {
+        "available": 11722,
+        "outside_onset_support": 8
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 38,
+      "status": "passed",
+      "onsets_verified": 2389,
+      "marks_verified": 11945,
+      "available_marks_verified": 11935,
+      "source_quotes_checked": 690541,
+      "status_counts": {
+        "available": 11935,
+        "outside_onset_support": 10
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 39,
+      "status": "passed",
+      "onsets_verified": 1493,
+      "marks_verified": 7465,
+      "available_marks_verified": 7461,
+      "source_quotes_checked": 589999,
+      "status_counts": {
+        "available": 7461,
+        "outside_onset_support": 4
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 40,
+      "status": "passed",
+      "onsets_verified": 1865,
+      "marks_verified": 9325,
+      "available_marks_verified": 9325,
+      "source_quotes_checked": 547023,
+      "status_counts": {
+        "available": 9325
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 41,
+      "status": "passed",
+      "onsets_verified": 1658,
+      "marks_verified": 8290,
+      "available_marks_verified": 8290,
+      "source_quotes_checked": 673465,
+      "status_counts": {
+        "available": 8290
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 42,
+      "status": "passed",
+      "onsets_verified": 1237,
+      "marks_verified": 6185,
+      "available_marks_verified": 6185,
+      "source_quotes_checked": 583933,
+      "status_counts": {
+        "available": 6185
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 43,
+      "status": "passed",
+      "onsets_verified": 1688,
+      "marks_verified": 8440,
+      "available_marks_verified": 8436,
+      "source_quotes_checked": 543823,
+      "status_counts": {
+        "available": 8436,
+        "outside_onset_support": 4
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 44,
+      "status": "passed",
+      "onsets_verified": 1144,
+      "marks_verified": 5720,
+      "available_marks_verified": 5720,
+      "source_quotes_checked": 496546,
+      "status_counts": {
+        "available": 5720
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 45,
+      "status": "passed",
+      "onsets_verified": 3142,
+      "marks_verified": 15710,
+      "available_marks_verified": 15705,
+      "source_quotes_checked": 598125,
+      "status_counts": {
+        "available": 15705,
+        "outside_onset_support": 5
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 46,
+      "status": "passed",
+      "onsets_verified": 6129,
+      "marks_verified": 30645,
+      "available_marks_verified": 30643,
+      "source_quotes_checked": 979235,
+      "status_counts": {
+        "available": 30643,
+        "outside_onset_support": 2
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 47,
+      "status": "passed",
+      "onsets_verified": 1743,
+      "marks_verified": 8715,
+      "available_marks_verified": 8715,
+      "source_quotes_checked": 626730,
+      "status_counts": {
+        "available": 8715
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 48,
+      "status": "passed",
+      "onsets_verified": 2968,
+      "marks_verified": 14840,
+      "available_marks_verified": 14829,
+      "source_quotes_checked": 938318,
+      "status_counts": {
+        "available": 14829,
+        "outside_onset_support": 11
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 49,
+      "status": "passed",
+      "onsets_verified": 3268,
+      "marks_verified": 16340,
+      "available_marks_verified": 16339,
+      "source_quotes_checked": 1136213,
+      "status_counts": {
+        "available": 16339,
+        "outside_onset_support": 1
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 50,
+      "status": "passed",
+      "onsets_verified": 1900,
+      "marks_verified": 9500,
+      "available_marks_verified": 9497,
+      "source_quotes_checked": 1101462,
+      "status_counts": {
+        "available": 9497,
+        "outside_onset_support": 3
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 51,
+      "status": "passed",
+      "onsets_verified": 2064,
+      "marks_verified": 10320,
+      "available_marks_verified": 10299,
+      "source_quotes_checked": 868942,
+      "status_counts": {
+        "available": 10299,
+        "outside_onset_support": 21
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 52,
+      "status": "passed",
+      "onsets_verified": 1690,
+      "marks_verified": 8450,
+      "available_marks_verified": 8436,
+      "source_quotes_checked": 876526,
+      "status_counts": {
+        "available": 8436,
+        "outside_onset_support": 14
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 53,
+      "status": "passed",
+      "onsets_verified": 1679,
+      "marks_verified": 8395,
+      "available_marks_verified": 8381,
+      "source_quotes_checked": 760426,
+      "status_counts": {
+        "available": 8381,
+        "outside_onset_support": 14
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 54,
+      "status": "passed",
+      "onsets_verified": 1616,
+      "marks_verified": 8080,
+      "available_marks_verified": 8073,
+      "source_quotes_checked": 623654,
+      "status_counts": {
+        "available": 8073,
+        "outside_onset_support": 7
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 55,
+      "status": "passed",
+      "onsets_verified": 1665,
+      "marks_verified": 8325,
+      "available_marks_verified": 8323,
+      "source_quotes_checked": 665564,
+      "status_counts": {
+        "available": 8323,
+        "outside_onset_support": 2
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 56,
+      "status": "passed",
+      "onsets_verified": 1744,
+      "marks_verified": 8720,
+      "available_marks_verified": 8712,
+      "source_quotes_checked": 639917,
+      "status_counts": {
+        "available": 8712,
+        "outside_onset_support": 8
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 57,
+      "status": "passed",
+      "onsets_verified": 3158,
+      "marks_verified": 15790,
+      "available_marks_verified": 15786,
+      "source_quotes_checked": 599486,
+      "status_counts": {
+        "available": 15786,
+        "outside_onset_support": 4
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 58,
+      "status": "passed",
+      "onsets_verified": 1826,
+      "marks_verified": 9130,
+      "available_marks_verified": 9120,
+      "source_quotes_checked": 565729,
+      "status_counts": {
+        "available": 9120,
+        "outside_onset_support": 10
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    },
+    {
+      "cycle_id": 59,
+      "status": "passed",
+      "onsets_verified": 1321,
+      "marks_verified": 6605,
+      "available_marks_verified": 6603,
+      "source_quotes_checked": 340691,
+      "status_counts": {
+        "available": 6603,
+        "outside_onset_support": 2
+      },
+      "method": "independent strict pandas asof; interval membership; exact source/grid arithmetic",
+      "scope": "Supplied registered clean quote window; window completeness and raw-file hashes belong to run lineage",
+      "empirical_models_fitted": 0
+    }
+  ],
+  "frozen_parent_reconciliation": "passed",
+  "new_analysis_attrition": {
+    "60": 0,
+    "300": 0
+  }
+}

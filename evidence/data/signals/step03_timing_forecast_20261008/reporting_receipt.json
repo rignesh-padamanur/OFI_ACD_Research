@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "source": "reports/complete_timing_forecast_reporting.py",
+  "source_sha256": "db8bd51ad8225b8b08ad91a6e8af73f6d5708a9ce0067221774981e45c13f291",
+  "all_planned_cycle_category_cells": 825,
+  "empty_evaluation_cells_retained": 16,
+  "summary_unchanged_sha256": "c9091b7de884cac2264226298a0ec15437b6031c441eb3a9221f04959994ea29",
+  "implementation_note": "The frozen summary producer saves observed cells. This deterministic reporting completion explicitly retains all planned per-cycle categories, including zeros; no model, sample or primary estimate changed.",
+  "figure_files": [
+    "output/figures/timing_forecast_fixed_patterns.png",
+    "output/figures/timing_forecast_fixed_patterns.svg"
+  ]
+}

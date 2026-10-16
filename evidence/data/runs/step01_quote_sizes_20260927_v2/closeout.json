@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "completed_at_utc": "2026-09-27T10:15:14.666260+00:00",
+  "verified_code_files": 5,
+  "verified_pre_repair_archive_files": 33,
+  "test_count": 24,
+  "source_comparison": "all source/raw/clean records; cached-input fidelity, not vendor completeness",
+  "exact_legacy_rows_compared": 55708318,
+  "exact_legacy_columns_compared": [
+    "timestamp",
+    "ask",
+    "bid",
+    "spread",
+    "mid",
+    "spread_pips",
+    "delta_sec"
+  ],
+  "boundary_regression_evidence": "boundary_regression.json",
+  "economic_scope": "Quote-size preservation in cached inputs; feed coverage and downstream identification remain unverified."
+}

@@ -1,0 +1,15 @@
+{
+  "python": "3.12.13 | packaged by Anaconda, Inc. | (main, Mar 19 2026, 20:12:32) [Clang 20.1.8 ]",
+  "executable": "/opt/miniconda3/envs/fxresearch/bin/python",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "thread_limits": {
+    "OPENBLAS_NUM_THREADS": 2,
+    "OMP_NUM_THREADS": 2
+  },
+  "numpy": "2.5.0",
+  "pandas": "2.2.3",
+  "scipy": "1.18.0",
+  "pyarrow": "18.1.0",
+  "sklearn": "1.9.0",
+  "joblib": "1.5.3"
+}

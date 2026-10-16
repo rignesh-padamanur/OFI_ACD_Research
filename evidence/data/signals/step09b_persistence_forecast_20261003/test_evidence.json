@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "tests_passed": 36,
+  "source_sha256": {
+    "repair_persistence_forecast.py": "6136f18e5bab1cee3126cc372a72126769bd54e6352fb5efdb78228a524c8a50",
+    "src/persistence_forecast.py": "10424ec514bab1986e4d78d9025334d069e031f737f701421c9582541b65d4b2",
+    "src/verify_persistence_forecast.py": "eaf2560c9059300f6d4c65676d1fe90f5da2667e7b1bb2ddc1dec8f0356cc515",
+    "tests/test_persistence_forecast.py": "2fe0c13e34545fad4aa6dc92f8211603cd4a444eb9a10e64b383001a55e8957b",
+    "tests/test_verify_persistence_forecast.py": "ac997bfe114284cb67a6b55f3104ff216c16282cd4d214b72d6c5ed0b5a2119f",
+    "reports/STEP09B_FORECAST_PROTOCOL.md": "3e8ab23c8132aed0e98daa3dad112a8a008cd6e8b4b880f29e1d231a5408584f"
+  },
+  "log_sha256": "19447b3c752489d95ece4fb58d6abc8c296c5d62f73a71d02158031e6f0cbb48"
+}

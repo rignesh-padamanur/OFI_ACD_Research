@@ -1,0 +1,52 @@
+{
+  "folds": 59,
+  "prediction_origins": 133918,
+  "eligible_origins": 127058,
+  "ineligible_origins": 6860,
+  "forecast_rows": 535672,
+  "forecasts_computed": 508232,
+  "ols_fits": 118,
+  "training_mean_calibrations": 59,
+  "empirical_models_fitted": 177,
+  "methods": [
+    "zero",
+    "training_mean",
+    "baseline",
+    "sequence"
+  ],
+  "primary_horizon_sec": 300,
+  "numeric_baseline_columns": [
+    "direction",
+    "initial_pips",
+    "aligned_pressure",
+    "pressure_magnitude",
+    "gross_pressure_scaled",
+    "variation_standardized",
+    "pre_spread_pips",
+    "log_pre_displayed_size",
+    "log1p_prior_quote_updates",
+    "aligned_sign_balance",
+    "nonzero_fraction",
+    "composition_reference",
+    "aligned_recent_5s_pressure",
+    "aligned_recent_30s_pressure",
+    "recent_5s_gross_scaled",
+    "recent_30s_gross_scaled",
+    "aligned_prior_5s_price_pips",
+    "aligned_prior_30s_price_pips",
+    "aligned_prior_300s_price_pips"
+  ],
+  "sequence_extension_columns": [
+    "sequence_z"
+  ],
+  "prediction_clock": "first_alert_s_plus_1_second",
+  "ols_unseen_calendar_fallbacks": {
+    "baseline": 2,
+    "sequence": 2
+  },
+  "maximum_equilibrated_condition": 76.7452990354622,
+  "future_evaluation_labels_attached": false,
+  "forecast_performance_computed": false,
+  "inference_computed": false,
+  "untouched_holdout": false
+}

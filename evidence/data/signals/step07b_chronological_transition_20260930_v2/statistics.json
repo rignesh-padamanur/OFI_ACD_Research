@@ -1,0 +1,195 @@
+{
+  "scope": "first_chronological_transition_only",
+  "primary_policy": "structural_only",
+  "source_spell_rows": 7622873,
+  "seasonal_parameter_rows": 13440,
+  "training_spells": 2841717,
+  "training_events": 2841708,
+  "forecast_rows": 3329001,
+  "carried_forecasts": 1,
+  "carried_completed_residuals": 1,
+  "calibration": {
+    "calendar_seconds": 4838400,
+    "eligible_bins": 1261165,
+    "candidate_bins": 12612,
+    "candidate_share_of_eligible": 0.010000277521180812,
+    "reason_counts": {
+      "unsupported": 1382666,
+      "invalid_flow": 0,
+      "seasonal_unavailable": 10791,
+      "quiet_no_duration": 2183774,
+      "incomplete_duration": 4,
+      "eligible": 1261165
+    }
+  },
+  "deployment": {
+    "calendar_seconds": 1209600,
+    "eligible_bins": 251347,
+    "candidate_bins": 1340,
+    "candidate_share_of_eligible": 0.005331275089816071,
+    "reason_counts": {
+      "unsupported": 345606,
+      "invalid_flow": 0,
+      "seasonal_unavailable": 0,
+      "quiet_no_duration": 612647,
+      "incomplete_duration": 0,
+      "eligible": 251347
+    }
+  },
+  "duration_working_model_diagnostics": {
+    "spells": 487284,
+    "completed_events": 487281,
+    "incomplete_positive_exposures": 3,
+    "sequence_resets": 2,
+    "sequence_fragments": 3,
+    "negative_log_score_seconds_mean": 1.1835439201342037,
+    "total_hazard": 490790.52474682673,
+    "event_hazard_ratio": 0.9928492410308102,
+    "martingale_mean": -0.007202216257514605,
+    "martingale_lag1_correlation": 0.01939399949439182,
+    "adjacent_pairs": 487281,
+    "hazard_bands": [
+      {
+        "lower_hazard": 0.0,
+        "upper_hazard": 0.010050335853501442,
+        "events": 0,
+        "hazard_exposure": 4897.367856037597,
+        "event_exposure_ratio": 0.0
+      },
+      {
+        "lower_hazard": 0.010050335853501442,
+        "upper_hazard": 0.051293294387550536,
+        "events": 3011,
+        "hazard_exposure": 20063.302355235734,
+        "event_exposure_ratio": 0.15007499496782728
+      },
+      {
+        "lower_hazard": 0.051293294387550536,
+        "upper_hazard": 0.10536051565782631,
+        "events": 25397,
+        "hazard_exposure": 25621.707840550866,
+        "event_exposure_ratio": 0.9912297867905892
+      },
+      {
+        "lower_hazard": 0.10536051565782631,
+        "upper_hazard": 0.6931471805599453,
+        "events": 247755,
+        "hazard_exposure": 176835.60539645713,
+        "event_exposure_ratio": 1.4010470314761834
+      },
+      {
+        "lower_hazard": 0.6931471805599453,
+        "upper_hazard": 2.302585092994046,
+        "events": 153885,
+        "hazard_exposure": 185697.7498565124,
+        "event_exposure_ratio": 0.8286853239681475
+      },
+      {
+        "lower_hazard": 2.302585092994046,
+        "upper_hazard": 4.605170185988091,
+        "events": 46973,
+        "hazard_exposure": 62447.488023292426,
+        "event_exposure_ratio": 0.7521999921354633
+      },
+      {
+        "lower_hazard": 4.605170185988091,
+        "upper_hazard": null,
+        "events": 10260,
+        "hazard_exposure": 15227.303418740543,
+        "event_exposure_ratio": 0.673789686713198
+      }
+    ],
+    "diagnostic_flags": [
+      "hazard_band_calibration"
+    ],
+    "reference_diagnostic_screen_passed": false,
+    "inference": "Descriptive predeclared screening tolerances, conditional on working observation assumptions; no formal p-values."
+  },
+  "combined_episodes": {
+    "clock_seconds": 2419200,
+    "observation_states": {
+      "trigger": 3825,
+      "clear_active": 552508,
+      "clear_quiet": 1171415,
+      "unknown": 691452
+    },
+    "candidate_bins": 3825,
+    "episode_fragments": 3011,
+    "confirmed_onsets": 3011,
+    "uncertain_onsets": 0,
+    "terminations": {
+      "closed_no_trigger": 3011,
+      "censored_unknown": 0,
+      "censored_support_change": 0,
+      "censored_sample_end": 0
+    },
+    "state_history_available": 3011,
+    "state_history_missing": 0,
+    "state_sample_eligible": 3011,
+    "confirmed_onsets_missing_history": 0,
+    "state_eligible_right_censored": 0,
+    "multiple_candidate_fragments": 375,
+    "max_candidate_bins": 77,
+    "max_span_seconds": 138,
+    "quality": {
+      "pre_mark_max_age_sec": {
+        "available": 3011,
+        "median": 30.295,
+        "p95": 92.911,
+        "max": 556.931
+      },
+      "pre_mark_repeat_fraction": {
+        "available": 3011,
+        "median": 0.4166666666666667,
+        "p95": 0.775,
+        "max": 0.9833333333333333
+      },
+      "pre_recorded_updates_300s": {
+        "available": 3011,
+        "median": 105.0,
+        "p95": 675.0,
+        "max": 1292.0
+      },
+      "pre_max_observed_silence_sec": {
+        "available": 3011,
+        "median": 31.368,
+        "p95": 85.0555,
+        "max": 298.366
+      },
+      "raw_pre_rv_300s_5s_bps": {
+        "available": 3011,
+        "median": 0.9909553156443245,
+        "p95": 3.0152001843063827,
+        "max": 10.856254007605177
+      }
+    },
+    "mark_age_sensitivity": {
+      "15": {
+        "state_sample_with_quality": 3011,
+        "max_mark_age_at_most_cap": 650,
+        "max_mark_age_above_cap": 2361
+      },
+      "30": {
+        "state_sample_with_quality": 3011,
+        "max_mark_age_at_most_cap": 1488,
+        "max_mark_age_above_cap": 1523
+      },
+      "60": {
+        "state_sample_with_quality": 3011,
+        "max_mark_age_at_most_cap": 2584,
+        "max_mark_age_above_cap": 427
+      }
+    }
+  },
+  "previous_onsets_preserved": 1806,
+  "new_onset_fragments": 1205,
+  "new_confirmed_onsets": 1205,
+  "new_state_eligible_onsets": 1205,
+  "episodes_with_candidates_across_cutoff": 0,
+  "fitted_duration_specifications": 1,
+  "empirical_response_models_fitted": 0,
+  "full_panel_extension_performed": false,
+  "extended_responses_computed": false,
+  "production_inference_approved": false,
+  "downstream_ready": false
+}

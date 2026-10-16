@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "tests_run": 573,
+  "failures": 0,
+  "errors": 0,
+  "output": ".............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................\n----------------------------------------------------------------------\nRan 573 tests in 26.237s\n\nOK\n",
+  "test_source_sha256": {
+    "test_acquisition.py": "701e0dd7b4116d90a87b6e44bfb05aafd753445ff22834d3b69771f6db9175b0",
+    "test_adaptive_duration.py": "0cce49d871ed50caa4f257848b3d7377e3233dd0c816a8111f7bb5e716d0eda8",
+    "test_analysis_ledger.py": "f6bc92a21edc4b8db8eacb4830b264a5d4535412eb0662916b73d8a5142ab71c",
+    "test_chronological_acd.py": "e247a0eae7a534dfc98a6deb3d25e9232f65c86054ea3bdacfc47347b0c7000e",
+    "test_chronological_panel.py": "e426a77d4610f77407e6b0b9885d96a1451fe2c1487a8758a965d16b16197d40",
+    "test_chronological_transition.py": "9c46840aaf75c2e26355872283c45cdf70a13ebf739aa43d70500f93cbcede88",
+    "test_data_preparation.py": "7872b7e6f5c4fd16092edffcbf17537a38b51eaabe3fe959d4cb7592cab6ebd8",
+    "test_discrete_duration.py": "798f52843489e52046374f1ed5f8473281d2363e93c219e331f24bd97f6461b7",
+    "test_duration_observation.py": "f5daa6aa8154458ef4be245a68589d0492774d2859e747557ff7cb65127b3af1",
+    "test_duration_shrinkage.py": "52711b16120239f672aa4289e5929c6a961d6b8f92afe7cde05954fcb6f0607a",
+    "test_estimation_inputs.py": "865e3fd8bc5a3436bba888b6821ed51e8491f07de55d51f72a44a62f341fd743",
+    "test_event_audit.py": "800b37d5c08602e8696a900f23349c23d81d13285e365a407917379b693cc809",
+    "test_event_episodes.py": "301da11519b5b37a5958bb1fb071297804eac3f3017536ebfe1006d2f32a5b7c",
+    "test_hour_conditioned_duration.py": "cf5180ba9eadd0f61f21206e5c88fcb1bf84239b9b2a819b0369a74405b12989",
+    "test_observation_eligibility.py": "c6e4a913492e36b5161006b4b4a48aa279d32bcbf08b45778b0e6e6c2540c1b3",
+    "test_panel_observations.py": "e090c0a865146575fd0337794776546aec1922b3b906af41e4c314d840f7c548",
+    "test_price_responses.py": "a868ed7b57c1f82db7075520211673fdb3e9750b4d50937e395a1f527596c393",
+    "test_quote_imbalance.py": "c87bfe177c64d93f06d52114df27978dfb3d6cdce4c86f2c2c3bc25cbba7fde0",
+    "test_seasonal_calibration.py": "41fa55bb7611a144c70bbb6ef28ab3484e4ecadf34f420db9847f4e39da552af",
+    "test_signal_clock.py": "9de944d553ecbb87cbbb5be5e02ca0d30bc71b35bc20f1c77a1a0dc2f5f49e4e",
+    "test_state_measurement.py": "f8e661bc8e8ad652b5a6255694f7409ccadd5c80f98c48d321d0fe4406749b32",
+    "test_streaming_episodes.py": "e40bc2d3b78c77f2fcc2ce07db4b77d31e536eeafa601d08637ac9fcf2188149",
+    "test_timestamp_audit.py": "65775a309815b2e0b804d4ea39e9fb2c44f2be253ed733652b60c5d740fb8c7b"
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "run_id": "step08_spread_history_20261003_v2",
+  "stage": "08_pre_onset_spread_history",
+  "status": "verified_exploratory_spread_history",
+  "started_at_utc": "2026-10-03T08:16:22.213126+00:00",
+  "scope": "exploratory_prior_spread_history_with_verified_quote_measurement",
+  "inputs": {
+    "clean_quotes": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/runs/step01_quote_sizes_20260927_v2/clean_quotes.parquet",
+      "sha256": "42bf8ebd9db201a5606e811de6d778e81b1094471d30af52e8e63f02b9e6254e"
+    },
+    "support_intervals": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/eligibility/step02b_observation_20260927/support_intervals.parquet",
+      "sha256": "088041bbc06b8517c4ae090d826abf70c11e590c03d7f8c65b89dd010a7b7443"
+    },
+    "cycle_schedule": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step07c_chronological_panel_20261001_v2/cycle_schedule.parquet",
+      "sha256": "9888e51512182a1778b5afe632a34d74bb2378d02b9757e45f6bb20e02be3e99"
+    },
+    "anchors": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step07e_panel_responses_20261001/anchors.parquet",
+      "sha256": "272a8127a52e7992f80bea53cef3c937ace485efc479b070e0a3fdb6d22740ae"
+    },
+    "features": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step07f_panel_analysis_20261001/features.parquet",
+      "sha256": "94ed30c9a6a7367ea81b51f77af9c8ed046707feb071267ec7cfe41643a3e6bc"
+    },
+    "membership": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step07m_joint_response_20261002/membership.parquet",
+      "sha256": "ddb09ba859bc2fa97ecdeae908d15836278c3d7a4e7a259a66650addaeedd280"
+    },
+    "scaling": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step07f_panel_analysis_20261001/scaling.json",
+      "sha256": "aa891c425a734374b0d74d0e16ab06b5353106d91dc1d02f260cca75e23cc094"
+    },
+    "response_manifest": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step07e_panel_responses_20261001/manifest.json",
+      "sha256": "b12b4640c88f78bd952c72ef03780eeffc98b67a9c2009f5f17b9038e427fbb3"
+    },
+    "panel_manifest": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step07f_panel_analysis_20261001/manifest.json",
+      "sha256": "f70ce68c87ff39321267aacc1145526d3e8c7ae6764908aa366cffc898ee4202"
+    },
+    "joint_manifest": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step07m_joint_response_20261002/manifest.json",
+      "sha256": "89881068a3c8fc8e214a97e102826494576acf007ad21f1e5881bf45dfc41dd0"
+    }
+  },
+  "protocol_sha256": "1bce2d620c5afd862482ae3c2652110d7d945fffbd5c0343cc17f5974c4912b3",
+  "measurement_code_sha256": {
+    "repair_spread_history.py": "2d9e5417a88cca4d67ed93686cf6199f1f7eae69f1d0f3329d691bf2c110287d",
+    "reports/STEP08_SPREAD_HISTORY_PROTOCOL.md": "1bce2d620c5afd862482ae3c2652110d7d945fffbd5c0343cc17f5974c4912b3",
+    "src/spread_history_measurement.py": "7cf5125c86f5c7c74ac3578fb747607f06a2569f1eaae222a151eb6e7050d6a8",
+    "src/verify_spread_history.py": "c4b715558553848c84fc37fd613655610bc9d6c907eaa614f824549a9dc46a48",
+    "src/panel_observations.py": "9f9bc8c35ab855afc8718626e10722642913d70c9d0196280249d34f112625af",
+    "src/data_preparation.py": "199ed717ada3eaea625ffb3da788e80a75a7765c7afdb2b560433c6f3a100831",
+    "src/duration_calibration.py": "e9af45e82a15285c6aede07a2e3db06c22bf02bb3df837e31f3d77c13fbd0d88",
+    "src/observation_eligibility.py": "6128d5acf8da8ecd367cfc01c2ea0e67a7cd811ffd41d25aacc725f69efb2a67",
+    "tests/test_spread_history_measurement.py": "92d14e044cd2aff23efc71e9862e9043664bfa9dd9e092b4b0d53368c2a493b6",
+    "tests/test_verify_spread_history.py": "094ee2c96cc9a77ec9cbbcdf6e75056be86fc53ea6193cb4a930b748a8035775"
+  },
+  "environment": {
+    "python": "3.12.13",
+    "numpy": "2.5.0",
+    "pandas": "2.2.3"
+  },
+  "analysis_start": "2024-05-06T00:00:00+00:00",
+  "end_exclusive": "2026-08-01T00:00:00+00:00",
+  "empirical_models_fitted": 24,
+  "production_inference_approved": false,
+  "causal_identification_established": false,
+  "novelty_established": false,
+  "measurement_completed_at_utc": "2026-10-03T08:19:15.215193+00:00",
+  "measurement_outputs": {
+    "measurement_statistics.json": "e79e70549e106ef1faca06d3c846e2788714cf82a6188f76b55d703421bf9783",
+    "analysis_input_60.parquet": "b7b6a15b2d52f696be8aeebd60c5e9b1514aec79172d2280e0800c1a1974d3d5",
+    "measurement_verification.json": "901c9b6141603806f5af0cd053b0069ee6d3baab175c6cef2849a324d599526d",
+    "joined_measurements.parquet": "76d4ba1f54797a41974e762416ba9d721efdcd16fe453938b1ccff98d654c972",
+    "marks.parquet": "a4211ffce1a80c1bea883c30f6aa54ef90b30aa646fff1ff1cf2d3878331a18c",
+    "analysis_input_300.parquet": "1f168416b1a9a838e17548d6071589f5686913c847533e73839943111448ed0f"
+  },
+  "reuse_created_at_utc": "2026-10-03T08:31:15.835160+00:00",
+  "parent_measurement_run": "step08_spread_history_20261003",
+  "preserved_failed_manifest_sha256": "63ee428c3c4a75484aa95505591c733a8d6e861a8bf42f87aa40f830f18c5ecb",
+  "retry_reason": "Independent daily-score reconciliation refined for scale-aware floating-point summation; no economic specification or observation changes.",
+  "analysis_code_sha256": {
+    "repair_spread_history.py": "087fb7ca571a85361b09e4c351bfe984f7be8633107e4a31a21527708d56bc8d",
+    "reports/STEP08_SPREAD_HISTORY_PROTOCOL.md": "1bce2d620c5afd862482ae3c2652110d7d945fffbd5c0343cc17f5974c4912b3",
+    "src/spread_history_analysis.py": "182f6f92b041cf1a638573d64835097ba9019f01085b7343d0cd9bd614b2a6eb",
+    "src/calendar_score_hac.py": "7e4c38c3df101193b6fc84198fb89cfa7f451c289ef1f3c6dc313abec13bfcbe",
+    "src/verify_spread_history.py": "33d8989d97e3a53bc81c283c1cec1d20dad8c49d36ab05a9302e2eefe34d04d7",
+    "tests/test_spread_history_analysis.py": "6b9ce4f0fec9ceae7a7a274656ba532ff8bb9c2c23809681e2a60edc1795b2d5",
+    "tests/test_verify_spread_history.py": "afb81c58f918f197d4d279c774c5122d4a0ead749a4f37b309272b682c498b3e"
+  },
+  "analysis_frozen_at_utc": "2026-10-03T08:36:50.802759+00:00",
+  "analysis_completed_at_utc": "2026-10-03T08:37:24.340840+00:00",
+  "model_count_definition": "2 nested designs x 6 accounting outcomes x 2 horizons; one prespecified comparison, no model selection",
+  "outputs": {
+    "measurement_statistics.json": "e79e70549e106ef1faca06d3c846e2788714cf82a6188f76b55d703421bf9783",
+    "analysis_input_60.parquet": "b7b6a15b2d52f696be8aeebd60c5e9b1514aec79172d2280e0800c1a1974d3d5",
+    "measurement_verification.json": "901c9b6141603806f5af0cd053b0069ee6d3baab175c6cef2849a324d599526d",
+    "analysis_statistics.json": "102e2d67a07dc14291ec646442c3cb0aab9ffccbb8b1aa377545b776e2443a81",
+    "joined_measurements.parquet": "76d4ba1f54797a41974e762416ba9d721efdcd16fe453938b1ccff98d654c972",
+    "analysis_verification.json": "76619ea2084698911473925115b957597591fd1a7e156f3a1450759f52431322",
+    "marks.parquet": "a4211ffce1a80c1bea883c30f6aa54ef90b30aa646fff1ff1cf2d3878331a18c",
+    "analysis_input_300.parquet": "1f168416b1a9a838e17548d6071589f5686913c847533e73839943111448ed0f",
+    "analysis_300/daily_scores.parquet": "e747e729f2405fbec2b0e0c0826296b6e448678ddbc4d18a4cd3093afd50a5bd",
+    "analysis_300/cross_outcome_covariances.parquet": "f31e9bc0bfab47f30d4e0bc8aeb559201e8dbc5ef4445146a30df541c4a3f31c",
+    "analysis_300/daily_influence.parquet": "2db73479973b82041299605436845098a20aa896b335ac52b4dfd79dadcc31a1",
+    "analysis_300/history_support.parquet": "f7e9d31c8f140454f588715d29aefe77b2b02a9db0aeffc2ef2e4d24253692cc",
+    "analysis_300/events.parquet": "d040e64929420f0e62f19b493db3f05bbc7bbf80c182caea7fd8b29cb07fae6c",
+    "analysis_300/statistics.json": "a4e6e75603a755bf0bf1b55dbd1da037ad77ebdcd85b33b13e040de443a0b2e6",
+    "analysis_300/bread.parquet": "7a77b526263f392e5558c0716d1d6b6d2c775d2424d381f51089f96c71bb084a",
+    "analysis_300/coefficients.parquet": "725b9e1452640d8e2f76c4305dd3bc9aa6c658721c54e3c75cc09d3b84c9a6f6",
+    "analysis_300/quarterly_influence.parquet": "e6a8ee2f2fe892a8c66b20c00b72e44ac7f97e1357dba981ff68ed3cdfd5245c",
+    "analysis_300/verification.json": "ee3bb4a716bd4dec7034a3dc520981c4c76988261e2535c615b0dbc4c24d4cbc",
+    "analysis_300/model_diagnostics.parquet": "736210c6ec48f615696c59b5084bd98741dc903b1ffc2a8c74991738ded28caf",
+    "analysis_300/covariances.parquet": "c5f10d0ade02c403c0441a7a9a73dd942df013c2f118f7ab6a3f2d0fbebf5d2c",
+    "analysis_300/history_intervals.parquet": "d8cf906d714a24c5cd9c371493feab25a0dcca5f6dba78a2f135d3cf1ffbc184",
+    "analysis_60/daily_scores.parquet": "139f3a4594b36ce408d377a6e1e47ba0436d77fae535564d32e4cc2b1f4fd895",
+    "analysis_60/cross_outcome_covariances.parquet": "b05d8691f0307a021304bcfd9f68b3ad04b569818657c730eda4c0c8e36893f3",
+    "analysis_60/daily_influence.parquet": "21cf13179e6f32a87951de2d725ed5e6486931155a8eb474a6efdaf526881058",
+    "analysis_60/history_support.parquet": "2c8568984800170233e1ce87a78f11a732f9c6c448b3eada6bebb38dc998cecb",
+    "analysis_60/events.parquet": "4195b59c348d7f941d14e0383cda28247bb65088db45a66df46d3d7e8f2f70cc",
+    "analysis_60/statistics.json": "d4d706c8df280a5a3ff6220641c37507f2c183672525251989c669bb67389126",
+    "analysis_60/bread.parquet": "72f88794c3b6603cb2a267e8a2e6652408af1f9978fa65b9aa01b590348b3dc2",
+    "analysis_60/coefficients.parquet": "52ccd46631089581d3dce0cd6b82297819020191830e5419a54c76a9fdc6bc36",
+    "analysis_60/quarterly_influence.parquet": "96327e8122dcd43cab5044273559fb9f80114bcd7c249767dbd526d17b14d04c",
+    "analysis_60/verification.json": "81a4064e6c9ca43516cb68c70f5f2531b8b07fcdc8803db0ed6f4cacac6fec82",
+    "analysis_60/model_diagnostics.parquet": "740a72da585948076f4b521afef1958f0deb77c4e7aa85584d25986d1206f0c1",
+    "analysis_60/covariances.parquet": "5f48c87bf93b75a6e010487cc2918ef9eb797872cb792ce4f17c6894cd39e17c",
+    "analysis_60/history_intervals.parquet": "a371ff164b0eab5e6f9ba70cc22136a533e877193f1eaed6e10d9ddc44c4a07f"
+  }
+}

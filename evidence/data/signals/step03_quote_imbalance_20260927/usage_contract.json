@@ -1,0 +1,9 @@
+{
+  "sparse_quote_containing_bins_only": true,
+  "clock_grid_before_model_fit": "Distinguish admissible no-update seconds (zero recorded flow under chosen support contract) from unsupported periods (missing). Do not blanket-fill zeros or silently fit only active seconds.",
+  "signal_time_column": "available_at",
+  "retrospective_audit_flags_are_predictors": false,
+  "primary_freshness_policy_selected": false,
+  "existing_calibration_and_models_reusable": false,
+  "sources_and_interpretation": "See methodology.json and the generated stage-03 review."
+}

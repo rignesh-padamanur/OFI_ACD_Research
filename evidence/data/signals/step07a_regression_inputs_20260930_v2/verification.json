@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "hashes_verified": 225,
+  "unique_files_hashed": 216,
+  "parent_runs_verified": 2,
+  "reference_rows_verified": 1281932,
+  "anchor_rows_verified": 1806,
+  "outcome_rows_verified": 5418,
+  "design_rows_verified": 7128,
+  "calendar_support_rows_verified": 124,
+  "designs_verified": 4,
+  "design_variants_verified": 8,
+  "joint_identities_verified": 5347,
+  "all_statistics_fields_verified": true,
+  "empirical_models_fitted": 0,
+  "production_inference_approved": false,
+  "methods": "Independent immutable-parent reconstruction of reference selection and constants, every feature, component-specific mask, design row, calendar support cell, SVD geometry, leverage, timing role and statistics field; no production transformation imports and no response fitting. New-run and direct-ledger registered hashes plus detector output/source/snapshot hashes checked; earlier detector raw ancestors not rehashed or re-estimated."
+}

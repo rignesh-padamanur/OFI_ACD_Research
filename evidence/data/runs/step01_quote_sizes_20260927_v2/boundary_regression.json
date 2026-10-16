@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "case": "millisecond_rounding",
+      "first_build_value": 1.8719999999999999,
+      "corrected_value": 1.872,
+      "expected": 1.872
+    },
+    {
+      "case": "nanosecond_preservation",
+      "first_build_value": 0.0,
+      "corrected_value": 1e-09,
+      "expected": 1e-09
+    }
+  ]
+}

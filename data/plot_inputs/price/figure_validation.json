@@ -1,0 +1,58 @@
+{
+  "scope": "Compact-input and figure reproduction check; not a full model or raw-data rerun",
+  "plotter_sha256": "eb78267c782a3bc05d17e50b177893f48c61df562415e3dc6eba8ed4e2b48a76",
+  "export_receipt_sha256": "8cc40cfb37b95f8add0b2bc3f52465f9f4a0780179a446ddb6543eab97b494e4",
+  "check_only_passed": true,
+  "optimized_mode_rejected_for_both_scripts": true,
+  "relocated_working_directory_independence_passed": true,
+  "published_pdfs_unchanged": true,
+  "rendering_limit": "Identical generated hashes were checked in the same software environment after relocation. Other platform or font versions can change rendered bytes; numerical data checks remain authoritative.",
+  "figures": {
+    "section4_adjustment": {
+      "pixels_equal_original_png": true,
+      "pixel_dimensions": [
+        1095,
+        2700
+      ],
+      "original_png_sha256": "97974cd9a13f2e40a5834fb11747e1a817fea3d2f0cfa281c8e7dfaa279377b5",
+      "frozen_publication_pdf_sha256": "871045e8f181a075f62d1264277a06cac4d590aaa6190d6df8ad669e8d56e3e7",
+      "generated_files": {
+        "png": {
+          "path": "build/figures/section4_adjustment.png",
+          "sha256": "e8a6ae00266c029a97a2cb9e355ae1e82714c6820b007c7cdccd71de31dd3f49",
+          "bytes": 141097,
+          "same_environment_relocated_sha256_identical": true
+        },
+        "pdf": {
+          "path": "build/figures/section4_adjustment.pdf",
+          "sha256": "34f74fbd7edfc1d86a16a43c5c1a8404e3aa5dd1d6a5d52f0b2e935226277a05",
+          "bytes": 49846,
+          "same_environment_relocated_sha256_identical": true
+        }
+      }
+    },
+    "section4_forecast_quarters": {
+      "pixels_equal_original_png": true,
+      "pixel_dimensions": [
+        1680,
+        2430
+      ],
+      "original_png_sha256": "ea04dc076096a6882c7be2587eadf8bdd1759e64a22cfa0994e6abfb16ecc54c",
+      "frozen_publication_pdf_sha256": "cedac85956a1255724aa2c07e2cc93fcadf8280b5da1161b00cbe20b13b01a2d",
+      "generated_files": {
+        "png": {
+          "path": "build/figures/section4_forecast_quarters.png",
+          "sha256": "c2dd2b18816f42fa4a45193c8e277e8a506cdc0d30406c12825f81f09408afc9",
+          "bytes": 139587,
+          "same_environment_relocated_sha256_identical": true
+        },
+        "pdf": {
+          "path": "build/figures/section4_forecast_quarters.pdf",
+          "sha256": "cedac85956a1255724aa2c07e2cc93fcadf8280b5da1161b00cbe20b13b01a2d",
+          "bytes": 37171,
+          "same_environment_relocated_sha256_identical": true
+        }
+      }
+    }
+  }
+}

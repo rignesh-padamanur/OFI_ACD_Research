@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "evaluation_cycles": 55,
+  "paired_outcomes_verified": 19042840,
+  "training_origin_instances_verified": 3837748,
+  "saved_model_predictions_verified": 110000,
+  "calendar_days_verified": 761,
+  "all_fixed_pattern_cells_verified": 24,
+  "independent_matrix_hac_lags": [
+    56,
+    28,
+    112
+  ],
+  "protected_files_unchanged": 39,
+  "statistical_coverage_or_external_validation_certified": false
+}

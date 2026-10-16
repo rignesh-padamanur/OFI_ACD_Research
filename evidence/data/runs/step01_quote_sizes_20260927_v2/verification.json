@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "verification_scope": "all source/raw/clean records; cached-input fidelity, not vendor completeness",
+  "verifier_sha256": "56ce385736addc3128c2d3eb7f263135b7c0b11e6e7dc052ca62bc1b4512c968",
+  "statistics": {
+    "raw_rows": 55709907,
+    "clean_rows": 55708318,
+    "invalid_size_rows": 0,
+    "tied_timestamp_rows": 0,
+    "zero_duration_rows": 0,
+    "gap_gt_60s_rows": 10099,
+    "sunday_rows": 614902,
+    "missing_duration_rows": 1,
+    "month_boundaries_checked": 30,
+    "first_timestamp": "2024-01-01 22:00:12.108000+00:00",
+    "last_timestamp": "2026-07-31 20:59:59.782000+00:00",
+    "removed_by_reason": {
+      "nonfinite_price": 0,
+      "nonpositive_price": 0,
+      "crossed_quote": 0,
+      "zero_spread": 1589,
+      "duplicate_full_snapshot": 0
+    },
+    "utc_dates_with_quotes": 809,
+    "utc_hours_with_quotes": 16054,
+    "mean_spread_pips": 0.37987200403358146,
+    "median_spread_pips": 0.2999999999997449,
+    "mean_delta_sec": 1.4609162878498017,
+    "median_delta_sec": 0.206,
+    "distinct_valid_sizes": {
+      "ask_volume": 3556,
+      "bid_volume": 2891
+    }
+  },
+  "outputs": {
+    "raw_quotes.parquet": {
+      "sha256": "2e5cd3b1751da85897e169245e3f710d22b9d1b281d467549f7929f033ff298c",
+      "bytes": 752857089
+    },
+    "clean_quotes.parquet": {
+      "sha256": "42bf8ebd9db201a5606e811de6d778e81b1094471d30af52e8e63f02b9e6254e",
+      "bytes": 976055434
+    }
+  }
+}

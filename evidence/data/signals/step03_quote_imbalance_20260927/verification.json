@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "quote_rows_checked": 55708318,
+  "one_second_bins_checked": 23253415,
+  "formula": "independent indicator expression; production uses price-change cases",
+  "aggregation": "independent numpy reduce-at; production uses pandas groupby",
+  "verification_batch_size": 333333,
+  "all_counts_monthly_tables_and_moments_checked": true,
+  "float_comparison_rtol": 1e-12,
+  "float_comparison_atol": 1e-10,
+  "coverage_certified": false,
+  "scope": "Recorded-quote proxy arithmetic, missingness, boundaries and bin availability; no inference or feed-completeness claim"
+}

@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "clock_rows_checked": 81475200,
+  "utc_days_checked": 943,
+  "daily_moment_rows_checked": 724224,
+  "calibration_parameter_rows_checked": 724224,
+  "normalized_channel_values_checked": 651801600,
+  "source_read_batch_size": 400000,
+  "checks": [
+    "full sequential parent-clock reconstruction",
+    "pandas daily cell moments",
+    "prior-date-only parameters with independent pairwise pooled variance",
+    "every serialized normalized value and missingness mask",
+    "all counts/moments/monthly/weekday-slot diagnostics",
+    "input/output/executed-source fingerprints"
+  ],
+  "scope": "Conditional on registered retrospective support; no assertion of online outage detection, optimal seasonal specification, Gaussian scores or event identification."
+}

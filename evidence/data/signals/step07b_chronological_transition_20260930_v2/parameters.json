@@ -1,0 +1,98 @@
+{
+  "training_start": "2024-03-11T00:00:00+00:00",
+  "parameter_cutoff": "2024-05-06T00:00:00+00:00",
+  "deployment_end": "2024-05-20T00:00:00+00:00",
+  "acd_parameters": {
+    "omega": 0.001155601958066918,
+    "alpha": 0.029654109011509455,
+    "beta": 0.9686315417383675,
+    "shape": 0.7428038159738308
+  },
+  "optimization_attempts": [
+    {
+      "start_alpha": 0.05,
+      "start_beta": 0.85,
+      "start_shape": 0.7,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 33,
+      "evaluations": 37,
+      "objective": 0.7528579037744807,
+      "gradient_inf_norm": 8.981943342722668e-07,
+      "omega": 0.0011555981890632096,
+      "alpha": 0.029653912967421668,
+      "beta": 0.968631774860575,
+      "shape": 0.7428040786479518,
+      "near_constraint": false
+    },
+    {
+      "start_alpha": 0.15,
+      "start_beta": 0.7,
+      "start_shape": 1.0,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 29,
+      "evaluations": 31,
+      "objective": 0.7528579037754666,
+      "gradient_inf_norm": 6.298682859336089e-07,
+      "omega": 0.0011556089016739864,
+      "alpha": 0.02965403646009383,
+      "beta": 0.968631678306427,
+      "shape": 0.7428034292782052,
+      "near_constraint": false
+    },
+    {
+      "start_alpha": 0.3,
+      "start_beta": 0.5,
+      "start_shape": 0.5,
+      "success": true,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "iterations": 29,
+      "evaluations": 33,
+      "objective": 0.7528579037735015,
+      "gradient_inf_norm": 6.513150412758488e-08,
+      "omega": 0.001155601958066918,
+      "alpha": 0.029654109011509455,
+      "beta": 0.9686315417383675,
+      "shape": 0.7428038159738308,
+      "near_constraint": false
+    }
+  ],
+  "acd_fit_objective": 0.7528579037735015,
+  "numerical_constraint_warning": false,
+  "detector": {
+    "mean": [
+      5.474902580005659,
+      2.392968678962066,
+      0.223500126317689
+    ],
+    "sample_std": [
+      7.571268120072319,
+      2.333379298277441,
+      1.0687077627441552
+    ],
+    "covariance_z": [
+      [
+        1.0000000000000013,
+        0.4551080187702176,
+        0.13422867793638468
+      ],
+      [
+        0.4551080187702176,
+        0.9999999999999999,
+        0.2888443765937708
+      ],
+      [
+        0.13422867793638468,
+        0.2888443765937708,
+        0.9999999999999998
+      ]
+    ],
+    "condition_number": 3.1221177155283586,
+    "quantile": 0.99,
+    "quantile_method": "linear",
+    "calibration_rows": 1261165,
+    "threshold": 5.308666278272702,
+    "training_threshold_ties": 0
+  }
+}

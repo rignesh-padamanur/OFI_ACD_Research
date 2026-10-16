@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "verified_at_utc": "2026-10-03T13:39:01.080547+00:00",
+  "all_origins": 135724,
+  "source_files": 17,
+  "code_files": 8,
+  "output_files": 7,
+  "scope": "serialized hashes/identities/statistics; separate independent full-source verification still required",
+  "response_models_fitted": 0
+}

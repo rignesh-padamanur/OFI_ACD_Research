@@ -1,0 +1,62 @@
+{
+  "run_id": "step03_timing_forecast_20261008",
+  "status": "fixed_comparison_verified",
+  "created_at": "2026-10-08T13:50:56.650199+00:00",
+  "scope": "one_exploratory_incremental_normalization_forecast_pair",
+  "code_sha256": {
+    "run_timing_forecast.py": "e11c9316e318f35448a1d736040c1f670fabe9bb5d601c74b2fab229f4e68b89",
+    "src/timing_forecast.py": "b9bc93f60506c23e42899b354148d511751d508c443bde1bfa39b5c32374b007",
+    "reports/STEP03_TIMING_FORECAST_PROTOCOL_2026_10_08.md": "7424d5219de23515f3d1aa35f6ebe680c2bcead55ec42dc5ab1942e136f2e6f5",
+    "verify_timing_forecast.py": "c4ba4d9357b14ba9cd1a8f8c7fd8e398738799be2d6044c9d32b293718427602",
+    "tests/test_timing_forecast.py": "6e54dfc1adb39b9086b2a98bf63ecd2e401eedfa75a6f979648507f79b828693",
+    "src/detector_contribution.py": "101b30f1d5583833bf01fdfed925e790a9a264e28f8c7f3ec6c920016381b274"
+  },
+  "seasonal_spells_sha256": "99465080098e706328f6e14c87247985d120a85e99da77d94677c5b87bc77bcf",
+  "prior_audit_sha256": "0e258a5e7b3764afdd9c2829a565ffc10bd9099cb1002722e1469761782217a5",
+  "feature_archive": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step11_detector_contribution_20261004",
+  "panel": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step07c_chronological_panel_20261001_v2",
+  "start": "2024-07-01T00:00:00+00:00",
+  "stop": "2026-08-01T00:00:00+00:00",
+  "first_evaluation_cycle": 5,
+  "last_evaluation_cycle": 59,
+  "base_columns": [
+    "current_spread",
+    "pre_spread",
+    "history_spread",
+    "variation",
+    "log_count",
+    "log_history_count",
+    "quote_age",
+    "history_age",
+    "hour",
+    "weekday",
+    "quote_ofi",
+    "adjusted_abs_quote_ofi",
+    "adjusted_tick_count",
+    "pre_quote_age_sec",
+    "raw_speed",
+    "seasonal_speed"
+  ],
+  "extension_column": "negative_log_mean_residual",
+  "model": {
+    "loss": "squared_error",
+    "learning_rate": 0.05,
+    "max_iter": 100,
+    "max_leaf_nodes": 15,
+    "min_samples_leaf": 100,
+    "l2_regularization": 1,
+    "max_bins": 63,
+    "early_stopping": false,
+    "random_state": 20261004
+  },
+  "independent_validation": false,
+  "economic_materiality_margin": null,
+  "full_pipeline_interval_coverage_established": false,
+  "versions": {
+    "python": "3.12.13",
+    "numpy": "2.5.0",
+    "pandas": "2.2.3",
+    "sklearn": "1.9.0"
+  },
+  "protected_files_unchanged": 39
+}

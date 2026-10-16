@@ -1,0 +1,116 @@
+{
+  "run_id": "step09b_persistence_forecast_20261003",
+  "stage": "09b_persistence_forecast",
+  "status": "verified_exploratory_persistence_forecasts",
+  "started_at_utc": "2026-10-03T10:25:44.517845+00:00",
+  "inputs": {
+    "parent_manifest": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step09a_prediction_ledger_20261003/manifest.json",
+      "sha256": "b5448a1207973a3dfe2efc9a99d7f4b61495ab469afadb32a351da60ae10adb9"
+    },
+    "parent_reverification": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/reports/tests/step09b_parent_reverification.json",
+      "sha256": "35dce1b2a92380f794eaa80972c51b6e1d29ea152d38a5dc0c383661087d9611"
+    },
+    "origins": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step09a_prediction_ledger_20261003/origins.parquet",
+      "sha256": "a2c1a2715d9e87f703fafcf6275eac662e24eba71c03a5464b32378abe806c8e"
+    },
+    "predictors": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step09a_prediction_ledger_20261003/predictors.parquet",
+      "sha256": "ad2d2cf478bd051416ae547e3202aec53d24eea8af4d34daf1832520b6371dbe"
+    },
+    "labels": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step09a_prediction_ledger_20261003/labels.parquet",
+      "sha256": "0c104745c200756960da57a1ded58aab11057795c997edba5904d30a253e8db7"
+    },
+    "folds": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step09a_prediction_ledger_20261003/folds.parquet",
+      "sha256": "7b5c24ef82c9ad846281f525cd4dcfdf5d74439b5978a4ec83066d06fb326c17"
+    },
+    "membership": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step09a_prediction_ledger_20261003/membership.parquet",
+      "sha256": "726573ad4454adf43b0f48d3aceadd00e279b1994733e394ea6877804a5b42bc"
+    }
+  },
+  "source_sha256": {
+    "repair_persistence_forecast.py": "6136f18e5bab1cee3126cc372a72126769bd54e6352fb5efdb78228a524c8a50",
+    "src/persistence_forecast.py": "10424ec514bab1986e4d78d9025334d069e031f737f701421c9582541b65d4b2",
+    "src/verify_persistence_forecast.py": "eaf2560c9059300f6d4c65676d1fe90f5da2667e7b1bb2ddc1dec8f0356cc515",
+    "tests/test_persistence_forecast.py": "2fe0c13e34545fad4aa6dc92f8211603cd4a444eb9a10e64b383001a55e8957b",
+    "tests/test_verify_persistence_forecast.py": "ac997bfe114284cb67a6b55f3104ff216c16282cd4d214b72d6c5ed0b5a2119f",
+    "reports/STEP09B_FORECAST_PROTOCOL.md": "3e8ab23c8132aed0e98daa3dad112a8a008cd6e8b4b880f29e1d231a5408584f"
+  },
+  "protocol_sha256": "3e8ab23c8132aed0e98daa3dad112a8a008cd6e8b4b880f29e1d231a5408584f",
+  "parent_run_id": "step09a_prediction_ledger_20261003",
+  "evaluation_start": "2024-05-06T00:00:00+00:00",
+  "end_exclusive": "2026-08-01T00:00:00+00:00",
+  "tests_passed": 36,
+  "environment": {
+    "python": "3.12.13",
+    "numpy": "2.5.0",
+    "pandas": "2.2.3",
+    "scipy": "1.18.0"
+  },
+  "causal_identification_established": false,
+  "novelty_established": false,
+  "untouched_holdout": false,
+  "formal_forecast_inference_approved": false,
+  "paper_ready": false,
+  "forecast_outputs": {
+    "forecasts.parquet": "bba574bca07cac15a754372e5995731f0b4aa3ac141b8a9cfe25a0e9be4af5e5",
+    "coefficients.parquet": "374080bd79b995c264f0dd12f2caf3ddd5bbf199fcf1c2297087eecc205a3947",
+    "fit_diagnostics.parquet": "15d85ee6df65cda9d0296b5591109a3f106f6dd1676eac93105d6a83fa66f2b9",
+    "forecast_statistics.json": "f33a4a3dc6724c75ac7aff2d0489af813202c600182a994b1375f93f62f4430b"
+  },
+  "forecasts_saved_at_utc": "2026-10-03T10:26:03.923727+00:00",
+  "evaluation_started_at_utc": "2026-10-03T10:26:27.545788+00:00",
+  "outputs": {
+    "coefficients.parquet": "374080bd79b995c264f0dd12f2caf3ddd5bbf199fcf1c2297087eecc205a3947",
+    "comparisons.parquet": "db79ed1de48e6f6cdd333ea674104e0f45bf42f81282623c00113e2d60cbfc3a",
+    "daily_losses.parquet": "d25edc6ef183f8a2acd25a382b585f0ff8a939d28bce727ebb74ba77b0aff682",
+    "evaluation_statistics.json": "fb36ee761a8a83df4b82e3cc573c95ce5aff963291744827fff471534354bc9d",
+    "evaluation_verification.json": "61127a95371e74f3403a92f9a855c97bd165846f0219e33dfd13fd3d441b5e36",
+    "fit_diagnostics.parquet": "15d85ee6df65cda9d0296b5591109a3f106f6dd1676eac93105d6a83fa66f2b9",
+    "fold_losses.parquet": "778cf75fe977444813d8f60a8c7839581c7b9dd5c8a33777b7a99cf2bcc0573d",
+    "forecast_statistics.json": "f33a4a3dc6724c75ac7aff2d0489af813202c600182a994b1375f93f62f4430b",
+    "forecast_verification.json": "0c60953f5f63bc968c913105a1369632fa3e7d8403821ce79d71aa13b11b2fa7",
+    "forecasts.parquet": "bba574bca07cac15a754372e5995731f0b4aa3ac141b8a9cfe25a0e9be4af5e5",
+    "metrics.parquet": "eb431fd2fcdc0ce24ec95d53f0514ce6745a2c15bc541b53dbe3b02a31cd712c",
+    "quarter_losses.parquet": "18bdee20272b6de2023e72aba8d2f1ee9aae41deba2944f46e356cb9afbe6f2b",
+    "scored_events.parquet": "b63f09dd179267ab8f1557d6562fbdb5259ecfa07f9c8de6b60193903c821989",
+    "serial_dependence.parquet": "eaa6afbd0db0a8660eb4119ea85cfe6f593aeb8d092f46b5f6ee9425cdee83cc",
+    "statistics.json": "fc7cdf4fd153346b0db779070064b8b8a5b8ac44f743123a39cba9caeea9a56e",
+    "test_evidence.json": "94c44d8130fc2ce0de593ac8cc6333ae6a57c534d7a52a5b2a3a4da12b3e555d",
+    "test_execution.log": "19447b3c752489d95ece4fb58d6abc8c296c5d62f73a71d02158031e6f0cbb48",
+    "saved_verification.json": "c0aa31de101048c6235624894a7caae50ecb4b9a1c78965e79ff9a5d53c1a25f"
+  },
+  "completed_at_utc": "2026-10-03T10:26:55.803920+00:00",
+  "empirical_model_accounting": {
+    "folds": 59,
+    "prediction_origins": 133918,
+    "eligible_origins": 127058,
+    "ineligible_origins": 6860,
+    "forecast_rows": 535672,
+    "forecasts_computed": 508232,
+    "ols_fits": 118,
+    "training_mean_calibrations": 59,
+    "empirical_models_fitted": 177,
+    "methods": [
+      "zero",
+      "training_mean",
+      "additive",
+      "interaction"
+    ],
+    "primary_horizon_sec": 300,
+    "ols_unseen_calendar_fallbacks": {
+      "additive": 2,
+      "interaction": 2
+    },
+    "maximum_equilibrated_condition": 19.565362706754627,
+    "future_evaluation_labels_attached": false,
+    "forecast_performance_computed": false,
+    "inference_computed": false,
+    "untouched_holdout": false
+  }
+}

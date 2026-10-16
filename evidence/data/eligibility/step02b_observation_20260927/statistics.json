@@ -1,0 +1,620 @@
+{
+  "coverage": {
+    "raw_rows": 55709907,
+    "requested_hours": 22632,
+    "nominal_open_hours": 16198,
+    "observed_hours": 16054,
+    "absent_nominal_open_hours": 144
+  },
+  "quote_transitions": {
+    "retained_quotes": 55708318,
+    "potential_adjacent_quote_transitions": 55708317,
+    "structural_segments": 208,
+    "structurally_eligible_transitions": 55708110,
+    "structurally_excluded_transitions": 207,
+    "initial_quotes_without_predecessor": 1,
+    "within_segment_gaps_gt_15s": 327906,
+    "transitions_with_structural_support_and_gap_le_15s": 55380204,
+    "within_segment_gaps_gt_30s": 71687,
+    "transitions_with_structural_support_and_gap_le_30s": 55636423,
+    "within_segment_gaps_gt_60s": 9958,
+    "transitions_with_structural_support_and_gap_le_60s": 55698152
+  },
+  "segment_start_reasons": {
+    "weekly_closure": 88,
+    "removed_raw_record": 69,
+    "weekly_closure|absent_nominal_open_hour": 46,
+    "absent_nominal_open_hour": 4,
+    "sample_start": 1
+  },
+  "support_interval_counts": {
+    "fresh_15s": 328114,
+    "fresh_30s": 71895,
+    "fresh_60s": 10166,
+    "structural_only": 208
+  },
+  "window_opportunities": [
+    {
+      "policy": "structural_only",
+      "lookback_seconds": 0,
+      "horizon_seconds": 0,
+      "pre_context_clock_anchors": 57787100,
+      "joint_clock_anchors": 57787100,
+      "future_unavailable_among_pre_eligible": 0
+    },
+    {
+      "policy": "structural_only",
+      "lookback_seconds": 0,
+      "horizon_seconds": 1,
+      "pre_context_clock_anchors": 57787100,
+      "joint_clock_anchors": 57786892,
+      "future_unavailable_among_pre_eligible": 208
+    },
+    {
+      "policy": "structural_only",
+      "lookback_seconds": 0,
+      "horizon_seconds": 5,
+      "pre_context_clock_anchors": 57787100,
+      "joint_clock_anchors": 57786133,
+      "future_unavailable_among_pre_eligible": 967
+    },
+    {
+      "policy": "structural_only",
+      "lookback_seconds": 0,
+      "horizon_seconds": 30,
+      "pre_context_clock_anchors": 57787100,
+      "joint_clock_anchors": 57781986,
+      "future_unavailable_among_pre_eligible": 5114
+    },
+    {
+      "policy": "structural_only",
+      "lookback_seconds": 0,
+      "horizon_seconds": 60,
+      "pre_context_clock_anchors": 57787100,
+      "joint_clock_anchors": 57777357,
+      "future_unavailable_among_pre_eligible": 9743
+    },
+    {
+      "policy": "structural_only",
+      "lookback_seconds": 0,
+      "horizon_seconds": 300,
+      "pre_context_clock_anchors": 57787100,
+      "joint_clock_anchors": 57742984,
+      "future_unavailable_among_pre_eligible": 44116
+    },
+    {
+      "policy": "structural_only",
+      "lookback_seconds": 60,
+      "horizon_seconds": 0,
+      "pre_context_clock_anchors": 57777357,
+      "joint_clock_anchors": 57777357,
+      "future_unavailable_among_pre_eligible": 0
+    },
+    {
+      "policy": "structural_only",
+      "lookback_seconds": 60,
+      "horizon_seconds": 1,
+      "pre_context_clock_anchors": 57777357,
+      "joint_clock_anchors": 57777208,
+      "future_unavailable_among_pre_eligible": 149
+    },
+    {
+      "policy": "structural_only",
+      "lookback_seconds": 60,
+      "horizon_seconds": 5,
+      "pre_context_clock_anchors": 57777357,
+      "joint_clock_anchors": 57776612,
+      "future_unavailable_among_pre_eligible": 745
+    },
+    {
+      "policy": "structural_only",
+      "lookback_seconds": 60,
+      "horizon_seconds": 30,
+      "pre_context_clock_anchors": 57777357,
+      "joint_clock_anchors": 57772924,
+      "future_unavailable_among_pre_eligible": 4433
+    },
+    {
+      "policy": "structural_only",
+      "lookback_seconds": 60,
+      "horizon_seconds": 60,
+      "pre_context_clock_anchors": 57777357,
+      "joint_clock_anchors": 57768545,
+      "future_unavailable_among_pre_eligible": 8812
+    },
+    {
+      "policy": "structural_only",
+      "lookback_seconds": 60,
+      "horizon_seconds": 300,
+      "pre_context_clock_anchors": 57777357,
+      "joint_clock_anchors": 57734584,
+      "future_unavailable_among_pre_eligible": 42773
+    },
+    {
+      "policy": "structural_only",
+      "lookback_seconds": 300,
+      "horizon_seconds": 0,
+      "pre_context_clock_anchors": 57742984,
+      "joint_clock_anchors": 57742984,
+      "future_unavailable_among_pre_eligible": 0
+    },
+    {
+      "policy": "structural_only",
+      "lookback_seconds": 300,
+      "horizon_seconds": 1,
+      "pre_context_clock_anchors": 57742984,
+      "joint_clock_anchors": 57742844,
+      "future_unavailable_among_pre_eligible": 140
+    },
+    {
+      "policy": "structural_only",
+      "lookback_seconds": 300,
+      "horizon_seconds": 5,
+      "pre_context_clock_anchors": 57742984,
+      "joint_clock_anchors": 57742284,
+      "future_unavailable_among_pre_eligible": 700
+    },
+    {
+      "policy": "structural_only",
+      "lookback_seconds": 300,
+      "horizon_seconds": 30,
+      "pre_context_clock_anchors": 57742984,
+      "joint_clock_anchors": 57738784,
+      "future_unavailable_among_pre_eligible": 4200
+    },
+    {
+      "policy": "structural_only",
+      "lookback_seconds": 300,
+      "horizon_seconds": 60,
+      "pre_context_clock_anchors": 57742984,
+      "joint_clock_anchors": 57734584,
+      "future_unavailable_among_pre_eligible": 8400
+    },
+    {
+      "policy": "structural_only",
+      "lookback_seconds": 300,
+      "horizon_seconds": 300,
+      "pre_context_clock_anchors": 57742984,
+      "joint_clock_anchors": 57700984,
+      "future_unavailable_among_pre_eligible": 42000
+    },
+    {
+      "policy": "fresh_15s",
+      "lookback_seconds": 0,
+      "horizon_seconds": 0,
+      "pre_context_clock_anchors": 54228878,
+      "joint_clock_anchors": 54228878,
+      "future_unavailable_among_pre_eligible": 0
+    },
+    {
+      "policy": "fresh_15s",
+      "lookback_seconds": 0,
+      "horizon_seconds": 1,
+      "pre_context_clock_anchors": 54228878,
+      "joint_clock_anchors": 53900764,
+      "future_unavailable_among_pre_eligible": 328114
+    },
+    {
+      "policy": "fresh_15s",
+      "lookback_seconds": 0,
+      "horizon_seconds": 5,
+      "pre_context_clock_anchors": 54228878,
+      "joint_clock_anchors": 52588392,
+      "future_unavailable_among_pre_eligible": 1640486
+    },
+    {
+      "policy": "fresh_15s",
+      "lookback_seconds": 0,
+      "horizon_seconds": 30,
+      "pre_context_clock_anchors": 54228878,
+      "joint_clock_anchors": 45626453,
+      "future_unavailable_among_pre_eligible": 8602425
+    },
+    {
+      "policy": "fresh_15s",
+      "lookback_seconds": 0,
+      "horizon_seconds": 60,
+      "pre_context_clock_anchors": 54228878,
+      "joint_clock_anchors": 40660678,
+      "future_unavailable_among_pre_eligible": 13568200
+    },
+    {
+      "policy": "fresh_15s",
+      "lookback_seconds": 0,
+      "horizon_seconds": 300,
+      "pre_context_clock_anchors": 54228878,
+      "joint_clock_anchors": 26454408,
+      "future_unavailable_among_pre_eligible": 27774470
+    },
+    {
+      "policy": "fresh_15s",
+      "lookback_seconds": 60,
+      "horizon_seconds": 0,
+      "pre_context_clock_anchors": 40660678,
+      "joint_clock_anchors": 40660678,
+      "future_unavailable_among_pre_eligible": 0
+    },
+    {
+      "policy": "fresh_15s",
+      "lookback_seconds": 60,
+      "horizon_seconds": 1,
+      "pre_context_clock_anchors": 40660678,
+      "joint_clock_anchors": 40529245,
+      "future_unavailable_among_pre_eligible": 131433
+    },
+    {
+      "policy": "fresh_15s",
+      "lookback_seconds": 60,
+      "horizon_seconds": 5,
+      "pre_context_clock_anchors": 40660678,
+      "joint_clock_anchors": 40019078,
+      "future_unavailable_among_pre_eligible": 641600
+    },
+    {
+      "policy": "fresh_15s",
+      "lookback_seconds": 60,
+      "horizon_seconds": 30,
+      "pre_context_clock_anchors": 40660678,
+      "joint_clock_anchors": 37292711,
+      "future_unavailable_among_pre_eligible": 3367967
+    },
+    {
+      "policy": "fresh_15s",
+      "lookback_seconds": 60,
+      "horizon_seconds": 60,
+      "pre_context_clock_anchors": 40660678,
+      "joint_clock_anchors": 34763588,
+      "future_unavailable_among_pre_eligible": 5897090
+    },
+    {
+      "policy": "fresh_15s",
+      "lookback_seconds": 60,
+      "horizon_seconds": 300,
+      "pre_context_clock_anchors": 40660678,
+      "joint_clock_anchors": 24833010,
+      "future_unavailable_among_pre_eligible": 15827668
+    },
+    {
+      "policy": "fresh_15s",
+      "lookback_seconds": 300,
+      "horizon_seconds": 0,
+      "pre_context_clock_anchors": 26454408,
+      "joint_clock_anchors": 26454408,
+      "future_unavailable_among_pre_eligible": 0
+    },
+    {
+      "policy": "fresh_15s",
+      "lookback_seconds": 300,
+      "horizon_seconds": 1,
+      "pre_context_clock_anchors": 26454408,
+      "joint_clock_anchors": 26424604,
+      "future_unavailable_among_pre_eligible": 29804
+    },
+    {
+      "policy": "fresh_15s",
+      "lookback_seconds": 300,
+      "horizon_seconds": 5,
+      "pre_context_clock_anchors": 26454408,
+      "joint_clock_anchors": 26306479,
+      "future_unavailable_among_pre_eligible": 147929
+    },
+    {
+      "policy": "fresh_15s",
+      "lookback_seconds": 300,
+      "horizon_seconds": 30,
+      "pre_context_clock_anchors": 26454408,
+      "joint_clock_anchors": 25603958,
+      "future_unavailable_among_pre_eligible": 850450
+    },
+    {
+      "policy": "fresh_15s",
+      "lookback_seconds": 300,
+      "horizon_seconds": 60,
+      "pre_context_clock_anchors": 26454408,
+      "joint_clock_anchors": 24833010,
+      "future_unavailable_among_pre_eligible": 1621398
+    },
+    {
+      "policy": "fresh_15s",
+      "lookback_seconds": 300,
+      "horizon_seconds": 300,
+      "pre_context_clock_anchors": 26454408,
+      "joint_clock_anchors": 20438400,
+      "future_unavailable_among_pre_eligible": 6016008
+    },
+    {
+      "policy": "fresh_30s",
+      "lookback_seconds": 0,
+      "horizon_seconds": 0,
+      "pre_context_clock_anchors": 56593282,
+      "joint_clock_anchors": 56593282,
+      "future_unavailable_among_pre_eligible": 0
+    },
+    {
+      "policy": "fresh_30s",
+      "lookback_seconds": 0,
+      "horizon_seconds": 1,
+      "pre_context_clock_anchors": 56593282,
+      "joint_clock_anchors": 56521387,
+      "future_unavailable_among_pre_eligible": 71895
+    },
+    {
+      "policy": "fresh_30s",
+      "lookback_seconds": 0,
+      "horizon_seconds": 5,
+      "pre_context_clock_anchors": 56593282,
+      "joint_clock_anchors": 56233885,
+      "future_unavailable_among_pre_eligible": 359397
+    },
+    {
+      "policy": "fresh_30s",
+      "lookback_seconds": 0,
+      "horizon_seconds": 30,
+      "pre_context_clock_anchors": 56593282,
+      "joint_clock_anchors": 54437638,
+      "future_unavailable_among_pre_eligible": 2155644
+    },
+    {
+      "policy": "fresh_30s",
+      "lookback_seconds": 0,
+      "horizon_seconds": 60,
+      "pre_context_clock_anchors": 56593282,
+      "joint_clock_anchors": 52726885,
+      "future_unavailable_among_pre_eligible": 3866397
+    },
+    {
+      "policy": "fresh_30s",
+      "lookback_seconds": 0,
+      "horizon_seconds": 300,
+      "pre_context_clock_anchors": 56593282,
+      "joint_clock_anchors": 45624961,
+      "future_unavailable_among_pre_eligible": 10968321
+    },
+    {
+      "policy": "fresh_30s",
+      "lookback_seconds": 60,
+      "horizon_seconds": 0,
+      "pre_context_clock_anchors": 52726885,
+      "joint_clock_anchors": 52726885,
+      "future_unavailable_among_pre_eligible": 0
+    },
+    {
+      "policy": "fresh_30s",
+      "lookback_seconds": 60,
+      "horizon_seconds": 1,
+      "pre_context_clock_anchors": 52726885,
+      "joint_clock_anchors": 52677101,
+      "future_unavailable_among_pre_eligible": 49784
+    },
+    {
+      "policy": "fresh_30s",
+      "lookback_seconds": 60,
+      "horizon_seconds": 5,
+      "pre_context_clock_anchors": 52726885,
+      "joint_clock_anchors": 52481470,
+      "future_unavailable_among_pre_eligible": 245415
+    },
+    {
+      "policy": "fresh_30s",
+      "lookback_seconds": 60,
+      "horizon_seconds": 30,
+      "pre_context_clock_anchors": 52726885,
+      "joint_clock_anchors": 51366789,
+      "future_unavailable_among_pre_eligible": 1360096
+    },
+    {
+      "policy": "fresh_30s",
+      "lookback_seconds": 60,
+      "horizon_seconds": 60,
+      "pre_context_clock_anchors": 52726885,
+      "joint_clock_anchors": 50223467,
+      "future_unavailable_among_pre_eligible": 2503418
+    },
+    {
+      "policy": "fresh_30s",
+      "lookback_seconds": 60,
+      "horizon_seconds": 300,
+      "pre_context_clock_anchors": 52726885,
+      "joint_clock_anchors": 44557300,
+      "future_unavailable_among_pre_eligible": 8169585
+    },
+    {
+      "policy": "fresh_30s",
+      "lookback_seconds": 300,
+      "horizon_seconds": 0,
+      "pre_context_clock_anchors": 45624961,
+      "joint_clock_anchors": 45624961,
+      "future_unavailable_among_pre_eligible": 0
+    },
+    {
+      "policy": "fresh_30s",
+      "lookback_seconds": 300,
+      "horizon_seconds": 1,
+      "pre_context_clock_anchors": 45624961,
+      "joint_clock_anchors": 45605890,
+      "future_unavailable_among_pre_eligible": 19071
+    },
+    {
+      "policy": "fresh_30s",
+      "lookback_seconds": 300,
+      "horizon_seconds": 5,
+      "pre_context_clock_anchors": 45624961,
+      "joint_clock_anchors": 45530098,
+      "future_unavailable_among_pre_eligible": 94863
+    },
+    {
+      "policy": "fresh_30s",
+      "lookback_seconds": 300,
+      "horizon_seconds": 30,
+      "pre_context_clock_anchors": 45624961,
+      "joint_clock_anchors": 45072571,
+      "future_unavailable_among_pre_eligible": 552390
+    },
+    {
+      "policy": "fresh_30s",
+      "lookback_seconds": 300,
+      "horizon_seconds": 60,
+      "pre_context_clock_anchors": 45624961,
+      "joint_clock_anchors": 44557300,
+      "future_unavailable_among_pre_eligible": 1067661
+    },
+    {
+      "policy": "fresh_30s",
+      "lookback_seconds": 300,
+      "horizon_seconds": 300,
+      "pre_context_clock_anchors": 45624961,
+      "joint_clock_anchors": 41344137,
+      "future_unavailable_among_pre_eligible": 4280824
+    },
+    {
+      "policy": "fresh_60s",
+      "lookback_seconds": 0,
+      "horizon_seconds": 0,
+      "pre_context_clock_anchors": 57517286,
+      "joint_clock_anchors": 57517286,
+      "future_unavailable_among_pre_eligible": 0
+    },
+    {
+      "policy": "fresh_60s",
+      "lookback_seconds": 0,
+      "horizon_seconds": 1,
+      "pre_context_clock_anchors": 57517286,
+      "joint_clock_anchors": 57507120,
+      "future_unavailable_among_pre_eligible": 10166
+    },
+    {
+      "policy": "fresh_60s",
+      "lookback_seconds": 0,
+      "horizon_seconds": 5,
+      "pre_context_clock_anchors": 57517286,
+      "joint_clock_anchors": 57466529,
+      "future_unavailable_among_pre_eligible": 50757
+    },
+    {
+      "policy": "fresh_60s",
+      "lookback_seconds": 0,
+      "horizon_seconds": 30,
+      "pre_context_clock_anchors": 57517286,
+      "joint_clock_anchors": 57213432,
+      "future_unavailable_among_pre_eligible": 303854
+    },
+    {
+      "policy": "fresh_60s",
+      "lookback_seconds": 0,
+      "horizon_seconds": 60,
+      "pre_context_clock_anchors": 57517286,
+      "joint_clock_anchors": 56910063,
+      "future_unavailable_among_pre_eligible": 607223
+    },
+    {
+      "policy": "fresh_60s",
+      "lookback_seconds": 0,
+      "horizon_seconds": 300,
+      "pre_context_clock_anchors": 57517286,
+      "joint_clock_anchors": 55139540,
+      "future_unavailable_among_pre_eligible": 2377746
+    },
+    {
+      "policy": "fresh_60s",
+      "lookback_seconds": 60,
+      "horizon_seconds": 0,
+      "pre_context_clock_anchors": 56910063,
+      "joint_clock_anchors": 56910063,
+      "future_unavailable_among_pre_eligible": 0
+    },
+    {
+      "policy": "fresh_60s",
+      "lookback_seconds": 60,
+      "horizon_seconds": 1,
+      "pre_context_clock_anchors": 56910063,
+      "joint_clock_anchors": 56900548,
+      "future_unavailable_among_pre_eligible": 9515
+    },
+    {
+      "policy": "fresh_60s",
+      "lookback_seconds": 60,
+      "horizon_seconds": 5,
+      "pre_context_clock_anchors": 56910063,
+      "joint_clock_anchors": 56863021,
+      "future_unavailable_among_pre_eligible": 47042
+    },
+    {
+      "policy": "fresh_60s",
+      "lookback_seconds": 60,
+      "horizon_seconds": 30,
+      "pre_context_clock_anchors": 56910063,
+      "joint_clock_anchors": 56638113,
+      "future_unavailable_among_pre_eligible": 271950
+    },
+    {
+      "policy": "fresh_60s",
+      "lookback_seconds": 60,
+      "horizon_seconds": 60,
+      "pre_context_clock_anchors": 56910063,
+      "joint_clock_anchors": 56385657,
+      "future_unavailable_among_pre_eligible": 524406
+    },
+    {
+      "policy": "fresh_60s",
+      "lookback_seconds": 60,
+      "horizon_seconds": 300,
+      "pre_context_clock_anchors": 56910063,
+      "joint_clock_anchors": 54788883,
+      "future_unavailable_among_pre_eligible": 2121180
+    },
+    {
+      "policy": "fresh_60s",
+      "lookback_seconds": 300,
+      "horizon_seconds": 0,
+      "pre_context_clock_anchors": 55139540,
+      "joint_clock_anchors": 55139540,
+      "future_unavailable_among_pre_eligible": 0
+    },
+    {
+      "policy": "fresh_60s",
+      "lookback_seconds": 300,
+      "horizon_seconds": 1,
+      "pre_context_clock_anchors": 55139540,
+      "joint_clock_anchors": 55133506,
+      "future_unavailable_among_pre_eligible": 6034
+    },
+    {
+      "policy": "fresh_60s",
+      "lookback_seconds": 300,
+      "horizon_seconds": 5,
+      "pre_context_clock_anchors": 55139540,
+      "joint_clock_anchors": 55109432,
+      "future_unavailable_among_pre_eligible": 30108
+    },
+    {
+      "policy": "fresh_60s",
+      "lookback_seconds": 300,
+      "horizon_seconds": 30,
+      "pre_context_clock_anchors": 55139540,
+      "joint_clock_anchors": 54961235,
+      "future_unavailable_among_pre_eligible": 178305
+    },
+    {
+      "policy": "fresh_60s",
+      "lookback_seconds": 300,
+      "horizon_seconds": 60,
+      "pre_context_clock_anchors": 55139540,
+      "joint_clock_anchors": 54788883,
+      "future_unavailable_among_pre_eligible": 350657
+    },
+    {
+      "policy": "fresh_60s",
+      "lookback_seconds": 300,
+      "horizon_seconds": 300,
+      "pre_context_clock_anchors": 55139540,
+      "joint_clock_anchors": 53587129,
+      "future_unavailable_among_pre_eligible": 1552411
+    }
+  ],
+  "new_quotes_acquired": 0,
+  "quotes_deleted_by_this_stage": 0,
+  "coverage_certified": false,
+  "primary_freshness_policy_selected": false,
+  "event_counts_computed": false,
+  "model_estimates_computed": false
+}

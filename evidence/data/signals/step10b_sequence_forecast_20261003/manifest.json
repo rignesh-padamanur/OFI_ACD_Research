@@ -1,0 +1,250 @@
+{
+  "run_id": "step10b_sequence_forecast_20261003",
+  "stage": "10b_sequence_forecast",
+  "status": "verified_exploratory_sequence_forecasts",
+  "started_at_utc": "2026-10-03T14:24:28.112384+00:00",
+  "inputs": {
+    "parent_manifest": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step09a_prediction_ledger_20261003/manifest.json",
+      "sha256": "b5448a1207973a3dfe2efc9a99d7f4b61495ab469afadb32a351da60ae10adb9"
+    },
+    "parent_reverification": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/reports/tests/step09b_parent_reverification.json",
+      "sha256": "35dce1b2a92380f794eaa80972c51b6e1d29ea152d38a5dc0c383661087d9611"
+    },
+    "origins": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step09a_prediction_ledger_20261003/origins.parquet",
+      "sha256": "a2c1a2715d9e87f703fafcf6275eac662e24eba71c03a5464b32378abe806c8e"
+    },
+    "labels": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step09a_prediction_ledger_20261003/labels.parquet",
+      "sha256": "0c104745c200756960da57a1ded58aab11057795c997edba5904d30a253e8db7"
+    },
+    "folds": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step09a_prediction_ledger_20261003/folds.parquet",
+      "sha256": "7b5c24ef82c9ad846281f525cd4dcfdf5d74439b5978a4ec83066d06fb326c17"
+    },
+    "membership": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step09a_prediction_ledger_20261003/membership.parquet",
+      "sha256": "726573ad4454adf43b0f48d3aceadd00e279b1994733e394ea6877804a5b42bc"
+    },
+    "measurement_manifest": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step10a_sequence_measurement_20261003/manifest.json",
+      "sha256": "988e450e8ed126a085a5a91b9d7c4bd7300e5b1c2cf50e1b6ac62d4ab6d9237b"
+    },
+    "features": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step10a_sequence_measurement_20261003/features.parquet",
+      "sha256": "cafd55b65882d749dc0f92c0b502b29f984b1249fc1623435e2a77ee2c1984f6"
+    },
+    "measurement_statistics": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step10a_sequence_measurement_20261003/statistics.json",
+      "sha256": "eb9942caca902db26b1528e0e81292f53c7b7cec12019c84d72a3e4fd1274b4c"
+    },
+    "measurement_independent_verification": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/signals/step10a_sequence_measurement_20261003/independent_verification.json",
+      "sha256": "3194368258580aea4638ae928eb70f9fc446f80c4c5483977498d1d7050d8b8d"
+    }
+  },
+  "source_sha256": {
+    "repair_sequence_forecast.py": "52cf71743681f27c53d224b91ecf096ec73c73c42f18f92cbb147ff074af2f4a",
+    "src/sequence_forecast.py": "16645778e56aa45f130a84b1020edfdf18db79c4d19c2fd5096fab7818ad0557",
+    "src/verify_sequence_forecast.py": "49a3745755374c10a0f04d323602c9cfc041750f62bafedb28e38aba979ed381",
+    "tests/test_sequence_forecast.py": "e45a0f27b645b29dc56ee32c3979efbf4d3a6fb835eafd1405c6c52503a4910b",
+    "tests/test_verify_sequence_forecast.py": "bf8596de9e9450845de1ffc50f1cb21a2b03f79b795f762605aaf44f1977f222",
+    "reports/STEP10B_FORECAST_PROTOCOL.md": "7a6f3804754e6b05cdb9c97b01f81ace840569156e11270d40c620b5cb7867d7",
+    "reports/STEP10B_LITERATURE_ADDENDUM.md": "9692a69bc52ad70727b4d6f570c82563047d2ca843b9b82b74e2086a52085c55"
+  },
+  "protocol_sha256": "7a6f3804754e6b05cdb9c97b01f81ace840569156e11270d40c620b5cb7867d7",
+  "parent_run_id": "step09a_prediction_ledger_20261003",
+  "measurement_run_id": "step10a_sequence_measurement_20261003",
+  "read_allowlists": {
+    "origins": [
+      "episode_id",
+      "bin_start",
+      "forecast_at",
+      "origin_eligible",
+      "direction",
+      "initial_pips"
+    ],
+    "labels": [
+      "episode_id",
+      "horizon_sec",
+      "forecast_at",
+      "label_ready_at",
+      "label_available",
+      "label_status",
+      "continuation_pips"
+    ],
+    "folds": [
+      "fold_id",
+      "fit_cutoff",
+      "prediction_start",
+      "prediction_end_exclusive",
+      "training_origins",
+      "prediction_origins",
+      "prediction_origin_eligible"
+    ],
+    "membership": [
+      "fold_id",
+      "role",
+      "episode_id",
+      "forecast_at",
+      "origin_eligible",
+      "label_ready_at",
+      "label_available"
+    ],
+    "features": [
+      "episode_id",
+      "bin_start",
+      "forecast_at",
+      "direction",
+      "initial_pips",
+      "aligned_pressure",
+      "pressure_magnitude",
+      "gross_pressure_scaled",
+      "variation_standardized",
+      "pre_spread_pips",
+      "log_pre_displayed_size",
+      "log1p_prior_quote_updates",
+      "aligned_sign_balance",
+      "nonzero_fraction",
+      "composition_reference",
+      "aligned_recent_5s_pressure",
+      "aligned_recent_30s_pressure",
+      "recent_5s_gross_scaled",
+      "recent_30s_gross_scaled",
+      "aligned_prior_5s_price_pips",
+      "aligned_prior_30s_price_pips",
+      "aligned_prior_300s_price_pips",
+      "sequence_z",
+      "onset_hour_utc",
+      "onset_weekday_utc",
+      "inherited_origin_eligible",
+      "measurement_available",
+      "combined_eligible",
+      "adjacent_agreement"
+    ]
+  },
+  "numeric_baseline_columns": [
+    "direction",
+    "initial_pips",
+    "aligned_pressure",
+    "pressure_magnitude",
+    "gross_pressure_scaled",
+    "variation_standardized",
+    "pre_spread_pips",
+    "log_pre_displayed_size",
+    "log1p_prior_quote_updates",
+    "aligned_sign_balance",
+    "nonzero_fraction",
+    "composition_reference",
+    "aligned_recent_5s_pressure",
+    "aligned_recent_30s_pressure",
+    "recent_5s_gross_scaled",
+    "recent_30s_gross_scaled",
+    "aligned_prior_5s_price_pips",
+    "aligned_prior_30s_price_pips",
+    "aligned_prior_300s_price_pips"
+  ],
+  "extension_columns": [
+    "sequence_z"
+  ],
+  "active_pointer_changed": false,
+  "master_statistics_changed": false,
+  "evaluation_start": "2024-05-06T00:00:00+00:00",
+  "end_exclusive": "2026-08-01T00:00:00+00:00",
+  "tests_passed": 43,
+  "environment": {
+    "python": "3.12.13",
+    "numpy": "2.5.0",
+    "pandas": "2.2.3",
+    "scipy": "1.18.0"
+  },
+  "causal_identification_established": false,
+  "novelty_established": false,
+  "untouched_holdout": false,
+  "formal_forecast_inference_approved": false,
+  "paper_ready": false,
+  "forecast_outputs": {
+    "forecasts.parquet": "f175285adcadc7a12e7af7165b91975473df7dcd82913e396a5ef1e90152490d",
+    "coefficients.parquet": "da9c713d9606f6187d426a908e8fc2399d6bcf521a1922b9b1630d304b53166c",
+    "fit_diagnostics.parquet": "fb195350b18a28c76b70ca26397d59f70c49a779f76119f5c4dae88f49865fc4",
+    "forecast_statistics.json": "c4cc250c8995e21bad1090165a8280caed3d06e9793e1594b1b09eebbd1715bd"
+  },
+  "forecasts_saved_at_utc": "2026-10-03T14:24:57.930302+00:00",
+  "evaluation_started_at_utc": "2026-10-03T14:25:51.575327+00:00",
+  "outputs": {
+    "coefficients.parquet": "da9c713d9606f6187d426a908e8fc2399d6bcf521a1922b9b1630d304b53166c",
+    "comparisons.parquet": "48c2c7a91b1fc14cebc8c5ddd6c73f19d4c2d15da644ef54684c939919631756",
+    "daily_losses.parquet": "ff2f30b08da5d54299ebb5b76d9da4a8bdc454a2ddfa410388cde87c8ac3c84a",
+    "evaluation_statistics.json": "ffc3fcf96bae4144b327d044ab807d661a7e012783afe72eb1b8088a8b400d78",
+    "evaluation_verification.json": "61127a95371e74f3403a92f9a855c97bd165846f0219e33dfd13fd3d441b5e36",
+    "fit_diagnostics.parquet": "fb195350b18a28c76b70ca26397d59f70c49a779f76119f5c4dae88f49865fc4",
+    "fold_losses.parquet": "c16c1e6001a9ff944ae779a63ca670ec1d522287bd6f4287f46d246af78a3c17",
+    "forecast_statistics.json": "c4cc250c8995e21bad1090165a8280caed3d06e9793e1594b1b09eebbd1715bd",
+    "forecast_verification.json": "3302a7dda6312ab7d509f21c66df397dceb73174c46d764f8068e64f152cc0fa",
+    "forecasts.parquet": "f175285adcadc7a12e7af7165b91975473df7dcd82913e396a5ef1e90152490d",
+    "metrics.parquet": "4e47848f72d582802fc03525b3eb12bc0a96b20fbcf2ef33dcc694cddb02bc34",
+    "quarter_losses.parquet": "3f7349e7db67fce77c0395fd1aeaf417de8d5901bc8c10552d079c1c65a46877",
+    "scored_events.parquet": "eee3839f7583ff52136f3cf885649434902ed1b7d3a20762a2fdddbf673117e0",
+    "serial_dependence.parquet": "2916943c424b93e11fe727615e5f0a5a4c5f2bb4974e30d1c6f796929414ef21",
+    "source_projection_verification.json": "ed6e54c322bbfef098123915ab8629e3c4123edb4c315cc682f17792aeff0e6b",
+    "statistics.json": "7f42d7082c47b4982278da368978d909457512e34787726ca23f90752b181ef9",
+    "test_evidence.json": "5f3fe56374f1795418ccdaa45c1b29839997c6954cc6935ef52b423cd314d965",
+    "test_execution.log": "6a19af271909b007f6a7462d85ba17d7fc422a4b73d0e2fd8ad779d59061cdcc",
+    "saved_verification.json": "b224657932b83ab96e576df6412c13e6763da48c157d10261ff4f1c714685a31"
+  },
+  "completed_at_utc": "2026-10-03T14:26:43.143839+00:00",
+  "empirical_model_accounting": {
+    "folds": 59,
+    "prediction_origins": 133918,
+    "eligible_origins": 127058,
+    "ineligible_origins": 6860,
+    "forecast_rows": 535672,
+    "forecasts_computed": 508232,
+    "ols_fits": 118,
+    "training_mean_calibrations": 59,
+    "empirical_models_fitted": 177,
+    "methods": [
+      "zero",
+      "training_mean",
+      "baseline",
+      "sequence"
+    ],
+    "primary_horizon_sec": 300,
+    "numeric_baseline_columns": [
+      "direction",
+      "initial_pips",
+      "aligned_pressure",
+      "pressure_magnitude",
+      "gross_pressure_scaled",
+      "variation_standardized",
+      "pre_spread_pips",
+      "log_pre_displayed_size",
+      "log1p_prior_quote_updates",
+      "aligned_sign_balance",
+      "nonzero_fraction",
+      "composition_reference",
+      "aligned_recent_5s_pressure",
+      "aligned_recent_30s_pressure",
+      "recent_5s_gross_scaled",
+      "recent_30s_gross_scaled",
+      "aligned_prior_5s_price_pips",
+      "aligned_prior_30s_price_pips",
+      "aligned_prior_300s_price_pips"
+    ],
+    "sequence_extension_columns": [
+      "sequence_z"
+    ],
+    "prediction_clock": "first_alert_s_plus_1_second",
+    "ols_unseen_calendar_fallbacks": {
+      "baseline": 2,
+      "sequence": 2
+    },
+    "maximum_equilibrated_condition": 76.7452990354622,
+    "future_evaluation_labels_attached": false,
+    "forecast_performance_computed": false,
+    "inference_computed": false,
+    "untouched_holdout": false
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "scope": "Retrospective observation-support audit. Detect events from contemporaneously observed information before attaching eligibility and outcome masks.",
+  "clock_grid_masks_are_online_health_detector": false,
+  "clock_grid_masks_automatically_Ft0_measurable": false,
+  "prefix_invariance_test_scope": "Previously observed quote timestamps; does not prove online observability of whole-hour absence labels.",
+  "forbidden_predictors": [
+    "future availability",
+    "interval end",
+    "eventual segment duration",
+    "retrospective clock-grid eligibility flags"
+  ],
+  "primary_freshness_policy_selected": false,
+  "event_dependent_attrition_computed": false
+}

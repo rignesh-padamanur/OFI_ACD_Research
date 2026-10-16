@@ -1,0 +1,18 @@
+{
+  "cQ": 134.54108927243408,
+  "cV": 1.962402411840539,
+  "sV": 1.5415551698605312,
+  "reference_start": "2024-02-26T00:00:00+00:00",
+  "reference_cutoff": "2024-04-22T00:00:00+00:00",
+  "reference_population": "detector-eligible structural calibration bins with finite Q and nonnegative finite V",
+  "reference_bins": 1282116,
+  "selected_reference_bins": 1281932,
+  "excluded_nonfinite_Q": 184,
+  "excluded_invalid_V": 184,
+  "excluded_union": 184,
+  "zero_Q_retained": 95,
+  "zero_V_retained": 0,
+  "population_standard_deviation_ddof": 0,
+  "response_or_candidate_filter": false,
+  "Q_mean_subtracted": false
+}

@@ -1,0 +1,31 @@
+{
+  "measure": "Cont-style recorded best-quote imbalance proxy",
+  "formula": "I(b_n>=b_prev)*qb_n - I(b_n<=b_prev)*qb_prev - I(a_n<=a_prev)*qa_n + I(a_n>=a_prev)*qa_prev",
+  "units": "Stored size units. Vendor BI5 documentation describes millions of base currency; archived decoder passes float32 size fields through unchanged. No rescaling performed.",
+  "timing": "Tick contribution available at its timestamp. Bins are [bin_start,bin_start+1s); aggregate available_at=bin_start+1s. Neither signal uses future quotes.",
+  "missingness": "Exclude predecessor/segment/price/size failures, retaining rows with NaN contributions. Bin model sum is NaN if any included transition is excluded; subtotal remains a separately named diagnostic. No-quote bins are absent, not silently zero.",
+  "policies": "No primary policy selected. usable_<policy> requires all transitions valid, full-bin support, and incoming gaps within the policy limit. Structural-only imposes no freshness limit.",
+  "audit_flags": "Full-bin support/usable flags depend on retrospective coverage audits, are sample-quality labels, and must not be Ft0 explanatory features.",
+  "limits": [
+    "Not identified transactions, cancellations, individual orders, dealer inventory, or complete decentralized FX flow.",
+    "Original same-timestamp price deduplication may have lost size updates; gaps and completeness remain unresolved.",
+    "Price changes enter the formula mechanically. Contemporaneous direction agreement is not evidence of causality, information, or prediction.",
+    "Arbitrary coarsening/thinning and all closed price-size paths are not claimed invariant.",
+    "No spread division, depth normalization, seasonal adjustment, threshold fitting, event detection or outcome estimation in this stage.",
+    "Actual real-time receive latency is unavailable; available_at refers to recorded quote timestamps and completed buckets."
+  ],
+  "sources": [
+    {
+      "title": "Cont, Kukanov and Stoikov: The Price Impact of Order Book Events, section 2.1",
+      "url": "https://arxiv.org/abs/1011.6402"
+    },
+    {
+      "title": "Dukascopy ITick: volume available at best bid/ask",
+      "url": "https://www.dukascopy.com/client/javadoc/com/dukascopy/api/ITick.html"
+    },
+    {
+      "title": "Dukascopy BI5 format: size units and field ordering",
+      "url": "https://www.dukascopy.com/wiki/en/development/data-export/"
+    }
+  ]
+}

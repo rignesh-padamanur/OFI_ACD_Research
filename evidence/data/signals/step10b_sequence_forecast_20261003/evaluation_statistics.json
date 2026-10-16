@@ -1,0 +1,124 @@
+{
+  "status": "descriptive_sequence_forecast_evaluation",
+  "primary_horizon_sec": 300,
+  "calendar_days": 817,
+  "days_with_scored_origins": 701,
+  "prediction_origins": 133918,
+  "issued_origins": 127058,
+  "scored_origins": 127013,
+  "issued_unavailable": 45,
+  "metrics": [
+    {
+      "method": "zero",
+      "n_origins": 133918,
+      "n_issued": 127058,
+      "n_scored": 127013,
+      "n_issued_unavailable": 45,
+      "sse": 1336801.402500006,
+      "mse": 10.524917941470605,
+      "rmse": 3.2442129926178715
+    },
+    {
+      "method": "training_mean",
+      "n_origins": 133918,
+      "n_issued": 127058,
+      "n_scored": 127013,
+      "n_issued_unavailable": 45,
+      "sse": 1336820.5297451278,
+      "mse": 10.525068534284898,
+      "rmse": 3.2442362019872872
+    },
+    {
+      "method": "baseline",
+      "n_origins": 133918,
+      "n_issued": 127058,
+      "n_scored": 127013,
+      "n_issued_unavailable": 45,
+      "sse": 1344404.092319819,
+      "mse": 10.58477551368615,
+      "rmse": 3.253425197186213
+    },
+    {
+      "method": "sequence",
+      "n_origins": 133918,
+      "n_issued": 127058,
+      "n_scored": 127013,
+      "n_issued_unavailable": 45,
+      "sse": 1344440.5814450958,
+      "mse": 10.585062800225929,
+      "rmse": 3.253469348284371
+    }
+  ],
+  "comparisons": [
+    {
+      "contrast": "sequence_minus_baseline",
+      "benchmark": "baseline",
+      "n": 127013,
+      "sum_loss_difference": 36.48912527692878,
+      "mean_loss_difference": 0.00028728653977883197,
+      "relative_mse_reduction": -2.714148631755009e-05,
+      "relative_mse_status": "available",
+      "rmse_difference": 4.415109815791851e-05
+    },
+    {
+      "contrast": "sequence_minus_training_mean",
+      "benchmark": "training_mean",
+      "n": 127013,
+      "sum_loss_difference": 7620.051699967938,
+      "mean_loss_difference": 0.05999426594102917,
+      "relative_mse_reduction": -0.005700130668565562,
+      "relative_mse_status": "available",
+      "rmse_difference": 0.009233146297083827
+    },
+    {
+      "contrast": "sequence_minus_zero",
+      "benchmark": "zero",
+      "n": 127013,
+      "sum_loss_difference": 7639.178945089747,
+      "mean_loss_difference": 0.060144858755322265,
+      "relative_mse_reduction": -0.0057145204447,
+      "relative_mse_status": "available",
+      "rmse_difference": 0.009256355666499516
+    }
+  ],
+  "comparison_diagnostics": {
+    "sequence_minus_baseline": {
+      "sum_absolute_daily_loss_difference": 681.5612348486218,
+      "maximum_absolute_daily_loss_difference_share": 0.03461387185794861,
+      "maximum_absolute_difference_date": "2025-04-11T00:00:00+00:00",
+      "sum_squared_daily_centered_difference": 2928.099806209645,
+      "zero_energy": false,
+      "maximum_daily_energy_share": 0.19193089808151745,
+      "maximum_energy_date": "2025-04-11T00:00:00+00:00",
+      "daily_centering_residual": -1.243254631189128e-14
+    },
+    "sequence_minus_training_mean": {
+      "sum_absolute_daily_loss_difference": 15694.35907094318,
+      "maximum_absolute_daily_loss_difference_share": 0.08365837347494243,
+      "maximum_absolute_difference_date": "2025-04-02T00:00:00+00:00",
+      "sum_squared_daily_centered_difference": 3904829.9911051085,
+      "zero_energy": false,
+      "maximum_daily_energy_share": 0.4214911957292693,
+      "maximum_energy_date": "2025-04-02T00:00:00+00:00",
+      "daily_centering_residual": 1.4721557306529576e-13
+    },
+    "sequence_minus_zero": {
+      "sum_absolute_daily_loss_difference": 15676.15222233218,
+      "maximum_absolute_daily_loss_difference_share": 0.08347764460928214,
+      "maximum_absolute_difference_date": "2025-04-02T00:00:00+00:00",
+      "sum_squared_daily_centered_difference": 3896512.5266234064,
+      "zero_energy": false,
+      "maximum_daily_energy_share": 0.4194776940389435,
+      "maximum_energy_date": "2025-04-02T00:00:00+00:00",
+      "daily_centering_residual": -1.8379742172669467e-13
+    }
+  },
+  "serial_max_lag": 40,
+  "loss": "raw squared C300 error in pips squared",
+  "empirical_models_fitted": 0,
+  "inference_computed": false,
+  "uncertainty_computed": false,
+  "untouched_holdout": false,
+  "causal_identification_established": false,
+  "novelty_established": false
+}

@@ -1,0 +1,60 @@
+{
+  "scope": "Notebook 2, fixed initial chronological reference audit. Neither full-panel rolling ACD scores nor a final paper specification.",
+  "calendar": "UTC: 56 initial days seasonal history, then 56 days model training, then 14 days validation. Validation is model-development data; later panel remains unused for these estimates.",
+  "seasonality": "At each UTC day start use only prior 56 origin days matching weekday and 15-minute origin slot. Working scale = observed exposure seconds / completed events. Four prior exposed dates, 1800 exposure seconds, 100 completions and full-window warm-up required. Scale is frozen at spell origin.",
+  "seasonal_model": "Exposure/event ratio is the MLE scale under a constant exponential working model for each origin cell, conditional on ignorable censoring. It is not an assumption-free estimate of mean latent durations. Dynamic ACD is fitted after this reference prefilter; simultaneous estimation and alternative seasonal specifications remain sensitivity questions.",
+  "historical_cutoffs": "A spell running at a historical seasonal or model-training cutoff contributes only exposure up to that cutoff; its later endpoint event is unavailable. Events exactly at the cutoff are excluded from that historical fit. Origin-time scale remains fixed even if the wait crosses cells or dates.",
+  "observation_assumption": "Density/survival contributions are a working ignorable-observation likelihood conditional on audited support. Freshness caps are deterministic elapsed-time rules for the recorded stream. Structural interruptions/removed quotes are not certified independent censoring, and omitted vendor updates remain unresolved. Reference fits do not identify latent market-wide arrivals.",
+  "recursion": "y_i=elapsed_i/scale_at_origin; psi_i=omega+alpha*y_previous+beta*psi_previous after an observed completion in the same eligible sequence. Initialize psi=omega/(1-alpha-beta) at component or factor-availability/training-entry reset. No state crosses a censored terminal or unavailable factor.",
+  "distributions": "EACD uses exponential mean psi. Weibull ACD uses shape k and scale psi/Gamma(1+1/k), so psi is the conditional mean in normalized units. Constant iid exponential is a reference using identical training and validation support.",
+  "likelihood": "For event d, log contribution = d*log density + (1-d)*log survival. Raw-seconds completed log density includes -log(origin seasonal scale). Incomplete spells have no density Jacobian. Positive exposure only; zero exposure is bookkeeping. No clipping, winsorization, or uncensored-completions-only likelihood.",
+  "optimization": "Three fixed starts. Analytic gradients checked by finite differences, omega>0, alpha,beta>=0, alpha+beta<0.999 reference ceiling. Weibull k in [0.2,5]. L-BFGS-B, max 150 iterations, ftol 1e-11, gtol 1e-6. All attempts and boundary flags saved; no global optimum guarantee.",
+  "validation": "Parameters are frozen at the training cutoff. Recurrence filters prior observations and updates only after each recorded completion; the current wait cannot change its own psi. Origin-after-cutoff validation excludes a wait already running at cutoff, though its eventual completion can update later forecasts. Completed scores are available only at the later quote.",
+  "diagnostics": "Cumulative hazard H gives martingale residual d-H under the working model. Hazard-band event counts are compared with integrated risk exposure; completed-only PIT uniformity is not assumed under censoring. Daily summaries and raw-seconds scores are descriptive, with no iid p-values.",
+  "diagnostic_flags": {
+    "event_hazard_ratio": [
+      0.9,
+      1.1
+    ],
+    "absolute_martingale_lag1_max": 0.05,
+    "hazard_band_ratio": [
+      0.8,
+      1.2
+    ],
+    "minimum_band_hazard_exposure": 100,
+    "meaning": "Fixed before execution, engineering screening tolerances only. Passing is insufficient for publication; failure blocks use as calibrated shock probabilities."
+  },
+  "sensitivity": "Structural-only Weibull also fitted without structural-terminal training contributions and with unit initial psi. These are isolated diagnostics; omitting tails is not a bias correction, and seasonal scales remain the common reference in these comparisons.",
+  "sources": [
+    {
+      "title": "Engle and Russell (1998), Autoregressive Conditional Duration",
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6809",
+      "scope": "ACD framework, not our observation assumptions or numerical settings."
+    },
+    {
+      "title": "Prigent, Renault and Scaillet, ACB model, section 2.1",
+      "url": "https://eprints.lse.ac.uk/119095/1/dp364.pdf",
+      "scope": "ACD conditional means, exponential/Weibull hazards and mean normalization."
+    },
+    {
+      "title": "Statsmodels duration analysis",
+      "url": "https://www.statsmodels.org/stable/duration.html",
+      "scope": "Completed versus censored event-time observations."
+    },
+    {
+      "title": "Statsmodels SurvfuncRight notes",
+      "url": "https://www.statsmodels.org/dev/generated/statsmodels.duration.survfunc.SurvfuncRight.html",
+      "scope": "Independent-censoring assumptions are substantive; censoring flags alone do not resolve dependence."
+    }
+  ],
+  "limits": [
+    "UTC/local-session DST and holiday effects require sensitivity. No primary support policy is selected.",
+    "Reset initialization is a working approximation; the latent state after a gap may differ from the unconditional mean. Numerical admissibility does not establish economic stationarity.",
+    "Time resolution, vendor batching and unrecovered updates may violate a continuous duration distribution. Diagnose rather than hide the mismatch.",
+    "The first validation window cannot establish stability across the full panel or predictive economic content.",
+    "No shock detector, persistence label, state-dependent price response, causal interpretation or final inference is estimated."
+  ],
+  "primary_freshness_policy": null,
+  "coverage_certified": false,
+  "downstream_ready": false
+}

@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "run_id": "step03_quote_imbalance_20260927",
+  "stage": "03_recorded_quote_imbalance",
+  "status": "verified_recorded_quote_proxy",
+  "created_at_utc": "2026-09-27T14:57:33.795119+00:00",
+  "parent_data_run": "step01_quote_sizes_20260927_v2",
+  "parent_eligibility_run": "step02b_observation_20260927",
+  "parent_clean_path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/runs/step01_quote_sizes_20260927_v2/clean_quotes.parquet",
+  "eligibility_directory": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/eligibility/step02b_observation_20260927",
+  "inputs": {
+    "parent_clean": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/runs/step01_quote_sizes_20260927_v2/clean_quotes.parquet",
+      "sha256": "42bf8ebd9db201a5606e811de6d778e81b1094471d30af52e8e63f02b9e6254e"
+    },
+    "parent_manifest": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/runs/step01_quote_sizes_20260927_v2/manifest.json",
+      "sha256": "ef3197dba7fec7232f99277d2be63d1344cecfd5292f19c7cd0bf4d52a4faad0"
+    },
+    "parent_verification": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/runs/step01_quote_sizes_20260927_v2/verification.json",
+      "sha256": "22d474c86d626649d638c74b3ec6761d245ea00a7059f040cd9bb5b707bbb409"
+    },
+    "eligibility_manifest": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/eligibility/step02b_observation_20260927/manifest.json",
+      "sha256": "7cc1b63c3b65d34f8a63d036d0b968ad1622a65721bd2180cbda57f66a513610"
+    },
+    "eligibility_verification": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/eligibility/step02b_observation_20260927/verification.json",
+      "sha256": "cf2520ce5a5bf5820ce2e94fdac42056a7f2725d6a5d8984dd741d97ad6b8de7"
+    },
+    "segments": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/eligibility/step02b_observation_20260927/segments.parquet",
+      "sha256": "a7f3ea6b78ff6af839a46c5d5eace43ded5c5492af7d86cb7ad8d5eb79c76391"
+    },
+    "support": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/eligibility/step02b_observation_20260927/support_intervals.parquet",
+      "sha256": "088041bbc06b8517c4ae090d826abf70c11e590c03d7f8c65b89dd010a7b7443"
+    },
+    "eligibility_usage_contract": {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/eligibility/step02b_observation_20260927/usage_contract.json",
+      "sha256": "64eaf67e15946608d42bca6fb789612e69b65c99578746f6f4d7a4b9634c9599"
+    }
+  },
+  "production_batch_size": 500000,
+  "coverage_certified": false,
+  "downstream_ready": false,
+  "primary_freshness_policy": null,
+  "environment": {
+    "python": "3.12.13",
+    "numpy": "2.5.0",
+    "pandas": "2.2.3",
+    "pyarrow": "18.1.0"
+  },
+  "code_sha256": {
+    "repair_quote_imbalance.py": "d178c435e65df42ab21111d5319663464fe93f55c90d825417afc75a63c8b6fe",
+    "src/ofi.py": "1028dfb8bd3b497ad873637ea0f571a9180963bc0021401433b41eba4225c006",
+    "src/quote_imbalance_statistics.py": "7328623429b94a6fdca6433e687be3aa3c7d028cd7323d429642997c1e7fb189",
+    "src/verify_quote_imbalance.py": "3dee52a51022f13290d7f738c9d8e56c24478ae3e2e74fc633431e202d7b9342",
+    "src/pipeline_state.py": "fc3d8f71f560a20d3c91da2800f70d4367a4b56c349f4eb39dc379be366c2672",
+    "src/data_preparation.py": "199ed717ada3eaea625ffb3da788e80a75a7765c7afdb2b560433c6f3a100831",
+    "tests/test_quote_imbalance.py": "c87bfe177c64d93f06d52114df27978dfb3d6cdce4c86f2c2c3bc25cbba7fde0"
+  },
+  "outputs": {
+    "quote_ofi_ticks.parquet": "d4a1a2c670b791a15d7d01be510a56df898e156db264260daaf7203aa72d8cc8",
+    "quote_ofi_1s.parquet": "1f798e60a09d0505c8097422706442284c12c62c673c4e9ef1ffcc740a28a18f",
+    "statistics.json": "7cacc259167273109a784f381186378a86a626a1f3167b5d5c943eab22701b42",
+    "monthly_statistics.parquet": "b31fe0ab4237c544bdba2539403d27a25909e5013ca79a675b7378673d96cd70",
+    "methodology.json": "5f9fd0a0870109a01f5f738cdfa0c0fb9dc98b6c6fb2265b02dc27b683ec4578",
+    "test_evidence.json": "d83a1c8b62e9145c63909adf2e9ad4deda294f8708018127049791cfd80ae657"
+  }
+}

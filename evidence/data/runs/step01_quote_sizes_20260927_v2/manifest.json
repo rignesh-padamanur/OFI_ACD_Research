@@ -1,0 +1,636 @@
+{
+  "schema_version": 2,
+  "run_id": "step01_quote_sizes_20260927_v2",
+  "stage": "01_quote_size_preservation",
+  "status": "verified",
+  "created_at_utc": "2026-09-27T10:11:24.105926+00:00",
+  "requested_start_month": "2024-01",
+  "requested_end_month": "2026-07",
+  "source_scope": "existing_cached_monthly_files",
+  "coverage_status": "not_certified",
+  "limitations": [
+    "Existing monthly files are cached observations, not a certified complete vendor feed.",
+    "The legacy downloader may have removed size-only updates sharing a timestamp and prices; those records cannot be recovered locally.",
+    "Missing hours, holidays, DST, and within-hour coverage require stage 02.",
+    "Source-row order within a tied timestamp is not independently established market-event order.",
+    "Quote-size units/update semantics and downstream OFI identification require separate verification.",
+    "Long gaps are retained; no stale-quote filling, duration truncation, or session filtering is performed here."
+  ],
+  "input_files": [
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2024_01.parquet",
+      "name": "eurusd_2024_01.parquet",
+      "sha256": "a9c9ccd881b1856e44e3bd136e25cfea1bf298f9a5673a9801b92f2f58957abc",
+      "bytes": 29229527,
+      "rows": 2161677
+    },
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2024_02.parquet",
+      "name": "eurusd_2024_02.parquet",
+      "sha256": "0d0e78202cbdead3171bb567a3628ebdbb3b3675650439da0df37bffb74b7c0e",
+      "bytes": 22918107,
+      "rows": 1699050
+    },
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2024_03.parquet",
+      "name": "eurusd_2024_03.parquet",
+      "sha256": "b327e034aa2eee4caacbca05e81a08a4b46312fcfc343173adfda884c74067d4",
+      "bytes": 19766537,
+      "rows": 1471855
+    },
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2024_04.parquet",
+      "name": "eurusd_2024_04.parquet",
+      "sha256": "6cf2d6232ad70861fa59730ca01d16802b84c06a7d18060ed9009984861e5fd9",
+      "bytes": 21054721,
+      "rows": 1563493
+    },
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2024_05.parquet",
+      "name": "eurusd_2024_05.parquet",
+      "sha256": "4f5d5d8154c9bc01569a50e440ffd844dd60be082e2c211545a6801fb3267f61",
+      "bytes": 16751227,
+      "rows": 1244928
+    },
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2024_06.parquet",
+      "name": "eurusd_2024_06.parquet",
+      "sha256": "e48b8a44b34d5373ec72fc48eae0e05bb61575839fd3f8269b7940c3b675f92a",
+      "bytes": 17820125,
+      "rows": 1334494
+    },
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2024_07.parquet",
+      "name": "eurusd_2024_07.parquet",
+      "sha256": "8ee7d68063bfafa60c78c057c82524dc2eeea911f564d4b6e979280a47bcc144",
+      "bytes": 19376232,
+      "rows": 1463333
+    },
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2024_08.parquet",
+      "name": "eurusd_2024_08.parquet",
+      "sha256": "517d3730ffdccfbface00b96eb07b42d52019d5a2230492a4b81fe18a9784e8a",
+      "bytes": 24549210,
+      "rows": 1850658
+    },
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2024_09.parquet",
+      "name": "eurusd_2024_09.parquet",
+      "sha256": "72abbad635571a6ecae00bd40e1b53cd1945f55163bed64e92336b9f48444515",
+      "bytes": 23854311,
+      "rows": 1797377
+    },
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2024_10.parquet",
+      "name": "eurusd_2024_10.parquet",
+      "sha256": "3720e02ab70a9a6423dcb6a3fde0058c5a18df4097a03c1e262dc15f5c71f73d",
+      "bytes": 23412817,
+      "rows": 1769081
+    },
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2024_11.parquet",
+      "name": "eurusd_2024_11.parquet",
+      "sha256": "c621e93598117b4e698bace318910d6108b8e61c05d8329b79f4f0a3546c50fe",
+      "bytes": 31698612,
+      "rows": 2311113
+    },
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2024_12.parquet",
+      "name": "eurusd_2024_12.parquet",
+      "sha256": "763f30bc1025c498b5fd15f3102e2a3c9bd6230b807fd657bc2ad1738140982a",
+      "bytes": 27410298,
+      "rows": 1972926
+    },
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2025_01.parquet",
+      "name": "eurusd_2025_01.parquet",
+      "sha256": "37ae003587f7f431749da4f27ea96df217315339eee731d04ac55aedf39270a5",
+      "bytes": 30968795,
+      "rows": 2269179
+    },
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2025_02.parquet",
+      "name": "eurusd_2025_02.parquet",
+      "sha256": "28739edbd5c07021147ecf783ce1e528ba78a8028796eb7f24e496666b5b36eb",
+      "bytes": 27324450,
+      "rows": 2044009
+    },
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2025_03.parquet",
+      "name": "eurusd_2025_03.parquet",
+      "sha256": "46403e8e6b5baf85c58dc1e180ec06f6d73a3d9830d398bb4248265480ffa47b",
+      "bytes": 32770387,
+      "rows": 2344361
+    },
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2025_04.parquet",
+      "name": "eurusd_2025_04.parquet",
+      "sha256": "9c2dcb5651b2a582021e3408c735a4a993884fb20268bf74bd59e85d388439b5",
+      "bytes": 54370311,
+      "rows": 3915597
+    },
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2025_05.parquet",
+      "name": "eurusd_2025_05.parquet",
+      "sha256": "72ea3869d2045392cb09e7d57446c639bbda9f00c6a3df5a2ba27d77266249f5",
+      "bytes": 33463792,
+      "rows": 2423219
+    },
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2025_06.parquet",
+      "name": "eurusd_2025_06.parquet",
+      "sha256": "2d1b37365ac60e85ca2104578f842ddbe0863dc19c11ede08dd4a70e2ad9b39f",
+      "bytes": 27842489,
+      "rows": 2033530
+    },
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2025_07.parquet",
+      "name": "eurusd_2025_07.parquet",
+      "sha256": "61eae565bf641872763d017231e3d13058cd6a8f474ee2af75fc00b61933edd9",
+      "bytes": 21599080,
+      "rows": 1558153
+    },
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2025_08.parquet",
+      "name": "eurusd_2025_08.parquet",
+      "sha256": "d475c1798f3059b528f03835e7edab65cd06df709864e543c109885eee81d2bd",
+      "bytes": 18417201,
+      "rows": 1341789
+    },
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2025_09.parquet",
+      "name": "eurusd_2025_09.parquet",
+      "sha256": "25aa6e161a075617c03e74414bf5ed11b05f3a53aa03f8008285cf3ba1a0fbf4",
+      "bytes": 20935410,
+      "rows": 1493853
+    },
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2025_10.parquet",
+      "name": "eurusd_2025_10.parquet",
+      "sha256": "6dc5adea3f0b01d21c01c1900727845030da25b95b6df5232e440a21d47d9cfb",
+      "bytes": 20629724,
+      "rows": 1486567
+    },
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2025_11.parquet",
+      "name": "eurusd_2025_11.parquet",
+      "sha256": "7b7f6195e13874bb6a199c9726252da4fd90af2f45b383b30ca485b4467be4ad",
+      "bytes": 17087171,
+      "rows": 1225494
+    },
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2025_12.parquet",
+      "name": "eurusd_2025_12.parquet",
+      "sha256": "3a389cc0a2269ae930f504e625f835c39ea60b9d3e4d92c736055a21f5e12a35",
+      "bytes": 17406020,
+      "rows": 1286177
+    },
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2026_01.parquet",
+      "name": "eurusd_2026_01.parquet",
+      "sha256": "479e1a51d75c131c9af3e7e82c4bb7b276478ee0aa0130464c249cf7ff639903",
+      "bytes": 20518486,
+      "rows": 1498002
+    },
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2026_02.parquet",
+      "name": "eurusd_2026_02.parquet",
+      "sha256": "8539a953310ffa5d8f6d0d1cffe836f62025ddafb839b45c24c93d0a44394280",
+      "bytes": 18001201,
+      "rows": 1323945
+    },
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2026_03.parquet",
+      "name": "eurusd_2026_03.parquet",
+      "sha256": "8eba66c6fb5e4a539cceb608d62775b7bd989438763182c18e4636757ac973b1",
+      "bytes": 34905855,
+      "rows": 2626683
+    },
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2026_04.parquet",
+      "name": "eurusd_2026_04.parquet",
+      "sha256": "8aba8ebeff230df39088548c6f0bb66df95fc14a81b94485b573b7397f2dc02d",
+      "bytes": 25250323,
+      "rows": 1918070
+    },
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2026_05.parquet",
+      "name": "eurusd_2026_05.parquet",
+      "sha256": "b5648f0f6003f48d04ea4ff870ccd050dab5506fc9c4f0533bbbdf7b2a6f2ed9",
+      "bytes": 19405148,
+      "rows": 1472510
+    },
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2026_06.parquet",
+      "name": "eurusd_2026_06.parquet",
+      "sha256": "24c93b4e8ecf58514cda0d8dfe000e1f8e746c42552379b0a03a61e234b6c249",
+      "bytes": 19060918,
+      "rows": 1420900
+    },
+    {
+      "path": "/Users/rigneshpadamanur/Documents/FX_Microstructure/data/raw/dukascopy/eurusd_2026_07.parquet",
+      "name": "eurusd_2026_07.parquet",
+      "sha256": "f00cf8d49eedf16eefdd9531f4d928fcd4813ad7f3a9d6237caf7102e68c768a",
+      "bytes": 18655879,
+      "rows": 1387884
+    }
+  ],
+  "monthly_cleaning": [
+    {
+      "source_file": "eurusd_2024_01.parquet",
+      "raw_rows": 2161677,
+      "clean_rows": 2161677,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 0,
+        "duplicate_full_snapshot": 0
+      }
+    },
+    {
+      "source_file": "eurusd_2024_02.parquet",
+      "raw_rows": 1699050,
+      "clean_rows": 1699050,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 0,
+        "duplicate_full_snapshot": 0
+      }
+    },
+    {
+      "source_file": "eurusd_2024_03.parquet",
+      "raw_rows": 1471855,
+      "clean_rows": 1471855,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 0,
+        "duplicate_full_snapshot": 0
+      }
+    },
+    {
+      "source_file": "eurusd_2024_04.parquet",
+      "raw_rows": 1563493,
+      "clean_rows": 1563493,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 0,
+        "duplicate_full_snapshot": 0
+      }
+    },
+    {
+      "source_file": "eurusd_2024_05.parquet",
+      "raw_rows": 1244928,
+      "clean_rows": 1244928,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 0,
+        "duplicate_full_snapshot": 0
+      }
+    },
+    {
+      "source_file": "eurusd_2024_06.parquet",
+      "raw_rows": 1334494,
+      "clean_rows": 1334494,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 0,
+        "duplicate_full_snapshot": 0
+      }
+    },
+    {
+      "source_file": "eurusd_2024_07.parquet",
+      "raw_rows": 1463333,
+      "clean_rows": 1463333,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 0,
+        "duplicate_full_snapshot": 0
+      }
+    },
+    {
+      "source_file": "eurusd_2024_08.parquet",
+      "raw_rows": 1850658,
+      "clean_rows": 1850658,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 0,
+        "duplicate_full_snapshot": 0
+      }
+    },
+    {
+      "source_file": "eurusd_2024_09.parquet",
+      "raw_rows": 1797377,
+      "clean_rows": 1797377,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 0,
+        "duplicate_full_snapshot": 0
+      }
+    },
+    {
+      "source_file": "eurusd_2024_10.parquet",
+      "raw_rows": 1769081,
+      "clean_rows": 1767492,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 1589,
+        "duplicate_full_snapshot": 0
+      }
+    },
+    {
+      "source_file": "eurusd_2024_11.parquet",
+      "raw_rows": 2311113,
+      "clean_rows": 2311113,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 0,
+        "duplicate_full_snapshot": 0
+      }
+    },
+    {
+      "source_file": "eurusd_2024_12.parquet",
+      "raw_rows": 1972926,
+      "clean_rows": 1972926,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 0,
+        "duplicate_full_snapshot": 0
+      }
+    },
+    {
+      "source_file": "eurusd_2025_01.parquet",
+      "raw_rows": 2269179,
+      "clean_rows": 2269179,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 0,
+        "duplicate_full_snapshot": 0
+      }
+    },
+    {
+      "source_file": "eurusd_2025_02.parquet",
+      "raw_rows": 2044009,
+      "clean_rows": 2044009,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 0,
+        "duplicate_full_snapshot": 0
+      }
+    },
+    {
+      "source_file": "eurusd_2025_03.parquet",
+      "raw_rows": 2344361,
+      "clean_rows": 2344361,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 0,
+        "duplicate_full_snapshot": 0
+      }
+    },
+    {
+      "source_file": "eurusd_2025_04.parquet",
+      "raw_rows": 3915597,
+      "clean_rows": 3915597,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 0,
+        "duplicate_full_snapshot": 0
+      }
+    },
+    {
+      "source_file": "eurusd_2025_05.parquet",
+      "raw_rows": 2423219,
+      "clean_rows": 2423219,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 0,
+        "duplicate_full_snapshot": 0
+      }
+    },
+    {
+      "source_file": "eurusd_2025_06.parquet",
+      "raw_rows": 2033530,
+      "clean_rows": 2033530,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 0,
+        "duplicate_full_snapshot": 0
+      }
+    },
+    {
+      "source_file": "eurusd_2025_07.parquet",
+      "raw_rows": 1558153,
+      "clean_rows": 1558153,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 0,
+        "duplicate_full_snapshot": 0
+      }
+    },
+    {
+      "source_file": "eurusd_2025_08.parquet",
+      "raw_rows": 1341789,
+      "clean_rows": 1341789,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 0,
+        "duplicate_full_snapshot": 0
+      }
+    },
+    {
+      "source_file": "eurusd_2025_09.parquet",
+      "raw_rows": 1493853,
+      "clean_rows": 1493853,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 0,
+        "duplicate_full_snapshot": 0
+      }
+    },
+    {
+      "source_file": "eurusd_2025_10.parquet",
+      "raw_rows": 1486567,
+      "clean_rows": 1486567,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 0,
+        "duplicate_full_snapshot": 0
+      }
+    },
+    {
+      "source_file": "eurusd_2025_11.parquet",
+      "raw_rows": 1225494,
+      "clean_rows": 1225494,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 0,
+        "duplicate_full_snapshot": 0
+      }
+    },
+    {
+      "source_file": "eurusd_2025_12.parquet",
+      "raw_rows": 1286177,
+      "clean_rows": 1286177,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 0,
+        "duplicate_full_snapshot": 0
+      }
+    },
+    {
+      "source_file": "eurusd_2026_01.parquet",
+      "raw_rows": 1498002,
+      "clean_rows": 1498002,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 0,
+        "duplicate_full_snapshot": 0
+      }
+    },
+    {
+      "source_file": "eurusd_2026_02.parquet",
+      "raw_rows": 1323945,
+      "clean_rows": 1323945,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 0,
+        "duplicate_full_snapshot": 0
+      }
+    },
+    {
+      "source_file": "eurusd_2026_03.parquet",
+      "raw_rows": 2626683,
+      "clean_rows": 2626683,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 0,
+        "duplicate_full_snapshot": 0
+      }
+    },
+    {
+      "source_file": "eurusd_2026_04.parquet",
+      "raw_rows": 1918070,
+      "clean_rows": 1918070,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 0,
+        "duplicate_full_snapshot": 0
+      }
+    },
+    {
+      "source_file": "eurusd_2026_05.parquet",
+      "raw_rows": 1472510,
+      "clean_rows": 1472510,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 0,
+        "duplicate_full_snapshot": 0
+      }
+    },
+    {
+      "source_file": "eurusd_2026_06.parquet",
+      "raw_rows": 1420900,
+      "clean_rows": 1420900,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 0,
+        "duplicate_full_snapshot": 0
+      }
+    },
+    {
+      "source_file": "eurusd_2026_07.parquet",
+      "raw_rows": 1387884,
+      "clean_rows": 1387884,
+      "removed": {
+        "nonfinite_price": 0,
+        "nonpositive_price": 0,
+        "crossed_quote": 0,
+        "zero_spread": 0,
+        "duplicate_full_snapshot": 0
+      }
+    }
+  ],
+  "environment": {
+    "python": "3.12.13",
+    "numpy": "2.5.0",
+    "pandas": "2.2.3",
+    "pyarrow": "18.1.0"
+  },
+  "implementation_sha256": "289925393a2cbfbcf06ec96ab8b0e8e1a4f32c81d352bed63b8d03d8877db38c",
+  "code_files": {
+    "src/data_preparation.py": "289925393a2cbfbcf06ec96ab8b0e8e1a4f32c81d352bed63b8d03d8877db38c",
+    "src/verify_data_stage.py": "56ce385736addc3128c2d3eb7f263135b7c0b11e6e7dc052ca62bc1b4512c968",
+    "prepare_master_dataset.py": "8a1b2b16fd94f07c476568472eb580f34c3f85920217329c9d9b1b2e08fb6474",
+    "verify_download.py": "30a20c43b8635725aaa9debeb47de9e4d48708d9e05dad56d12051389a62ac0c",
+    "tests/test_data_preparation.py": "7872b7e6f5c4fd16092edffcbf17537a38b51eaabe3fe959d4cb7592cab6ebd8"
+  },
+  "outputs": {
+    "raw_quotes.parquet": {
+      "sha256": "2e5cd3b1751da85897e169245e3f710d22b9d1b281d467549f7929f033ff298c",
+      "bytes": 752857089
+    },
+    "clean_quotes.parquet": {
+      "sha256": "42bf8ebd9db201a5606e811de6d778e81b1094471d30af52e8e63f02b9e6254e",
+      "bytes": 976055434
+    }
+  }
+}

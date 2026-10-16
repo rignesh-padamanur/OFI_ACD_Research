@@ -1,0 +1,50 @@
+[
+  {
+    "start_alpha": 0.05,
+    "start_beta": 0.85,
+    "start_shape": 0.7,
+    "success": true,
+    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+    "iterations": 33,
+    "evaluations": 37,
+    "objective": 0.7528579037744807,
+    "gradient_inf_norm": 8.981943342722668e-07,
+    "omega": 0.0011555981890632096,
+    "alpha": 0.029653912967421668,
+    "beta": 0.968631774860575,
+    "shape": 0.7428040786479518,
+    "near_constraint": false
+  },
+  {
+    "start_alpha": 0.15,
+    "start_beta": 0.7,
+    "start_shape": 1.0,
+    "success": true,
+    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+    "iterations": 29,
+    "evaluations": 31,
+    "objective": 0.7528579037754666,
+    "gradient_inf_norm": 6.298682859336089e-07,
+    "omega": 0.0011556089016739864,
+    "alpha": 0.02965403646009383,
+    "beta": 0.968631678306427,
+    "shape": 0.7428034292782052,
+    "near_constraint": false
+  },
+  {
+    "start_alpha": 0.3,
+    "start_beta": 0.5,
+    "start_shape": 0.5,
+    "success": true,
+    "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+    "iterations": 29,
+    "evaluations": 33,
+    "objective": 0.7528579037735015,
+    "gradient_inf_norm": 6.513150412758488e-08,
+    "omega": 0.001155601958066918,
+    "alpha": 0.029654109011509455,
+    "beta": 0.9686315417383675,
+    "shape": 0.7428038159738308,
+    "near_constraint": false
+  }
+]

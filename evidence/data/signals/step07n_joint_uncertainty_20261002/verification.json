@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "target_count": 12,
+  "interval_rows_verified": 24,
+  "covariance_rows_verified": 288,
+  "score_rows_verified": 9804,
+  "lag_product_rows_verified": 10224,
+  "calendar_days_verified": 817,
+  "empirical_models_fitted": 0,
+  "inference_approved": false,
+  "method": "Raw-event daily reconciliation, stable scalar coordinate pilots, dense Bartlett calendar kernel and independent normal quantile.",
+  "executed_tests": 955,
+  "regression_jobs_rechecked": 4,
+  "regression_interval_rows_preserved": 56,
+  "regression_verification_scope": "source_bound_rechecks_of_previously_independently_verified_results",
+  "production_inference_approved": false,
+  "downstream_ready": false
+}
