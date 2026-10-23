@@ -113,8 +113,6 @@ class QuoteTimingTests(unittest.TestCase):
         self.assertTrue(actual.pre_rv_300s_5s_bps.iloc[:300].isna().all())
         self.assertTrue(actual.pre_rv_300s_5s_bps.iloc[300:].notna().all())
         s = 400
-        # direct scalar reconstruction has neither the production rolling sums
-        # nor the vector reference's five-phase grouping.
         marks = []
         for lag in range(300, -1, -5):
             cutoff = clock.bin_start.iloc[s]-pd.Timedelta(seconds=lag)
@@ -141,7 +139,6 @@ class QuoteTimingTests(unittest.TestCase):
         actual = quote_diagnostics(clock, quotes, support, policy='structural_only')
         self.assertTrue(actual.pre_quote_ofi_300s.iloc[300:351].isna().all())
         self.assertTrue(np.isfinite(actual.pre_quote_ofi_300s.iloc[351]))
-        # a quote before the support start cannot supply the first history mark.
         clock, quotes, support = quote_fixture()
         support.loc[0, 'start'] = clock.bin_start.iloc[0]
         actual = quote_diagnostics(clock, quotes, support, policy='structural_only')
@@ -149,7 +146,6 @@ class QuoteTimingTests(unittest.TestCase):
         self.assertTrue(np.isnan(actual.pre_rv_300s_5s_bps.iloc[300]))
         self.assertTrue(np.isnan(actual.pre_quote_ofi_300s.iloc[300]))
         self.assertTrue(np.isfinite(actual.pre_rv_300s_5s_bps.iloc[301]))
-        # start a new support interval; 300 seconds of history must not bridge it.
         clock, quotes, support = quote_fixture()
         split = clock.bin_start.iloc[310]
         support = pd.DataFrame({'start': [support.start.iloc[0], split],

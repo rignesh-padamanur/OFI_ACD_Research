@@ -249,9 +249,6 @@ def _lineage(run, manifest, cache):
     parent_directory = Path(inputs['parent_manifest']['path']).parent
     reference_directory = Path(inputs['reference_manifest']['path']).parent
     parent, count_parent = _registered_hashes(parent_directory, cache)
-    # the earlier detector's verified outputs and executed sources are the
-    # immediate reference parent. Do not rehash/reconstruct its multi-GB raw
-    # ancestors during a narrowly scoped transformation-stage verification.
     reference, count_reference = _registered_hashes(reference_directory, cache, include_inputs=False)
     _require(parent['status'] == 'verified_development_analysis_ledger', 'Unverified ledger parent')
     _require(_read(parent_directory / 'verification.json')['status'] == 'passed',
@@ -261,8 +258,6 @@ def _lineage(run, manifest, cache):
     _require(reference['status'] == 'verified_original_detector_development_audit',
              'Reference parent status differs')
     _require(parent['primary_policy'] == 'structural_only', 'Wrong ledger policy')
-    # the calibration parent must be the actual detector ancestor of the
-    # selected episodes, not merely another run sharing the same time bounds.
     chain = parent['inputs']['response_manifest']
     for step, expected_status in [
         ('responses', 'verified_development_price_responses'),
@@ -346,7 +341,6 @@ def _design_geometry(frame, curvature):
         singular = [float(value) for value in values]
         if rank == ncolumns:
             condition = float(values[0] / values[-1])
-        # diagonal of the orthogonal projector onto the retained column space.
         diagonal = np.einsum('ij,ij->i', left[:, used], left[:, used])
         limit = float(2 * rank / nrows)
         max_h = float(np.max(diagonal))
@@ -403,7 +397,6 @@ def _distribution_reference(series):
 
 
 def _statistics_reference(features, samples, design_rows, schemas):
-    # count failures independently as successive set intersections of IDs.
     survivors = set(features['episode_id'])
     waterfall = []
     for flag in ['pre_state_eligible', 'valid_spread', 'valid_size', 'baseline_finite']:

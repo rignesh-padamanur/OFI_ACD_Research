@@ -50,8 +50,6 @@ def compute_weibull_residuals(df_acd, params):
             + beta * psi[t - 1]
         )
 
-    # standard unit-mean ACD residual: ε_i = δ̃_i / ψ_i
-    # E[ε_i] = 1 under correct specification (Engle & Russell, 1998)
     eps = x / psi
 
     out = df_acd.copy()

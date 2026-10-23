@@ -78,8 +78,6 @@ def verify():
         close(group.mse_b, group.sum_lb / group.n)
         close(group.mse_t, group.sum_lt / group.n)
         close(group.relative_reduction, group.sum_d / group.sum_lb)
-    # recompute the declared daily ratio influences and Bartlett covariance,
-    # independently of src/timing_forecast.py, in the paper's increase convention.
     excess = -daily.sum_d.to_numpy()
     delta, relative = excess.sum() / n, excess.sum() / sums.sum_lb
     influence = (excess - delta * daily.n.to_numpy()) / n

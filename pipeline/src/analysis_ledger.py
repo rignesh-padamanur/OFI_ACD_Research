@@ -143,7 +143,6 @@ def assemble_ledger(anchors, measurements, direction, paths):
     _same(a.episode_id, d.episode_id, 'direction IDs')
     _same(a.bin_start, d.bin_start, 'direction endpoints')
     _same(a.onset_confirmed, d.onset_confirmed, 'direction confirmation')
-    # keep nonfinite directions ineligible; do not replace inherited signs
     if not np.allclose(a.direction, d.inherited_direction, rtol=0, atol=0, equal_nan=True):
         raise ValueError('Inherited direction changed')
     if not np.allclose(a.quote_ofi, d.inherited_net, rtol=0, atol=0, equal_nan=True):
@@ -168,7 +167,6 @@ def assemble_ledger(anchors, measurements, direction, paths):
     a['onset_weekday_utc'] = a.bin_start.dt.dayofweek.astype('int64')
     a['onset_slot_15m_utc'] = (a.bin_start.dt.hour*4 + a.bin_start.dt.minute//15).astype('int64')
     a['nominal_start_at'] = a.bin_start - pd.Timedelta(seconds=300)
-    # use the same oldest boundary for all grids; include every selected source
     source_cols = [f'pre_first_quote_at_{f}s' for f in FREQUENCIES] + ['pre_mark_at', 'detection_mark_at']
     a['source_start_at'] = a[source_cols].min(axis=1)
     if a.loc[a.pre_state_eligible, 'source_start_at'].isna().any():

@@ -135,11 +135,6 @@ def _registered_tree(run):
         for parent in parents:
             context = _read(Path(parent) / 'manifest.json')
             if context.get('stage') == '02a_whole_hour_coverage':
-                # this historical audit is registered context for observation
-                # support, not a verified vendor-recovery/model deployment.
-                # its manifest/table/verification are hashed by the referring
-                # stage-02b input records; source-cache hashes are covered by
-                # the data ancestor. Do not claim recovery was completed.
                 _require(context.get('status') == 'coverage_audited_recovery_waiting_for_vendor_access'
                          and context.get('coverage_certified') is False,
                          'Coverage-context scope changed')
@@ -150,8 +145,6 @@ def _registered_tree(run):
                 visit(parent)
 
     visit(run, root=True)
-    # comparing registrations across the tree also binds every used parent
-    # output to its own manifest, even where older stages use different aliases.
     root = manifests[str(Path(run).resolve())]
     output_owners = {}
     for directory, m in manifests.items():
@@ -385,8 +378,6 @@ def _feature_reference(run, manifest, parameters, duration):
     ready = np.isfinite(clock[['adjusted_abs_quote_ofi', 'adjusted_tick_count']]).all(axis=1).to_numpy()
     status = clock.flow_status.to_numpy()
     reason = np.full(len(raw), 'eligible', dtype=object)
-    # reverse-priority assignments provide a separate implementation of the
-    # mutually exclusive observation accounting, including quiet/unready bins.
     reason[completed != recorded] = 'incomplete_duration'
     reason[recorded == 0] = 'quiet_no_duration'
     reason[~ready] = 'seasonal_unavailable'
@@ -479,8 +470,6 @@ def _episode_reference(run, manifest, deployment, quotes, support):
     saved_s = pd.read_parquet(run / 'combined_scored.parquet')
     _frame(saved_o, combined_o, 'combined opportunity clock')
     _frame(saved_s, combined_s, 'combined baseline scores')
-    # old deployed numbers must be byte-identical as numbers, even though the
-    # independent new covariance arithmetic only promises floating tolerance.
     pd.testing.assert_frame_equal(saved_o.iloc[:len(old_opportunities)].reset_index(drop=True),
                                   old_opportunities, check_exact=True, check_dtype=False, check_categorical=False)
     pd.testing.assert_frame_equal(saved_s.iloc[:len(old_scored)].reset_index(drop=True),

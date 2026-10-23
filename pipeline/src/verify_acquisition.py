@@ -70,8 +70,6 @@ def verify_coverage_audit(acq:Path):
     hours=ledger.hour.array.asi8
     if not np.array_equal(ledger.rows,[counts.get(int(h),0) for h in hours]):raise AssertionError('Hourly counts differ')
     for field,lookup in [('first_timestamp',first),('last_timestamp',last)]:
-        # construct datetime values without converting integer nanoseconds to
-        # floats when absent hours are present.
         expected=pd.DatetimeIndex([pd.Timestamp(lookup[int(h)],unit='ns',tz='UTC') if int(h) in lookup else pd.NaT for h in hours])
         if not np.array_equal(ledger[field].array.asi8,expected.asi8):raise AssertionError(field+' differs')
     metrics={
@@ -136,8 +134,6 @@ def verify_recovery(acq:Path):
             frame=decoded[r['hour']]
             old_hour=old.loc[(old.timestamp>=hour)&(old.timestamp<hour+pd.Timedelta(hours=1))]
             if r['purpose']=='decoder_control_existing_hour':
-                # existing inputs intentionally used a lossy price-only key.
-                # report whether that transform is needed to reconcile a control.
                 direct=len(old_hour)==len(frame) and old_hour.reset_index(drop=True).equals(frame)
                 legacy=frame.loc[(frame.ask!=0)&(frame.bid!=0)].drop_duplicates(['timestamp','ask','bid'])
                 pd.testing.assert_frame_equal(old_hour.reset_index(drop=True),legacy.reset_index(drop=True),check_exact=True)

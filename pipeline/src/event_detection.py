@@ -25,7 +25,6 @@ def build_event_detection_pipeline(
         'after the registered calibration and duration repairs.'
     )
 
-    # 1-second ACD summaries
     res_col = f"residual_{acd_model.lower()}"
     mu_col = "psi_weibull" if acd_model.lower() == "weibull" else "mu_eacd"
 
@@ -51,7 +50,6 @@ def build_event_detection_pipeline(
 
     event_df = event_df.dropna()
 
-    # chronological train/test split
 
     N = len(event_df)
     n_train = int(N * train_frac)
@@ -63,9 +61,7 @@ def build_event_detection_pipeline(
 
     train = event_df.iloc[:n_train]
 
-    # fit scaling on the training partition
 
-    # z_ofi uses absolute OFI
     ofi_train_mean = train["abs_ofi"].mean()
     ofi_train_std = train["abs_ofi"].std()
     assert ofi_train_std > 0, "abs_ofi has zero variance in training set"
@@ -74,7 +70,6 @@ def build_event_detection_pipeline(
         event_df["abs_ofi"] - ofi_train_mean
     ) / ofi_train_std
 
-    # z_intensity uses quote counts
     int_train_mean = train[intensity_col].mean()
     int_train_std = train[intensity_col].std()
     assert int_train_std > 0, "Intensity has zero variance in training set"
@@ -83,7 +78,6 @@ def build_event_detection_pipeline(
         event_df[intensity_col] - int_train_mean
     ) / int_train_std
 
-    # z_duration reverses the sign of the standardized log residual
     log_duration_full = np.log(
         event_df[res_col].replace(0, np.nan).fillna(1.0)
     )
@@ -93,12 +87,10 @@ def build_event_detection_pipeline(
     log_dur_train_std = log_duration_train.std()
     assert log_dur_train_std > 0, "log_duration has zero variance in training set"
 
-    # sign flip: smaller log residuals give larger z_duration
     event_df["z_duration"] = (
         log_dur_train_mean - log_duration_full
     ) / log_dur_train_std
 
-    # fit covariance on the same training partition
 
     Z_full = event_df[["z_ofi", "z_intensity", "z_duration"]].to_numpy()
     Z_train = Z_full[:n_train, :]
@@ -106,7 +98,6 @@ def build_event_detection_pipeline(
     if method == "mahalanobis":
         cov_train = np.cov(Z_train, rowvar=False)
 
-        # require positive covariance eigenvalues
         eigvals = np.linalg.eigvalsh(cov_train)
         assert np.all(eigvals > 0), (
             f"Train covariance is not positive definite. "
@@ -130,7 +121,6 @@ def build_event_detection_pipeline(
             + event_df["z_duration"]
         )
 
-    # estimate the threshold from training scores only
 
     train_stress = event_df["stress_score"].iloc[:n_train]
     threshold = train_stress.quantile(quantile_threshold)

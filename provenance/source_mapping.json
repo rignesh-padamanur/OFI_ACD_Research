@@ -19,43 +19,22 @@
       "source": "repair_acquisition.py",
       "release": "pipeline/repair_acquisition.py",
       "source_sha256": "70f17ac0505f299ef9d63387d18f042871ec9356f36821405e18288029d5f2d4",
-      "release_sha256": "a90ef30721a64be43362c49d286f5a06203037f68f20266c5b05a184e4cad0fd",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "70f17ac0505f299ef9d63387d18f042871ec9356f36821405e18288029d5f2d4",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "f1522e35fa1cfbd3c592ff8ec11ad453d06a63104882587f9dea3508df2c8f9f",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "repair_chronological_panel.py",
       "release": "pipeline/repair_chronological_panel.py",
       "source_sha256": "5cea004a8905abfa0bb92f201db063ac537aa4e0fe895bf5094050f546588f7f",
-      "release_sha256": "b12c4830bb3548e67734e85759a193a2b8f8ce7daa08adb29b48592bb1f75cd4",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "5cea004a8905abfa0bb92f201db063ac537aa4e0fe895bf5094050f546588f7f",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "fef10a1cc1f9b2b7eae246f94280f8c8643b77e898dbde6b71134cfd7aaff9d8",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "repair_chronological_transition.py",
       "release": "pipeline/repair_chronological_transition.py",
       "source_sha256": "4ab98b1e96db416d1c607f91b4bc19053ae70ee15cccdd89eb1271522838f650",
-      "release_sha256": "a6d83eac47f42a36eb682bfd01efb8cba339f42211f570063fe5b98176b2ebb6",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "4ab98b1e96db416d1c607f91b4bc19053ae70ee15cccdd89eb1271522838f650",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "5da2afd50ea12aca735f345140700363f11d45fb8d10b6216b90ab39b7d740e1",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "repair_duration_observation.py",
@@ -68,29 +47,15 @@
       "source": "repair_event_audit.py",
       "release": "pipeline/repair_event_audit.py",
       "source_sha256": "63983d2e164a264f1df9ed8a53a0f49f29d83e4cf18b10b5004ceeb2a3eca8ac",
-      "release_sha256": "d0c4cacdd418003129b7a0914f53281cf1aef53aef9d599a436bcd0cdcd7ceb2",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "63983d2e164a264f1df9ed8a53a0f49f29d83e4cf18b10b5004ceeb2a3eca8ac",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "a97234a1cd2c41c6d10b5a90cac3b567e59d1ab96b1b47cc84746656726b12b0",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "repair_joint_response.py",
       "release": "pipeline/repair_joint_response.py",
       "source_sha256": "a2666173a29d190eb33899d870ab8aa5341e628ed7ba37e354470c002c96ef58",
-      "release_sha256": "12e40b8ba01a006cf65ce76571a58e360ff0cd05993b04f49b7d727a89e8c840",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "a2666173a29d190eb33899d870ab8aa5341e628ed7ba37e354470c002c96ef58",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "7e9defb881d25ff47c7eef9e5b1db61fd32663ba9d36303af1a0c9ff5031d266",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "repair_joint_uncertainty.py",
@@ -124,15 +89,8 @@
       "source": "repair_panel_responses.py",
       "release": "pipeline/repair_panel_responses.py",
       "source_sha256": "050911d34db244b3dedf3dce12d2ccf2431a5be0a170a0042debb457112ca5fb",
-      "release_sha256": "6d8ddc2353d2ae6fb567ad842edea4e6bbb1a10f65285bf3dde8e228fbc413ce",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "050911d34db244b3dedf3dce12d2ccf2431a5be0a170a0042debb457112ca5fb",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "df544d2aed9ea498fbef2a6eb3a8e7237c72f71ac836e476992be3748e4e4b5d",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "repair_panel_state_precision.py",
@@ -152,15 +110,8 @@
       "source": "repair_prediction_ledger.py",
       "release": "pipeline/repair_prediction_ledger.py",
       "source_sha256": "aeac1134d7273b4f2dc8e053e6db40cad10a3197ea643db1914c54abe882b4a6",
-      "release_sha256": "24c09bd0490e98c646d2b4b7d3314b9b382dbcb1e1795054dd995ae29101eeae",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "aeac1134d7273b4f2dc8e053e6db40cad10a3197ea643db1914c54abe882b4a6",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "2c9c9c24eec1702f336a02b3f9bdd8a5305fc066d8ccb5d34a2ef16b8aeb8b88",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "repair_quote_imbalance.py",
@@ -173,29 +124,15 @@
       "source": "repair_seasonal_calibration.py",
       "release": "pipeline/repair_seasonal_calibration.py",
       "source_sha256": "2aebb3248e31776d792997a25aba511cefcb3359c7fe3429699b0377015953c2",
-      "release_sha256": "93589fb9e623a2098167cd20437af4a890286f94a997cc471b7d221982923ba0",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "2aebb3248e31776d792997a25aba511cefcb3359c7fe3429699b0377015953c2",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "6be1b2bbd6f8305fa8c3cb7190e547c62052b65d950488615f8127de559e49f4",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "repair_sequence_forecast.py",
       "release": "pipeline/repair_sequence_forecast.py",
       "source_sha256": "52cf71743681f27c53d224b91ecf096ec73c73c42f18f92cbb147ff074af2f4a",
-      "release_sha256": "a62211921633b359e8269ef1f70b7aba6315d2412905d83ce342652fcffeeaff",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "52cf71743681f27c53d224b91ecf096ec73c73c42f18f92cbb147ff074af2f4a",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "83ea024a5aec52f22163f54a0367705a884ae4912e2eaa90e3d8c48fe5bcb161",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "repair_sequence_measurement.py",
@@ -208,15 +145,8 @@
       "source": "repair_signal_clock.py",
       "release": "pipeline/repair_signal_clock.py",
       "source_sha256": "c24a931779d959490f6a80d558556a14e44060386fa00efeefabeab210792abd",
-      "release_sha256": "b01bd4b703edaf71d737c142ec8d571551f7acdcc4dc6b413645812da82e4667",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "c24a931779d959490f6a80d558556a14e44060386fa00efeefabeab210792abd",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "a08e371d686cef24f6c981972ea20eef0a1418a404df3960ef9d5231ff498689",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "reports/stage07m_closeout.py",
@@ -236,15 +166,8 @@
       "source": "reports/tests/test_panel_state_precision.py",
       "release": "pipeline/reports/tests/test_panel_state_precision.py",
       "source_sha256": "f33cbd7f9f000644025790324a61dedc5938ede49e8c3f70ac9199752a0c6d9d",
-      "release_sha256": "2c3287659831d211124eaca06437914152870f86128923125bbf55f0039d9f96",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "f33cbd7f9f000644025790324a61dedc5938ede49e8c3f70ac9199752a0c6d9d",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "e51ec5fedb99f9ef8b0b7992458fcead392a156823e0a121ef8a916e8200e5af",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "reports/tests/test_stage07c_v3_guards.py",
@@ -264,15 +187,8 @@
       "source": "run_timing_forecast.py",
       "release": "pipeline/run_timing_forecast.py",
       "source_sha256": "e11c9316e318f35448a1d736040c1f670fabe9bb5d601c74b2fab229f4e68b89",
-      "release_sha256": "17c51568f01d15c9361a967cdb13816389dba2068dd521f1d8a74666e0d1edf6",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "e11c9316e318f35448a1d736040c1f670fabe9bb5d601c74b2fab229f4e68b89",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "644f7518dcb55b611c31591c8f16125165a0845b737c47f633dc9bef175f516c",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/__init__.py",
@@ -285,50 +201,29 @@
       "source": "src/acd_kernel.c",
       "release": "pipeline/src/acd_kernel.c",
       "source_sha256": "0477453f6f492434da99c8b0cb3813539cece34fa2850e7708232c9aa7c7e3e6",
-      "release_sha256": "0477453f6f492434da99c8b0cb3813539cece34fa2850e7708232c9aa7c7e3e6",
-      "transformation": "none"
+      "release_sha256": "6e77595b67cceaf2bda78f2e36ca984d87090b17647f3cf8ff4e5e1a8d20b825",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/acquisition.py",
       "release": "pipeline/src/acquisition.py",
       "source_sha256": "54e9dd5db475721130459684f861ce82fb42dbe9c99958605b9badfe13602a87",
-      "release_sha256": "fa4f1e799effb685280225bee86d9a43fed62ac1931e6dbee96a1fee5da9a856",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "54e9dd5db475721130459684f861ce82fb42dbe9c99958605b9badfe13602a87",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "75ec7d4003aca2e88e1eb70296271ba36f9660f2c5cc06ca716c0121db675734",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/analysis_ledger.py",
       "release": "pipeline/src/analysis_ledger.py",
       "source_sha256": "a268105901b9be4c0b1a34b6adefd02841879f00f303034fe2a817683bcee3a3",
-      "release_sha256": "223f064818e0d6a8dca4c8ac0e59e65d7890e5cca65dab2d94c64260425926a6",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "a268105901b9be4c0b1a34b6adefd02841879f00f303034fe2a817683bcee3a3",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "97e8a26183c6a9ad8137c945b36851e33d9cd70c810d91747e1e5952b10171b7",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/calendar_score_hac.py",
       "release": "pipeline/src/calendar_score_hac.py",
       "source_sha256": "7e4c38c3df101193b6fc84198fb89cfa7f451c289ef1f3c6dc313abec13bfcbe",
-      "release_sha256": "abd39acc324b0c0bad69b6c317b20f65f571d1cf5037f715dbc61ee585996be6",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "7e4c38c3df101193b6fc84198fb89cfa7f451c289ef1f3c6dc313abec13bfcbe",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "728862f81a9c6d72e740a470f0aae55f058b96ac2772f06421d8dcc293691ae0",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/calibration_statistics.py",
@@ -341,29 +236,15 @@
       "source": "src/chronological_acd.py",
       "release": "pipeline/src/chronological_acd.py",
       "source_sha256": "c550c9b8dc3bb97c2d824bcd4f87477956c6e002a60bc3f71e81db2655c7fcdb",
-      "release_sha256": "fe0b1e0991363ca96a4ff41259f6772e255092716d3dfe5a402cc5ceb7b92bf4",
-      "transformation": "portable C compiler selection Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "be191eb446266e6b06ed1122d8750ca36eb0bfc9c3bd54609f87977385162a37",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "f38af32b9b2e227abfe625cd611f342045893c34d1803ee342e65667c4e7362d",
+      "transformation": "portable C compiler selection; Comments removed; executable code unchanged."
     },
     {
       "source": "src/chronological_panel.py",
       "release": "pipeline/src/chronological_panel.py",
       "source_sha256": "d51e4f17a11d0113ad268227fa56c4632b78e3c5214103a49415f55b627dd17f",
-      "release_sha256": "3f17e3c986a8ffd76bc32b580e6a619aa2eb8bf9bae1699f9957486604197ea2",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "d51e4f17a11d0113ad268227fa56c4632b78e3c5214103a49415f55b627dd17f",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "e4885af102e73f42b73ab95858aae911401e9d129581c9f1a9a89bcfaa131302",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/chronological_transition.py",
@@ -376,15 +257,8 @@
       "source": "src/data_preparation.py",
       "release": "pipeline/src/data_preparation.py",
       "source_sha256": "199ed717ada3eaea625ffb3da788e80a75a7765c7afdb2b560433c6f3a100831",
-      "release_sha256": "b3d05cce3ead338c03e20a9b578f9af73107ac2121cd3f488bb6dea7984ab128",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "199ed717ada3eaea625ffb3da788e80a75a7765c7afdb2b560433c6f3a100831",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "38ebbed1d1159fcdce4e817242cc10951b51c3a1989c18a09b58612979001f78",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/deseasonal.py",
@@ -397,71 +271,36 @@
       "source": "src/detector_contribution.py",
       "release": "pipeline/src/detector_contribution.py",
       "source_sha256": "101b30f1d5583833bf01fdfed925e790a9a264e28f8c7f3ec6c920016381b274",
-      "release_sha256": "cd49c0ccd86a138d47868ba9f66ab53f9d1ce5dbeefaaf799780c09e97ebd037",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "101b30f1d5583833bf01fdfed925e790a9a264e28f8c7f3ec6c920016381b274",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "8c970399a5fad8bf467093cfa0ffaa14056d18348fc439f02feaf28de8382998",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/duration_calibration.py",
       "release": "pipeline/src/duration_calibration.py",
       "source_sha256": "e9af45e82a15285c6aede07a2e3db06c22bf02bb3df837e31f3d77c13fbd0d88",
-      "release_sha256": "85fd4bc43947b86ac5608ec1c26b87e454c7e9be0475ed6ed9e2e2567189dd21",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "e9af45e82a15285c6aede07a2e3db06c22bf02bb3df837e31f3d77c13fbd0d88",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "f29065b2e8f25b7b08fd277eb541b65d0118e09e548789d9b87c5747d3309f82",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/duration_observation.py",
       "release": "pipeline/src/duration_observation.py",
       "source_sha256": "eb2c7aa32313eb523674e03b7e3e7178c28401c2253937f1f9187f3dad7000e7",
-      "release_sha256": "65b9d3f3588b58eb1e91e3bd346708112c77b33517e511433dc6bf4f3c5f4322",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "eb2c7aa32313eb523674e03b7e3e7178c28401c2253937f1f9187f3dad7000e7",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "c58bd508108d148a615d7177c938aabf066ce553317c90c6a902858b47b533db",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/eacd.py",
       "release": "pipeline/src/eacd.py",
       "source_sha256": "47b1dc80ba2a5b1dfe9f4f66218d01927214ce31ea5bf07539d4890951b8b8b8",
       "release_sha256": "ea15571a6a55cd1c4bfb25e3dd46586f5110cfc8ade0b3147bdca0a1ec7d60da",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "47b1dc80ba2a5b1dfe9f4f66218d01927214ce31ea5bf07539d4890951b8b8b8",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "transformation": "Comment cleanup (2026-10-23); executable code unchanged."
     },
     {
       "source": "src/estimation_inputs.py",
       "release": "pipeline/src/estimation_inputs.py",
       "source_sha256": "0b9853150f63c7bafa0df6c8586bfd3d90fcafae2e805cb3ff6b80eeedae3c5a",
-      "release_sha256": "1ef6ec6e85f57db03af696377b5a4e9d0e21da460dc6134ff89aa3c9a3218a85",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "0b9853150f63c7bafa0df6c8586bfd3d90fcafae2e805cb3ff6b80eeedae3c5a",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "1d4baf6cd32d8ca7320093041d5872ff7facf29ad46020c9ac1ea37c80187755",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/event_audit.py",
@@ -474,29 +313,15 @@
       "source": "src/event_detection.py",
       "release": "pipeline/src/event_detection.py",
       "source_sha256": "1bc1002f7f503565f795b0a583a195f46cd131b10bb15eb03c2074a742d06c5d",
-      "release_sha256": "2cf47003dae3687e5bfa3a79df8d3475f2e349e887377d58e5370405b95e40e2",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "1bc1002f7f503565f795b0a583a195f46cd131b10bb15eb03c2074a742d06c5d",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "7f7bc3152120ee1931352a6d6ac72cfe0773d58631694e945d86abccf665f539",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/event_episodes.py",
       "release": "pipeline/src/event_episodes.py",
       "source_sha256": "7eb2ae6b8f5413c1b6f93152cf3a6399b76bf265b9f8abc744d935e0e540c78e",
-      "release_sha256": "c4766612f6c0ec1ec4f7af355edbed6d9dea7f14ca0e73601f4e04c4bb6b8c85",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "7eb2ae6b8f5413c1b6f93152cf3a6399b76bf265b9f8abc744d935e0e540c78e",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "660336a4640c9cbb6bc3905168d5683100af9e9d5ff3b675be028ea56d0fbc94",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/intensity.py",
@@ -537,43 +362,22 @@
       "source": "src/panel_analysis.py",
       "release": "pipeline/src/panel_analysis.py",
       "source_sha256": "d5495fe14f85d0a22bdbde10afe87a1609fafa02031a84c896a8503bee078476",
-      "release_sha256": "4c8341d21ccfb551c68b1fac1f41bbba1a4bdb68af48443bb7875bd7fc829872",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "d5495fe14f85d0a22bdbde10afe87a1609fafa02031a84c896a8503bee078476",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "631436fa39c5899a28fc96b68d4198b120a7c9a405691885a45ad70512a134e9",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/panel_measurement.py",
       "release": "pipeline/src/panel_measurement.py",
       "source_sha256": "5c9c1370527d160d6902cc8299aef4ab211bb1362717a26b140004ae1ac15440",
-      "release_sha256": "e905a3a831fb6e355fbf54dcefed9f80cdaa8418181ccafe11838b6af75f841e",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "5c9c1370527d160d6902cc8299aef4ab211bb1362717a26b140004ae1ac15440",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "2bfb920294d574925c538ed5b567fcf21486b4fd0a2db46b1517b2faa17c7cb2",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/panel_observations.py",
       "release": "pipeline/src/panel_observations.py",
       "source_sha256": "9f9bc8c35ab855afc8718626e10722642913d70c9d0196280249d34f112625af",
-      "release_sha256": "afaa9563ce1163ddb91da6803424f6a4cd2289e9d2b4594f8b09844aa110ad7b",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "9f9bc8c35ab855afc8718626e10722642913d70c9d0196280249d34f112625af",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "57180fd7c77261c8ac80f2f78d937837e6b6dd0dabe3820bc9de764951a6c77e",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/panel_reference_precision.py",
@@ -586,57 +390,29 @@
       "source": "src/panel_responses.py",
       "release": "pipeline/src/panel_responses.py",
       "source_sha256": "76b1ee7de175606c525eff42f0eaa3926bbb22790274ed0aaa5d3a78e18738a0",
-      "release_sha256": "9a102c4d1e45712da33e65ee243ad6031fe533358711a48b4bc255bf516e2980",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "76b1ee7de175606c525eff42f0eaa3926bbb22790274ed0aaa5d3a78e18738a0",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "a97181922829e7a5ff8d57961a224f597a52a53583e7dd6f05f4a09f39eac569",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/panel_state_precision.py",
       "release": "pipeline/src/panel_state_precision.py",
       "source_sha256": "8a1bb7d7df3bc66af6405fe1ed604c4594c3bb315fa98f1e4c4ee0dba02cebd3",
-      "release_sha256": "3c90e20e0d432f7c011b9f096abfc9c2fede32fb5eec1ee1130806a76e39c129",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "8a1bb7d7df3bc66af6405fe1ed604c4594c3bb315fa98f1e4c4ee0dba02cebd3",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "229214bbba0a5b7413942a1336ddbf1a02a68e5cf09795dd5f9633958f0cb74a",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/persistence.py",
       "release": "pipeline/src/persistence.py",
       "source_sha256": "38a032494792e3de948f5b63113bbe0615757e80f1a4bf7b9ce072511179c9c0",
-      "release_sha256": "d1efa256965ea43793859c4d1e1bc54a49d191e2ce803d309b6ea5bff33ecb30",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "38a032494792e3de948f5b63113bbe0615757e80f1a4bf7b9ce072511179c9c0",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "27621a7584bc8ddd9720f32ea22419b3d3f1d0fc28c6efbfba7e038caac3bd86",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/persistence_forecast.py",
       "release": "pipeline/src/persistence_forecast.py",
       "source_sha256": "10424ec514bab1986e4d78d9025334d069e031f737f701421c9582541b65d4b2",
-      "release_sha256": "27e4949954cd0ba1a4454f38a7704f61d32937d0dff53f4777ee8bdc04899fcd",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "10424ec514bab1986e4d78d9025334d069e031f737f701421c9582541b65d4b2",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "c6c2db7f7dda6686b1087cdb01ebe01ec5723de9b2eb5a8a490a4023216793b3",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/pipeline_state.py",
@@ -649,29 +425,15 @@
       "source": "src/prediction_ledger.py",
       "release": "pipeline/src/prediction_ledger.py",
       "source_sha256": "9070513d09f1eb75b42e4268dbcdb03d87dca26264d0a3eb9fda1e5161348f3e",
-      "release_sha256": "c698fbf95c20009276a574d47d3bb93ade807b76884cbbdee85fb139e76151de",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "9070513d09f1eb75b42e4268dbcdb03d87dca26264d0a3eb9fda1e5161348f3e",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "bcd888c8bc7f3d2234e1d907e1865a13d434f49594654936827e07f86367e508",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/price_responses.py",
       "release": "pipeline/src/price_responses.py",
       "source_sha256": "499be2c42f9a5cb089b607bb8eb956c21f2904779001e46624fcbe17b076e3ae",
-      "release_sha256": "8d4f6c70f4bba79b8183a543b956b68862723cc8848fc29247d3f102749dcfb3",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "499be2c42f9a5cb089b607bb8eb956c21f2904779001e46624fcbe17b076e3ae",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "c7eb66b6ce5506be6b71173fcc47870717859d0a858975366fbfdda64bfab057",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/quote_imbalance_statistics.py",
@@ -684,29 +446,15 @@
       "source": "src/sequence_forecast.py",
       "release": "pipeline/src/sequence_forecast.py",
       "source_sha256": "16645778e56aa45f130a84b1020edfdf18db79c4d19c2fd5096fab7818ad0557",
-      "release_sha256": "305d2154fb00ec4e331d1630f2e0751231aa5c8036848d4f06bddb3c15193019",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "16645778e56aa45f130a84b1020edfdf18db79c4d19c2fd5096fab7818ad0557",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "05cbb7d9e365d261da84958f329440af3b81f8cf6b193051adc4b344339413ec",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/sequence_measurement.py",
       "release": "pipeline/src/sequence_measurement.py",
       "source_sha256": "e962159c3ed72bcb800d4f4120378d4d23a9778fca34b7262fadf190c665b973",
-      "release_sha256": "cb474802b1db3fcb94f1ada692a1e857267e912d5963f7fae7f7987816cd4ad2",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "e962159c3ed72bcb800d4f4120378d4d23a9778fca34b7262fadf190c665b973",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "cca016c9d8205927d3250bffea54a13140f8df0ffcfadb71b26a9026f61baac8",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/signal_clock.py",
@@ -726,15 +474,8 @@
       "source": "src/streaming_episodes.py",
       "release": "pipeline/src/streaming_episodes.py",
       "source_sha256": "325fd4933ce7760354d87d25c7da25af6900fd7c50bcdf1b2a318b70c6358b44",
-      "release_sha256": "809c65626b7d0c5880070ffb3bfbcba918127332e3e3ed1946b63213ebc3c1cc",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "325fd4933ce7760354d87d25c7da25af6900fd7c50bcdf1b2a318b70c6358b44",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "19d75040265024284fa0e6bc11a44909c14a576c212331f8ecea1e529eb65d1e",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/timing_forecast.py",
@@ -747,99 +488,50 @@
       "source": "src/verify_acquisition.py",
       "release": "pipeline/src/verify_acquisition.py",
       "source_sha256": "66ebe09f5c8d52715c6b62f9fb641ff2ef5fc3e6161283167af6a6d2a67fd79b",
-      "release_sha256": "027d1f959405bb9b941bfd447ff59e3ad5ca6d2e740fd8a1c35a66d792ae08b3",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "66ebe09f5c8d52715c6b62f9fb641ff2ef5fc3e6161283167af6a6d2a67fd79b",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "e4ea74f0d8a173f23fbe041d17cbc8ee9ffe846fc430f7396779109c96aabc34",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/verify_analysis_ledger.py",
       "release": "pipeline/src/verify_analysis_ledger.py",
       "source_sha256": "4e013074d0107b0d6bcf3436d89f702927f26a1e291964a7161d8853e3ddc27f",
-      "release_sha256": "efb2c2493fbffdc0274712d6ce1eba6e708087b1240c0733732f9f829c1fb960",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "4e013074d0107b0d6bcf3436d89f702927f26a1e291964a7161d8853e3ddc27f",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "8682e347910d4009334d5a1f429a70b02fb0394d5d78b0f1ee18b209b6fe1d93",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/verify_chronological_acd.py",
       "release": "pipeline/src/verify_chronological_acd.py",
       "source_sha256": "df17359c83927709862dc6b449f0132ac66d32b35d6a108d5fda9cf12ae41d7a",
-      "release_sha256": "d08214086b08845e54bbf37d65d99e95782ccb72c2eff0111d51c2dd6b357df3",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "df17359c83927709862dc6b449f0132ac66d32b35d6a108d5fda9cf12ae41d7a",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "1590b9e4e3bd510f7ea4133889f6ec66ec334c7b13d12a6537c47761f51a56a8",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/verify_chronological_panel_v2.py",
       "release": "pipeline/src/verify_chronological_panel_v2.py",
       "source_sha256": "3613c0299dd22375ff5a7d99e174aab44e363b601a5e258faf2f446c5750c540",
-      "release_sha256": "f4752901669b75d97117f291098af3ea09b4d81210b46bff0f69176a303ea48d",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "3613c0299dd22375ff5a7d99e174aab44e363b601a5e258faf2f446c5750c540",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "4dec24f5ae4b57da3107d354886e663dc72a90c1f73d04e187acff219b4978f4",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/verify_chronological_panel_v3.py",
       "release": "pipeline/src/verify_chronological_panel_v3.py",
       "source_sha256": "00d2d0a1a4dd7f79157336b9248f54c373a6c0cbd769d48d3dc4a7c0b4da880d",
-      "release_sha256": "5c72c4cec0e5fb1e84855417cf6ce350e65356657a39b96a12b2cded266fdf97",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "00d2d0a1a4dd7f79157336b9248f54c373a6c0cbd769d48d3dc4a7c0b4da880d",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "e0e1b344e19b2703ec3c5735cf24190149ee26e944eb6fb3ea3d854eaba2df3a",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/verify_chronological_transition.py",
       "release": "pipeline/src/verify_chronological_transition.py",
       "source_sha256": "6cd11150aa9d92e1071d4967fbc1dab2f31b376fd44f9624873f8d3f61960d24",
-      "release_sha256": "27c5fb7bb911cb5922be76fbb407c10acce0c7f35cfec22ee2a3275d7a161ac8",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "6cd11150aa9d92e1071d4967fbc1dab2f31b376fd44f9624873f8d3f61960d24",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "2a0938c50b2ef3bf862f3b22e91c46d9e55200184e384fbe67501e575e235561",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/verify_data_stage.py",
       "release": "pipeline/src/verify_data_stage.py",
       "source_sha256": "56ce385736addc3128c2d3eb7f263135b7c0b11e6e7dc052ca62bc1b4512c968",
-      "release_sha256": "8725f660d1b8df98e022872b7b573e6fac50e1fccfde9891bd14868011a1f3b2",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "56ce385736addc3128c2d3eb7f263135b7c0b11e6e7dc052ca62bc1b4512c968",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "c6daff73071ad859e3c02bbafdf6f3f4887f985a13fecff278647faeb9ba4039",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/verify_duration_observation.py",
@@ -852,29 +544,15 @@
       "source": "src/verify_estimation_inputs.py",
       "release": "pipeline/src/verify_estimation_inputs.py",
       "source_sha256": "665e197203cd833252b8e0084f3649fb9dad6044ef887e8bc3fd078d8dc3b538",
-      "release_sha256": "791ae1d78ed3f833cb68d5aeb121ff05bc9dce87b1ae25a037c27b03a735186c",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "665e197203cd833252b8e0084f3649fb9dad6044ef887e8bc3fd078d8dc3b538",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "3736e2cbf444c8d736867f1859f99abf66a28398924248fc34043ec2df551e6f",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/verify_event_audit.py",
       "release": "pipeline/src/verify_event_audit.py",
       "source_sha256": "3afb6a2ddc85ad62cec95b0b8343db44449fd49bdd91eccabeffa2e639bf3f23",
-      "release_sha256": "f5dd9964fbdc241b14e19a9fae513f3a7f2ed490cd9552f57474bedff33a797f",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "3afb6a2ddc85ad62cec95b0b8343db44449fd49bdd91eccabeffa2e639bf3f23",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "271bbb8544980483aad202da6da86b20a19420648b518742ae9b5e0dfa010a3a",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/verify_event_episodes.py",
@@ -887,43 +565,22 @@
       "source": "src/verify_joint_response.py",
       "release": "pipeline/src/verify_joint_response.py",
       "source_sha256": "1612f0e112ba76c9acdc6df48cf0a6237c87b282c4b30f42aaf74addfe14a44c",
-      "release_sha256": "b6a69f736801088780ff7dc5f5ec6caf406dfb0d8a6a825479609a87dc02c056",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "1612f0e112ba76c9acdc6df48cf0a6237c87b282c4b30f42aaf74addfe14a44c",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "69153d0193c5d910ec406b44f90f217e1f3a946f1932162fb12c534e08ea0607",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/verify_joint_uncertainty.py",
       "release": "pipeline/src/verify_joint_uncertainty.py",
       "source_sha256": "2d8e6ff4a10f834f0e1f90fc8dbb6239d2ce30e29470a8af13d45f78890f9084",
-      "release_sha256": "a14283c731f040f9fe7ff5959dc9593257cdb0e860c150b2ef9d99ce72907746",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "2d8e6ff4a10f834f0e1f90fc8dbb6239d2ce30e29470a8af13d45f78890f9084",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "62bccb6530755d881e884ba62785b0bf33156b7bd50ec71089af5488442b9930",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/verify_observation_eligibility.py",
       "release": "pipeline/src/verify_observation_eligibility.py",
       "source_sha256": "517d2f93fecf02fa468c563df48bef719300f7b2e047da231518c480a0240834",
-      "release_sha256": "00922ac046e39583df7812e954766f0d1b5e880e306f539d01cfdbb0f6ffcb9e",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "517d2f93fecf02fa468c563df48bef719300f7b2e047da231518c480a0240834",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "6831e60e324359c0422083593ae0cc8ab10f40871e39c5cf5d42bc8d8bd16d34",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/verify_panel_analysis.py",
@@ -943,29 +600,15 @@
       "source": "src/verify_panel_measurement.py",
       "release": "pipeline/src/verify_panel_measurement.py",
       "source_sha256": "45b90e91b07af2cf523613db2d9e7b82c121b6efb6fc618e58a2481cdb717b34",
-      "release_sha256": "df2f4e38d5fa2e9c920c5888519526832263491e67e5e62862ffce8bb47b43df",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "45b90e91b07af2cf523613db2d9e7b82c121b6efb6fc618e58a2481cdb717b34",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "29b078e05e87c8aabd150f3dd5250a826df4da39983179018c103a518853afa0",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/verify_panel_response_run.py",
       "release": "pipeline/src/verify_panel_response_run.py",
       "source_sha256": "442bf1a9db184eff4d59a505fde89138444dedd6b2a4960acaa60ee9543e7205",
-      "release_sha256": "02b75aaad3f18bcb0aad1ddfa45409b195e4613a7d60305f393dc67c6f3b7724",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "442bf1a9db184eff4d59a505fde89138444dedd6b2a4960acaa60ee9543e7205",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "82b19b2e38a5ff7e1e5a1149a6ba6b63c5df3a18c8f5f53797744c3ea95409cf",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/verify_panel_responses.py",
@@ -978,15 +621,8 @@
       "source": "src/verify_persistence_forecast.py",
       "release": "pipeline/src/verify_persistence_forecast.py",
       "source_sha256": "eaf2560c9059300f6d4c65676d1fe90f5da2667e7b1bb2ddc1dec8f0356cc515",
-      "release_sha256": "5d4fedb5438c7a2f94627e61b016b55c442f9b36f967955cfb7e19a49802b89f",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "eaf2560c9059300f6d4c65676d1fe90f5da2667e7b1bb2ddc1dec8f0356cc515",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "d566794d2326a262c3ace0fb870f6507ecfb01ca74f54eceeaf8bd01a287138a",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/verify_prediction_ledger.py",
@@ -999,15 +635,8 @@
       "source": "src/verify_price_responses.py",
       "release": "pipeline/src/verify_price_responses.py",
       "source_sha256": "22376ac3a846ced4aeecb052c1cbd346cd139c8ec7c52317a7f6d0586b41ebbd",
-      "release_sha256": "3b5de8f68ebd0c0b684c4a026a4d15dc1bc4bab271012bc1d96cb19eb6263978",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "22376ac3a846ced4aeecb052c1cbd346cd139c8ec7c52317a7f6d0586b41ebbd",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "d0a8befb2649cf442eb173105f9be97901e749abf168c8b715974aa7c0e09a65",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/verify_quote_imbalance.py",
@@ -1020,71 +649,36 @@
       "source": "src/verify_seasonal_calibration.py",
       "release": "pipeline/src/verify_seasonal_calibration.py",
       "source_sha256": "92345a06725c51ae20bc8c851b00ab72b9b521a750ba605be2800078ee4e3bd7",
-      "release_sha256": "7d528f5fef4ab9a5389f6a2778e2f9b78c5ddacfb2ab8c6bf56e355ecc54c86d",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "92345a06725c51ae20bc8c851b00ab72b9b521a750ba605be2800078ee4e3bd7",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "c30b92d81eda9da48cdf953a9c1f87b79052949bad888ba720efcf3717692657",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/verify_sequence_forecast.py",
       "release": "pipeline/src/verify_sequence_forecast.py",
       "source_sha256": "49a3745755374c10a0f04d323602c9cfc041750f62bafedb28e38aba979ed381",
-      "release_sha256": "f03086432834098428545b784ec7371a6c8eb1cc1c353ea739ff6488bc5a8896",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "49a3745755374c10a0f04d323602c9cfc041750f62bafedb28e38aba979ed381",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "829b118ff7ae5ce4edbfc80cef085927ddbe2df226933000af7add94ab0ffc8d",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/verify_signal_clock.py",
       "release": "pipeline/src/verify_signal_clock.py",
       "source_sha256": "1841bdf042707f323579f8830aa5d92516a7032a5cb38e5db24644b54f76a198",
-      "release_sha256": "e2c122d6142d8e9153e4847524ef058ddf8dacfe25f318c4540b7ae8a2669294",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "1841bdf042707f323579f8830aa5d92516a7032a5cb38e5db24644b54f76a198",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "5f0bea830761de0ca1437b1a30ba1df959ace36863cfe5a9ff941a229acba708",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/verify_state_measurement.py",
       "release": "pipeline/src/verify_state_measurement.py",
       "source_sha256": "7a086bb509dac300dc80424fcb4ca5c17c928a9e11d76c7269e2a2379b58bb36",
-      "release_sha256": "ff927891a5978ab2547415a30cf40289aa91ff884be6aed007dd0e39539c1f55",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "7a086bb509dac300dc80424fcb4ca5c17c928a9e11d76c7269e2a2379b58bb36",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "96ab5e63f3d30f81947e969c8ea418504570e323dc1e583c2dd7ce5fba700550",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/weibull.py",
       "release": "pipeline/src/weibull.py",
       "source_sha256": "57b0dc905945c1941843feb7caf557a73c6becc2ec85f6ee371d16f2283736d0",
-      "release_sha256": "1787fe367193248305456af15e50a6db71e65a92b28fb4dd788cb09fd33e8277",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "57b0dc905945c1941843feb7caf557a73c6becc2ec85f6ee371d16f2283736d0",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "eca394ac6c1bbc64b53a2e53f5317eb4a85a621f321dd35a54c55891c0d4bbe5",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "tests/test_acquisition.py",
@@ -1097,43 +691,22 @@
       "source": "tests/test_analysis_ledger.py",
       "release": "pipeline/tests/test_analysis_ledger.py",
       "source_sha256": "f6bc92a21edc4b8db8eacb4830b264a5d4535412eb0662916b73d8a5142ab71c",
-      "release_sha256": "b8d69503c6391b6ab06e45cfd2b8a0541bbdcdbd1f6ac94848a67b85d4b69ebe",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "f6bc92a21edc4b8db8eacb4830b264a5d4535412eb0662916b73d8a5142ab71c",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "f1387b1b2c3283eb7ab48e976240f3ebd13387715be3a4fd89c576d5c6a2546b",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "tests/test_calendar_score_hac.py",
       "release": "pipeline/tests/test_calendar_score_hac.py",
       "source_sha256": "8a271bf60467e5e726acfd7847d07bcff9436e2d6463e5fdc35f1b52ef9dcfd5",
-      "release_sha256": "20fa1bd74cd520d0d966c5f0ae91504e9a6edf4633f76e3438a078cb5a5be5c7",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "8a271bf60467e5e726acfd7847d07bcff9436e2d6463e5fdc35f1b52ef9dcfd5",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "5fb842ed23d3126c438ba30c30af873b2c06ab485af7fd0dbbcc9494db4f98b0",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "tests/test_chronological_acd.py",
       "release": "pipeline/tests/test_chronological_acd.py",
       "source_sha256": "e247a0eae7a534dfc98a6deb3d25e9232f65c86054ea3bdacfc47347b0c7000e",
-      "release_sha256": "d18527430f5ebf2c8105719f1674d5f29ffed84aad86c74da0f85fb32d36f7ab",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "e247a0eae7a534dfc98a6deb3d25e9232f65c86054ea3bdacfc47347b0c7000e",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "341e20ec83ddbc5304c0d3d37d458bd082112b0c98e0936117049fc04fb84c79",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "tests/test_chronological_panel.py",
@@ -1160,78 +733,43 @@
       "source": "tests/test_detector_contribution.py",
       "release": "pipeline/tests/test_detector_contribution.py",
       "source_sha256": "1d195ea22adad98940f0ba6bc8477faa2915f6d60762c69959c4fffe83a5eba7",
-      "release_sha256": "1d195ea22adad98940f0ba6bc8477faa2915f6d60762c69959c4fffe83a5eba7",
-      "transformation": "none"
+      "release_sha256": "550212506e368c727064a3bd79974141966f9ec6f5d60b41d9d74690131c85d7",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "tests/test_duration_observation.py",
       "release": "pipeline/tests/test_duration_observation.py",
       "source_sha256": "f5daa6aa8154458ef4be245a68589d0492774d2859e747557ff7cb65127b3af1",
-      "release_sha256": "7bdceb55e48a3df1e7f3e36b9eeae5dae3b9ba3dfa727bc6db43e5d2171237d6",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "f5daa6aa8154458ef4be245a68589d0492774d2859e747557ff7cb65127b3af1",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "ad87228e49139755bc63a1737e50c0f24502ad164c377ca35ca098412c9c3095",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "tests/test_estimation_inputs.py",
       "release": "pipeline/tests/test_estimation_inputs.py",
       "source_sha256": "865e3fd8bc5a3436bba888b6821ed51e8491f07de55d51f72a44a62f341fd743",
-      "release_sha256": "0f9a6ace5639ea0327184fb9a80469831c7889d98720613ee028b7b0fa1c9135",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "865e3fd8bc5a3436bba888b6821ed51e8491f07de55d51f72a44a62f341fd743",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "0d01ac74bafc379748c507d6b50c5ac8580b2390e56afdd8fce4f4b16003b1e7",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "tests/test_event_audit.py",
       "release": "pipeline/tests/test_event_audit.py",
       "source_sha256": "800b37d5c08602e8696a900f23349c23d81d13285e365a407917379b693cc809",
-      "release_sha256": "564cf06805a3410efa5b05cd1a4da17a3f20d0d58ec8a1271f575d6f5afb15c9",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "800b37d5c08602e8696a900f23349c23d81d13285e365a407917379b693cc809",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "68877e3a94a378755a4e711564dcb8a6030b756ee2ce6f243967187e0a4730a9",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "tests/test_event_episodes.py",
       "release": "pipeline/tests/test_event_episodes.py",
       "source_sha256": "301da11519b5b37a5958bb1fb071297804eac3f3017536ebfe1006d2f32a5b7c",
-      "release_sha256": "bffa8c38ca8e833ad4e37714a079941a5c5e7996a2f9b351861985330435a4c8",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "301da11519b5b37a5958bb1fb071297804eac3f3017536ebfe1006d2f32a5b7c",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "11f5e6d0a2f1bc8d5ea029b79bb7feb9ee44e8a24e8a7e2702394e2fffbef3ce",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "tests/test_joint_response.py",
       "release": "pipeline/tests/test_joint_response.py",
       "source_sha256": "10308b4dfbfc4b6065dd77791fedc22bbf0e4a44e9941c0a5193a5810abe1ab4",
-      "release_sha256": "743f8ca62199214bcb9217931566914839a4332540b1cc9f8b483b59edafdb13",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "10308b4dfbfc4b6065dd77791fedc22bbf0e4a44e9941c0a5193a5810abe1ab4",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "f9158187e42d53e0cecb285fa70d7d9d7eba565e27cf6428cad87310b00036cc",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "tests/test_joint_uncertainty.py",
@@ -1244,15 +782,8 @@
       "source": "tests/test_observation_eligibility.py",
       "release": "pipeline/tests/test_observation_eligibility.py",
       "source_sha256": "c6e4a913492e36b5161006b4b4a48aa279d32bcbf08b45778b0e6e6c2540c1b3",
-      "release_sha256": "185870775ec633af96dacbde35d217f076093ac572bbd1b6421d17c5224692d2",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "c6e4a913492e36b5161006b4b4a48aa279d32bcbf08b45778b0e6e6c2540c1b3",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "6e09d7a7b8bd4b434038bda99da62be7b4813f454235ffc70d38ba77d20bb5d8",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "tests/test_panel_analysis.py",
@@ -1272,29 +803,15 @@
       "source": "tests/test_panel_observations.py",
       "release": "pipeline/tests/test_panel_observations.py",
       "source_sha256": "e090c0a865146575fd0337794776546aec1922b3b906af41e4c314d840f7c548",
-      "release_sha256": "a7fd80ba46eb7903797ead3554b435e9266958fa7b50e57db66717ecddf9f9d8",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "e090c0a865146575fd0337794776546aec1922b3b906af41e4c314d840f7c548",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "e1014ef0390a14cd82f9aefe3b68ba34a0a0cd4b9cd320dd7f325c632c702a19",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "tests/test_panel_responses.py",
       "release": "pipeline/tests/test_panel_responses.py",
       "source_sha256": "81c01562a5f47aca1f5615d27b96129e9e4b63fe98853466c98669516f0d8ee6",
-      "release_sha256": "d4d5bff7236f4f596f325c9b4b1b83201543c146bf23c28e0be795a699236fb3",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "81c01562a5f47aca1f5615d27b96129e9e4b63fe98853466c98669516f0d8ee6",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "99ea762c93c086c3bb2e52421a3fe718b2aef89f76929c444591de73df9324d4",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "tests/test_persistence_forecast.py",
@@ -1307,15 +824,8 @@
       "source": "tests/test_prediction_ledger.py",
       "release": "pipeline/tests/test_prediction_ledger.py",
       "source_sha256": "631122b0d998d835ad7a42cfc61faa4f3bf123872b70f11445579195e831852c",
-      "release_sha256": "1eb2216a86d24f857880f5bba446723babcfa93138b2679d05d4fa73e860de8b",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "631122b0d998d835ad7a42cfc61faa4f3bf123872b70f11445579195e831852c",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "8fbf9df7faf493ff4266a01696753f7747775dacd9a85da914daa5d2c1f9a466",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "tests/test_price_responses.py",
@@ -1335,15 +845,8 @@
       "source": "tests/test_seasonal_calibration.py",
       "release": "pipeline/tests/test_seasonal_calibration.py",
       "source_sha256": "41fa55bb7611a144c70bbb6ef28ab3484e4ecadf34f420db9847f4e39da552af",
-      "release_sha256": "cea48a82cffe315396d55ff1ef5e02a41fa120924929eb1e8977038d08fcb31c",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "41fa55bb7611a144c70bbb6ef28ab3484e4ecadf34f420db9847f4e39da552af",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "b66edbff3576f5e4454844e3d49127318e5ba5cb8bf3bbac001373414fd481a2",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "tests/test_sequence_forecast.py",
@@ -1363,43 +866,22 @@
       "source": "tests/test_signal_clock.py",
       "release": "pipeline/tests/test_signal_clock.py",
       "source_sha256": "9de944d553ecbb87cbbb5be5e02ca0d30bc71b35bc20f1c77a1a0dc2f5f49e4e",
-      "release_sha256": "964b706e4e7b258cfcde79cb17323878b80a481f43011d83ae840242ffddf785",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "9de944d553ecbb87cbbb5be5e02ca0d30bc71b35bc20f1c77a1a0dc2f5f49e4e",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "b545642daa3be1d08813910639c1da0a65c06fdea0d6a1cc7299159d0d1f09e5",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "tests/test_state_measurement.py",
       "release": "pipeline/tests/test_state_measurement.py",
       "source_sha256": "f8e661bc8e8ad652b5a6255694f7409ccadd5c80f98c48d321d0fe4406749b32",
-      "release_sha256": "3abbb5aee92552692b74f0004a234a36899081db6e375d6edffc5c1d55d6c0cd",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "f8e661bc8e8ad652b5a6255694f7409ccadd5c80f98c48d321d0fe4406749b32",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "bf24e3cbdf1b5ef9e8e5876baa1655021495c355f5183661a4057ccdc84a1afc",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "tests/test_streaming_episodes.py",
       "release": "pipeline/tests/test_streaming_episodes.py",
       "source_sha256": "e40bc2d3b78c77f2fcc2ce07db4b77d31e536eeafa601d08637ac9fcf2188149",
-      "release_sha256": "85cb99bf755abf5a090170b572020b63b4abf79a62e68e9727550786cc72158a",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "e40bc2d3b78c77f2fcc2ce07db4b77d31e536eeafa601d08637ac9fcf2188149",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "6647f816f1d42916daa0a4ce257ef9ae2954f10c842ca2ba033675d619bf60cd",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "tests/test_timing_forecast.py",
@@ -1412,15 +894,8 @@
       "source": "tests/test_verify_joint_response.py",
       "release": "pipeline/tests/test_verify_joint_response.py",
       "source_sha256": "72e29c0f56d376cb8d3b1f73a4699ee4934bfb5a36e10106412a315de941180c",
-      "release_sha256": "d2050ae343e6939ddb8343aeb9b23900a9a9d4c735de9699ed820e45286a842b",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "72e29c0f56d376cb8d3b1f73a4699ee4934bfb5a36e10106412a315de941180c",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "c029baf46e97e93f8ea6ec65a226fcc5eeeff742bbc4acccc437b3d6332e9d53",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "tests/test_verify_joint_uncertainty.py",
@@ -1433,57 +908,29 @@
       "source": "tests/test_verify_persistence_forecast.py",
       "release": "pipeline/tests/test_verify_persistence_forecast.py",
       "source_sha256": "ac997bfe114284cb67a6b55f3104ff216c16282cd4d214b72d6c5ed0b5a2119f",
-      "release_sha256": "694a08555d31eee55c78332b5c9e8843932bb3b6efa69e66337e045cb4310b8c",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "ac997bfe114284cb67a6b55f3104ff216c16282cd4d214b72d6c5ed0b5a2119f",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "4cb840a489761e8e97540e9fccad0606384abe9c05d3279b7ccc08f4257e600a",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "tests/test_verify_prediction_ledger.py",
       "release": "pipeline/tests/test_verify_prediction_ledger.py",
       "source_sha256": "0222deb2a2a7936c64d14c99137a7e76c98ba0e48ed64626c485cbbfc37f4dde",
-      "release_sha256": "63bbcd3f779170650bdb476dfb2c4fff85dd332f24f2ff68d6380c7abb273196",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "0222deb2a2a7936c64d14c99137a7e76c98ba0e48ed64626c485cbbfc37f4dde",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "e6dd783b1d74b3832a6a627c04ddc2b7cda93b0f046a612ed38d814c37fe9165",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "tests/test_verify_sequence_forecast.py",
       "release": "pipeline/tests/test_verify_sequence_forecast.py",
       "source_sha256": "bf8596de9e9450845de1ffc50f1cb21a2b03f79b795f762605aaf44f1977f222",
-      "release_sha256": "5d2d474561bf177c5473e1679b3ec727f43422828fdecbe87ca5b3cd3c5ef3bc",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "bf8596de9e9450845de1ffc50f1cb21a2b03f79b795f762605aaf44f1977f222",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "6a938c95d3ccf85d5ffde26fe9520de2652120fd23a2f7faa1d12bd5cfd76876",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "verify_detector_contribution.py",
       "release": "pipeline/verify_detector_contribution.py",
       "source_sha256": "1ea479bbb38755a8d2a092950b3e3e83d0a350f1ebb32fa52969ece28d76d5c0",
-      "release_sha256": "2ec9b9cc0ff2c34881c6ae56c32b67ed5911ec504cfed2316ed10c738d78451c",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "1ea479bbb38755a8d2a092950b3e3e83d0a350f1ebb32fa52969ece28d76d5c0",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "047700d6bf45a338c1ad150156e24cbb36de5bea5bcb74333aa134d90ca85479",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "verify_download.py",
@@ -1503,43 +950,22 @@
       "source": "src/re_estimate_acd.py",
       "release": "pipeline/src/re_estimate_acd.py",
       "source_sha256": "1d032a33b2523f8f9c2428b8fcae6fccf356f54b328064209cf24c38fa94745b",
-      "release_sha256": "8f20d387ab533634a39257126ea37c7a1c19176cb4b530c7430cd32196c15896",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "1d032a33b2523f8f9c2428b8fcae6fccf356f54b328064209cf24c38fa94745b",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "67ded84f6fb56f652d5769fd604012f686139f51c11701949de661a271befd60",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/run_calibration_audit.py",
       "release": "pipeline/src/run_calibration_audit.py",
       "source_sha256": "a7551159a3e09a4b1ebf7f4a02ab832ad9a3649c61ff294d1b60202d84cbd320",
-      "release_sha256": "465cde7c79cfdbab394980ae435e6c5895b1252be935787ca55032dd64447889",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "a7551159a3e09a4b1ebf7f4a02ab832ad9a3649c61ff294d1b60202d84cbd320",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "e9aa97d9d4be94cf54e575ed4fb757cc0c867058ae4db40b2c977c062e803c0c",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "src/run_corrected_regressions.py",
       "release": "pipeline/src/run_corrected_regressions.py",
       "source_sha256": "ebf28124ea0c5ec8eddf3b89a48cf19b3d0ed9c7e09e1861a00c77e20a9a2455",
-      "release_sha256": "455b06a6dd09ef4f0b5c449c0c3aa9ea126cd42232e4c9976b2a7c96e4a250ef",
-      "transformation": "Comment cleanup (2026-10-23); executable code unchanged.",
-      "release_revisions": [
-        {
-          "date": "2026-10-23",
-          "previous_release_sha256": "ebf28124ea0c5ec8eddf3b89a48cf19b3d0ed9c7e09e1861a00c77e20a9a2455",
-          "change": "Comments only; executable tokens and AST, including docstrings, unchanged."
-        }
-      ]
+      "release_sha256": "55a754320dee2e41671bb6fcf25cabbd1caec14e29fb4df7e75fc77d8d0acd84",
+      "transformation": "Comments removed; executable code unchanged."
     },
     {
       "source": "data/signals/step07m_joint_response_20261002/membership.parquet",
@@ -2980,8 +2406,8 @@
   "generated_core_files": [
     {
       "release_path": "requirements.txt",
-      "sha256": "e8111e64c3c301b2814d43d2ad7448e0be90391d765fa7540103e763b1f4bdc0",
-      "bytes": 630
+      "sha256": "1e95fb0e44dec56f5ffbccb4f39e1a3bb7ada4df65e3cd7d8108d1b748b450cc",
+      "bytes": 421
     },
     {
       "release_path": "pipeline/tests/__init__.py",
@@ -3002,7 +2428,7 @@
   "core_edits": [
     {
       "path": "pipeline/src/chronological_acd.py",
-      "purpose": "Portable C99 shared-library build flags and CC selection; unchanged C likelihood source and mathematical Python code.",
+      "purpose": "Portable C99 shared-library build flags and CC selection; unchanged C likelihood calculations and mathematical Python code.",
       "native_validation": "macOS arm64; Linux command construction tested but no native Linux execution; Windows intentionally rejected with WSL guidance."
     }
   ]

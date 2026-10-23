@@ -165,7 +165,6 @@ def _qr_fit(tx, ty, columns):
     _require(n > p and np.isfinite(matrix).all(), 'Insufficient or nonfinite training design')
     maxima = np.max(np.abs(matrix), axis=0)
     _require((maxima > 0).all(), 'Zero substantive design column')
-    # stable RMS units; QR is independently solved without using producer fits.
     units = maxima * (np.linalg.norm(matrix/maxima, axis=0)/math.sqrt(n))
     _require(np.isfinite(units).all() and (units > 0).all(), 'Invalid equilibrated column scale')
     scaled = matrix/units

@@ -207,7 +207,6 @@ def reference_legacy(inputs, anchors, paths):
     selected = paths.set_index(keys).reindex(pd.MultiIndex.from_frame(old[keys])).reset_index()
     require(selected.target_at.notna().all(), 'Legacy onset-horizon identity absent')
     admissible = old.target_at.le(old_stop)
-    # whole-path masks intentionally change when the former future cutoff is removed.
     masks = ['common_path_available', 'common_path_age_le_15', 'common_path_age_le_30', 'common_path_age_le_60']
     require({name for name in old if name.startswith('common_path')} == set(masks), 'Legacy path-mask schema changed')
     own_columns = [name for name in old if name not in masks]
@@ -293,7 +292,6 @@ def verify_panel_response_run(run):
     compare(pd.read_parquet(run/'cycle_statistics.parquet'), cycles, 'Cycle statistics')
     directions = pd.read_parquet(inputs['directions']['path'])
     inherited_direction = directions[['episode_id', 'bin_start', 'onset_confirmed', 'inherited_net', 'inherited_direction']].copy()
-    # Stage07d stores finite signs as integers; response directions allow NaN.
     inherited_direction['inherited_direction'] = inherited_direction.inherited_direction.astype(float)
     compare(anchors[['episode_id', 'bin_start', 'onset_confirmed', 'quote_ofi', 'direction']].rename(
         columns={'quote_ofi': 'inherited_net', 'direction': 'inherited_direction'}),

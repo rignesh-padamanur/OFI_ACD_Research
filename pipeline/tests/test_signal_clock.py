@@ -11,7 +11,7 @@ from src.signal_clock import SECOND as S, HOUR, SparseCursor, prepare_clock_inpu
 from src.verify_signal_clock import reference_chunk, verify_clock_run
 from src.pipeline_state import iter_signal_clock
 
-BASE = pd.Timestamp('2024-01-07T22:00:00Z')  # Sunday
+BASE = pd.Timestamp('2024-01-07T22:00:00Z')
 
 
 def hours():
@@ -179,7 +179,6 @@ class ClockContract(unittest.TestCase):
 
 class ClockArtifactVerification(unittest.TestCase):
     def fixture(self, path):
-        # coverage rows include a raw record removed by cleaning; signal rows do not.
         h = hours(); h['rows'] = [4, 0, 0, 0]; h['structurally_observed_hour'] = [True, False, False, False]
         support = intervals([(0, 5*S), (9*S, 12*S)])
         source = sparse([(0, 1, np.nan, 1, np.nan), (9, 2, 7., 0, 20.)])

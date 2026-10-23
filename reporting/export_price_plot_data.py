@@ -52,7 +52,6 @@ def read_responses():
         assert endpoint.index.is_unique
         endpoints[horizon] = endpoint.loc[ids, VALUE_COLUMNS].to_numpy()
 
-    # one row per event and horizon; keep the same cohort along the path
     seen = np.zeros(N * 301, dtype=bool)
     sums = np.zeros((301, 3), dtype=float)
     counts = np.zeros(301, dtype=np.int64)
@@ -141,7 +140,6 @@ def main():
                         continuation_pips=cohort.continuation_pips.to_numpy())
     for key, (q, _, _) in zip(("interaction", "sequence"), quarters):
         q.to_csv(out / f"{key}_quarter_losses.csv", index=False, float_format="%.17g")
-    # check that serialization preserves every floating-point plot input
     roundtrip = pd.read_csv(out / "mean_response_path.csv", float_precision="round_trip")
     np.testing.assert_array_equal(roundtrip[VALUE_COLUMNS].to_numpy(), means)
     with np.load(out / "continuation_distribution.npz", allow_pickle=False) as distribution:

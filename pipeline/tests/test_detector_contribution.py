@@ -81,7 +81,6 @@ class DetectorContributionTests(unittest.TestCase):
         grid, base, spread = self.make_grid()
         origins = pd.DataFrame({'bin_start': [base+pd.Timedelta(seconds=350)], 'support_id': [0], 'quote_ofi': [1.]})
         result = grid.outcomes(origins).iloc[0]
-        # S(s+2) uses quote s+1, not s+2; detection mark uses quote s.
         self.assertAlmostEqual(result.y300, spread[351:651].mean()/10)
         self.assertAlmostEqual(result.y60, spread[351:411].mean()/10)
         self.assertAlmostEqual(result.J+result.C, result.I)
@@ -91,7 +90,7 @@ class DetectorContributionTests(unittest.TestCase):
         f = pd.DataFrame({'bin_start': [base+pd.Timedelta(seconds=s) for s in [199, 200, 650]],
                           'support_id': [0, 0, 1], 'quote_ofi': [1., 1., 0.]})
         r = grid.outcomes(f)
-        self.assertTrue(r.outcome_ready.iloc[0])  # final mark exactly at support end
+        self.assertTrue(r.outcome_ready.iloc[0])
         self.assertFalse(r.outcome_ready.iloc[1])
         self.assertTrue(r.outcome_ready.iloc[2])
         self.assertTrue(np.isnan(r.C.iloc[2]))

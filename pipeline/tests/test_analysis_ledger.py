@@ -360,7 +360,6 @@ class DependenceAccountingTests(unittest.TestCase):
         frames = parent_frames(ends=[0, 602], ids=[9, 2])
         ledger = assemble_ledger(*frames)
         d = dependence_tables(ledger['anchors'], ledger['outcomes'])
-        # first h300 interval ends301; second actualstart301 merely touches.
         self.assertTrue(d['pairs'].loc[d['pairs'].horizon_sec.eq(300)].empty)
         ledger['anchors'].loc[ledger['anchors'].episode_id.eq(2), 'source_start_at'] = at(300)
         d = dependence_tables(ledger['anchors'], ledger['outcomes'])

@@ -189,7 +189,6 @@ def reference_measurements(windows, quotes, support):
             quote_grid = stamps[:, ::freq]
             log_grid = logs[:, ::freq]
             differences = log_grid[:, 1:]-log_grid[:, :-1]
-            # multiplication after the sum preserves the prescribed units.
             variance = np.add.reduce(np.square(differences), axis=1)*100_000_000.
             grid_age = np.max(ages[:, ::freq], axis=1)
             out = windows.iloc[lo:hi][['window_id','kind','end_at','episode_id','onset_confirmed']].copy()

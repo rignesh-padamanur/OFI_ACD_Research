@@ -143,8 +143,6 @@ def _validated_inputs(opportunities, scored):
         if (not pd.api.types.is_numeric_dtype(s[name].dtype)
                 or pd.api.types.is_bool_dtype(s[name].dtype)):
             raise ValueError('Pre-onset states must be numeric, with missing states permitted')
-    # missing or infinite prior states mark an onset unavailable; they do not
-    # exclude a detector candidate. Conversion also validates nullable dtypes.
     history = np.isfinite(s[['pre_rv_300s_5s_bps', 'pre_quote_ofi_300s']].to_numpy(
         dtype='float64', na_value=np.nan)).all(axis=1)
     trigger = np.zeros(len(o), dtype=bool)

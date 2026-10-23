@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 import pyarrow.parquet as pq
 from src.data_preparation import sha256
-from src.signal_clock import SparseCursor  # I/O only; no production alignment/support/statistics logic.
+from src.signal_clock import SparseCursor
 from src.verify_quote_imbalance import Rows, compare_frames
 
 S = 1_000_000_000
@@ -154,7 +154,6 @@ def verify_clock_run(run, *, batch_size=173_111):
         assert source_quotes == parent['ticks']['quotes']
         assert source_rows == parent['bins']['quote_containing_bins']
     stats.check(run)
-    # additional closed-form interval accounting, independent of any row construction.
     for policy in RULES:
         part = support.loc[support.policy.eq(policy)]
         a = pd.DatetimeIndex(part.start).as_unit('ns').asi8

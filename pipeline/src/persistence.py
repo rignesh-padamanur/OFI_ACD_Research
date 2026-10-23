@@ -25,7 +25,6 @@ def build_coalesced_event_table(event_df, trigger_col="candidate_event", debounc
     if len(cand_times) == 0:
         return pd.DataFrame(), df
 
-    # group candidate seconds into discrete events if gap > debounce_gap_sec
     gaps = (cand_times.to_series().diff().dt.total_seconds() > debounce_gap_sec).cumsum()
     
     cand_df = pd.DataFrame({"timestamp": cand_times, "event_group": gaps})
@@ -39,7 +38,6 @@ def build_coalesced_event_table(event_df, trigger_col="candidate_event", debounc
         peak_stress = event_slice["stress_score"].max()
         mean_stress = event_slice["stress_score"].mean()
         
-        # aggregate signed OFI during event window (F_{t0}-measurable direction)
         net_ofi = event_slice["ofi"].sum() if "ofi" in event_slice.columns else 0.0
         
         event_list.append({
@@ -79,7 +77,6 @@ def compute_volatility_standardized_paths(quotes, events, horizon_sec=300, pre_v
         eid = row["event_id"]
         t0 = row["end_time"]
         
-        # pre-event realized volatility (300s window before t0)
         pre_window = mid_1s.loc[t0 - pd.Timedelta(seconds=pre_vol_sec) : t0]
         if len(pre_window) < 10:
             pre_vol = 1e-4
@@ -94,14 +91,11 @@ def compute_volatility_standardized_paths(quotes, events, horizon_sec=300, pre_v
             
         p0 = fwd_window.iloc[0]
         
-        # direction from realized price change within event window (F_{t0}-measurable)
-        # event_move = mid(last tick in event) - mid(first tick in event)
         if "event_move" in row.index and pd.notna(row.get("event_move")) and row["event_move"] != 0:
             direction = 1.0 if row["event_move"] > 0 else -1.0
         elif "net_ofi" in row.index and pd.notna(row.get("net_ofi")) and row["net_ofi"] != 0:
             direction = 1.0 if row["net_ofi"] > 0 else -1.0
         else:
-            # no direction available; leave price changes unaligned
             direction = 1.0
         
         for h_sec in range(1, len(fwd_window)):

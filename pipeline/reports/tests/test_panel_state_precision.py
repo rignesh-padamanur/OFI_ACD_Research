@@ -30,8 +30,6 @@ SECOND = 1_000_000_000
 def fixture(log_levels, *, flow=None):
     levels = np.asarray(log_levels, dtype=float)
     times = pd.date_range(ORIGIN, periods=len(levels), freq='s')
-    # every pre-mark finds the quote one second before it. Extra future quotes
-    # let the end-mark and strict-boundary checks run without special handling.
     qt = pd.date_range(ORIGIN-pd.Timedelta(seconds=1), periods=len(levels)+2, freq='s')
     mid = np.exp(np.r_[levels, levels[-1], levels[-1]])
     quotes = pd.DataFrame({'timestamp': qt, 'bid': mid-.000001, 'ask': mid+.000001,
@@ -74,8 +72,6 @@ def scalar_variation(clock, quotes, support, position):
         if quote.timestamp < interval.start or quote.timestamp >= interval.end_exclusive:
             return np.nan
         midpoint = (float(quote.bid)+float(quote.ask))/2.
-        # NumPy log matches the defined recorded log-price transform; scalar
-        # summation, independent quote selection, and window construction differ.
         logs.append(float(np.log(midpoint)))
     squares = [(logs[j+1]-logs[j])**2 for j in range(60)]
     if not all(math.isfinite(value) for value in squares):

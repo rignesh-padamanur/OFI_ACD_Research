@@ -48,8 +48,6 @@ def resolve_inputs():
             and sha256(ROOT/'reports/pipeline_master_statistics.json')==record['registered_master_sha256']
             and sha256(ROOT/'data/active_direction_cancellation_audit.json')==record['registered_pointer_sha256'],
             'Prior registered identity differs')
-    # historical releases bind their executed tests, not the evolving test directory.
-    # adding this stage's tests must not invalidate unchanged older test evidence.
     for name,digest in oldm['outputs'].items(): require(sha256(prior/name)==digest,'Prior output changed: '+name)
     for key,item in oldm['inputs'].items(): require(sha256(item['path'])==item['sha256'],'Prior input changed: '+key)
     oldtests=read(prior/'test_evidence.json')
@@ -176,7 +174,6 @@ def main(run_id):
         actual=build_joint_response(samples,START,END)
         for name in FRAMES: actual[name].to_parquet(run/(name+'.parquet'),index=False)
         atomic_json(run/'statistics.json',actual['statistics'])
-        # verify the serialized records rather than only the in-memory objects.
         loaded={n:pd.read_parquet(run/(n+'.parquet')) for n in FRAMES}
         loaded['statistics']=read(run/'statistics.json')
         verification=verify_joint_response(loaded,samples,START,END)

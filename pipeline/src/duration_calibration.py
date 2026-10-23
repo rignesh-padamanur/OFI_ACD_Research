@@ -133,8 +133,6 @@ def model_sample(frame, *, start_ns, stop_ns, omit_structural_tails=False):
     """
     a=ns(frame.origin_at);b=ns(frame.end_at);event=frame.event_observed.to_numpy()
     mask=(a>=start_ns)&(a<stop_ns)&np.isfinite(frame.scale_sec)&(frame.exposure_ns>0)
-    # a stop at/after the historical cutoff is administrative censoring here.
-    # its eventual structural cause cannot determine training-set membership.
     if omit_structural_tails:mask&=~((~event)&(b<stop_ns)&((frame.stop_code.to_numpy()&2)!=0))
     idx=np.flatnonzero(mask);out=frame.iloc[idx].copy().reset_index(drop=True)
     end=np.minimum(b[idx],stop_ns);observed=event[idx]&(b[idx]<stop_ns)

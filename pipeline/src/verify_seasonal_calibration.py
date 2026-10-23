@@ -47,7 +47,6 @@ def reference_daily(frame):
 
 
 def reference_fit(history, index, spec):
-    # select prior calendar days explicitly; the current/future indices are never read.
     past = list(range(max(0,index-spec.lookback_days),index))
     matched = [j for j in past if (index-j)%7==0]
     shape = (4,2,96)
@@ -179,7 +178,7 @@ class ReferenceStatistics:
 
 
 def verify_calibration_run(run):
-    from src.deseasonal import CalibrationSpec  # schema only, no production numerical functions.
+    from src.deseasonal import CalibrationSpec
     run=Path(run);manifest=json.loads((run/'manifest.json').read_text())
     for key,r in manifest['inputs'].items():
         assert sha256(Path(r['path']))==r['sha256'],'Input changed: '+key

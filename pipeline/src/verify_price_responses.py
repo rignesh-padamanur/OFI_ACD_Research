@@ -235,8 +235,6 @@ def reference_response_tables(onsets, quotes, support, *, policy, development_en
     p['triplet_quote_available'] = (future_available & core['available'][:, :2].all(axis=1)[:, None]).ravel()
     detection_stamps = a.detection_mark_at.iloc[identities.onset_row.to_numpy()].reset_index(drop=True)
     p['endpoint_reuses_detection_quote'] = p.continuation_quote_available & p.endpoint_quote_at.eq(detection_stamps)
-    # independent forward join to another observed detection. This does not use
-    # episode closing times and allows uncertain fragments as later events.
     later = pd.DataFrame({'next_detected_at': pd.to_datetime(onsets.available_at, utc=True)})
     if n:
         joined = pd.merge_asof(pd.DataFrame({'detected_at': pd.to_datetime(onsets.available_at, utc=True)}),
@@ -432,8 +430,6 @@ def verify_price_responses(run):
         if saved_policy != statistics['policies'][policy]:
             raise AssertionError('Policy/root statistics differ: '+policy)
         _json_compare(saved_policy, policy_statistics, exact=True)
-        # means must share the exact same available row identities; medians are
-        # not additive and are deliberately excluded from this mean identity.
         present = summary.observations.gt(0)
         np.testing.assert_allclose(summary.loc[present, 'mean_total_pips'],
             summary.loc[present, 'mean_initial_pips']+summary.loc[present, 'mean_continuation_pips'],

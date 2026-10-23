@@ -61,7 +61,6 @@ def assemble_panel_ledger(anchors, measurements, direction, paths):
     analysis_segments(anchors.bin_start)
     if not paths.horizon_sec.isin(HORIZONS).all():
         raise ValueError('Read only the fixed 0/60/300-second response paths')
-    # check identity and timing without adding an exclusion
     if anchors.episode_id.duplicated().any():
         raise ValueError('Unique anchor identities required')
     linked = anchors.set_index('episode_id').state_sample_eligible.reindex(measurements.episode_id)

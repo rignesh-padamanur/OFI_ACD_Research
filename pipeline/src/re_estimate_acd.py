@@ -41,7 +41,6 @@ df_acd = may2026.loc[mask].copy()
 print(f"   Active durations (0 < δ ≤ 60s): {len(df_acd):,}")
 del may2026
 
-# seasonal factors use 15-minute bins
 print("\n2. Computing 15-minute diurnal spline Φ_δ(t) and deseasonalizing...")
 
 from src.deseasonal import deseasonalize_series
@@ -61,7 +60,6 @@ print(f"   adj δ̃ median: {df_acd['adj_delta_sec'].median():.6f}s")
 N_cal = len(df_acd)
 x = df_acd["adj_delta_sec"].to_numpy()
 
-# forward filter
 def forward_filter(omega, alpha, beta, x):
     """ACD(1,1) conditional expectation recursion."""
     n = len(x)
@@ -71,7 +69,6 @@ def forward_filter(omega, alpha, beta, x):
         psi[t] = omega + alpha * x[t-1] + beta * psi[t-1]
     return psi
 
-# fit EACD(1,1)
 print(f"\n3. Estimating EACD(1,1) on N = {N_cal:,} deseasonalized durations...")
 print("   (Warm-started from old parameters + perturbations)")
 
@@ -86,7 +83,7 @@ def eacd_nll(params):
     return nll if np.isfinite(nll) else 1e20
 
 eacd_inits = [
-    [0.003688, 0.027007, 0.965855],   # old EACD parameters
+    [0.003688, 0.027007, 0.965855],
     [0.005, 0.03, 0.95],
     [0.002, 0.02, 0.97],
     [0.01, 0.05, 0.90],
@@ -118,7 +115,6 @@ assert eacd_omega > 0
 print(f"\n   BEST EACD: ω = {eacd_omega:.6f}, α = {eacd_alpha:.6f}, β = {eacd_beta:.6f}")
 print(f"   α + β = {eacd_persistence:.6f}, NLL = {best_eacd_nll:,.0f}, ln L = {-best_eacd_nll:,.0f}")
 
-# fit WACD(1,1)
 print(f"\n4. Estimating Weibull ACD(1,1) on N = {N_cal:,} deseasonalized durations...")
 print("   (Warm-started from old parameters + perturbations)")
 
@@ -137,7 +133,7 @@ def wacd_nll(params):
     return nll if np.isfinite(nll) else 1e20
 
 wacd_inits = [
-    [0.001575, 0.022548, 0.96502, 0.749015],   # old WACD parameters
+    [0.001575, 0.022548, 0.96502, 0.749015],
     [0.002, 0.025, 0.965, 0.75],
     [0.003, 0.03, 0.95, 0.80],
     [0.001, 0.015, 0.975, 0.70],
@@ -170,7 +166,6 @@ assert 0.3 < wacd_k < 2.0
 print(f"\n   BEST WACD: ω = {wacd_omega:.6f}, α = {wacd_alpha:.6f}, β = {wacd_beta:.6f}, k = {wacd_k:.6f}")
 print(f"   α + β = {wacd_persistence:.6f}, NLL = {best_wacd_nll:,.0f}, ln L = {-best_wacd_nll:,.0f}")
 
-# likelihood-ratio comparison
 print(f"\n5. Likelihood Ratio Test: H₀: k = 1 (EACD) vs H₁: k ≠ 1 (WACD)")
 delta_lnL = best_eacd_nll - best_wacd_nll
 LR = 2.0 * delta_lnL
@@ -178,7 +173,6 @@ print(f"   Δ ln L = {delta_lnL:,.0f}")
 print(f"   LR = 2 × Δ ln L = {LR:,.0f} ~ χ²(1)")
 print(f"   {'REJECT H₀' if LR > 3.841 else 'FAIL TO REJECT'} at α = 0.05")
 
-# standard errors from the Hessian
 print(f"\n6. Computing Hessian-based standard errors at WACD MLE...")
 
 from scipy.optimize import approx_fprime
@@ -210,7 +204,6 @@ for name, val, s, null in zip(param_names, best_wacd.x, se, null_vals):
     t_stat = (val - null) / s if se_valid and s > 0 else np.nan
     print(f"   {name}: estimate = {val:.6f}, SE = {s:.6f}, t({name}={null}) = {t_stat:.2f}")
 
-# check residuals
 print(f"\n7. Residual diagnostics...")
 
 psi = forward_filter(wacd_omega, wacd_alpha, wacd_beta, x)
@@ -226,7 +219,6 @@ import math
 half_life = math.log(2) / math.log(1.0 / wacd_beta)
 print(f"   Half-life: {half_life:.1f} quote updates ({half_life * np.median(x):.2f}s at median duration)")
 
-# Ljung-Box Q(10), full calibration sample
 print(f"\n   Computing Ljung-Box Q(10) on N = {N_cal:,}...")
 demeaned = eps_standard - eps_standard.mean()
 var_eps = np.sum(demeaned**2) / N_cal
@@ -235,7 +227,6 @@ for lag in range(1, 11):
     rho[lag-1] = np.sum(demeaned[:N_cal-lag] * demeaned[lag:]) / (N_cal * var_eps)
 Q10_residual = N_cal * (N_cal + 2) * np.sum(rho**2 / (N_cal - np.arange(1, 11)))
 
-# also on raw durations (for consistent comparison)
 x_raw = df_acd["delta_sec"].to_numpy()
 demeaned_raw = x_raw - x_raw.mean()
 var_raw = np.sum(demeaned_raw**2) / N_cal
@@ -244,7 +235,6 @@ for lag in range(1, 11):
     rho_raw[lag-1] = np.sum(demeaned_raw[:N_cal-lag] * demeaned_raw[lag:]) / (N_cal * var_raw)
 Q10_raw = N_cal * (N_cal + 2) * np.sum(rho_raw**2 / (N_cal - np.arange(1, 11)))
 
-# also on deseasonalized durations (pre-ACD)
 demeaned_adj = x - x.mean()
 var_adj = np.sum(demeaned_adj**2) / N_cal
 rho_adj = np.zeros(10)

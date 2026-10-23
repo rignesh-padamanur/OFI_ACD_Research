@@ -115,7 +115,6 @@ def measure_windows(windows, quotes, support, batch_size=512):
     price = quotes[['bid', 'ask']].to_numpy(dtype=float)
     if not np.isfinite(price).all() or (price[:, 0] <= 0).any() or (price[:, 1] <= price[:, 0]).any():
         raise ValueError('Clean positive bid/ask prices required')
-    # halve first to avoid overflow when adding finite positive prices
     mid = price[:, 0] / 2 + price[:, 1] / 2
     if not len(t):
         return _empty_measurements()
@@ -126,8 +125,6 @@ def measure_windows(windows, quotes, support, batch_size=512):
         end, s = t[left:right], sid[left:right]
         status = np.full(len(w), 'available', dtype=object)
         status[end - 300 * SECOND < a[s]] = 'window_crosses_support'
-        # one strict-prior lookup per one-second boundary. Coarser grids are
-        # exact subsets, ensuring a common endpoint and age-screen population.
         targets = end[:, None] + np.arange(-300, 1, dtype='int64')[None, :] * SECOND
         ix = np.searchsorted(q, targets, side='left') - 1
         stamps = q[np.maximum(ix, 0)] if len(q) else np.zeros(targets.shape, dtype='int64')

@@ -21,7 +21,6 @@ def fixture():
         '2024-05-06T01:00:00Z', '2024-05-06T02:00:00Z',
         '2024-05-06T03:00:00Z', '2024-05-19T23:59:00Z',
         '2024-06-02T23:59:30Z', '2024-05-06T04:00:00Z'], utc=True)
-    # keep IDs chronological without depending on file row order.
     times = times.sort_values()
     n = len(times)
     q = np.ones(n)
@@ -78,7 +77,6 @@ def fixture():
             rows.append(dict(episode_id=row.episode_id, bin_start=row.bin_start,
                 detected_at=row.available_at, horizon_sec=h, target_at=target,
                 endpoint_status=status,
-                # deliberately stale: the timestamp cannot certify label maturity.
                 endpoint_quote_at=row.available_at-pd.Timedelta(2, unit='s') if available else pd.NaT,
                 endpoint_age_sec=float(h+2) if available else np.nan,
                 initial_pips=row.initial_pips, continuation_pips=c,
@@ -96,7 +94,6 @@ def fixture():
 
 
 def produced(a, f, scaling, outcomes, schedule):
-    # producer is used only to create the candidate artifacts under test.
     from src.prediction_ledger import build_origins, attach_labels, build_folds
     first = build_origins(a, f, scaling)
     labels = attach_labels(first['origins'], outcomes, sample_end=END)
@@ -190,7 +187,6 @@ class VerifyPredictionLedgerTests(unittest.TestCase):
         for key in ['episode_id', 'forecast_at', 'label_ready_at']:
             template[key] = label[key]
         bad['membership'] = pd.concat([bad['membership'], template.to_frame().T], ignore_index=True)
-        # preserve dtypes so the failure concerns membership, not serialization.
         for key in ['episode_id', 'fold_id', 'horizon_sec']:
             bad['membership'][key] = bad['membership'][key].astype('int64')
         with self.assertRaises(AssertionError):

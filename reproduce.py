@@ -14,8 +14,6 @@ ROOT = Path(__file__).resolve().parent
 
 def run(*args: str, cwd: Path = ROOT) -> None:
     environment = os.environ.copy()
-    # reporting checks deliberately use assertions; do not let an inherited
-    # optimization setting disable them in child interpreters.
     environment.pop("PYTHONOPTIMIZE", None)
     environment["PYTHONDONTWRITEBYTECODE"] = "1"
     environment["MPLBACKEND"] = "Agg"

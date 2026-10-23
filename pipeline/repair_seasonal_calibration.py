@@ -69,7 +69,6 @@ def build_artifacts(clock_path,run,spec):
                 raise ValueError('Parent clock must comprise consecutive complete UTC days')
             t=pd.DatetimeIndex(frame.bin_start).as_unit('ns').asi8
             if not np.array_equal(t,day.value+np.arange(86400)*SECOND):raise ValueError('Missing/duplicate parent clock row')
-            # the application day's measurements have not entered history when fit_day runs.
             fit=fit_day(history,index,spec)
             normalized=normalize_day(frame,fit)
             stats.add(day,frame,normalized,fit)

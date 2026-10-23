@@ -233,7 +233,6 @@ def build(run_id, evidence):
     common = list(prefix.columns)
     pd.testing.assert_frame_equal(prefix[common], old_onsets[common], check_dtype=False,
                                   check_categorical=False, check_exact=True)
-    # a returned episode may extend; it must retain its onset identity and history.
     episode_stats = policy_statistics(tables)
     daily = pd.DataFrame({'date': pd.date_range(PREVIOUS, STOP, freq='D', inclusive='left')})
     for col, frame, mask in [('candidate_bins', combined_s, combined_s.candidate_event),

@@ -122,7 +122,6 @@ class ObservationContract(unittest.TestCase):
                     np.testing.assert_array_equal(counts,oracle.reshape(-1,3600).sum(axis=1))
 
     def test_calendar_closed_period_is_separate_from_unresolved_absence(self):
-        # Friday 20:59, Sunday 22:00 UTC in winter; winter Friday 21:00 missing too.
         ts, ids, hours, seg, support=fixture(np.array([59*60,50*3600])*SECOND,
             start='2024-01-05T20:00:00Z',end_hours=51)
         self.assertEqual(seg.absent_open_hours_before.iloc[1],1)
@@ -161,7 +160,6 @@ class ObservationContract(unittest.TestCase):
 
     def test_two_independent_failures_have_both_reasons(self):
         *_, seg, support=fixture(np.array([1,3601,7201])*SECOND,[0,2])
-        # raw middle hour has a removed quote, so the structural cut is solely cleaning.
         self.assertEqual(seg.start_reason.iloc[1],'removed_raw_record')
         self.assertEqual(seg.quote_count.sum(),2)
 

@@ -211,7 +211,6 @@ class ACDLikelihoodTests(unittest.TestCase):
         rng=np.random.default_rng(508);x=rng.exponential(1,150000);cap=.5;event=x<=cap
         f=model_frame(np.minimum(x,cap),event,np.ones(len(x),dtype=bool));pred=predict(f,[1.,0.,0.,1.]);d=diagnostics(f,pred)
         self.assertAlmostEqual(d['event_hazard_ratio'],1,delta=.015)
-        # completed-only means are selected by censoring; do not compare them to one.
         self.assertLess(f.loc[f.event_observed,'normalized_exposure'].mean(),.3)
 
     def test_fit_recovers_simulated_censored_weibull_acd(self):

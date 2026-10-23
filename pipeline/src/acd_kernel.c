@@ -1,5 +1,3 @@
-/* Mean-parameterized EACD/WACD likelihood; all durations and scales supplied
-   by the explicit chronological observation layer. No data reads or fitting. */
 #include <math.h>
 #include <stdint.h>
 #include <stddef.h>

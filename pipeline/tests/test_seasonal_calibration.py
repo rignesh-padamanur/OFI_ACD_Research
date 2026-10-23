@@ -207,7 +207,6 @@ class CalibrationArtifactContract(unittest.TestCase):
                 flow=np.where(count>0,count*2.*np.where(sec%2,1,-1),np.nan)
                 code=np.where(count>0,2,1)
                 f=frame(d,sec,count,flow,code)
-                # the synthetic feed has a fully unsupported Sunday, never silent-zero filling.
                 if d==6:
                     for p in POLICY_NAMES:f['flow_status_'+p]=np.uint8(0);f['support_id_'+p]=np.int32(-1)
                 table=pa.Table.from_pandas(f,preserve_index=False)

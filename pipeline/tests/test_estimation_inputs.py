@@ -13,7 +13,6 @@ import pandas as pd
 from src.analysis_ledger import assemble_ledger
 from src.estimation_inputs import make_scaling, build_inputs
 
-# load the existing independent parent fixture without requiring tests to be a package.
 _fixture_spec = importlib.util.spec_from_file_location(
     '_stage06c_test_fixture', Path(__file__).with_name('test_analysis_ledger.py'))
 _fixture_module = importlib.util.module_from_spec(_fixture_spec)
@@ -304,8 +303,6 @@ class EstimationInputTests(unittest.TestCase):
     def test_only_all_zero_calendar_columns_are_removed_from_schema(self):
         r = inputs()
         schema = r['schemas']['c_300']['baseline']
-        # both fixture events are Sunday hour00; Sunday must stay despite
-        # being collinear with the intercept when Monday is absent.
         self.assertIn('weekday_6', schema['columns'])
         self.assertNotIn('hour_01', schema['columns'])
         self.assertIn('hour_01', schema['unsupported_calendar_columns'])

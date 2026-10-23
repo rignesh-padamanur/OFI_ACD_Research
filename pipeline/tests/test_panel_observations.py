@@ -119,7 +119,6 @@ class SeasonalPanelTests(unittest.TestCase):
         self.tails = pd.DataFrame({'policy': 'structural_only', 'last_quote_id': tails,
             'stop': pd.to_datetime(times[tails] + 15_000_000_000, utc=True),
             'stop_code': np.full(len(tails), 2, dtype='uint8')})
-        # a real boundary correction at midnight, with no completed event.
         self.tails.loc[0, 'stop'] = ORIGIN + pd.Timedelta(days=1)
         self.stop = ORIGIN + pd.Timedelta(days=113)
 

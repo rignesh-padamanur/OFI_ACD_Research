@@ -137,13 +137,12 @@ class PredictionLedgerTests(unittest.TestCase):
         self.assertIn(5, predictions.episode_id.to_list())
 
     def test_maturity_uses_target_not_stale_source_quote(self):
-        # ID2's h300 mark predates cutoff, but its target is cutoff+1 second.
         selected = self.o.episode_id.eq(2) & self.o.horizon_sec.eq(300)
         self.o.loc[selected, 'endpoint_quote_at'] = pd.Timestamp('2024-05-05T23:54:00Z')
         self.o.loc[selected, 'endpoint_age_sec'] = 361.
         _, labels, result = self.all_tables()
         training = result['membership'].loc[lambda x: x.fold_id.eq(1) & x.role.eq('training')]
-        self.assertIn(1, training.episode_id.to_list())  # maturity exactly cutoff is allowed
+        self.assertIn(1, training.episode_id.to_list())
         self.assertNotIn(2, training.episode_id.to_list())
         maturity = labels.loc[labels.episode_id.eq(2) & labels.horizon_sec.eq(300)].iloc[0]
         self.assertEqual(maturity.label_ready_at, pd.Timestamp('2024-05-06T00:00:01Z'))
@@ -152,7 +151,7 @@ class PredictionLedgerTests(unittest.TestCase):
     def test_detection_boundary_assigns_next_block_and_expands_training(self):
         _, _, result = self.all_tables(); members = result['membership']
         p = members.loc[members.role.eq('prediction')].set_index('episode_id')
-        self.assertEqual(p.loc[3, 'fold_id'], 1)  # onset before midnight, detection at midnight
+        self.assertEqual(p.loc[3, 'fold_id'], 1)
         self.assertEqual(p.loc[8, 'fold_id'], 2)
         self.assertEqual(len(p), 7)
         t1 = set(members.loc[members.fold_id.eq(1) & members.role.eq('training'), 'episode_id'])
@@ -160,7 +159,7 @@ class PredictionLedgerTests(unittest.TestCase):
         self.assertEqual(t1, {0, 1})
         self.assertTrue(t1.issubset(t2))
         self.assertNotIn(5, t2)
-        self.assertIn(7, t2)  # its target equals the second cutoff
+        self.assertIn(7, t2)
         self.assertFalse(members.loc[members.role.eq('training'), 'evaluation_eligible'].any())
         json.dumps(result['statistics'], allow_nan=False)
 
@@ -245,7 +244,6 @@ class PredictionLedgerTests(unittest.TestCase):
 
     def test_sample_end_equality_is_observable(self):
         origins = self.origins()['origins']
-        # restrict to one origin whose 300s target defines the sample end.
         selected = origins.loc[origins.episode_id.eq(0)].copy()
         outcomes = self.o.loc[self.o.episode_id.eq(0)].copy()
         end = selected.forecast_at.iloc[0] + pd.Timedelta(300, unit='s')

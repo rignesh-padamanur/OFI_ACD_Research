@@ -103,8 +103,6 @@ def parent_binding():
 
 
 def load_parent(manifest):
-    # full file hashes bind the unprojected artifacts. Only declared columns are
-    # loaded into the mathematical routines; no future feature can enter X.
     for value in manifest['inputs'].values():
         fingerprint(value['path'], value['sha256'])
     frames = {name: pd.read_parquet(manifest['inputs'][name]['path'], columns=READ_ALLOWLISTS[name])

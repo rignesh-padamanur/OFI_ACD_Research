@@ -79,7 +79,6 @@ def _source(samples, start, end):
     counts = pd.crosstab(samples.episode_id, samples.horizon_sec)
     _require({60, 300}.issubset(counts.columns) and counts[[60, 300]].eq(1).all().all(),
              'Each event requires both future horizons')
-    # grouping preserves missing J and compares its stored finite value exactly.
     for field in ['bin_start', 'detected_at', 'initial_pips', 'analysis_segment', 'regressor_eligible']:
         _require(samples.groupby('episode_id')[field].nunique(dropna=False).le(1).all(),
                  'Horizon-invariant source field changed: ' + field)
@@ -98,7 +97,6 @@ def _source(samples, start, end):
     j, c, i = [joint[name].to_numpy(dtype=float) for name in COMPONENTS.values()]
     np.testing.assert_allclose(i, j + c, rtol=1e-12, atol=1e-9,
                                err_msg='Inherited J+C=I identity')
-    # compare signs separately rather than multiplying potentially tiny values.
     same_c = np.sign(j) == np.sign(c)
     opposite_c = np.sign(j) == -np.sign(c)
     same_i = np.sign(j) == np.sign(i)

@@ -186,7 +186,6 @@ def fit_forecasts(origins, predictors, labels, folds, membership):
                      and part.origin_eligible.equals(o.loc[ids].origin_eligible), 'Membership origin metadata mismatch')
         _require(train_member.loc[train_ids].label_ready_at.equals(ready)
                  and train_member.loc[train_ids].label_available.eq(True).all(), 'Training membership maturity mismatch')
-        # read labels and availability only for selected training rows
         selected = labels.loc[labels.horizon_sec.eq(300) & labels.episode_id.isin(train_ids),
                               ['episode_id', 'forecast_at', 'label_ready_at', 'label_available', 'continuation_pips']]
         _require(len(selected) == len(train_ids) and not selected.episode_id.duplicated().any(),

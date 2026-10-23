@@ -30,8 +30,6 @@ Output Files:
 ================================================================================
 """
 
-# this file is preserved as historical source.  Neither direct execution nor
-# import may expose the superseded event labels and episode-peak regressions.
 raise RuntimeError(
     "Legacy regression pipeline is blocked: this module uses superseded "
     "persistence labels and episode-peak features. Use the verified stage-07a "
@@ -72,7 +70,6 @@ def load_unified_dataset():
     print(f"  Loaded: {FDB_PATH.name}")
     print(f"  Shape:  {df.shape[0]:,} events × {df.shape[1]} columns")
 
-    # base category: Off-Peak (17:00–24:00 UTC)
     hour = df["start_time"].dt.hour
     df["session_asian"] = ((hour >= 0) & (hour < 7)).astype(int)
     df["session_london"] = ((hour >= 7) & (hour < 12)).astype(int)
@@ -120,7 +117,6 @@ def load_unified_dataset():
     return df
 
 
-# probit with session effects
 def run_probit_with_session_fe(df):
     """
     Headline regression (Fix 1 + Fix 3):
@@ -161,13 +157,11 @@ def run_probit_with_session_fe(df):
     print(f"  Train persistence rate: {y_train.mean():.4f}")
     print(f"  Test persistence rate:  {y_test.mean():.4f}")
 
-    # restricted model: no session effects
     X_train_r = sm.add_constant(train_df[features_no_fe])
     X_test_r = sm.add_constant(test_df[features_no_fe])
     probit_r = Probit(y_train, X_train_r).fit(disp=False)
     assert probit_r.mle_retvals["converged"], "Restricted Probit did not converge"
 
-    # full model: include session effects
     X_train_f = sm.add_constant(train_df[features_full])
     X_test_f = sm.add_constant(test_df[features_full])
     probit_f = Probit(y_train, X_train_f).fit(disp=False)
@@ -224,13 +218,11 @@ def run_probit_with_session_fe(df):
     delta_auc = auc_f - auc_r
     print(f"  ΔAUC from Session FE: {delta_auc:+.4f}")
 
-    # wald test: joint significance of session dummies
-    # use restriction matrix: test that coefficients on the last 3 variables = 0
     n_params = len(probit_f.params)
     R = np.zeros((3, n_params))
-    R[0, n_params - 3] = 1  # session_asian
-    R[1, n_params - 2] = 1  # session_london
-    R[2, n_params - 1] = 1  # session_ny
+    R[0, n_params - 3] = 1
+    R[1, n_params - 2] = 1
+    R[2, n_params - 1] = 1
     r = np.zeros(3)
 
     wald_result = probit_f.wald_test((R, r))
@@ -244,7 +236,6 @@ def run_probit_with_session_fe(df):
     else:
         print(f"    → FAIL TO REJECT H₀: Session FE are NOT jointly significant")
 
-    # likelihood ratio test: restricted vs. full
     lr_stat = 2 * (probit_f.llf - probit_r.llf)
     from scipy.stats import chi2 as chi2_dist
     lr_p = chi2_dist.sf(lr_stat, df=3)
@@ -276,7 +267,6 @@ def run_probit_with_session_fe(df):
     return probit_f, train_df, test_df
 
 
-# half-life diagnostics
 def report_halflife_diagnostics(df):
     """
     Report half-life statistics with proper winsorization disclosure.
@@ -307,7 +297,6 @@ def report_halflife_diagnostics(df):
     print(f"    Median: {capped_hl.median():.2f} seconds")
     print(f"    Std:    {capped_hl.std():.2f}")
 
-    # non-parametric AUC_300 as primary metric
     auc = df["auc_300"]
     print(f"\n  Primary Invariance Metric: Non-Parametric AUC_300")
     print(f"    Mean:   {auc.mean():,.2f} σ·s")
@@ -322,7 +311,6 @@ def report_halflife_diagnostics(df):
     print(f'     decay rate estimate λ̂ → 0, producing unbounded half-lives."')
 
 
-# compare sessions
 def report_session_analysis(df):
     """
     Document session heterogeneity to justify session FE inclusion.
@@ -374,7 +362,6 @@ def report_session_analysis(df):
     print(f"\n  ✓ Saved: {out_path}")
 
 
-# persistence-score interpretation
 def report_persistence_score(df):
     """
     S_persistence = Φ((AUC_300 − μ_train) / σ_train) × 100

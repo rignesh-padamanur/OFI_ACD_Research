@@ -78,7 +78,6 @@ def verify(run):
         if not (ns(train.bin_start)+301*SECOND <= pd.Timestamp(cal['cutoff']).value).all():
             raise ValueError('Reference model uses unmatured labels')
         sample = f.iloc[ix]
-        # direct searches at the 601 declared marks, without using QuoteGrid or prefix sums.
         quote_start = sample.bin_start.min()-pd.Timedelta(seconds=301)
         quote_stop = sample.bin_start.max()+pd.Timedelta(seconds=302)
         q = read_quote_window(manifest['inputs']['clean_quotes']['path'], quote_start, quote_stop, ['timestamp', 'bid', 'ask'])
@@ -89,7 +88,6 @@ def verify(run):
             qi = np.searchsorted(qt, times, side='left')-1
             good = (qi >= 0) & (qt[np.maximum(qi, 0)] >= starts[sid]) & (times <= ends[sid])
             sp = (prices[np.maximum(qi, 0), 1]-prices[np.maximum(qi, 0), 0])/10
-            # s is index 299, detection at 300, the future 300 marks at 301:601.
             if good[300]:
                 np.testing.assert_allclose(row.current_spread, sp[300], atol=1e-12)
             if row.reference_ready:
@@ -102,7 +100,6 @@ def verify(run):
                 mid = prices[np.maximum(qi, 0)].sum(axis=1)
                 np.testing.assert_allclose(e.loc[pos, 'absolute_move'], abs(mid[-1]-mid[300])/20, atol=1e-12)
             tested_marks += len(times)
-        # complete-data, independently grouped daily residual totals.
         for j, rule in enumerate(RULES):
             selected = mask & f['onset_'+rule].to_numpy()
             part = pd.DataFrame({'date': f.loc[selected, 'bin_start'].dt.normalize(),

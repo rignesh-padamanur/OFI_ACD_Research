@@ -503,8 +503,6 @@ def verify_analysis_ledger(run):
     np.testing.assert_allclose(zero.continuation_pips,0,rtol=0,atol=1e-9,err_msg='Ledger C(0)=0')
     if len(outcomes) != len(original['anchors'])*len(HORIZONS):
         raise AssertionError('Three-horizon ledger row conservation failed')
-    # each unordered edge contributes exactly two degrees, and every interval
-    # belongs to exactly one component. Calendar shares describe the same cohort.
     for h in HORIZONS:
         intervals = dependence['intervals'].loc[dependence['intervals'].horizon_sec.eq(h)]
         pairs = dependence['pairs'].loc[dependence['pairs'].horizon_sec.eq(h)]

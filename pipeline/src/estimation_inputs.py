@@ -62,7 +62,6 @@ def make_scaling(reference, start, cutoff):
         raise ValueError('Insufficient valid scaling reference')
     q = selected.pre_quote_ofi_300s.to_numpy(dtype=float)
     v = selected.pre_rv_300s_5s_bps.to_numpy(dtype=float)
-    # scale before squaring to avoid RMS overflow
     q_max = float(np.max(np.abs(q)))
     with np.errstate(over='ignore', invalid='ignore', divide='ignore'):
         cQ = q_max * float(np.sqrt(np.mean((q / q_max) ** 2))) if q_max > 0 else 0.

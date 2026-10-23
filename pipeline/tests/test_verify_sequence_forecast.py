@@ -22,7 +22,7 @@ def fixture():
             continue
         for hour in [0, 1, 2]:
             if date < START and date.dayofweek == 0 and hour == 1:
-                continue  # an unseen combination, not an unseen marginal level.
+                continue
             for minute in range(2 if date < START else 1):
                 times.append(date + pd.Timedelta(hour, unit='h') + pd.Timedelta(minute, unit='m'))
     times += [START + pd.Timedelta(13, unit='h'),
@@ -118,8 +118,6 @@ def fixture():
 class VerifySequenceForecastTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        # producer calls create candidate artifacts only; the verifier does not
-        # import it or use its matrix builder, solver or loss aggregation.
         from src.sequence_forecast import fit_forecasts, evaluate_forecasts
         cls.parent = fixture()
         cls.fitted = fit_forecasts(**cls.parent)
@@ -148,7 +146,6 @@ class VerifySequenceForecastTests(unittest.TestCase):
         parent['membership'] = parent['membership'].loc[parent['membership'].fold_id.eq(1)].copy()
         actual = fit_forecasts(**parent)
         future = parent['labels'].label_ready_at.gt(START)
-        # includes an origin before START whose 300-second label is not mature.
         self.assertTrue((future & parent['labels'].forecast_at.lt(START)).any())
         changed = deepcopy(parent)
         changed['labels'].loc[future & changed['labels'].label_available, 'continuation_pips'] += 100000.
@@ -233,8 +230,6 @@ class VerifySequenceForecastTests(unittest.TestCase):
         source['inherited_origin_eligible'] = self.parent['origins'].origin_eligible
         source['combined_eligible'] = source.inherited_origin_eligible
         source['adjacent_agreement'] = source.sequence_z+source.composition_reference
-        # reconstruct adjacency then centered score may round differently at the last bit;
-        # source uses the measured centered values, so freeze its exact identity here.
         parent = deepcopy(self.parent)
         source['sequence_z'] = source.adjacent_agreement-source.composition_reference
         parent['predictors']['sequence_z'] = source.sequence_z

@@ -29,7 +29,6 @@ def direct_square_window_sums(values, window=60):
     if len(values) >= window:
         windows = sliding_window_view(values, window)
         counts = sliding_window_view(finite, window).sum(axis=-1)
-        # terms are nonnegative; keep nonfinite windows unavailable
         with np.errstate(invalid='ignore', over='ignore'):
             total = windows.sum(axis=-1)
         result[window-1:] = np.where(counts == window, total, np.nan)

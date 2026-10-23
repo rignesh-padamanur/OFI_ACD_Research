@@ -120,7 +120,6 @@ def score_cycle(clock, factors, duration, quotes, support, *, cutoff):
         s.loc[training].assign(candidate_event=lambda x: score_detector(x[FEATURES].to_numpy(), fit) >= fit['threshold']))
     calibration['eligible_bin_identity_sha256'] = integer_fingerprint(ns(s.loc[training, 'bin_start']))
     selected = s.loc[~training].reset_index(drop=True)
-    # include all 300 seconds before the first deployed state
     begin = cutoff-pd.Timedelta(seconds=300)
     history = f.loc[f.bin_start.ge(begin)].reset_index(drop=True)
     economic = quote_diagnostics(history, quotes, support, 'structural_only').set_index('bin_start')

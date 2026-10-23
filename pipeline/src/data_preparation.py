@@ -109,8 +109,6 @@ def clean_quotes(raw: pd.DataFrame, previous_timestamp=None):
     frame['spread_pips'] = frame.spread * 10000
     frame['delta_sec'] = frame.timestamp.diff().dt.total_seconds()
     if len(frame) and previous_timestamp is not None:
-        # scalar Timedelta.total_seconds() discards sub-microsecond precision
-        # and can round differently from the vectorized within-month operation.
         elapsed_ns = frame.timestamp.iloc[0].value - previous_timestamp.value
         frame.loc[frame.index[0], 'delta_sec'] = elapsed_ns / 1_000_000_000
     frame['quote_size_valid'] = (np.isfinite(frame[['ask_volume', 'bid_volume']]).all(axis=1)
@@ -212,8 +210,6 @@ def promote_statistics(root: Path, run: Path, verification: dict, test_evidence:
         historical = root / master['legacy_statistics']['path']
         if sha256(historical) != master['legacy_statistics']['sha256']:
             raise ValueError('Legacy statistics archive changed')
-        # the old file contains nonstandard NaN JSON. Preserve its exact bytes
-        # in the archive, and represent undefined numbers as null here.
         master['legacy_statistics']['statistics'] = json.loads(
             historical.read_text(), parse_constant=lambda _: None)
         master['legacy_statistics']['encoding_note'] = (

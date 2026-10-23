@@ -1,4 +1,3 @@
-# Reproduction outputs and local environments
 /build/
 /.venv/
 /archive/
@@ -18,7 +17,6 @@ __pycache__/
 *.out
 *.toc
 *.synctex.gz
-# Never add raw or reconstructed research archives to this compact release.
 /pipeline/data/
 /pipeline/output/
 /pipeline/tmp/

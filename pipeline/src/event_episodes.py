@@ -114,7 +114,6 @@ def build_episode_tables(opportunities, scored):
         finish('censored_sample_end', stop=at[-1], why='development_end')
     ep = pd.DataFrame(rows, columns=EPISODE_COLUMNS)
     for col in TIME_COLUMNS:
-        # nullable integers preserve nanoseconds when timestamps are missing
         ep[col] = pd.to_datetime(pd.array(ep[col], dtype='Int64'), unit='ns', utc=True)
     for col in ['episode_id', 'support_id', 'candidate_bins', 'span_seconds', 'preceding_clear_seconds']:
         ep[col] = ep[col].astype('int64')
