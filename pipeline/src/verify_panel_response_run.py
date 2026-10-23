@@ -207,7 +207,7 @@ def reference_legacy(inputs, anchors, paths):
     selected = paths.set_index(keys).reindex(pd.MultiIndex.from_frame(old[keys])).reset_index()
     require(selected.target_at.notna().all(), 'Legacy onset-horizon identity absent')
     admissible = old.target_at.le(old_stop)
-    # Whole-path masks intentionally change when the former future cutoff is removed.
+    # whole-path masks intentionally change when the former future cutoff is removed.
     masks = ['common_path_available', 'common_path_age_le_15', 'common_path_age_le_30', 'common_path_age_le_60']
     require({name for name in old if name.startswith('common_path')} == set(masks), 'Legacy path-mask schema changed')
     own_columns = [name for name in old if name not in masks]

@@ -69,7 +69,7 @@ def parent_inputs():
         result[key] = fingerprint(folder / name, manifest['outputs'][name])
     value = rm['inputs']['cycle_schedule']
     result['schedule'] = fingerprint(value['path'], value['sha256'])
-    # This is reconciliation evidence only. It never determines origin issuance.
+    # this is reconciliation evidence only. It never determines origin issuance.
     joint = ROOT / 'data/signals/step07m_joint_response_20261002'
     jm = read(joint / 'manifest.json')
     result['joint_manifest'] = fingerprint(joint / 'manifest.json')
@@ -213,7 +213,7 @@ def build(run_id):
         m.update(status='pending_reload_verification', tests_passed=count)
         write(run / 'manifest.json', m)
         result = verify_saved(run, allow_pending=True)
-        # Persist successful reload evidence before promoting the run. An
+        # persist successful reload evidence before promoting the run. An
         # interruption at any earlier point therefore cannot certify completion.
         reload_evidence = {k: v for k, v in result.items() if k != 'manifest_sha256'}
         write(run / 'saved_verification.json', reload_evidence)

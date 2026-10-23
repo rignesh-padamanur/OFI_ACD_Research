@@ -93,7 +93,7 @@ def fetch_hour(hour, cache: Path, session=None, max_attempts=3, sleep=time.sleep
             try:
                 response = session.get(prior['url'], timeout=(30, 30))
                 item['http_status'] = response.status_code
-                # Retain server backoff guidance, without persisting cookies or
+                # retain server backoff guidance, without persisting cookies or
                 # unrelated headers. A 429 stops this invocation immediately.
                 if isinstance(response.headers,dict) or hasattr(response.headers,'items'):
                     retry_after=response.headers.get('Retry-After')
@@ -123,7 +123,7 @@ def fetch_hour(hour, cache: Path, session=None, max_attempts=3, sleep=time.sleep
             except requests.RequestException as error:
                 item.update(status='network_error', error=f'{type(error).__name__}: {error}')
             prior['attempts'].append(item)
-            # Clear final-response fields so a network failure cannot inherit
+            # clear final-response fields so a network failure cannot inherit
             # a successful response's row count or fingerprint from an old attempt.
             for field in ['response_file','response_bytes','response_sha256','http_status','rows','error','retry_after']:
                 prior.pop(field,None)

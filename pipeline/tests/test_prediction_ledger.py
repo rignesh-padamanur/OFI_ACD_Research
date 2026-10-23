@@ -152,7 +152,7 @@ class PredictionLedgerTests(unittest.TestCase):
     def test_detection_boundary_assigns_next_block_and_expands_training(self):
         _, _, result = self.all_tables(); members = result['membership']
         p = members.loc[members.role.eq('prediction')].set_index('episode_id')
-        self.assertEqual(p.loc[3, 'fold_id'], 1)  # onset before midnight, alert at midnight
+        self.assertEqual(p.loc[3, 'fold_id'], 1)  # onset before midnight, detection at midnight
         self.assertEqual(p.loc[8, 'fold_id'], 2)
         self.assertEqual(len(p), 7)
         t1 = set(members.loc[members.fold_id.eq(1) & members.role.eq('training'), 'episode_id'])
@@ -245,7 +245,7 @@ class PredictionLedgerTests(unittest.TestCase):
 
     def test_sample_end_equality_is_observable(self):
         origins = self.origins()['origins']
-        # Restrict to one origin whose 300s target defines the sample end.
+        # restrict to one origin whose 300s target defines the sample end.
         selected = origins.loc[origins.episode_id.eq(0)].copy()
         outcomes = self.o.loc[self.o.episode_id.eq(0)].copy()
         end = selected.forecast_at.iloc[0] + pd.Timedelta(300, unit='s')

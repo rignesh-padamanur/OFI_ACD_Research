@@ -90,7 +90,7 @@ class WindowConstructionTests(unittest.TestCase):
         o = onsets()
         o['support_id'] = 1
         w = build_windows(o, s, training_start=at(-900), parameter_cutoff=at(0))
-        # Development uses the second interval, so use its inherited identity.
+        # development uses the second interval, so use its inherited identity.
         self.assertEqual(len(w.loc[w.kind.eq('calibration')]), 3)
         self.assertEqual(w.loc[w.kind.eq('calibration'), 'support_id'].tolist(), [-1, -1, 1])
 
@@ -137,7 +137,7 @@ class VariationMeasurementTests(unittest.TestCase):
         m = measure(q=q).set_index('frequency_sec')
         self.assertEqual(m.loc[1, 'first_quote_at'], at(-1))
         self.assertEqual(m.loc[1, 'last_quote_at'], at(1))
-        # One-second marks see two separate log(2) moves; five-second marks
+        # one-second marks see two separate log(2) moves; five-second marks
         # combine them into one log(4) move. The endpoint quote is excluded.
         self.assertAlmostEqual(m.loc[1, 'rv_bps2'], 2 * np.log(2) ** 2 * 1e8, places=5)
         self.assertAlmostEqual(m.loc[5, 'rv_bps2'], np.log(4) ** 2 * 1e8, places=5)

@@ -15,4 +15,4 @@ These are historical registration-aware builders. Some validate specific parent 
 
 The source selection includes imported scientific modules, independent verifiers, relevant tests, and several otherwise disabled legacy scripts that retained tests load to check their rejection behavior. The release includes the legacy guard marker at `pipeline/reports/PIPELINE_REPAIR_LOG.md`; removing it could accidentally permit superseded APIs. No notebook is a producer dependency of this selected script pipeline.
 
-The code edits made for publication concern compiler portability and release tooling. They do not change event thresholds, predictors, fitted models, horizons or saved empirical results. Original-versus-release hashes and transformation reasons are recorded in [the source mapping](../provenance/source_mapping.json).
+The code edits made for publication concern compiler portability, release tooling and comment cleanup. They do not change event thresholds, predictors, fitted models, horizons or saved empirical results. Original-versus-release hashes and transformation reasons are recorded in [the source mapping](../provenance/source_mapping.json).

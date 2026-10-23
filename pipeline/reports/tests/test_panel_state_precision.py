@@ -30,7 +30,7 @@ SECOND = 1_000_000_000
 def fixture(log_levels, *, flow=None):
     levels = np.asarray(log_levels, dtype=float)
     times = pd.date_range(ORIGIN, periods=len(levels), freq='s')
-    # Every pre-mark finds the quote one second before it. Extra future quotes
+    # every pre-mark finds the quote one second before it. Extra future quotes
     # let the end-mark and strict-boundary checks run without special handling.
     qt = pd.date_range(ORIGIN-pd.Timedelta(seconds=1), periods=len(levels)+2, freq='s')
     mid = np.exp(np.r_[levels, levels[-1], levels[-1]])

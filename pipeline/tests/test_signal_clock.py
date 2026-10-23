@@ -179,7 +179,7 @@ class ClockContract(unittest.TestCase):
 
 class ClockArtifactVerification(unittest.TestCase):
     def fixture(self, path):
-        # Coverage rows include a raw record removed by cleaning; signal rows do not.
+        # coverage rows include a raw record removed by cleaning; signal rows do not.
         h = hours(); h['rows'] = [4, 0, 0, 0]; h['structurally_observed_hour'] = [True, False, False, False]
         support = intervals([(0, 5*S), (9*S, 12*S)])
         source = sparse([(0, 1, np.nan, 1, np.nan), (9, 2, 7., 0, 20.)])

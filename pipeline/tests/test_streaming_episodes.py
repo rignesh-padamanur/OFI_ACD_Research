@@ -56,7 +56,7 @@ class StreamingEpisodeTests(unittest.TestCase):
         if len(o):
             reference = reference_episode_tables(o, s, o.bin_start.iloc[0], o.available_at.iloc[-1])
             for key, frame in zip(['clock', 'membership', 'episodes', 'onsets'], reference):
-                # The older independent verifier leaves empty membership times
+                # the older independent verifier leaves empty membership times
                 # as object. Exact typed output equivalence was checked above.
                 pd.testing.assert_frame_equal(actual[key], frame, check_dtype=bool(len(frame)),
                                               obj='independent ' + key)

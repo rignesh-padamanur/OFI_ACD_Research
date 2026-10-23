@@ -492,7 +492,7 @@ def verify_panel_measurement(run):
         compare(pd.read_parquet(run / (name + '.parquet')), table, name + ' table')
     calendar = reference_calendar(onsets, expected_measurements, expected_direction, start=start, stop=stop)
     compare(pd.read_parquet(run / 'calendar.parquet'), calendar, 'Full calendar including empty dates')
-    # The root statistics are checked below against the same independently
+    # the root statistics are checked below against the same independently
     # reconstructed tables; saved measurements are never used as their oracle.
     statistics = read(run / 'statistics.json')
     verify_statistics(statistics, onsets, expected_measurements, expected_direction,

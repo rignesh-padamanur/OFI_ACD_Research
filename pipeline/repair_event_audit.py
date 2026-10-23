@@ -45,7 +45,7 @@ def resolve_inputs():
     data = ROOT / 'data/runs' / ptr['active_run.json']['data_run_id']
     eligibility = ROOT / 'data/eligibility' / ptr['active_eligibility.json']['eligibility_run_id']
     expected = {}
-    # Verify saved parent provenance with deduplicated file hashing.
+    # verify saved parent provenance with deduplicated file hashing.
     for directory in [parent, calibration, clock, data, eligibility]:
         m = read(directory / 'manifest.json')
         if read(directory / 'verification.json')['status'] != 'passed':
@@ -195,7 +195,7 @@ def build_policy(run, policy, inputs, clock, quotes, support, factors, parent_st
         counts = o.reason.value_counts()
         a, b = s.candidate_event.to_numpy(), s.candidate_without_duration.to_numpy()
         both, union = int((a & b).sum()), int((a | b).sum())
-        # Runs are descriptive only; missing seconds/changes in support break them.
+        # runs are descriptive only; missing seconds/changes in support break them.
         starts = a.copy()
         if len(a) > 1:
             connected = (np.diff(ns(s.bin_start)) == 1_000_000_000) & (np.diff(s.support_id) == 0)

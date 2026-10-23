@@ -62,7 +62,7 @@ for name, month_str in regimes.items():
     x = adj_delta.iloc[:N_SAMPLE].to_numpy()
     n = len(x)
     
-    # Scale-invariant mean NLL
+    # scale-invariant mean NLL
     def mean_nll(params):
         omega, alpha, beta, k = params
         if omega <= 1e-7 or alpha < 0.001 or beta < 0.50 or (alpha + beta) >= 0.9999 or k <= 0.3 or k >= 1.8:
@@ -83,7 +83,6 @@ for name, month_str in regimes.items():
             return 1e10
         return -np.mean(ll_terms)
 
-    # Initial parameter guess
     init = [0.005, 0.03, 0.95, 0.75]
     bounds = [(1e-6, 0.05), (0.001, 0.20), (0.60, 0.999), (0.4, 1.2)]
     
@@ -112,7 +111,7 @@ for name, month_str in regimes.items():
     print(f"       k (shape) = {res.x[3]:.4f}, persistence (alpha+beta) = {res.x[1]+res.x[2]:.6f}")
     print(f"       iterations = {res.nit}, function_evals = {res.nfev}, success = {res.success}")
 
-# Add production parameters for direct benchmark
+# add production parameters for direct benchmark
 with open(ROOT / "data" / "results" / "weibull_params.json") as f:
     prod_params = json.load(f)
 
@@ -129,7 +128,7 @@ fits["Production (May 2026 Baseline)"] = {
 }
 
 print("\n3. Evaluating downstream signal sensitivity on independent out-of-sample data...")
-# Test window: June 2025 (completely outside all 3 calibration months)
+# test window: June 2025 (completely outside all 3 calibration months)
 eval_sub = active_df.loc["2025-06"].iloc[:500000].copy()
 eval_adj = deseasonalize_month(eval_sub["delta_sec"]).to_numpy()
 n_eval = len(eval_adj)
@@ -143,9 +142,9 @@ for model_name, p in fits.items():
     for t in range(1, n_eval):
         psi[t] = w + a * eval_adj[t-1] + b * psi[t-1]
     
-    eps = eval_adj / psi  # Standard unit-mean ACD residual
+    eps = eval_adj / psi  # standard unit-mean ACD residual
     log_eps = np.log(np.maximum(eps, 1e-12))
-    # Duration urgency signal: inverted log standardized innovation
+    # duration urgency signal: inverted log standardized innovation
     z = -(log_eps - np.mean(log_eps)) / np.std(log_eps)
     signals[model_name] = z
 
@@ -158,7 +157,6 @@ print("=" * 80)
 audit_records = []
 for model_name, z in signals.items():
     r_pearson = float(np.corrcoef(base_z, z)[0, 1])
-    # Spearman rank correlation
     rank_base = pd.Series(base_z).rank()
     rank_model = pd.Series(z).rank()
     r_spearman = float(np.corrcoef(rank_base, rank_model)[0, 1])
@@ -168,7 +166,7 @@ for model_name, z in signals.items():
     p95_diff = float(np.percentile(diff, 95))
     p99_diff = float(np.percentile(diff, 99))
     
-    # Top 1% tail event overlap (Jaccard similarity at q0.99)
+    # top 1% tail event overlap (Jaccard similarity at q0.99)
     top1_base = base_z >= np.percentile(base_z, 99)
     top1_model = z >= np.percentile(z, 99)
     jaccard = float(np.sum(top1_base & top1_model) / np.sum(top1_base | top1_model))

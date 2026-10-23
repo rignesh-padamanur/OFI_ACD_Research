@@ -368,7 +368,7 @@ class HistoryQualityTests(unittest.TestCase):
     def test_quote_before_support_cannot_supply_first_history_mark(self):
         onsets, quotes, support = self.history_fixture()
         support.loc[0, 'start'] = onsets.bin_start.iloc[0] - pd.Timedelta(seconds=300)
-        # The advertised state history is internally inconsistent with its support;
+        # the advertised state history is internally inconsistent with its support;
         # fail closed instead of attaching numbers from a pre-support quote.
         with self.assertRaises(ValueError):
             attach_history_quality(onsets, quotes, support)

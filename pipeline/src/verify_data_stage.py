@@ -42,7 +42,7 @@ def verify_run(run: Path) -> dict:
             require(np.array_equal(raw.source_row,np.arange(len(source))), 'Raw row provenance')
             pd.testing.assert_frame_equal(raw[source_cols].reset_index(drop=True), source.reset_index(drop=True),check_exact=True)
 
-            # Independently enumerate the admissible source tuples. Valid tied
+            # independently enumerate the admissible source tuples. Valid tied
             # timestamps and size-only changes are distinct observations.
             admissible=(np.isfinite(source.ask)&np.isfinite(source.bid)&(source.ask>source.bid)&(source.bid>0))
             selected=source.loc[admissible]
@@ -56,7 +56,7 @@ def verify_run(run: Path) -> dict:
             require(np.array_equal(clean.mid,(clean.ask.to_numpy()+clean.bid.to_numpy())/2),'Midpoint identity')
             require(np.array_equal(clean.spread_pips,expected_spread*10000),'Pip conversion')
             ts=clean.timestamp
-            # Use integer timestamp differences, independently of the cleaner's
+            # use integer timestamp differences, independently of the cleaner's
             # pandas duration operation. Subtract before conversion to float.
             time_ns=ts.array.asi8
             expected_delta=np.full(len(ts),np.nan,dtype=float)

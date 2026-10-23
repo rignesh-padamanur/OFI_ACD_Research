@@ -143,8 +143,8 @@ The HAC weights subsequently use 1-j/(L+1), not 1-j/b.
         raise ValueError('Pilot lag outside observed calendar; no silent cap')
     with np.errstate(over='ignore', invalid='ignore'):
         h = g @ w
-        # Scaling this scalar projection by one constant changes neither ratio.
-        # Avoid squaring huge values; retain the scale with the scaled moments.
+        # a common scale leaves both ratios unchanged
+        # avoid overflow when squaring; keep the scale with the scaled moments
         scale = float(np.max(np.abs(h)))
         cancellation_scale = float(np.max(np.abs(g) @ np.abs(w)))
         projection_tolerance = NUMERICAL_MULTIPLIER * EPS * cancellation_scale

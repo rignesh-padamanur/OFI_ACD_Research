@@ -223,7 +223,7 @@ class CalendarScoreHACChecks(unittest.TestCase):
         g = aggregate_daily_scores(fit['event_scores'], times, start, end)['daily_scores']
         factors = np.array([1., -1e6, 1e-6, -3., 7., -.2])
         before = calendar_hac(g, fit['bread'], weights)
-        # If X*=X D, scores*=scores D and bread*=D^-1 bread D^-1.
+        # if X*=X D, scores*=scores D and bread*=D^-1 bread D^-1.
         transformed_bread = fit['bread']/factors[:, None]/factors[None, :]
         after = calendar_hac(g*factors, transformed_bread, weights)
         self.assertEqual(before['automatic']['lag'], after['automatic']['lag'])

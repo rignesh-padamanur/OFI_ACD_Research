@@ -45,7 +45,7 @@ def get_kernel():
     directory=Path(tempfile.gettempdir())/'fx_acd_kernel'/fingerprint;directory.mkdir(parents=True,exist_ok=True)
     binary=directory/('kernel.dylib' if sys.platform == 'darwin' else 'kernel.so')
     command,compiler=kernel_build_command(source,binary)
-    # Build from reviewed local source every interpreter run; do not trust a cached binary.
+    # rebuild from local source each run to avoid a stale binary
     subprocess.run(command,check=True,capture_output=True,text=True)
     lib=ctypes.CDLL(str(binary));f=lib.acd_kernel
     double=ctypes.POINTER(ctypes.c_double);byte=ctypes.POINTER(ctypes.c_uint8)

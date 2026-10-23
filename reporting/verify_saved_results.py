@@ -147,7 +147,7 @@ def uncertainty(groups):
         lag=int(row.lag)
         cov=u@v+sum((1-j/(lag+1))*(u[j:]@v[:-j]+v[j:]@u[:-j]) for j in range(1,lag+1))
         close(cov,row.value,'Cross covariance',atol=1e-12)
-    # Recompute the declared coordinate-wise Bartlett bandwidth and maximum rule.
+    # recompute each coordinate bandwidth, then take the declared maximum
     bandwidths=[]
     for influence in reconstructed.values():
         n=len(influence);pilot=int(np.floor(4*(n/100)**(2/9)))

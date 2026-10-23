@@ -17,7 +17,7 @@ def ns(column):
 
 
 def reference_hour_counts(starts, ends, lookback, horizon, origin, n):
-    # Inclusive integer-second endpoints and per-bin accumulation, independent
+    # inclusive integer-second endpoints and per-bin accumulation, independent
     # of the production cumulative-union integration algorithm.
     left = np.floor_divide(starts-1, S)+1+lookback
     right = np.floor_divide(ends-1, S)-horizon
@@ -97,7 +97,7 @@ def verify_eligibility(run):
     np.testing.assert_array_equal(ns(seg.start),ts[expected_starts])
     np.testing.assert_array_equal(ns(seg.last_quote),ts[expected_stops-1])
 
-    # Check all retained timestamp/provenance pairs against the immutable raw panel;
+    # check all retained timestamp/provenance pairs against the immutable raw panel;
     # also rebuild every raw hourly count and sparse removed-record boundaries.
     requests=set((rid[:-1][removed]+1).tolist())
     if rid[-1] < total-1: requests.add(int(rid[-1]+1))

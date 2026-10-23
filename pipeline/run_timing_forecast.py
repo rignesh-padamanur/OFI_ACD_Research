@@ -166,7 +166,7 @@ def fit(run):
             require(np.isfinite(p[ready]).all(), 'Nonfinite issued prediction')
             prediction[name] = p
             joblib.dump(model, out/f'model_{name}.joblib')
-        # Only after issuing predictions attach the inherited future labels.
+        # only after issuing predictions attach the inherited future labels.
         label_path = ARCHIVE/'cycles'/f'{c:03d}'/'economics.parquet'
         e = pd.read_parquet(label_path, columns=['bin_start', 'y300', 'outcome_ready'])
         require(np.array_equal(ns(deployment.bin_start), ns(e.bin_start)), 'Deployment target identity')

@@ -111,7 +111,7 @@ class QuoteGrid:
         i = self.index(t)
         if (i < 300).any() or (i+1 >= len(self.t)).any():
             raise ValueError('Insufficient feature grid')
-        # Quote count/flow history uses the same strict pre-bin 300 seconds.
+        # counts and flow use the same 300 seconds strictly before the bin
         ct = ns(clock.bin_start)
         ci = (t-ct[0])//SECOND
         if (np.diff(ct) != SECOND).any() or (ci < 300).any() or (ci >= len(ct)).any():
@@ -119,7 +119,7 @@ class QuoteGrid:
         good_clock = np.isin(clock.flow_status_structural_only, [1, 2])
         cp = np.r_[0, np.cumsum(~good_clock)]
         hist_ok = self.window_valid(i-300, i, sid) & (cp[ci]-cp[ci-300] == 0)
-        # Sum 60 actual five-second return squares, without subtracting old sums.
+        # sum the 60 squared five-second returns directly
         logmid = np.where(self.valid, np.log(self.mid/200000), np.nan)
         squares = np.full(len(self.t), np.nan)
         squares[5:] = (logmid[5:]-logmid[:-5])**2

@@ -136,7 +136,7 @@ def _parents(parent):
              primary.label_ready_at.eq(o.forecast_at+pd.Timedelta(300, unit='s')).all(), 'Wrong primary label maturity')
     _require(pd.api.types.is_bool_dtype(primary.label_available) and primary.label_available.notna().all(),
              'Label availability must be nonmissing boolean')
-    # Response finiteness is examined only after selecting a matured training set.
+    # response finiteness is examined only after selecting a matured training set.
     for name in ['fit_cutoff', 'prediction_start', 'prediction_end_exclusive']:
         _utc(folds[name], 'fold '+name)
     fs = folds.sort_values('fit_cutoff').reset_index(drop=True)
@@ -218,7 +218,7 @@ def _qr_fit(tx, ty, columns):
     _require(n > p and np.isfinite(matrix).all(), 'Insufficient or nonfinite training design')
     maxima = np.max(np.abs(matrix), axis=0)
     _require((maxima > 0).all(), 'Zero substantive design column')
-    # Stable RMS units; QR is independently solved without using producer fits.
+    # stable RMS units; QR is independently solved without using producer fits.
     units = maxima * (np.linalg.norm(matrix/maxima, axis=0)/math.sqrt(n))
     _require(np.isfinite(units).all() and (units > 0).all(), 'Invalid equilibrated column scale')
     scaled = matrix/units

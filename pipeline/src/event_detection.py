@@ -25,9 +25,7 @@ def build_event_detection_pipeline(
         'after the registered calibration and duration repairs.'
     )
 
-    # ==========================
     # 1-second ACD summaries
-    # ==========================
     res_col = f"residual_{acd_model.lower()}"
     mu_col = "psi_weibull" if acd_model.lower() == "weibull" else "mu_eacd"
 
@@ -42,9 +40,6 @@ def build_event_detection_pipeline(
         })
     )
 
-    # ==========================
-    # Merge all signals
-    # ==========================
 
     intensity_col = "adj_tick_count" if "adj_tick_count" in trading_intensity.columns else "tick_count"
 
@@ -56,9 +51,7 @@ def build_event_detection_pipeline(
 
     event_df = event_df.dropna()
 
-    # ==========================
-    # Chronological train/test split
-    # ==========================
+    # chronological train/test split
 
     N = len(event_df)
     n_train = int(N * train_frac)
@@ -68,14 +61,11 @@ def build_event_detection_pipeline(
 
     train_end_date = event_df.index[n_train - 1]
 
-    # Training partition (strictly past data for normalization)
     train = event_df.iloc[:n_train]
 
-    # ==========================
-    # Standardize using TRAIN-ONLY parameters
-    # ==========================
+    # fit scaling on the training partition
 
-    # --- z_ofi: standardized absolute OFI ---
+    # z_ofi uses absolute OFI
     ofi_train_mean = train["abs_ofi"].mean()
     ofi_train_std = train["abs_ofi"].std()
     assert ofi_train_std > 0, "abs_ofi has zero variance in training set"
@@ -84,7 +74,7 @@ def build_event_detection_pipeline(
         event_df["abs_ofi"] - ofi_train_mean
     ) / ofi_train_std
 
-    # --- z_intensity: standardized tick intensity ---
+    # z_intensity uses quote counts
     int_train_mean = train[intensity_col].mean()
     int_train_std = train[intensity_col].std()
     assert int_train_std > 0, "Intensity has zero variance in training set"
@@ -93,36 +83,30 @@ def build_event_detection_pipeline(
         event_df[intensity_col] - int_train_mean
     ) / int_train_std
 
-    # --- z_duration: log-standardized ACD residual (sign-inverted) ---
-    # Compute log-residual for entire sample
+    # z_duration reverses the sign of the standardized log residual
     log_duration_full = np.log(
         event_df[res_col].replace(0, np.nan).fillna(1.0)
     )
 
-    # Estimate mean and std of log-residual on training data only
     log_duration_train = log_duration_full.iloc[:n_train]
     log_dur_train_mean = log_duration_train.mean()
     log_dur_train_std = log_duration_train.std()
     assert log_dur_train_std > 0, "log_duration has zero variance in training set"
 
-    # Apply train-only normalization to the entire sample
-    # Sign inversion: positive z_dur = fast execution (short duration)
+    # sign flip: smaller log residuals give larger z_duration
     event_df["z_duration"] = (
         log_dur_train_mean - log_duration_full
     ) / log_dur_train_std
 
-    # ==========================
-    # Combined stress score using TRAIN-ONLY covariance
-    # ==========================
+    # fit covariance on the same training partition
 
     Z_full = event_df[["z_ofi", "z_intensity", "z_duration"]].to_numpy()
     Z_train = Z_full[:n_train, :]
 
     if method == "mahalanobis":
-        # Covariance estimated on training partition only
         cov_train = np.cov(Z_train, rowvar=False)
 
-        # Guard against ill-conditioned covariance (per global rules)
+        # require positive covariance eigenvalues
         eigvals = np.linalg.eigvalsh(cov_train)
         assert np.all(eigvals > 0), (
             f"Train covariance is not positive definite. "
@@ -146,9 +130,7 @@ def build_event_detection_pipeline(
             + event_df["z_duration"]
         )
 
-    # ==========================
-    # Candidate-event threshold (from TRAINING data only)
-    # ==========================
+    # estimate the threshold from training scores only
 
     train_stress = event_df["stress_score"].iloc[:n_train]
     threshold = train_stress.quantile(quantile_threshold)
@@ -161,9 +143,6 @@ def build_event_detection_pipeline(
         event_df["candidate_event"]
     ].copy()
 
-    # ==========================
-    # Diagnostic metadata
-    # ==========================
     print(f"  Train/test split: {train_frac:.0%} / {1-train_frac:.0%}")
     print(f"  Train: N_train = {n_train:,} (ends {train_end_date})")
     print(f"  Test:  N_test  = {N - n_train:,}")

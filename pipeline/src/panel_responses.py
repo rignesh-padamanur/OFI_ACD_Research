@@ -47,7 +47,7 @@ def construct_panel_responses(onsets, quotes, support, *, sample_end, all_onsets
         raise ValueError('Selected onset is absent from the global onset stream')
     inherited = all_onsets.iloc[positions].reset_index(drop=True)
     selected = onsets.reset_index(drop=True)
-    # Matching values, including missing values, prevent a batch from silently
+    # matching values, including missing values, prevent a batch from silently
     # changing its timing, direction, support or inherited sample membership.
     for col in ['bin_start', 'available_at', 'support_id', 'quote_ofi',
                 'onset_confirmed', 'state_sample_eligible', 'period']:
@@ -59,7 +59,7 @@ def construct_panel_responses(onsets, quotes, support, *, sample_end, all_onsets
         onsets, quotes, support, policy='structural_only',
         development_end=sample_end, horizons=np.arange(301, dtype='int64'))
     anchors, paths = result['anchors'], result['paths']
-    # The next detection can lie in another processing batch or calibration
+    # the next detection can lie in another processing batch or calibration
     # cycle. It remains a descriptive flag, never an eligibility condition.
     next_position = np.searchsorted(global_detection, ns(anchors.available_at), side='right')
     next_detection = np.full(len(anchors), np.iinfo('int64').max, dtype='int64')

@@ -103,7 +103,7 @@ def parent_binding():
 
 
 def load_parent(manifest):
-    # Full file hashes bind the unprojected artifacts. Only declared columns are
+    # full file hashes bind the unprojected artifacts. Only declared columns are
     # loaded into the mathematical routines; no future feature can enter X.
     for value in manifest['inputs'].values():
         fingerprint(value['path'], value['sha256'])

@@ -30,7 +30,7 @@ Output Files:
 ================================================================================
 """
 
-# This file is preserved as historical source.  Neither direct execution nor
+# this file is preserved as historical source.  Neither direct execution nor
 # import may expose the superseded event labels and episode-peak regressions.
 raise RuntimeError(
     "Legacy regression pipeline is blocked: this module uses superseded "
@@ -48,9 +48,6 @@ from scipy.stats import norm, spearmanr
 from sklearn.metrics import roc_auc_score, brier_score_loss
 from pathlib import Path
 
-# ============================================================
-# PATH CONFIGURATION
-# ============================================================
 PROJECT_ROOT = Path(__file__).parent.parent.resolve()
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
@@ -59,9 +56,6 @@ FDB_PATH = PROJECT_ROOT / "data" / "results" / "final_event_database.parquet"
 RESULTS_DIR = PROJECT_ROOT / "data" / "results"
 
 
-# ============================================================
-# SECTION A: LOAD UNIFIED DATASET
-# ============================================================
 def load_unified_dataset():
     """
     Load the pre-computed final_event_database.parquet which already
@@ -78,17 +72,14 @@ def load_unified_dataset():
     print(f"  Loaded: {FDB_PATH.name}")
     print(f"  Shape:  {df.shape[0]:,} events × {df.shape[1]} columns")
 
-    # ── Session Dummies (Fix 3) ──
-    # Base category: Off-Peak (17:00–24:00 UTC)
+    # base category: Off-Peak (17:00–24:00 UTC)
     hour = df["start_time"].dt.hour
     df["session_asian"] = ((hour >= 0) & (hour < 7)).astype(int)
     df["session_london"] = ((hour >= 7) & (hour < 12)).astype(int)
     df["session_ny"] = ((hour >= 12) & (hour < 17)).astype(int)
 
-    # Sort chronologically (should already be sorted, but enforce)
     df = df.sort_values("start_time").reset_index(drop=True)
 
-    # ── Validate critical columns ──
     critical_cols = [
         "peak_stress", "z_ofi", "z_intensity", "z_duration",
         "pre_vol_pips", "auc_300", "is_persistent",
@@ -108,7 +99,6 @@ def load_unified_dataset():
     else:
         print(f"  ✓ Zero NaN in critical columns")
 
-    # ── Assertions ──
     assert len(df) > 1000, f"Too few events: {len(df)}"
     assert df["is_persistent"].isin([0, 1]).all(), "is_persistent not binary"
     assert df["start_time"].is_monotonic_increasing, "Not chronologically sorted"
@@ -130,9 +120,7 @@ def load_unified_dataset():
     return df
 
 
-# ============================================================
-# SECTION B: CORRECTED PROBIT WITH SESSION FIXED EFFECTS
-# ============================================================
+# probit with session effects
 def run_probit_with_session_fe(df):
     """
     Headline regression (Fix 1 + Fix 3):
@@ -155,12 +143,10 @@ def run_probit_with_session_fe(df):
     print("        collinear with pre_vol_pips; requires 797 MB tick file to compute)")
     print("=" * 80)
 
-    # ── Feature sets ──
     features_no_fe = ["pre_vol_pips", "peak_stress",
                       "z_ofi", "z_intensity", "z_duration"]
     features_full = features_no_fe + ["session_asian", "session_london", "session_ny"]
 
-    # ── Chronological 70/30 split ──
     n_train = int(len(df) * 0.70)
     train_df = df.iloc[:n_train].copy()
     test_df = df.iloc[n_train:].copy()
@@ -175,22 +161,20 @@ def run_probit_with_session_fe(df):
     print(f"  Train persistence rate: {y_train.mean():.4f}")
     print(f"  Test persistence rate:  {y_test.mean():.4f}")
 
-    # ── Model A: Probit WITHOUT session FE (restricted) ──
+    # restricted model: no session effects
     X_train_r = sm.add_constant(train_df[features_no_fe])
     X_test_r = sm.add_constant(test_df[features_no_fe])
     probit_r = Probit(y_train, X_train_r).fit(disp=False)
     assert probit_r.mle_retvals["converged"], "Restricted Probit did not converge"
 
-    # ── Model B: Probit WITH session FE (full) ──
+    # full model: include session effects
     X_train_f = sm.add_constant(train_df[features_full])
     X_test_f = sm.add_constant(test_df[features_full])
     probit_f = Probit(y_train, X_train_f).fit(disp=False)
     assert probit_f.mle_retvals["converged"], "Full Probit did not converge"
 
-    # ── Average Marginal Effects ──
     margeff = probit_f.get_margeff()
 
-    # ── Out-of-sample evaluation ──
     p_r_test = probit_r.predict(X_test_r)
     p_f_test = probit_f.predict(X_test_f)
 
@@ -199,7 +183,6 @@ def run_probit_with_session_fe(df):
     brier_r = brier_score_loss(y_test, p_r_test)
     brier_f = brier_score_loss(y_test, p_f_test)
 
-    # ── TABLE 1: Probit Coefficients ──
     col_names = ["const"] + features_full
     print(f"\n{'─' * 90}")
     print(f"TABLE 1: PROBIT COEFFICIENT ESTIMATES (Full Model with Session FE)")
@@ -223,14 +206,12 @@ def run_probit_with_session_fe(df):
     print(f"  BIC:                 {probit_f.bic:.4f}")
     print(f"  N (train):           {len(train_df):,}")
 
-    # ── TABLE 2: Average Marginal Effects ──
     print(f"\n{'─' * 90}")
     print(f"TABLE 2: AVERAGE MARGINAL EFFECTS (dF/dx)")
     print(f"  Interpretation: 1-unit increase in X → dF/dx change in P(persistent)")
     print(f"{'─' * 90}")
     print(margeff.summary())
 
-    # ── TABLE 3: Out-of-Sample Performance ──
     print(f"\n{'─' * 90}")
     print(f"TABLE 3: OUT-OF-SAMPLE PERFORMANCE (Test N = {len(test_df):,})")
     print(f"{'─' * 90}")
@@ -243,8 +224,8 @@ def run_probit_with_session_fe(df):
     delta_auc = auc_f - auc_r
     print(f"  ΔAUC from Session FE: {delta_auc:+.4f}")
 
-    # ── Wald test: joint significance of session dummies ──
-    # Use restriction matrix: test that coefficients on the last 3 variables = 0
+    # wald test: joint significance of session dummies
+    # use restriction matrix: test that coefficients on the last 3 variables = 0
     n_params = len(probit_f.params)
     R = np.zeros((3, n_params))
     R[0, n_params - 3] = 1  # session_asian
@@ -263,14 +244,13 @@ def run_probit_with_session_fe(df):
     else:
         print(f"    → FAIL TO REJECT H₀: Session FE are NOT jointly significant")
 
-    # ── Likelihood Ratio test: restricted vs. full ──
+    # likelihood ratio test: restricted vs. full
     lr_stat = 2 * (probit_f.llf - probit_r.llf)
     from scipy.stats import chi2 as chi2_dist
     lr_p = chi2_dist.sf(lr_stat, df=3)
     print(f"\n  Likelihood Ratio Test (restricted vs. full):")
     print(f"    LR stat = {lr_stat:.4f},  p = {lr_p:.6e}")
 
-    # ── Save results ──
     reg_data = []
     for i, name in enumerate(col_names):
         reg_data.append({
@@ -296,9 +276,7 @@ def run_probit_with_session_fe(df):
     return probit_f, train_df, test_df
 
 
-# ============================================================
-# SECTION C: HALF-LIFE DIAGNOSTICS (Fix 2)
-# ============================================================
+# half-life diagnostics
 def report_halflife_diagnostics(df):
     """
     Report half-life statistics with proper winsorization disclosure.
@@ -329,7 +307,7 @@ def report_halflife_diagnostics(df):
     print(f"    Median: {capped_hl.median():.2f} seconds")
     print(f"    Std:    {capped_hl.std():.2f}")
 
-    # Non-parametric AUC_300 as primary metric
+    # non-parametric AUC_300 as primary metric
     auc = df["auc_300"]
     print(f"\n  Primary Invariance Metric: Non-Parametric AUC_300")
     print(f"    Mean:   {auc.mean():,.2f} σ·s")
@@ -344,9 +322,7 @@ def report_halflife_diagnostics(df):
     print(f'     decay rate estimate λ̂ → 0, producing unbounded half-lives."')
 
 
-# ============================================================
-# SECTION D: SESSION-LEVEL PERSISTENCE HETEROGENEITY
-# ============================================================
+# compare sessions
 def report_session_analysis(df):
     """
     Document session heterogeneity to justify session FE inclusion.
@@ -393,15 +369,12 @@ def report_session_analysis(df):
     print(f"    • London AM: inter-dealer inventory squaring → mean-reverting")
     print(f"    • NY PM: directional US macro flow absorption → permanent")
 
-    # Save
     out_path = RESULTS_DIR / "session_analysis_corrected.csv"
     stats.to_csv(out_path, index=False)
     print(f"\n  ✓ Saved: {out_path}")
 
 
-# ============================================================
-# SECTION E: PERSISTENCE SCORE — CORRECTED FRAMING
-# ============================================================
+# persistence-score interpretation
 def report_persistence_score(df):
     """
     S_persistence = Φ((AUC_300 − μ_train) / σ_train) × 100
@@ -453,9 +426,6 @@ def report_persistence_score(df):
     return S
 
 
-# ============================================================
-# SECTION F: VALIDATION SUITE
-# ============================================================
 def run_validation_suite(df, probit_model):
     """
     Automated validation checks per JFE/JFQA peer-review standards.
@@ -501,9 +471,6 @@ def run_validation_suite(df, probit_model):
         print("  ✓ All validation checks passed")
 
 
-# ============================================================
-# MAIN
-# ============================================================
 def main():
     print("╔" + "═" * 78 + "╗")
     print("║  CORRECTED NOTEBOOK 5: PROBIT + SESSION FE + HALF-LIFE WINSORIZATION      ║")

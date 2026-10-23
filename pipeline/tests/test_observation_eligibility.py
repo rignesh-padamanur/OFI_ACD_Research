@@ -161,7 +161,7 @@ class ObservationContract(unittest.TestCase):
 
     def test_two_independent_failures_have_both_reasons(self):
         *_, seg, support=fixture(np.array([1,3601,7201])*SECOND,[0,2])
-        # Raw middle hour has a removed quote, so the structural cut is solely cleaning.
+        # raw middle hour has a removed quote, so the structural cut is solely cleaning.
         self.assertEqual(seg.start_reason.iloc[1],'removed_raw_record')
         self.assertEqual(seg.quote_count.sum(),2)
 

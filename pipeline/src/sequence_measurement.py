@@ -70,7 +70,7 @@ def sequence_statistics(q5):
         'nonzero_fraction': nonzero / N, 'all_zero_sequence': nonzero == 0,
         'constant_nonzero_sequence': np.abs(sign_sum) == N,
         'order_degenerate': (nonzero <= 1) | (np.abs(sign_sum) == N)})
-    # The counterexamples are valid observations and never screened out.
+    # retain these valid counterexamples in the sample
     require(result.loc[result.order_degenerate, 'sequence_z'].eq(0).all(), 'Degenerate sequence identity failed')
     return result
 
@@ -130,7 +130,7 @@ def measure_pressure(onsets, sparse, support):
         gross = np.array([math.fsum(abs(float(v)) for v in x) for x in values])
         naive = np.sum(values, axis=1)
         epsilon = np.finfo(float).eps
-        # Diagnostic for this five-term aggregation only. It does not bound
+        # diagnostic for this five-term aggregation only. It does not bound
         # inherited bin-construction error or introduce a zero tolerance.
         bound = (GRID * epsilon / (1 - GRID * epsilon)) * gross
         q5[row] = stable
@@ -257,7 +257,7 @@ def build_features(origins, predictors, anchors, pressure, sequences, price, sca
             'Sparse quote counts differ from raw quote window')
     inherited = a.state_history_available.to_numpy(dtype=bool)
     require((~inherited | source_both).all(), 'Previously available history cannot be reconstructed')
-    # Existing upstream verification uses these absolute/relative precision
+    # existing upstream verification uses these absolute/relative precision
     # tolerances for independently reconstructed preceding flow and variation.
     require(np.allclose(out.loc[inherited, 'sum_1s_fsum'], a.loc[inherited, 'pre_quote_ofi_300s'],
                         rtol=1e-8, atol=1e-8), 'Inherited preceding pressure differs from sparse reconstruction')

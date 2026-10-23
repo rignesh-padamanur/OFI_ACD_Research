@@ -120,8 +120,8 @@ def reference_quote_diagnostics(clock, quotes, support_intervals):
         same[300:] = ((sid[300:] >= 0) & (sid[300:] == sid[:-300])
                       & (times[300:]-times[:-300] == 300*SECOND))
     ready = enough & same & np.isfinite(flow)
-    # Five disjoint second phases contain the required five-second return grid.
-    # Each rolling window has 60 returns and therefore exactly 61 marks.
+    # five disjoint second phases contain the required five-second return grid.
+    # each rolling window has 60 returns and therefore exactly 61 marks.
     mid = (pre.bid+pre.ask).to_numpy()/2
     log_mid = pd.Series(np.where(pre_valid & (mid > 0), np.log(mid), np.nan))
     squared = (log_mid-log_mid.shift(5)).pow(2)
@@ -385,7 +385,7 @@ def verify_event_audit(run):
         expected[['z_ofi', 'z_intensity', 'z_duration']] = z
         scored = pd.read_parquet(directory/'scored_bins.parquet')
         compare_numeric_frame(scored, expected, rtol=1e-8, atol=1e-8)
-        # Selection must be exact for the saved arithmetic, including ties.
+        # selection must be exact for the saved arithmetic, including ties.
         np.testing.assert_array_equal(scored.candidate_event, scored.distance >= params['three_feature']['threshold'])
         np.testing.assert_array_equal(scored.candidate_without_duration,
                                       scored.distance_without_duration >= params['two_feature']['threshold'])

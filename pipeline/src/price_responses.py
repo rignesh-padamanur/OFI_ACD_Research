@@ -137,7 +137,7 @@ def construct_price_responses(onsets, quotes, support, *, policy, development_en
     for col in ['continuation_pips', 'total_pips']:
         paths[col] = np.where(directed_long, direction_long * paths['raw_' + col], np.nan)
     paths['endpoint_reuses_detection_quote'] = det_good & end_good & (pd.DatetimeIndex(end['at']).asi8 == repeat(pd.DatetimeIndex(det['at']).asi8))
-    # Later detections, not future episode prices, provide a descriptive overlap
+    # later detections, not future episode prices, provide a descriptive overlap
     # flag. It never enters onset eligibility or direction.
     next_detection = np.r_[td[1:], np.iinfo('int64').max] if n else np.empty(0, dtype='int64')
     overlap = pd.array(repeat(next_detection) <= target, dtype='boolean')

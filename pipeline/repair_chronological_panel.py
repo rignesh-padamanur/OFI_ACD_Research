@@ -272,7 +272,7 @@ def build(run_id, evidence):
         monthly = daily.drop(columns='date').groupby(daily.date.dt.strftime('%Y-%m')).sum().rename_axis('month').reset_index()
         for name, frame in [('onsets', onsets), ('episodes', episodes), ('daily', daily),
                             ('monthly', monthly), ('cycle_statistics', pd.DataFrame(cycle_rows))]: save_frame(run, name, frame)
-        # Reuse episode/quality summaries, supplying calendar counts from the streamed daily ledger.
+        # reuse episode/quality summaries, supplying calendar counts from the streamed daily ledger.
         epstats = policy_statistics({'clock': pd.DataFrame({'observation_state': pd.Series(dtype='object')}),
                                     'onsets': onsets, 'episodes': episodes})
         epstats['clock_seconds'] = int(daily.calendar_seconds.sum())

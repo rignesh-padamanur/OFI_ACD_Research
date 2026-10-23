@@ -49,7 +49,7 @@ def duration_chunk(timestamps, offset, components, previous_ns=None):
     if ((gap[1:] if previous_ns is None else gap) <= 0).any():
         raise ValueError('Strictly increasing quote times required')
     if previous_ns is None:
-        gap[0] = -1  # Explicit absent-predecessor sentinel, never a duration.
+        gap[0] = -1  # marks a missing predecessor, not a duration
     ids = np.arange(offset, offset+len(t), dtype='int64')
     out = pd.DataFrame({'quote_id': ids, 'available_at': pd.to_datetime(t, utc=True), 'audit_gap_ns': gap})
     for policy, c in components.items():

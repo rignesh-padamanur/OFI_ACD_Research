@@ -154,7 +154,7 @@ def verify_clock_run(run, *, batch_size=173_111):
         assert source_quotes == parent['ticks']['quotes']
         assert source_rows == parent['bins']['quote_containing_bins']
     stats.check(run)
-    # Additional closed-form interval accounting, independent of any row construction.
+    # additional closed-form interval accounting, independent of any row construction.
     for policy in RULES:
         part = support.loc[support.policy.eq(policy)]
         a = pd.DatetimeIndex(part.start).as_unit('ns').asi8

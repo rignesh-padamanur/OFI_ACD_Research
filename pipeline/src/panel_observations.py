@@ -102,7 +102,7 @@ def iter_source_spells(path, terminals, *, policy, stop_ns, batch_size=BATCH_SIZ
         times = _ns(frame.available_at)
         if (np.diff(times) <= 0).any():
             raise ValueError('Unique increasing quote timestamps required')
-        # Only inspect the requested prefix and its first lookahead observation.
+        # read the requested prefix plus one lookahead observation
         crossing = int(np.searchsorted(times, stop_ns))
         frame = frame.iloc[:min(len(frame), crossing + 1)].reset_index(drop=True)
         times = _ns(frame.available_at)

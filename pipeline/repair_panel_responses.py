@@ -170,7 +170,7 @@ def build_statistics(anchors, highlights, component, calendar, boundary, cycles,
 
 def cycle_counts(cycle, anchors, paths):
     past = paths.target_at.gt(cycle.deployment_end)
-    # Only the final onset could lose a global next detection in this whole-cycle batch.
+    # only the final onset could lose a global next detection in this whole-cycle batch.
     local_last = paths.episode_id.eq(anchors.episode_id.iloc[-1]) if len(anchors) else np.zeros(len(paths),bool)
     return {'cycle_id':int(cycle.cycle_id),'onset_rows':len(anchors),'path_rows':len(paths),
         'targets_after_cycle_end':int(past.sum()),

@@ -15,7 +15,6 @@ from pathlib import Path
 from scipy.optimize import minimize
 from scipy.special import gamma as gamma_func
 
-# ── Project paths ──────────────────────────────────────────────────────────
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 CLEAN_PATH   = PROJECT_ROOT / "data" / "processed" / "eurusd_clean.parquet"
@@ -27,7 +26,6 @@ print("=" * 80)
 print("RE-ESTIMATING ACD MODELS ON DESEASONALIZED DURATIONS")
 print("=" * 80)
 
-# ── Step 1: Load and filter to May 2026 calibration window ────────────────
 print("\n1. Loading clean tick data and filtering to May 2026...")
 df = pd.read_parquet(CLEAN_PATH, columns=["timestamp", "bid", "ask", "spread",
                                            "mid", "spread_pips", "delta_sec"])
@@ -43,7 +41,7 @@ df_acd = may2026.loc[mask].copy()
 print(f"   Active durations (0 < δ ≤ 60s): {len(df_acd):,}")
 del may2026
 
-# ── Step 2: Apply 15-minute multiplicative deseasonalization ──────────────
+# seasonal factors use 15-minute bins
 print("\n2. Computing 15-minute diurnal spline Φ_δ(t) and deseasonalizing...")
 
 from src.deseasonal import deseasonalize_series
@@ -61,9 +59,9 @@ print(f"   adj δ̃ mean:   {df_acd['adj_delta_sec'].mean():.6f}s")
 print(f"   adj δ̃ median: {df_acd['adj_delta_sec'].median():.6f}s")
 
 N_cal = len(df_acd)
-x = df_acd["adj_delta_sec"].to_numpy()  # DESEASONALIZED durations
+x = df_acd["adj_delta_sec"].to_numpy()
 
-# ── Helper: fast forward filter (vectorized where possible) ───────────────
+# forward filter
 def forward_filter(omega, alpha, beta, x):
     """ACD(1,1) conditional expectation recursion."""
     n = len(x)
@@ -73,7 +71,7 @@ def forward_filter(omega, alpha, beta, x):
         psi[t] = omega + alpha * x[t-1] + beta * psi[t-1]
     return psi
 
-# ── Step 3: Estimate EACD(1,1) via MLE ────────────────────────────────────
+# fit EACD(1,1)
 print(f"\n3. Estimating EACD(1,1) on N = {N_cal:,} deseasonalized durations...")
 print("   (Warm-started from old parameters + perturbations)")
 
@@ -87,7 +85,6 @@ def eacd_nll(params):
     nll = np.sum(np.log(psi) + x / psi)
     return nll if np.isfinite(nll) else 1e20
 
-# Warm start from old parameters + targeted perturbations
 eacd_inits = [
     [0.003688, 0.027007, 0.965855],   # old EACD parameters
     [0.005, 0.03, 0.95],
@@ -121,7 +118,7 @@ assert eacd_omega > 0
 print(f"\n   BEST EACD: ω = {eacd_omega:.6f}, α = {eacd_alpha:.6f}, β = {eacd_beta:.6f}")
 print(f"   α + β = {eacd_persistence:.6f}, NLL = {best_eacd_nll:,.0f}, ln L = {-best_eacd_nll:,.0f}")
 
-# ── Step 4: Estimate WACD(1,1) via MLE ────────────────────────────────────
+# fit WACD(1,1)
 print(f"\n4. Estimating Weibull ACD(1,1) on N = {N_cal:,} deseasonalized durations...")
 print("   (Warm-started from old parameters + perturbations)")
 
@@ -139,7 +136,6 @@ def wacd_nll(params):
     nll = -np.sum(ll)
     return nll if np.isfinite(nll) else 1e20
 
-# Warm start from old parameters + perturbations
 wacd_inits = [
     [0.001575, 0.022548, 0.96502, 0.749015],   # old WACD parameters
     [0.002, 0.025, 0.965, 0.75],
@@ -174,7 +170,7 @@ assert 0.3 < wacd_k < 2.0
 print(f"\n   BEST WACD: ω = {wacd_omega:.6f}, α = {wacd_alpha:.6f}, β = {wacd_beta:.6f}, k = {wacd_k:.6f}")
 print(f"   α + β = {wacd_persistence:.6f}, NLL = {best_wacd_nll:,.0f}, ln L = {-best_wacd_nll:,.0f}")
 
-# ── Step 5: LR test ──────────────────────────────────────────────────────
+# likelihood-ratio comparison
 print(f"\n5. Likelihood Ratio Test: H₀: k = 1 (EACD) vs H₁: k ≠ 1 (WACD)")
 delta_lnL = best_eacd_nll - best_wacd_nll
 LR = 2.0 * delta_lnL
@@ -182,7 +178,7 @@ print(f"   Δ ln L = {delta_lnL:,.0f}")
 print(f"   LR = 2 × Δ ln L = {LR:,.0f} ~ χ²(1)")
 print(f"   {'REJECT H₀' if LR > 3.841 else 'FAIL TO REJECT'} at α = 0.05")
 
-# ── Step 6: Hessian-based SE ─────────────────────────────────────────────
+# standard errors from the Hessian
 print(f"\n6. Computing Hessian-based standard errors at WACD MLE...")
 
 from scipy.optimize import approx_fprime
@@ -214,11 +210,11 @@ for name, val, s, null in zip(param_names, best_wacd.x, se, null_vals):
     t_stat = (val - null) / s if se_valid and s > 0 else np.nan
     print(f"   {name}: estimate = {val:.6f}, SE = {s:.6f}, t({name}={null}) = {t_stat:.2f}")
 
-# ── Step 7: Residual diagnostics ──────────────────────────────────────────
+# check residuals
 print(f"\n7. Residual diagnostics...")
 
 psi = forward_filter(wacd_omega, wacd_alpha, wacd_beta, x)
-eps_standard = x / psi  # standard unit-mean residual
+eps_standard = x / psi
 
 print(f"   Standard residual (ε = δ̃/ψ) mean: {eps_standard.mean():.6f}")
 print(f"   Standard residual median:          {np.median(eps_standard):.6f}")
@@ -226,12 +222,11 @@ print(f"   Standard residual std:             {eps_standard.std():.6f}")
 print(f"   Filtered ψ mean:                   {psi.mean():.6f}s")
 print(f"   Filtered ψ median:                 {np.median(psi):.6f}s")
 
-# Half-life
 import math
 half_life = math.log(2) / math.log(1.0 / wacd_beta)
 print(f"   Half-life: {half_life:.1f} quote updates ({half_life * np.median(x):.2f}s at median duration)")
 
-# Ljung-Box Q(10) on FULL calibration sample
+# Ljung-Box Q(10), full calibration sample
 print(f"\n   Computing Ljung-Box Q(10) on N = {N_cal:,}...")
 demeaned = eps_standard - eps_standard.mean()
 var_eps = np.sum(demeaned**2) / N_cal
@@ -240,7 +235,7 @@ for lag in range(1, 11):
     rho[lag-1] = np.sum(demeaned[:N_cal-lag] * demeaned[lag:]) / (N_cal * var_eps)
 Q10_residual = N_cal * (N_cal + 2) * np.sum(rho**2 / (N_cal - np.arange(1, 11)))
 
-# Also on raw durations (for consistent comparison)
+# also on raw durations (for consistent comparison)
 x_raw = df_acd["delta_sec"].to_numpy()
 demeaned_raw = x_raw - x_raw.mean()
 var_raw = np.sum(demeaned_raw**2) / N_cal
@@ -249,7 +244,7 @@ for lag in range(1, 11):
     rho_raw[lag-1] = np.sum(demeaned_raw[:N_cal-lag] * demeaned_raw[lag:]) / (N_cal * var_raw)
 Q10_raw = N_cal * (N_cal + 2) * np.sum(rho_raw**2 / (N_cal - np.arange(1, 11)))
 
-# Also on deseasonalized durations (pre-ACD)
+# also on deseasonalized durations (pre-ACD)
 demeaned_adj = x - x.mean()
 var_adj = np.sum(demeaned_adj**2) / N_cal
 rho_adj = np.zeros(10)
@@ -266,7 +261,6 @@ print(f"   WACD residuals Q(10) = {Q10_residual:,.2f}")
 print(f"   Reduction from raw: {reduction_raw:.2f}%")
 print(f"   Reduction from deseasonalized: {reduction_adj:.2f}%")
 
-# ── Step 8: Save parameters ──────────────────────────────────────────────
 print(f"\n8. Saving updated parameter files...")
 
 eacd_params = {
@@ -315,7 +309,6 @@ with open(WACD_JSON, "w") as f:
     json.dump(wacd_params, f, indent=2)
 print(f"   ✓ Saved {WACD_JSON}")
 
-# ── Step 9: Save updated acd_input.parquet ────────────────────────────────
 print(f"\n9. Saving updated acd_input.parquet with adj_delta_sec column...")
 df_acd.to_parquet(ACD_OUT_PATH)
 print(f"   ✓ Saved {ACD_OUT_PATH}")
@@ -324,7 +317,6 @@ print(f"   N = {len(df_acd):,}")
 assert "adj_delta_sec" in df_acd.columns
 assert "phi_duration" in df_acd.columns
 
-# ── Step 10: Compare old vs. new parameters ───────────────────────────────
 print(f"\n10. Old vs. New parameter comparison:")
 print(f"{'':5s} {'Parameter':10s} {'Old':>12s} {'New':>12s} {'Δ%':>10s}")
 print(f"{'':5s} {'─'*10:10s} {'─'*12:>12s} {'─'*12:>12s} {'─'*10:>10s}")
@@ -340,7 +332,6 @@ old_p = 0.987568
 new_p = wacd_persistence
 print(f"{'':5s} {'α+β':10s} {old_p:12.6f} {new_p:12.6f} {(new_p-old_p)/old_p*100:+9.2f}%")
 
-# ── Summary ──────────────────────────────────────────────────────────────
 print("\n" + "=" * 80)
 print("ESTIMATION COMPLETE")
 print("=" * 80)

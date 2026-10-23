@@ -21,7 +21,7 @@ def fixture():
         for horizon in (60, 300):
             j, c, i = triple
             if event == 2 and horizon == 300:
-                c, i = -3., -1.  # The same event has different endpoint behavior.
+                c, i = -3., -1.  # the same event has different endpoint behavior.
             if event == 14 and horizon == 300:
                 c = i = np.nan
             row = dict(episode_id=event, horizon_sec=horizon, bin_start=onset,
@@ -227,7 +227,7 @@ class JointResponseTests(unittest.TestCase):
             build(s)
 
     def test_roundoff_cannot_relax_endpoint_order_or_exact_zero(self):
-        # All these triples pass the additive tolerance, but contradict the
+        # all these triples pass the additive tolerance, but contradict the
         # endpoint label implied by their signs or zero values.
         for j, c, i in [(1., -1e-12, 1. + 1e-12), (1., 1e-12, 1. - 1e-12),
                         (1., -1e-16, 1.), (1., 0., 1. + 1e-12),

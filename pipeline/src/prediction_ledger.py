@@ -378,7 +378,7 @@ def build_folds(origins, labels, schedule, *, evaluation_start='2024-05-06T00:00
     f = origins[['episode_id', 'forecast_at', 'origin_eligible']].copy()
     for name in ['label_ready_at', 'label_available', 'evaluation_eligible']:
         f[name] = primary.loc[f.episode_id, name].to_numpy()
-    # Preserve UTC dtype after keyed assignment (timezone-aware object arrays).
+    # restore UTC dtype after keyed assignment
     f['label_ready_at'] = pd.to_datetime(f.label_ready_at, utc=True)
     rows, memberships = [], []
     selected = s.loc[s.parameter_cutoff.ge(start) & s.parameter_cutoff.lt(stop)]

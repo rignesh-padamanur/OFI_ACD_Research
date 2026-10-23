@@ -69,7 +69,7 @@ def acquire(acq):
     manifest=json.loads((acq/'manifest.json').read_text())
     record_phase_code(acq,manifest,'fetch')
     targets=json.loads((acq/'targets.json').read_text())['targets'];results=[]
-    # One persistent connection avoids repeated slow connection setup and
+    # one persistent connection avoids repeated slow connection setup and
     # reduces load. Stop promptly on access/rate limits or repeated transport
     # failure, while retaining every attempted and unattempted target status.
     consecutive_failures=0;stop_reason=None

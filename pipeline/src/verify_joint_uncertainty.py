@@ -282,7 +282,7 @@ def _verify_statistics(stats, reference):
             _require(math.isfinite(saved[prefix + '_min_eigenvalue'])
                      and saved[prefix + '_min_eigenvalue'] >= -saved[prefix + '_psd_tolerance'],
                      'Saved covariance diagnostic is indefinite')
-            # Matrices are singular by the accounting identities; tiny null-space
+            # matrices are singular by the accounting identities; tiny null-space
             # eigenvalues may differ in sign between two valid summation orders.
             _require(abs(saved[prefix + '_min_eigenvalue'] - minimum) <= 1024 * EPS * 12 * scale,
                      'Covariance minimum eigenvalue differs beyond roundoff')

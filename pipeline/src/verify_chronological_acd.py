@@ -73,7 +73,7 @@ def reference_sample(frame,start,stop,omit=False):
     f=frame.loc[keep].copy().reset_index(drop=True);old_end=ns(f.end_at);end=np.minimum(old_end,stop)
     f['end_at']=pd.to_datetime(end,utc=True);f['event_observed']=f.event_observed.to_numpy()&(old_end<stop)
     f['stop_code']=np.where(old_end>=stop,8,f.stop_code).astype('uint8');f['exposure_ns']=end-ns(f.origin_at)
-    # Apply sensitivity selection to the already historically clipped view.
+    # apply sensitivity selection to the already historically clipped view.
     if omit:f=f.loc[f.event_observed | ((f.stop_code & 2)==0)].reset_index(drop=True)
     f['normalized_exposure']=f.exposure_ns.to_numpy()/S/f.scale_sec.to_numpy()
     previous=f.shift(1)

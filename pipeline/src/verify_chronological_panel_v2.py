@@ -154,7 +154,7 @@ def verify_observations(directory, inputs, origin, stop):
         np.add.at(totals[:, 0], key, 1)
         np.add.at(totals[:, 1], key, e.astype('int64'))
         np.add.at(totals[:, 2], key, b-a)
-        # Direct contributions to each later same-weekday historical cutoff;
+        # direct contributions to each later same-weekday historical cutoff;
         # unlike production, this never fits seasons from corrected full totals.
         for lag in range(7, 57, 7):
             date = day+lag
@@ -460,7 +460,7 @@ class CandidateGraph:
         _frame(pd.read_parquet(directory/'episode_clock.parquet'), expected_clock, 'global candidate graph clock')
         membership = expected_clock.loc[state == 'trigger', ['bin_start', 'available_at', 'episode_id']].reset_index(drop=True)
         _frame(pd.read_parquet(directory/'candidate_membership.parquet'), membership, 'global candidate graph membership')
-        # Resolve candidate nodes whose five-second future crossed the previous
+        # resolve candidate nodes whose five-second future crossed the previous
         # chunk. No market-state or detector computation reads this future.
         for node in self.pending_nodes:
             matches = positions[self.seconds+positions > node['position']]
@@ -723,7 +723,7 @@ def verify_panel(run):
     counts.update(source_rows_verified=source['source_spell_rows'], seasonal_rows_verified=source['seasonal_parameter_rows'])
     support = pd.read_parquet(inputs['support_intervals']['path'])
     support = support.loc[support.policy.eq('structural_only')].reset_index(drop=True)
-    # Seed from the actual issued forecasts saved by the verified pilot, not a
+    # seed from the actual issued forecasts saved by the verified pilot, not a
     # fresh refilter under either old or new parameters.
     old_path = pd.read_parquet(previous/'model_path.parquet', filters=[('end_at', '>=', continuation)])
     old_forecasts = pd.read_parquet(previous/'forecasts.parquet').set_index('origin_quote_id').loc[old_path.origin_quote_id]
@@ -822,7 +822,7 @@ def verify_panel(run):
     previously_closed = old_episodes.loc[old_episodes.termination.ne('censored_sample_end')].reset_index(drop=True)
     pd.testing.assert_frame_equal(episodes.set_index('episode_id').loc[previously_closed.episode_id].reset_index(),
                                   previously_closed, check_exact=True, check_dtype=False, check_categorical=False)
-    # Independent legacy summary needs a clock only for its state counters; use
+    # independent legacy summary needs a clock only for its state counters; use
     # an empty reference and replace those exact counters from the compressed graph.
     epstats = reference_policy_statistics(pd.DataFrame({'observation_state': pd.Series(dtype=object)}), episodes, onsets)
     epstats.update(clock_seconds=graph.seconds, observation_states=graph.state_counts, candidate_bins=len(graph.nodes))
@@ -841,7 +841,7 @@ def verify_panel(run):
     first_times = ns(episodes.first_candidate_bin)
     last_times = ns(episodes.last_candidate_bin)
     boundaries = ns(schedule.parameter_cutoff.iloc[1:])
-    # Count an episode once even if its candidate chain spans several cutoffs.
+    # count an episode once even if its candidate chain spans several cutoffs.
     crossing = np.searchsorted(boundaries, last_times, side='right') > np.searchsorted(boundaries, first_times, side='right')
     expected['episodes_with_candidates_across_cutoffs'] = int(crossing.sum())
     fitted_stats = [read(run/'cycles'/f'{i:03d}'/'statistics.json') for i in range(2, len(schedule))]

@@ -153,7 +153,7 @@ def build_run(root, run_id, evidence):
 
 def promote(root, run, statistics, verification):
     m = json.loads((run/'manifest.json').read_text())
-    # Recheck live pointers and every ancestor fingerprint before promotion.
+    # recheck live pointers and every ancestor fingerprint before promotion.
     inputs, parent, elig, signal = resolve_inputs(root)
     if inputs != m['inputs'] or (parent, elig, signal) != (m['parent_data_run'], m['parent_eligibility_run'], m['parent_signal_run']):
         raise ValueError('Active parents changed during build')

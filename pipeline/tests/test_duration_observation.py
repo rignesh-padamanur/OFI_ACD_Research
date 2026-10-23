@@ -14,7 +14,7 @@ from src.pipeline_state import load_duration_observations
 
 
 def fixture():
-    # First component has exact 15/30/60-second waits and a 60s+1ns gap.
+    # first component has exact 15/30/60-second waits and a 60s+1ns gap.
     origin = pd.Timestamp('2024-01-01', tz='UTC').value
     t = origin+np.array([0, 15*SECOND, 45*SECOND, 105*SECOND, 165*SECOND+1, 166*SECOND, 180*SECOND, 200*SECOND], dtype='int64')
     segments = pd.DataFrame({'segment_id':[0,1,2], 'quote_start':[0,5,7], 'quote_stop_exclusive':[5,7,8],
@@ -126,7 +126,7 @@ class DurationContractTests(unittest.TestCase):
 
     def test_tied_structural_and_cap_stop_keeps_both_reasons(self):
         segments=self.segments.copy();segments.loc[0,'end_exclusive']=pd.Timestamp(self.t[4]+15*SECOND,tz='UTC')
-        # Extend only that interval; move next segment start forward to keep support disjoint.
+        # extend only that interval; move next segment start forward to keep support disjoint.
         t=self.t.copy();t[5:]+=20*SECOND
         segments.loc[1,'start']=pd.Timestamp(t[5],tz='UTC');segments.loc[1,'last_quote']=pd.Timestamp(t[6],tz='UTC')
         segments.loc[1,'end_exclusive']=pd.Timestamp(t[6]+SECOND,tz='UTC')

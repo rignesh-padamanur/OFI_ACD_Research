@@ -51,7 +51,7 @@ def construct(o=None, q=None, s=None, *, stop=4000, all_o=None):
 
 class PanelResponseTimingTests(unittest.TestCase):
     def test_calibration_cutoff_is_not_an_observation_boundary(self):
-        # Treat 20 seconds as a processing cutoff. The endpoint at 21 still
+        # treat 20 seconds as a processing cutoff. The endpoint at 21 still
         # observes the quote at 20.5, and strictly excludes the quote at 21.
         q = quotes([9, 10.5, 19.5, 20.5, 21], [1.1, 1.1002, 1.1003, 1.1004, 1.2])
         p = construct(q=q)['paths'].set_index('horizon_sec')

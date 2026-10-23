@@ -23,7 +23,7 @@ def refresh_masks(samples):
 
 
 def fixture():
-    # Includes every endpoint label, changes across horizons, incomplete joint
+    # includes every endpoint label, changes across horizons, incomplete joint
     # observations, development rows and a date with no events.
     movements = [(1., .5, -2.), (-1., -.5, .5), (1., -.2, 0.), (0., 1., -1.),
                  (0., 0., 0.), (1., -1., -1.), (-1., 2., 2.), (-1., 0., -.5),
@@ -121,7 +121,7 @@ class IndependentJointResponseTests(unittest.TestCase):
         actual = build_joint_response(samples, START, END)
         self.verify(actual, samples)
         self.assertTrue(actual['membership'].endpoint_pattern.eq('extended').all())
-        # Numerically near an identity, but endpoints do not strictly extend.
+        # numerically near an identity, but endpoints do not strictly extend.
         samples['total_pips'] = samples.initial_pips
         with self.assertRaises(AssertionError):
             reference_joint_response(samples, START, END)
@@ -132,7 +132,7 @@ class IndependentJointResponseTests(unittest.TestCase):
         samples['initial_pips'] = values
         samples['continuation_pips'] = 0.
         samples['total_pips'] = values
-        # Put all three on a single date to check the daily aggregation as well.
+        # put all three on a single date to check the daily aggregation as well.
         samples['bin_start'] = START + pd.Timedelta(seconds=10)
         samples['detected_at'] = samples.bin_start + pd.Timedelta(seconds=1)
         samples['target_at'] = samples.detected_at + pd.to_timedelta(samples.horizon_sec, unit='s')
